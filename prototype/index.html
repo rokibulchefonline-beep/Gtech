@@ -11,10 +11,15 @@
 
   Copy is the client's own, used verbatim.
 
-  Imagery is vector mockups in assets/img/. They are real, swappable assets:
-  replace the src with a photograph at the same aspect ratio and nothing
-  reflows. Stock photography could not be downloaded — the sandbox proxy
-  denies all outbound hosts, including the live site and every image CDN.
+  Imagery references the client's own assets on gtechdigital.co.uk by absolute
+  URL. They cannot be downloaded from this build environment (the proxy denies
+  all outbound hosts), so they are hot-linked and will render in any normal
+  browser. Before production these should be served locally from
+  assets/img/ rather than cross-origin.
+
+  The Meta badge URL is a best guess (meta-logo.webp) — the brief supplied the
+  Google URL twice. Both badges fall back to an inline SVG mark via onerror,
+  so a wrong URL degrades rather than breaking.
 -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,15 +33,14 @@
 
 <a class="skip-link" href="#main">Skip to main content</a>
 
-<p class="proto-bar"><b>PROTOTYPE</b> — imagery is vector mockups pending real photography. Figures marked “placeholder” need real, verifiable data.</p>
+<p class="proto-bar"><b>PROTOTYPE</b> — images load from gtechdigital.co.uk. Figures marked “placeholder” need real, verifiable data.</p>
 
 <!-- ============================================================== HEADER -->
 <header class="site-header" data-header>
   <div class="container site-header__inner">
 
     <a class="logo" href="index.html">
-      <span class="logo__mark" aria-hidden="true">G</span>
-      <span>G<span class="logo__accent">Tech</span> Digital</span>
+      <img src="https://www.gtechdigital.co.uk/assets/frontend/images/logo.png" alt="GTech Digital" width="200" height="52">
     </a>
 
     <nav class="nav" aria-label="Primary">
@@ -69,8 +73,8 @@
                 <a class="mega__link" href="pricing.html"><b>Packages</b><span>Digital marketing packages</span></a>
               </div>
               <div class="c-3">
-                <div class="media media--4x3">
-                  <img src="assets/img/web-development.svg" alt="Featured project: a responsive website shown on desktop and mobile." loading="lazy" width="600" height="400">
+                <div class="media media--4x3 media--illustration">
+                  <img src="https://www.gtechdigital.co.uk/assets/frontend/images/Web-Development.webp" alt="Featured project: a responsive website shown on desktop and mobile." loading="lazy" width="600" height="400">
                 </div>
                 <a class="link mt-4" href="portfolio.html">
                   View our work
@@ -102,7 +106,7 @@
 
 <div class="mobile-nav" id="mobile-nav" data-mobile-nav aria-hidden="true">
   <div class="mobile-nav__head">
-    <span class="logo"><span class="logo__mark" aria-hidden="true">G</span><span>G<span class="logo__accent">Tech</span> Digital</span></span>
+    <span class="logo"><img src="https://www.gtechdigital.co.uk/assets/frontend/images/logo.png" alt="GTech Digital" width="180" height="47"></span>
     <button class="nav-toggle" style="display:grid" data-nav-close aria-label="Close menu">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
     </button>
@@ -127,33 +131,40 @@
 <main id="main">
 
 <!-- ==========================================================================
-     HERO — concept preserved per brief. Client copy verbatim.
+     HERO — matched to the live site: gradient ground, trust pill, mint
+     highlight, flanking badge artwork, pill CTAs. Client copy verbatim.
      ========================================================================== -->
 <section class="hero">
+  <img class="hero__bg" src="https://www.gtechdigital.co.uk/assets/frontend/images/background-index-page.webp" alt="" aria-hidden="true" fetchpriority="high">
+
   <div class="container">
 
     <p class="hero__trust">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
-      <span class="t-label">Authorized Google &amp; Meta Partner</span>
+      <span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
+        Authorized Google &amp; Meta Partner
+      </span>
     </p>
 
     <div class="hero__grid">
 
       <div class="credential hero__credential-desktop">
-        <div class="credential__logo">
-          <svg width="34" height="34" viewBox="0 0 48 48" aria-hidden="true">
+        <img src="https://www.gtechdigital.co.uk/assets/frontend/images/google-logo.webp" alt="Google Partner — Google Ads Certified Partner"
+             onerror="this.style.display='none';this.nextElementSibling.hidden=false">
+        <div class="credential__fallback" hidden>
+          <svg width="32" height="32" viewBox="0 0 48 48" aria-hidden="true">
             <path fill="#4285F4" d="M45.1 24.5c0-1.6-.1-2.7-.4-3.9H24v7.1h12.1c-.2 1.8-1.6 4.6-4.5 6.4l6.9 5.4c4.1-3.8 6.6-9.4 6.6-15Z"/>
             <path fill="#34A853" d="M24 46c5.9 0 10.9-2 14.5-5.3l-6.9-5.4c-1.9 1.3-4.4 2.2-7.6 2.2-5.8 0-10.7-3.8-12.5-9.1l-7.1 5.5C8 41.4 15.4 46 24 46Z"/>
             <path fill="#FBBC05" d="M11.5 28.4c-.5-1.4-.7-2.9-.7-4.4s.3-3 .7-4.4l-7.1-5.5C2.9 17 2 20.4 2 24s.9 7 2.4 9.9l7.1-5.5Z"/>
             <path fill="#EA4335" d="M24 10.5c4.1 0 6.9 1.8 8.5 3.3l6.2-6C34.9 4.4 29.9 2 24 2 15.4 2 8 6.6 4.4 14.1l7.1 5.5c1.8-5.3 6.7-9.1 12.5-9.1Z"/>
           </svg>
+          <p class="credential__name">Google Partner</p>
+          <p class="credential__meta">Google Ads Certified Partner</p>
         </div>
-        <p class="credential__name">Google Partner</p>
-        <p class="credential__meta">Google Ads Certified</p>
       </div>
 
       <div class="hero__center">
-        <h1 class="t-display hero__title">
+        <h1 class="hero__title">
           Best Digital Marketing<br>
           Agency for <span class="hero__highlight">Scalable Growth</span>
         </h1>
@@ -166,42 +177,48 @@
         </p>
 
         <div class="hero__ctas">
-          <a class="btn btn--white btn--lg" href="services.html">Our Services</a>
-          <a class="btn btn--on-dark btn--lg" href="#contact">Get Offer</a>
+          <a class="btn btn--on-dark" href="services.html">Our Services</a>
+          <a class="btn btn--primary" href="#contact">Get Offer</a>
         </div>
       </div>
 
       <div class="credential hero__credential-desktop">
-        <div class="credential__logo">
-          <svg width="34" height="34" viewBox="0 0 48 48" aria-hidden="true">
+        <img src="https://www.gtechdigital.co.uk/assets/frontend/images/meta-logo.webp" alt="Meta Business Partner — Meta Business Verified Member"
+             onerror="this.style.display='none';this.nextElementSibling.hidden=false">
+        <div class="credential__fallback" hidden>
+          <svg width="32" height="32" viewBox="0 0 48 48" aria-hidden="true">
             <path fill="#0081FB" d="M9.4 31.2c0 1.7.4 3 .9 3.8.7 1.1 1.7 1.5 2.7 1.5 1.4 0 2.6-.3 5-3.7 1.9-2.7 4.2-6.4 5.7-8.8l2.5-3.9c1.8-2.8 3.9-5.9 6.3-8 2-1.7 4.1-2.6 6.2-2.6 3.6 0 7 2.1 9.6 6 2.9 4.3 4.3 9.7 4.3 15.3 0 3.3-.7 5.7-1.8 7.7-1.1 1.8-3.2 3.7-6.7 3.7v-5.2c3 0 3.8-2.8 3.8-6 0-4.5-1.1-9.6-3.4-13.2-1.7-2.5-3.8-4.1-6.2-4.1-2.5 0-4.6 1.9-6.9 5.3-1.2 1.8-2.5 4-3.9 6.5l-1.5 2.6c-3 5.3-3.8 6.5-5.3 8.6-2.7 3.6-5 5-8 5-3.6 0-5.9-1.6-7.3-3.9C1.5 37.1.8 34.5.8 31.6l4.7-.2Z"/>
           </svg>
+          <p class="credential__name">Meta Business Partner</p>
+          <p class="credential__meta">Meta Business Verified Member</p>
         </div>
-        <p class="credential__name">Meta Business Partner</p>
-        <p class="credential__meta">Verified Member</p>
       </div>
 
     </div>
 
     <div class="hero__credentials-mobile">
       <div class="credential">
-        <div class="credential__logo">
-          <svg width="28" height="28" viewBox="0 0 48 48" aria-hidden="true">
+        <img src="https://www.gtechdigital.co.uk/assets/frontend/images/google-logo.webp" alt="Google Partner — Google Ads Certified Partner"
+             onerror="this.style.display='none';this.nextElementSibling.hidden=false">
+        <div class="credential__fallback" hidden>
+          <svg width="32" height="32" viewBox="0 0 48 48" aria-hidden="true">
             <path fill="#4285F4" d="M45.1 24.5c0-1.6-.1-2.7-.4-3.9H24v7.1h12.1c-.2 1.8-1.6 4.6-4.5 6.4l6.9 5.4c4.1-3.8 6.6-9.4 6.6-15Z"/>
             <path fill="#34A853" d="M24 46c5.9 0 10.9-2 14.5-5.3l-6.9-5.4c-1.9 1.3-4.4 2.2-7.6 2.2-5.8 0-10.7-3.8-12.5-9.1l-7.1 5.5C8 41.4 15.4 46 24 46Z"/>
             <path fill="#FBBC05" d="M11.5 28.4c-.5-1.4-.7-2.9-.7-4.4s.3-3 .7-4.4l-7.1-5.5C2.9 17 2 20.4 2 24s.9 7 2.4 9.9l7.1-5.5Z"/>
             <path fill="#EA4335" d="M24 10.5c4.1 0 6.9 1.8 8.5 3.3l6.2-6C34.9 4.4 29.9 2 24 2 15.4 2 8 6.6 4.4 14.1l7.1 5.5c1.8-5.3 6.7-9.1 12.5-9.1Z"/>
           </svg>
+          <p class="credential__name">Google Partner</p>
         </div>
-        <p class="credential__name">Google Partner</p>
       </div>
       <div class="credential">
-        <div class="credential__logo">
-          <svg width="28" height="28" viewBox="0 0 48 48" aria-hidden="true">
+        <img src="https://www.gtechdigital.co.uk/assets/frontend/images/meta-logo.webp" alt="Meta Business Partner — Verified Member"
+             onerror="this.style.display='none';this.nextElementSibling.hidden=false">
+        <div class="credential__fallback" hidden>
+          <svg width="32" height="32" viewBox="0 0 48 48" aria-hidden="true">
             <path fill="#0081FB" d="M9.4 31.2c0 1.7.4 3 .9 3.8.7 1.1 1.7 1.5 2.7 1.5 1.4 0 2.6-.3 5-3.7 1.9-2.7 4.2-6.4 5.7-8.8l2.5-3.9c1.8-2.8 3.9-5.9 6.3-8 2-1.7 4.1-2.6 6.2-2.6 3.6 0 7 2.1 9.6 6 2.9 4.3 4.3 9.7 4.3 15.3 0 3.3-.7 5.7-1.8 7.7-1.1 1.8-3.2 3.7-6.7 3.7v-5.2c3 0 3.8-2.8 3.8-6 0-4.5-1.1-9.6-3.4-13.2-1.7-2.5-3.8-4.1-6.2-4.1-2.5 0-4.6 1.9-6.9 5.3-1.2 1.8-2.5 4-3.9 6.5l-1.5 2.6c-3 5.3-3.8 6.5-5.3 8.6-2.7 3.6-5 5-8 5-3.6 0-5.9-1.6-7.3-3.9C1.5 37.1.8 34.5.8 31.6l4.7-.2Z"/>
           </svg>
+          <p class="credential__name">Meta Business Partner</p>
         </div>
-        <p class="credential__name">Meta Business Partner</p>
       </div>
     </div>
 
@@ -295,8 +312,8 @@
               </div>
 
               <figure>
-                <div class="media media--3x2">
-                  <img src="assets/img/digital-marketing.svg" alt="Campaign dashboard showing impressions, conversions, cost per acquisition and channel split." loading="lazy" width="600" height="400">
+                <div class="media media--3x2 media--illustration">
+                  <img src="https://www.gtechdigital.co.uk/assets/frontend/images/Digital-Marketing.webp" alt="Campaign dashboard showing impressions, conversions, cost per acquisition and channel split." loading="lazy" width="600" height="400">
                 </div>
                 <figcaption class="media__caption">Swap for a real GA4 or Google Ads screenshot when you have one cleared to publish.</figcaption>
               </figure>
@@ -341,8 +358,8 @@
               </div>
 
               <figure>
-                <div class="media media--3x2">
-                  <img src="assets/img/web-development.svg" alt="A responsive website shown on desktop and mobile, with hero, feature cards and navigation." loading="lazy" width="600" height="400">
+                <div class="media media--3x2 media--illustration">
+                  <img src="https://www.gtechdigital.co.uk/assets/frontend/images/Web-Development.webp" alt="A responsive website shown on desktop and mobile, with hero, feature cards and navigation." loading="lazy" width="600" height="400">
                 </div>
                 <figcaption class="media__caption">Swap for a screenshot of an actual client site, named.</figcaption>
               </figure>
@@ -387,8 +404,8 @@
               </div>
 
               <figure>
-                <div class="media media--3x2">
-                  <img src="assets/img/custom-software.svg" alt="System architecture diagram: a core platform connected to CRM, payments, inventory, reporting, an API layer and workflow automation." loading="lazy" width="600" height="400">
+                <div class="media media--3x2 media--illustration">
+                  <img src="https://www.gtechdigital.co.uk/assets/frontend/images/Software-Development.webp" alt="System architecture diagram: a core platform connected to CRM, payments, inventory, reporting, an API layer and workflow automation." loading="lazy" width="600" height="400">
                 </div>
                 <figcaption class="media__caption">Swap for a real interface you shipped — abstract code imagery reads as stock.</figcaption>
               </figure>
@@ -431,8 +448,8 @@
               </div>
 
               <figure>
-                <div class="media media--3x2">
-                  <img src="assets/img/mobile-app.svg" alt="Mobile app screens in device frames with dashboard statistics, and App Store and Google Play badges." loading="lazy" width="600" height="400">
+                <div class="media media--3x2 media--illustration">
+                  <img src="https://www.gtechdigital.co.uk/assets/frontend/images/App-Development.webp" alt="Mobile app screens in device frames with dashboard statistics, and App Store and Google Play badges." loading="lazy" width="600" height="400">
                 </div>
                 <figcaption class="media__caption">Swap for real store screenshots, and include the rating if the app is live.</figcaption>
               </figure>

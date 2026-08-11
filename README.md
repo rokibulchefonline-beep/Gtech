@@ -33,27 +33,33 @@ content model. Replace with real, approved client data before production.
 
 ## Imagery
 
-**No images could be downloaded.** The sandbox network proxy denies every outbound
-host — the live site, Unsplash, Picsum and Pixabay all return 403 at CONNECT, verified
-repeatedly. Stock photography and the existing site assets are therefore unavailable in
-this environment.
+The page uses the client's own assets from `gtechdigital.co.uk`, referenced by absolute
+URL:
 
-Instead, `prototype/assets/img/` contains purpose-built SVG mockups. They are real,
-swappable assets, not grey placeholders:
+| Asset | Used for |
+|---|---|
+| `logo.png` | Header and mobile drawer |
+| `background-index-page.webp` | Hero background |
+| `google-logo.webp` | Google Partner badge |
+| `meta-logo.webp` | Meta Business Partner badge — **URL is a guess, see below** |
+| `Digital-Marketing.webp` | Digital Marketing service panel |
+| `Web-Development.webp` | Web Development panel + mega-menu |
+| `Software-Development.webp` | Custom Software panel |
+| `App-Development.webp` | Mobile App panel |
 
-| File | Used for | Depicts |
-|---|---|---|
-| `digital-marketing.svg` | Digital Marketing panel | Campaign dashboard: impressions, conversions, CPA, channel split |
-| `web-development.svg` | Web Development panel, mega-menu | Responsive site on desktop and mobile |
-| `custom-software.svg` | Custom Software panel | System architecture: core platform + integrations |
-| `mobile-app.svg` | Mobile App panel | App screens in device frames with store badges |
+**They are hot-linked, not downloaded.** This build environment's proxy denies all
+outbound hosts, so the files cannot be pulled into the repo here — but they load
+normally in any browser. **Before production, serve them locally from
+`assets/img/`** rather than cross-origin: hot-linking adds a third-party DNS lookup and
+connection to the critical path, and breaks if the source path ever changes.
 
-To swap in a photograph, replace the `src` with your file at the same aspect ratio
-(3:2 for the service panels). Ratios are fixed in CSS, so nothing reflows.
+**The Meta badge URL is unverified.** The brief supplied the Google URL twice, once
+labelled as Meta, so `meta-logo.webp` is inferred from the naming convention. Both
+badges carry an `onerror` fallback to an inline SVG mark, so a wrong URL degrades to a
+tidy fallback instead of a broken image. Confirm the real filename.
 
-**To get real imagery in:** either commit photographs to `prototype/assets/img/`, or add
-`gtechdigital.co.uk` to the environment's network policy and I can pull the live assets
-directly.
+Service artwork is rendered with `object-fit: contain` on a tinted panel, because the
+intrinsic ratios are unknown and `cover` would crop the illustrations.
 
 ## Homepage features
 
