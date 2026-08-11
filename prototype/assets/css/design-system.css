@@ -1,144 +1,108 @@
 /* ==========================================================================
-   GTech Digital — Design System
-   Phase 2 prototype. Shared by every page in /prototype.
+   GTech Digital — Design System v2 (editorial)
 
-   Contents:
-     1. Tokens
-     2. Reset & base
-     3. Typography
-     4. Layout & grid
-     5. Buttons
-     6. Forms
-     7. Cards & surfaces
-     8. Badges, pills, tags
-     9. Section furniture
-    10. Motion
-    11. Utilities
+   v1 failed for a specific reason: every section was the same shape, so the
+   page read as a template. v2 is built to make that impossible —
+   asymmetric spans are the default, centred layout is the exception, and
+   hierarchy comes from type scale and rules rather than from cards.
+
+   1. Tokens   2. Reset   3. Type   4. Grid   5. Rules & labels
+   6. Buttons  7. Forms   8. Surfaces  9. Media  10. Motion  11. Utilities
    ========================================================================== */
 
 /* 1. Tokens ============================================================== */
 
 :root {
-  /* Brand — sampled from the current site. CONFIRM against real brand values. */
-  --brand-primary: #0b4fd8;
-  --brand-primary-dark: #062e82;
-  --brand-primary-darker: #041d55;
-  --brand-primary-light: #3b7bf0;
-  --brand-primary-050: #eef4ff;
-  --brand-primary-100: #d9e6ff;
+  /* Brand. Confirm against real values. */
+  --brand-primary: #0b3fb0;
+  --brand-primary-dark: #06266d;
+  --brand-ink: #071634;
+  --brand-primary-050: #eff4ff;
+  --brand-primary-100: #d7e3ff;
 
-  /* Darkened from the sampled #e8332a: at that value, white button text and
-     13px accent eyebrows measure ~4.25:1 and fail WCAG AA. This passes at
-     4.95:1 on white and 4.64:1 on --surface-alt while staying the brand red. */
+  /* Accent is reserved for actions and metric emphasis. Nothing else. */
   --brand-accent: #d42d23;
   --brand-accent-dark: #a81a11;
-  --brand-accent-light: #ff5c53;
-  --brand-accent-050: #fff1f0;
+  /* The accent fails AA as text on the dark grounds (3.72:1). This tint
+     holds 6.6:1 — use it for any accent text on a dark surface. */
+  --brand-accent-on-dark: #ff6b60;
 
   --brand-cyan: #22d3ee;
-  --brand-cyan-dark: #0ea5c4;
 
-  /* Neutrals */
-  --neutral-900: #0d1424;
-  --neutral-800: #1a2338;
-  --neutral-700: #2f3a52;
-  --neutral-600: #4d5872;
-  --neutral-500: #6b7691;
-  --neutral-400: #97a1b8;
-  --neutral-300: #c3cad9;
-  --neutral-200: #e0e5ee;
-  --neutral-100: #f0f3f8;
-  --neutral-050: #f7f9fc;
+  /* Warm-tinted neutrals — pure grey is what makes generated pages feel cold. */
+  --neutral-900: #10131a;
+  --neutral-800: #1c212c;
+  --neutral-700: #333a49;
+  --neutral-600: #4a5263;
+  --neutral-500: #626d88;
+  --neutral-400: #949cad;
+  --neutral-300: #c5cad4;
+  --neutral-200: #e3e5ea;
+  --neutral-150: #eceef2;
+  --neutral-100: #f2f3f6;
+  --neutral-050: #f8f8f6;
   --neutral-000: #ffffff;
 
-  /* Semantic */
-  --success: #10b981;
-  /* --success is a fill colour only; it fails AA as text on white (2.54:1).
-     Use --success-text for any green text. */
   --success-text: #05704f;
-  --success-050: #ecfdf5;
   --warning: #f59e0b;
 
-  /* Applied roles */
   --text-strong: var(--neutral-900);
   --text-body: var(--neutral-600);
-  /* Not neutral-500: that passes on pure white (4.54:1) but drops to 4.23:1 on
-     the tinted card surfaces, failing AA. This holds 4.74:1 there. */
-  --text-muted: #626d88;
-  --text-inverse: var(--neutral-000);
+  --text-muted: var(--neutral-500);
   --surface: var(--neutral-000);
   --surface-alt: var(--neutral-050);
-  --surface-dark: var(--neutral-900);
+  --surface-dark: var(--brand-ink);
   --border: var(--neutral-200);
-  --border-strong: var(--neutral-300);
+  --rule: var(--neutral-900);
 
-  /* Spacing — 4px base */
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 12px;
-  --space-4: 16px;
-  --space-6: 24px;
-  --space-8: 32px;
-  --space-12: 48px;
-  --space-16: 64px;
-  --space-20: 80px;
-  --space-24: 96px;
-  --space-32: 128px;
+  --space-1: 4px;   --space-2: 8px;   --space-3: 12px;  --space-4: 16px;
+  --space-5: 20px;  --space-6: 24px;  --space-8: 32px;  --space-10: 40px;
+  --space-12: 48px; --space-16: 64px; --space-20: 80px; --space-24: 96px;
+  --space-32: 128px; --space-40: 160px;
 
-  /* Section rhythm */
-  --section-y: clamp(48px, 7vw, 96px);
+  /* Deliberately varied — sections must not all breathe identically. */
+  --section-tight: clamp(40px, 5vw, 64px);
+  --section: clamp(64px, 8vw, 112px);
+  --section-loose: clamp(88px, 12vw, 168px);
 
-  /* Layout */
-  --content-max: 1280px;
-  --content-wide: 1440px;
-  --gutter: clamp(16px, 4vw, 24px);
+  --content-max: 1320px;
+  --gutter: clamp(20px, 5vw, 56px);
 
-  /* Radii */
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
+  /* Restrained radii. v1's 16px-everywhere is a large part of the "template"
+     read; editorial work is mostly square. */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
   --radius-pill: 999px;
 
-  /* Elevation — soft and low-opacity */
-  --shadow-1: 0 1px 2px rgba(13, 20, 36, 0.05), 0 2px 6px rgba(13, 20, 36, 0.04);
-  --shadow-2: 0 4px 10px rgba(13, 20, 36, 0.06), 0 12px 28px rgba(13, 20, 36, 0.07);
-  --shadow-3: 0 10px 24px rgba(13, 20, 36, 0.08), 0 24px 60px rgba(13, 20, 36, 0.1);
-  --shadow-brand: 0 10px 30px rgba(11, 79, 216, 0.22);
-  --shadow-accent: 0 8px 22px rgba(232, 51, 42, 0.28);
+  --shadow-1: 0 1px 2px rgba(16, 19, 26, 0.06);
+  --shadow-2: 0 8px 30px rgba(16, 19, 26, 0.09);
+  --shadow-3: 0 20px 60px rgba(16, 19, 26, 0.14);
 
-  /* Motion */
-  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
-  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
   --dur-fast: 160ms;
-  --dur: 240ms;
-  --dur-slow: 400ms;
+  --dur: 280ms;
+  --dur-slow: 520ms;
 
-  /* Type */
-  --font-sans: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  --font: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
 }
 
-/* 2. Reset & base ======================================================== */
+/* 2. Reset =============================================================== */
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+*, *::before, *::after { box-sizing: border-box; }
 
 html {
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
-  scroll-padding-top: 96px;
+  scroll-padding-top: 88px;
 }
 
 body {
   margin: 0;
-  font-family: var(--font-sans);
+  font-family: var(--font);
   font-size: 16px;
-  font-weight: 400;
-  line-height: 1.7;
+  line-height: 1.65;
   color: var(--text-body);
   background: var(--surface);
   -webkit-font-smoothing: antialiased;
@@ -146,153 +110,128 @@ body {
   overflow-x: hidden;
 }
 
-img,
-svg,
-video {
-  max-width: 100%;
-  display: block;
-}
+img, svg, video { max-width: 100%; display: block; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+p, figure, blockquote { margin: 0; }
+button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
 
 a {
-  color: var(--brand-primary);
-  text-decoration: none;
-  transition: color var(--dur) var(--ease-out);
-}
-
-a:hover {
-  color: var(--brand-primary-dark);
-}
-
-ul,
-ol {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-button {
-  font: inherit;
-  cursor: pointer;
-  border: 0;
-  background: none;
   color: inherit;
+  text-decoration: none;
+  transition: color var(--dur) var(--ease);
 }
 
-/* Visible focus everywhere — WCAG 2.1 AA. */
 :focus-visible {
-  outline: 3px solid var(--brand-cyan);
+  outline: 2px solid var(--brand-accent);
   outline-offset: 3px;
-  border-radius: 4px;
 }
 
 .skip-link {
   position: absolute;
   left: -9999px;
-  top: 0;
   z-index: 999;
-  background: var(--brand-primary);
+  background: var(--neutral-900);
   color: #fff;
-  padding: 12px 20px;
-  border-radius: 0 0 var(--radius-sm) 0;
+  padding: 14px 22px;
   font-weight: 600;
 }
-
-.skip-link:focus {
-  left: 0;
-  color: #fff;
-}
+.skip-link:focus { left: 0; top: 0; }
 
 .visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
-  border: 0;
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
 }
 
-/* 3. Typography ========================================================== */
+/* 3. Type ================================================================
+   Wide scale contrast is the point: display sits ~5x body, so hierarchy is
+   unmistakable without needing a card around everything.                  */
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4 {
   margin: 0;
   color: var(--text-strong);
   font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-}
-
-p {
-  margin: 0;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
 }
 
 .t-display {
-  font-size: clamp(36px, 5.4vw, 64px);
-  font-weight: 700;
-  line-height: 1.08;
-  letter-spacing: -0.03em;
+  font-size: clamp(42px, 7.2vw, 92px);
+  font-weight: 600;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
 }
 
 .t-h1 {
-  font-size: clamp(32px, 4.4vw, 48px);
-  font-weight: 700;
-  line-height: 1.14;
-  letter-spacing: -0.03em;
+  font-size: clamp(34px, 5.4vw, 68px);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.042em;
 }
 
 .t-h2 {
-  font-size: clamp(26px, 3.4vw, 36px);
+  font-size: clamp(28px, 3.8vw, 46px);
   font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -0.025em;
+  line-height: 1.08;
+  letter-spacing: -0.038em;
 }
 
 .t-h3 {
-  font-size: clamp(21px, 2.4vw, 28px);
+  font-size: clamp(21px, 2.2vw, 27px);
   font-weight: 600;
-  line-height: 1.3;
+  line-height: 1.22;
+  letter-spacing: -0.025em;
 }
 
 .t-h4 {
-  font-size: clamp(18px, 1.8vw, 22px);
+  font-size: 18px;
   font-weight: 600;
-  line-height: 1.4;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
 }
 
-.t-body-lg {
-  font-size: clamp(16px, 1.4vw, 18px);
-  line-height: 1.75;
-}
-
-.t-body-sm {
-  font-size: 14px;
+.t-lead {
+  font-size: clamp(17px, 1.5vw, 20px);
   line-height: 1.6;
+  letter-spacing: -0.011em;
+  color: var(--text-body);
+  text-wrap: pretty;
 }
 
-.t-overline {
-  font-size: 13px;
+.t-body { font-size: 16px; line-height: 1.7; }
+.t-sm { font-size: 14px; line-height: 1.6; }
+.t-xs { font-size: 12.5px; line-height: 1.5; }
+
+/* Small-caps label — the editorial alternative to a coloured pill. */
+.t-label {
+  font-size: 11.5px;
   font-weight: 600;
-  line-height: 1.4;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
+  color: var(--text-muted);
 }
 
-.t-metric {
-  font-size: clamp(36px, 4.6vw, 56px);
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.03em;
+/* Oversized figures. Tabular so columns of numbers align. */
+.t-figure {
+  font-size: clamp(52px, 8vw, 108px);
+  font-weight: 600;
+  line-height: 0.86;
+  letter-spacing: -0.05em;
+  color: var(--text-strong);
   font-variant-numeric: tabular-nums;
 }
 
-/* 4. Layout & grid ======================================================= */
+/* Index numerals: 01, 02 … a structural device, never decoration. */
+.t-index {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  font-variant-numeric: tabular-nums;
+  color: var(--brand-accent);
+}
+
+/* 4. Grid ================================================================
+   12 columns. Content deliberately does NOT always start at column 1.     */
 
 .container {
   width: 100%;
@@ -301,474 +240,309 @@ p {
   padding-inline: var(--gutter);
 }
 
-.container--wide {
-  max-width: var(--content-wide);
+.grid12 {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: clamp(16px, 2.4vw, 32px);
 }
 
-.container--narrow {
-  max-width: 800px;
-}
-
-.section {
-  padding-block: var(--section-y);
-  position: relative;
-}
-
-.section--alt {
-  background: var(--surface-alt);
-}
+.section { padding-block: var(--section); }
+.section--tight { padding-block: var(--section-tight); }
+.section--loose { padding-block: var(--section-loose); }
+.section--alt { background: var(--surface-alt); }
 
 .section--dark {
   background: var(--surface-dark);
   color: var(--neutral-300);
 }
+.section--dark h1, .section--dark h2,
+.section--dark h3, .section--dark h4 { color: #fff; }
+.section--dark .t-label { color: var(--neutral-400); }
+.section--dark .t-lead { color: var(--neutral-300); }
+.section--dark .t-figure { color: #fff; }
 
-.section--dark h1,
-.section--dark h2,
-.section--dark h3,
-.section--dark h4 {
-  color: var(--text-inverse);
-}
+/* Any dark ground — including .cta and the footer, which are not .section--dark
+   but sit on the same ink. --text-muted is tuned for light surfaces and fails
+   AA here. */
+.section--dark .text-muted,
+.cta .text-muted,
+.site-footer .text-muted { color: var(--neutral-400); }
 
-.section--tight {
-  padding-block: clamp(32px, 4vw, 56px);
-}
+.cta .t-label,
+.site-footer .t-label { color: var(--neutral-400); }
 
-.grid {
-  display: grid;
-  gap: var(--space-6);
-}
+.section--dark .text-accent,
+.cta .text-accent,
+.site-footer .text-accent,
+.section--dark .logo__accent,
+.cta .logo__accent,
+.site-footer .logo__accent,
+.hero .logo__accent { color: var(--brand-accent-on-dark); }
 
-.grid--2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.grid--3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.grid--4 {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
+/* Column spans.
+   These set grid-column-END only. Using the `grid-column` shorthand here would
+   write `start: span N; end: auto`, and a later `.start-*` rule would then
+   override the start and collapse the item to a single track. */
+.c-1{grid-column-end:span 1}.c-2{grid-column-end:span 2}.c-3{grid-column-end:span 3}
+.c-4{grid-column-end:span 4}.c-5{grid-column-end:span 5}.c-6{grid-column-end:span 6}
+.c-7{grid-column-end:span 7}.c-8{grid-column-end:span 8}.c-9{grid-column-end:span 9}
+.c-10{grid-column-end:span 10}.c-11{grid-column-end:span 11}.c-12{grid-column-end:span 12}
+.start-2{grid-column-start:2}.start-3{grid-column-start:3}
+.start-4{grid-column-start:4}.start-5{grid-column-start:5}
+.start-6{grid-column-start:6}.start-7{grid-column-start:7}
+.start-8{grid-column-start:8}
 
 @media (max-width: 1023px) {
-  .grid--3,
-  .grid--4 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .c-1,.c-2,.c-3,.c-4,.c-5,.c-6 { grid-column-end: span 6; }
+  .c-7,.c-8,.c-9,.c-10,.c-11 { grid-column-end: span 12; }
+  .start-2,.start-3,.start-4,.start-5,.start-6,.start-7,.start-8 {
+    grid-column-start: auto;
   }
 }
 
 @media (max-width: 639px) {
-  .grid--2,
-  .grid--3,
-  .grid--4 {
-    grid-template-columns: minmax(0, 1fr);
-  }
+  .c-1,.c-2,.c-3,.c-4,.c-5,.c-6 { grid-column-end: span 12; }
 }
 
-/* 5. Buttons ============================================================= */
+/* 5. Rules & section headers ============================================= */
+
+.rule {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 0;
+}
+
+.rule--strong { border-top-color: var(--rule); }
+.section--dark .rule { border-top-color: rgba(255, 255, 255, 0.14); }
+
+/* Numbered section marker sitting on a full-width hairline. */
+.section-marker {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-6);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: var(--space-12);
+}
+
+.section--dark .section-marker { border-bottom-color: rgba(255, 255, 255, 0.22); }
+
+/* 6. Buttons ============================================================= */
 
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-2);
-  padding: 14px 28px;
-  border-radius: var(--radius-pill);
-  font-size: 15px;
+  gap: 10px;
+  padding: 15px 26px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  font-size: 14.5px;
   font-weight: 600;
   letter-spacing: -0.01em;
-  text-align: center;
   white-space: nowrap;
-  transition: background var(--dur) var(--ease-out),
-    color var(--dur) var(--ease-out), transform var(--dur) var(--ease-out),
-    box-shadow var(--dur) var(--ease-out), border-color var(--dur) var(--ease-out);
-  border: 2px solid transparent;
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease),
+    border-color var(--dur) var(--ease), transform var(--dur-fast) var(--ease);
 }
 
-.btn:hover {
-  transform: translateY(-2px);
-}
+.btn:active { transform: translateY(1px); }
 
-.btn:active {
-  transform: translateY(0);
-}
+.btn--primary { background: var(--brand-accent); color: #fff; }
+.btn--primary:hover { background: var(--brand-accent-dark); color: #fff; }
 
-.btn svg {
-  flex: none;
-}
+.btn--ink { background: var(--neutral-900); color: #fff; }
+.btn--ink:hover { background: var(--brand-primary); color: #fff; }
 
-/* Accent is reserved for actions and metric emphasis only. */
-.btn--primary {
-  background: var(--brand-accent);
-  color: #fff;
-  box-shadow: var(--shadow-accent);
-}
+.btn--outline { border-color: var(--neutral-300); color: var(--text-strong); }
+.btn--outline:hover { border-color: var(--neutral-900); background: var(--neutral-900); color: #fff; }
 
-.btn--primary:hover {
-  background: var(--brand-accent-dark);
-  color: #fff;
-}
+.btn--on-dark { border-color: rgba(255,255,255,0.4); color: #fff; }
+.btn--on-dark:hover { background: #fff; border-color: #fff; color: var(--neutral-900); }
 
-.btn--secondary {
-  background: var(--brand-primary);
-  color: #fff;
-  box-shadow: var(--shadow-brand);
-}
+.btn--white { background: #fff; color: var(--neutral-900); }
+.btn--white:hover { background: var(--neutral-150); color: var(--neutral-900); }
 
-.btn--secondary:hover {
-  background: var(--brand-primary-dark);
-  color: #fff;
-}
+.btn--lg { padding: 18px 34px; font-size: 15.5px; }
+.btn--sm { padding: 11px 18px; font-size: 13.5px; }
+.btn--block { display: flex; width: 100%; }
 
-.btn--outline {
-  background: transparent;
-  color: var(--brand-primary);
-  border-color: var(--border-strong);
-}
-
-.btn--outline:hover {
-  border-color: var(--brand-primary);
-  background: var(--brand-primary-050);
-  color: var(--brand-primary-dark);
-}
-
-.btn--on-dark {
-  background: transparent;
-  color: #fff;
-  border-color: rgba(255, 255, 255, 0.55);
-}
-
-.btn--on-dark:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: #fff;
-  color: #fff;
-}
-
-.btn--white {
-  background: #fff;
-  color: var(--brand-primary-dark);
-}
-
-.btn--white:hover {
-  background: var(--neutral-100);
-  color: var(--brand-primary-dark);
-}
-
-.btn--lg {
-  padding: 17px 36px;
-  font-size: 16px;
-}
-
-.btn--sm {
-  padding: 10px 20px;
-  font-size: 14px;
-}
-
-.btn--block {
-  display: flex;
-  width: 100%;
-}
-
-/* Text link with a moving arrow. */
-.link-arrow {
+/* Underline that draws in from the left on hover. */
+.link {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-2);
-  font-weight: 600;
-  font-size: 15px;
-  color: var(--brand-primary);
-}
-
-.link-arrow svg {
-  transition: transform var(--dur) var(--ease-out);
-}
-
-.link-arrow:hover svg {
-  transform: translateX(4px);
-}
-
-/* 6. Forms =============================================================== */
-
-.field {
-  display: block;
-  margin-bottom: var(--space-4);
-}
-
-.field__label {
-  display: block;
-  font-size: 14px;
+  gap: 9px;
+  font-size: 14.5px;
   font-weight: 600;
   color: var(--text-strong);
-  margin-bottom: var(--space-2);
+  padding-bottom: 3px;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size var(--dur) var(--ease), color var(--dur) var(--ease);
 }
 
-.field__hint {
-  font-size: 13px;
-  color: var(--text-muted);
-  margin-top: var(--space-1);
-}
+.link:hover { background-size: 100% 1px; }
+.section--dark .link { color: #fff; }
 
-.input,
-.select {
+/* 7. Forms =============================================================== */
+
+.input, .select {
   width: 100%;
-  padding: 12px 16px;
+  padding: 14px 16px;
   font: inherit;
   font-size: 15px;
   color: var(--text-strong);
   background: var(--surface);
-  border: 1.5px solid var(--border);
+  border: 1px solid var(--neutral-300);
   border-radius: var(--radius-sm);
-  transition: border-color var(--dur) var(--ease-out),
-    box-shadow var(--dur) var(--ease-out);
+  transition: border-color var(--dur) var(--ease);
 }
 
-.input:focus,
-.select:focus {
-  border-color: var(--brand-primary);
-  box-shadow: 0 0 0 4px var(--brand-primary-050);
+.input:focus, .select:focus {
+  border-color: var(--neutral-900);
   outline: none;
 }
 
 .select {
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%234d5872' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%234a5263' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 14px center;
   padding-right: 42px;
 }
 
-/* Range slider — styled consistently across engines. */
-.range {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 100%;
-  height: 6px;
-  border-radius: var(--radius-pill);
-  background: var(--neutral-200);
-  outline: none;
-  margin: var(--space-3) 0;
+.field__label {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--text-strong);
+  margin-bottom: 7px;
 }
 
-.range::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: var(--brand-primary);
-  border: 3px solid #fff;
-  box-shadow: var(--shadow-brand);
-  cursor: pointer;
-  transition: transform var(--dur-fast) var(--ease-out);
-}
+/* 8. Surfaces ============================================================ */
 
-.range::-webkit-slider-thumb:hover {
-  transform: scale(1.12);
-}
-
-.range::-moz-range-thumb {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: var(--brand-primary);
-  border: 3px solid #fff;
-  box-shadow: var(--shadow-brand);
-  cursor: pointer;
-}
-
-/* 7. Cards & surfaces ==================================================== */
-
-.card {
+/* Bordered panel, not a floating rounded card. */
+.panel {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   padding: var(--space-8);
-  transition: transform var(--dur) var(--ease-out),
-    box-shadow var(--dur) var(--ease-out), border-color var(--dur) var(--ease-out);
 }
 
-.card--hover:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-3);
-  border-color: var(--brand-primary-100);
-}
-
-.card--flush {
-  padding: 0;
-  overflow: hidden;
-}
-
-.card--dark {
+.panel--dark {
   background: var(--neutral-800);
-  border-color: rgba(255, 255, 255, 0.08);
-  color: var(--neutral-300);
-}
-
-/* 8. Badges, pills, tags ================================================= */
-
-.pill {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  padding: 8px 18px;
-  border-radius: var(--radius-pill);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.pill--glass {
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  color: #fff;
-  backdrop-filter: blur(8px);
-}
-
-.pill--soft {
-  background: var(--brand-primary-050);
-  color: var(--brand-primary-dark);
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 .tag {
   display: inline-block;
-  padding: 5px 12px;
+  padding: 5px 11px;
+  border: 1px solid var(--border);
   border-radius: var(--radius-pill);
-  background: var(--neutral-100);
-  color: var(--neutral-600);
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: 500;
-  letter-spacing: 0.01em;
-}
-
-.tag--brand {
-  background: var(--brand-primary-050);
-  color: var(--brand-primary-dark);
-}
-
-/* Metric — large numeral in the accent colour with a direction arrow. */
-.metric__value {
-  display: flex;
-  align-items: baseline;
-  gap: var(--space-1);
-  color: var(--brand-accent);
-  font-size: clamp(30px, 3.4vw, 42px);
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.03em;
-  font-variant-numeric: tabular-nums;
-}
-
-.metric__label {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--text-body);
-  margin-top: var(--space-2);
-}
-
-/* Timeframe is never omitted — a metric without one reads as evasive. */
-.metric__timeframe {
-  font-size: 12.5px;
   color: var(--text-muted);
-  margin-top: 2px;
 }
 
-/* 9. Section furniture =================================================== */
+/* 9. Media ===============================================================
+   Every image region declares its aspect ratio so swapping a real asset in
+   never reflows the page.                                                 */
 
-.section-head {
-  max-width: 720px;
-  margin-bottom: var(--space-12);
+.media {
+  position: relative;
+  overflow: hidden;
+  background: var(--neutral-150);
+  border-radius: var(--radius-md);
 }
 
-.section-head--center {
-  margin-inline: auto;
-  text-align: center;
+.media > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.section-head__eyebrow {
-  color: var(--brand-accent);
-  margin-bottom: var(--space-3);
+.media--16x9 { aspect-ratio: 16 / 9; }
+.media--4x3  { aspect-ratio: 4 / 3; }
+.media--3x2  { aspect-ratio: 3 / 2; }
+.media--1x1  { aspect-ratio: 1 / 1; }
+.media--4x5  { aspect-ratio: 4 / 5; }
+.media--21x9 { aspect-ratio: 21 / 9; }
+
+/* Placeholder spec: names the exact asset that belongs here. Delete the
+   .media__spec element once the real image is dropped in. */
+.media__spec {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 4px;
+  padding: var(--space-5);
+  background:
+    repeating-linear-gradient(
+      -45deg,
+      transparent 0 11px,
+      rgba(16, 19, 26, 0.035) 11px 22px
+    );
+  border: 1px dashed var(--neutral-300);
+  border-radius: inherit;
+  color: var(--neutral-600);
 }
 
-.section--dark .section-head__eyebrow {
-  color: var(--brand-cyan);
+.media__spec b {
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--neutral-700);
 }
 
-.section-head__lead {
-  margin-top: var(--space-4);
-  color: var(--text-body);
-}
+.media__spec span { font-size: 11.5px; line-height: 1.45; }
 
-.section--dark .section-head__lead {
-  color: var(--neutral-400);
-}
-
-.divider {
-  height: 1px;
-  background: var(--border);
-  border: 0;
-  margin: 0;
+.media__caption {
+  margin-top: 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-muted);
 }
 
 /* 10. Motion ============================================================= */
 
 [data-reveal] {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity var(--dur-slow) var(--ease-out),
-    transform var(--dur-slow) var(--ease-out);
+  transform: translateY(18px);
+  transition: opacity var(--dur-slow) var(--ease),
+    transform var(--dur-slow) var(--ease);
 }
 
-[data-reveal].is-visible {
-  opacity: 1;
-  transform: none;
-}
+[data-reveal].is-visible { opacity: 1; transform: none; }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.001ms !important;
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
-    scroll-behavior: auto !important;
+    transition-duration: .001ms !important;
   }
-
-  [data-reveal] {
-    opacity: 1;
-    transform: none;
-  }
+  [data-reveal] { opacity: 1; transform: none; }
 }
 
 /* 11. Utilities ========================================================== */
 
-.text-center { text-align: center; }
 .text-accent { color: var(--brand-accent); }
-.text-primary { color: var(--brand-primary); }
-.text-cyan { color: var(--brand-cyan); }
 .text-muted { color: var(--text-muted); }
 .text-strong { color: var(--text-strong); }
-.text-inverse { color: var(--text-inverse); }
+.text-white { color: #fff; }
 
-.mt-2 { margin-top: var(--space-2); }
-.mt-3 { margin-top: var(--space-3); }
-.mt-4 { margin-top: var(--space-4); }
-.mt-6 { margin-top: var(--space-6); }
-.mt-8 { margin-top: var(--space-8); }
-.mt-12 { margin-top: var(--space-12); }
+.mt-2{margin-top:var(--space-2)}.mt-3{margin-top:var(--space-3)}
+.mt-4{margin-top:var(--space-4)}.mt-5{margin-top:var(--space-5)}
+.mt-6{margin-top:var(--space-6)}.mt-8{margin-top:var(--space-8)}
+.mt-10{margin-top:var(--space-10)}.mt-12{margin-top:var(--space-12)}
+.mt-16{margin-top:var(--space-16)}.mt-20{margin-top:var(--space-20)}
 
-.flex { display: flex; }
-.flex-wrap { flex-wrap: wrap; }
-.items-center { align-items: center; }
-.justify-center { justify-content: center; }
-.gap-2 { gap: var(--space-2); }
-.gap-3 { gap: var(--space-3); }
-.gap-4 { gap: var(--space-4); }
-.gap-6 { gap: var(--space-6); }
-
-.full-width { width: 100%; }
+.flex{display:flex}.wrap{flex-wrap:wrap}.items-center{align-items:center}
+.items-end{align-items:flex-end}.between{justify-content:space-between}
+.gap-2{gap:var(--space-2)}.gap-3{gap:var(--space-3)}.gap-4{gap:var(--space-4)}
+.gap-6{gap:var(--space-6)}.gap-8{gap:var(--space-8)}

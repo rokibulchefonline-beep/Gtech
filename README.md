@@ -31,6 +31,29 @@ Open `prototype/index.html` directly in a browser — no build step, no server n
 data**, marked by a banner at the top of the page. They demonstrate the layout and
 content model. Replace with real, approved client data before production.
 
+## Supplying the real media
+
+Every image region on the homepage is a labelled placeholder that names the exact asset
+belonging there, at a fixed aspect ratio. To swap in a real file:
+
+1. Drop the image into `prototype/assets/img/`.
+2. Inside the `.media` element, add `<img src="assets/img/<file>" alt="…">`.
+3. Delete the sibling `<div class="media__spec">…</div>`.
+
+Aspect ratios are already set, so nothing reflows when the real image lands.
+
+| Placeholder | Ratio | What it needs |
+|---|---|---|
+| `digital-marketing.jpg` | 3:2 | Campaign dashboard, GA4/Ads screenshot, or team working |
+| `web-development.jpg` | 3:2 | A real site you built, desktop + mobile |
+| `custom-software.jpg` | 3:2 | A real interface you shipped — not stock code imagery |
+| `mobile-app.jpg` | 3:2 | Real app screens in device frames |
+| `client-portrait.jpg` | 4:5 | Headshot of the person quoted |
+| `work-featured.jpg` | 4:3 | Featured project, shown in the Services mega-menu |
+
+Client logos in the marquee are text placeholders — replace with real SVGs (permission
+required from each client).
+
 ## Constraints
 
 - **Typography:** Poppins across all pages

@@ -164,20 +164,52 @@
     counters.forEach(function (el) { observer.observe(el); });
   }
 
-  /* ------------------------------------------------------- Process stepper */
+  /* ------------------------------------------------------- Service accordion */
 
-  function initProcess() {
-    var stages = document.querySelectorAll("[data-stage]");
-    if (!stages.length) return;
+  /*
+   * Replaces v1's four service cards plus four repeated bullet sections with
+   * one indexed list. Exactly one row is open at a time, so the section has a
+   * predictable height and the page keeps an editorial rhythm.
+   */
+  function initServices() {
+    var items = document.querySelectorAll("[data-svc]");
+    if (!items.length) return;
 
-    stages.forEach(function (stage) {
-      var activate = function () {
-        stages.forEach(function (s) { s.classList.remove("is-active"); });
-        stage.classList.add("is-active");
-      };
-      stage.addEventListener("mouseenter", activate);
-      stage.addEventListener("focusin", activate);
+    items.forEach(function (item) {
+      var trigger = item.querySelector("[data-svc-toggle]");
+      if (!trigger) return;
+
+      trigger.addEventListener("click", function () {
+        var willOpen = !item.classList.contains("is-open");
+
+        items.forEach(function (other) {
+          other.classList.remove("is-open");
+          var t = other.querySelector("[data-svc-toggle]");
+          if (t) t.setAttribute("aria-expanded", "false");
+        });
+
+        if (willOpen) {
+          item.classList.add("is-open");
+          trigger.setAttribute("aria-expanded", "true");
+        }
+      });
     });
+  }
+
+  /* ------------------------------------------- Mega-menu vertical position */
+
+  // The menu is fixed and full-bleed, so it must sit flush under the header
+  // whatever height the header resolves to.
+  function initMegaOffset() {
+    var header = document.querySelector("[data-header]");
+    if (!header) return;
+    var set = function () {
+      document.documentElement.style.setProperty(
+        "--mega-top", header.getBoundingClientRect().height + "px"
+      );
+    };
+    set();
+    window.addEventListener("resize", set);
   }
 
   /* --------------------------------------------------------- ROI calculator */
@@ -498,7 +530,8 @@
     initMobileNav();
     initReveal();
     initCounters();
-    initProcess();
+    initServices();
+    initMegaOffset();
     initCalculator();
     initMobileCta();
     initStubForms();

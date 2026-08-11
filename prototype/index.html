@@ -4,17 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Digital Marketing Agency UK | GTech Digital — Google &amp; Meta Partner</title>
-<meta name="description" content="GTech Digital is a Google Partner and Meta Business Partner agency delivering SEO, paid media, web and app development for ambitious UK businesses. See our results.">
+<meta name="description" content="GTech Digital is a Google Partner and Meta Business Partner agency delivering SEO, paid ads, web, app and custom software for UK businesses.">
 
 <!--
-  Phase 2 prototype — GTech Digital homepage.
+  GTech Digital homepage — v2 (editorial rebuild).
 
-  Hero section structure and concept preserved from the current site per the
-  project brief. Every other section is redesigned per site-audit-and-concept.md.
+  Copy is the client's own, used verbatim.
 
-  ALL METRICS, CLIENT NAMES, TESTIMONIALS AND LOGOS BELOW ARE PLACEHOLDERS.
-  They demonstrate the layout and content model. Replace with real, approved
-  client data before this goes anywhere near production.
+  Every image region is a labelled placeholder naming the exact asset that
+  belongs there. Drop the real file in as an <img> and delete the sibling
+  .media__spec element — aspect ratios are already fixed so nothing reflows.
 -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,11 +27,9 @@
 
 <a class="skip-link" href="#main">Skip to main content</a>
 
-<div class="proto-bar">
-  <strong>PROTOTYPE</strong> — Phase 2 design concept. All metrics, client names and testimonials are placeholder data.
-</div>
+<p class="proto-bar"><b>PROTOTYPE</b> — image regions are labelled placeholders. Figures marked “placeholder” need real, verifiable data.</p>
 
-<!-- ============================================================ HEADER -->
+<!-- ============================================================== HEADER -->
 <header class="site-header" data-header>
   <div class="container site-header__inner">
 
@@ -43,150 +40,110 @@
 
     <nav class="nav" aria-label="Primary">
       <ul class="nav__list">
-
         <li class="nav__item" data-megamenu>
           <a class="nav__link" href="services.html" aria-expanded="false" aria-haspopup="true">
             Services
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
           </a>
 
           <div class="mega">
-            <div>
-              <p class="mega__title">Marketing</p>
-              <a class="mega__link" href="service-single.html">
-                <span class="mega__link-name">SEO</span>
-                <span class="mega__link-desc">Technical, local and content-led organic growth</span>
-              </a>
-              <a class="mega__link" href="service-single.html">
-                <span class="mega__link-name">Paid Media</span>
-                <span class="mega__link-desc">Google, Meta and TikTok Ads managed for ROAS</span>
-              </a>
-              <a class="mega__link" href="service-single.html">
-                <span class="mega__link-name">Social Media Marketing</span>
-                <span class="mega__link-desc">Strategy, content and community that converts</span>
-              </a>
-              <a class="mega__link" href="service-single.html">
-                <span class="mega__link-name">Link Building</span>
-                <span class="mega__link-desc">Fully managed, white-label authority building</span>
-              </a>
-            </div>
-
-            <div>
-              <p class="mega__title">Development</p>
-              <a class="mega__link" href="service-single.html">
-                <span class="mega__link-name">Web Development</span>
-                <span class="mega__link-desc">Fast, accessible sites built to convert</span>
-              </a>
-              <a class="mega__link" href="service-single.html">
-                <span class="mega__link-name">Mobile App Development</span>
-                <span class="mega__link-desc">Native iOS &amp; Android, and cross-platform</span>
-              </a>
-              <a class="mega__link" href="service-single.html">
-                <span class="mega__link-name">Custom Software</span>
-                <span class="mega__link-desc">Tailored systems, integrations and automation</span>
-              </a>
-            </div>
-
-            <div>
-              <p class="mega__title">Emerging</p>
-              <a class="mega__link" href="service-single.html">
-                <span class="mega__link-name">AEO &amp; GEO</span>
-                <span class="mega__link-desc">Visibility in AI answers and generative search</span>
-              </a>
-              <a class="mega__link" href="services.html">
-                <span class="mega__link-name">All Services</span>
-                <span class="mega__link-desc">Compare the full range and service tiers</span>
-              </a>
-              <a class="mega__link" href="pricing.html">
-                <span class="mega__link-name">Pricing &amp; Tiers</span>
-                <span class="mega__link-desc">Transparent packages from £1,200/month</span>
-              </a>
-            </div>
-
-            <div class="mega__promo">
-              <div>
-                <h4>What could growth be worth?</h4>
-                <p>Model your projected 12-month return in under a minute. No email needed for the headline figure.</p>
+            <div class="container grid12">
+              <div class="c-3">
+                <p class="t-label mega__col-title">Marketing</p>
+                <a class="mega__link" href="service-single.html"><b>SEO &amp; Local SEO</b><span>Organic visibility and local rankings</span></a>
+                <a class="mega__link" href="service-single.html"><b>Google Ads</b><span>High-intent lead campaigns</span></a>
+                <a class="mega__link" href="service-single.html"><b>Meta &amp; TikTok Ads</b><span>Targeted reach and brand awareness</span></a>
+                <a class="mega__link" href="service-single.html"><b>Social Media Marketing</b><span>Growth and visibility across platforms</span></a>
               </div>
-              <a class="btn btn--white btn--sm" href="#roi-calculator">Open the calculator</a>
+              <div class="c-3">
+                <p class="t-label mega__col-title">Build</p>
+                <a class="mega__link" href="service-single.html"><b>Web Development</b><span>Responsive, SEO-friendly websites</span></a>
+                <a class="mega__link" href="service-single.html"><b>App Development</b><span>Native and cross-platform apps</span></a>
+                <a class="mega__link" href="service-single.html"><b>Custom Software</b><span>Tailored systems and integrations</span></a>
+              </div>
+              <div class="c-3">
+                <p class="t-label mega__col-title">Sectors</p>
+                <a class="mega__link" href="services.html"><b>Hospitality SEO</b><span>Restaurants, tourism and leisure</span></a>
+                <a class="mega__link" href="services.html"><b>All services</b><span>Compare the full range</span></a>
+                <a class="mega__link" href="pricing.html"><b>Packages</b><span>Digital marketing packages</span></a>
+              </div>
+              <div class="c-3">
+                <div class="media media--4x3">
+                  <div class="media__spec">
+                    <b>work-featured.jpg</b>
+                    <span>4:3 — featured project screenshot or client work sample</span>
+                  </div>
+                </div>
+                <a class="link mt-4" href="portfolio.html">
+                  View our work
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+              </div>
             </div>
           </div>
         </li>
 
-        <li class="nav__item"><a class="nav__link" href="#industries">Industries</a></li>
-        <li class="nav__item"><a class="nav__link" href="portfolio.html">Case Studies</a></li>
-        <li class="nav__item"><a class="nav__link" href="pricing.html">Pricing</a></li>
-        <li class="nav__item"><a class="nav__link" href="#resources">Resources</a></li>
-        <li class="nav__item"><a class="nav__link" href="#about">About</a></li>
+        <li class="nav__item"><a class="nav__link" href="pricing.html">Seo Packages</a></li>
+        <li class="nav__item"><a class="nav__link" href="portfolio.html">Portfolio</a></li>
+        <li class="nav__item"><a class="nav__link" href="#insights">Blog</a></li>
+        <li class="nav__item"><a class="nav__link" href="#contact">Contact Us</a></li>
       </ul>
     </nav>
 
     <div class="header__actions">
-      <a class="header__phone" href="tel:+442035985956">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
-        0203 598 5956
-      </a>
-      <a class="btn btn--primary" href="#book">Book Intro Call</a>
+      <a class="header__phone" href="tel:+442035985956">0203 598 5956</a>
+      <a class="btn btn--primary btn--sm" href="#contact">Book Intro Call</a>
     </div>
 
     <button class="nav-toggle" data-nav-open aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
 
   </div>
 </header>
 
-<!-- Mobile drawer -->
 <div class="mobile-nav" id="mobile-nav" data-mobile-nav aria-hidden="true">
   <div class="mobile-nav__head">
-    <span class="logo">
-      <span class="logo__mark" aria-hidden="true">G</span>
-      <span>G<span class="logo__accent">Tech</span> Digital</span>
-    </span>
+    <span class="logo"><span class="logo__mark" aria-hidden="true">G</span><span>G<span class="logo__accent">Tech</span> Digital</span></span>
     <button class="nav-toggle" style="display:grid" data-nav-close aria-label="Close menu">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
     </button>
   </div>
-
   <a class="mobile-nav__link" href="services.html">Services</a>
   <div class="mobile-nav__sub">
-    <a href="service-single.html">SEO</a>
-    <a href="service-single.html">Paid Media</a>
-    <a href="service-single.html">Social Media Marketing</a>
-    <a href="service-single.html">Link Building</a>
+    <a href="service-single.html">Digital Marketing</a>
     <a href="service-single.html">Web Development</a>
-    <a href="service-single.html">Mobile App Development</a>
-    <a href="service-single.html">Custom Software</a>
-    <a href="service-single.html">AEO &amp; GEO</a>
+    <a href="service-single.html">App Development</a>
+    <a href="service-single.html">Software Development</a>
   </div>
-  <a class="mobile-nav__link" href="#industries">Industries</a>
-  <a class="mobile-nav__link" href="portfolio.html">Case Studies</a>
-  <a class="mobile-nav__link" href="pricing.html">Pricing</a>
-  <a class="mobile-nav__link" href="#resources">Resources</a>
-  <a class="mobile-nav__link" href="#about">About</a>
-
-  <div class="mt-8 flex gap-4" style="flex-direction:column">
-    <a class="btn btn--primary btn--block" href="#book">Book Intro Call</a>
+  <a class="mobile-nav__link" href="pricing.html">Seo Packages</a>
+  <a class="mobile-nav__link" href="portfolio.html">Portfolio</a>
+  <a class="mobile-nav__link" href="#insights">Blog</a>
+  <a class="mobile-nav__link" href="#contact">Contact Us</a>
+  <div class="mt-10 flex gap-3" style="flex-direction:column">
+    <a class="btn btn--primary btn--block" href="#contact">Book Intro Call</a>
     <a class="btn btn--outline btn--block" href="tel:+442035985956">0203 598 5956</a>
   </div>
 </div>
 
 <main id="main">
 
-<!-- ==============================================================================
-     HERO — STRUCTURE AND CONCEPT PRESERVED PER BRIEF
-     Trust pill, headline with cyan highlight, supporting copy, flanking Google
-     Partner / Meta Business Partner credential cards, and two CTAs. The only
-     addition is a single credibility stat; the layout is unchanged.
-     ============================================================================== -->
+<!-- ==========================================================================
+     HERO — concept preserved per brief. Client copy verbatim.
+     ========================================================================== -->
 <section class="hero">
   <div class="container">
+
+    <p class="hero__trust">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
+      <span class="t-label">Authorized Google &amp; Meta Partner</span>
+    </p>
+
     <div class="hero__grid">
 
-      <!-- Left credential card -->
       <div class="credential hero__credential-desktop">
         <div class="credential__logo">
-          <svg width="40" height="40" viewBox="0 0 48 48" aria-hidden="true">
+          <svg width="34" height="34" viewBox="0 0 48 48" aria-hidden="true">
             <path fill="#4285F4" d="M45.1 24.5c0-1.6-.1-2.7-.4-3.9H24v7.1h12.1c-.2 1.8-1.6 4.6-4.5 6.4l6.9 5.4c4.1-3.8 6.6-9.4 6.6-15Z"/>
             <path fill="#34A853" d="M24 46c5.9 0 10.9-2 14.5-5.3l-6.9-5.4c-1.9 1.3-4.4 2.2-7.6 2.2-5.8 0-10.7-3.8-12.5-9.1l-7.1 5.5C8 41.4 15.4 46 24 46Z"/>
             <path fill="#FBBC05" d="M11.5 28.4c-.5-1.4-.7-2.9-.7-4.4s.3-3 .7-4.4l-7.1-5.5C2.9 17 2 20.4 2 24s.9 7 2.4 9.9l7.1-5.5Z"/>
@@ -194,22 +151,13 @@
           </svg>
         </div>
         <p class="credential__name">Google Partner</p>
-        <p class="credential__verified">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-          Google Ads Certified
-        </p>
+        <p class="credential__meta">Google Ads Certified</p>
       </div>
 
-      <!-- Centre column -->
       <div class="hero__center">
-        <span class="pill pill--glass">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
-          Authorized Google &amp; Meta Partner
-        </span>
-
         <h1 class="t-display hero__title">
-          Best Digital Marketing Agency<br>
-          for <span class="text-cyan">Scalable Growth</span>
+          Best Digital Marketing<br>
+          Agency for <span class="hero__highlight">Scalable Growth</span>
         </h1>
 
         <p class="hero__lead">
@@ -219,39 +167,28 @@
           strategies to turn clicks into paying customers.
         </p>
 
-        <p class="hero__proof">
-          <strong>£12.4M+</strong> in tracked client revenue across 200+ UK campaigns
-        </p>
-
         <div class="hero__ctas">
-          <a class="btn btn--on-dark btn--lg" href="services.html">Our Services</a>
-          <a class="btn btn--primary btn--lg" href="#book">Get Your Free Growth Audit</a>
+          <a class="btn btn--white btn--lg" href="services.html">Our Services</a>
+          <a class="btn btn--on-dark btn--lg" href="#contact">Get Offer</a>
         </div>
       </div>
 
-      <!-- Right credential card -->
       <div class="credential hero__credential-desktop">
         <div class="credential__logo">
-          <svg width="40" height="40" viewBox="0 0 48 48" aria-hidden="true">
+          <svg width="34" height="34" viewBox="0 0 48 48" aria-hidden="true">
             <path fill="#0081FB" d="M9.4 31.2c0 1.7.4 3 .9 3.8.7 1.1 1.7 1.5 2.7 1.5 1.4 0 2.6-.3 5-3.7 1.9-2.7 4.2-6.4 5.7-8.8l2.5-3.9c1.8-2.8 3.9-5.9 6.3-8 2-1.7 4.1-2.6 6.2-2.6 3.6 0 7 2.1 9.6 6 2.9 4.3 4.3 9.7 4.3 15.3 0 3.3-.7 5.7-1.8 7.7-1.1 1.8-3.2 3.7-6.7 3.7v-5.2c3 0 3.8-2.8 3.8-6 0-4.5-1.1-9.6-3.4-13.2-1.7-2.5-3.8-4.1-6.2-4.1-2.5 0-4.6 1.9-6.9 5.3-1.2 1.8-2.5 4-3.9 6.5l-1.5 2.6c-3 5.3-3.8 6.5-5.3 8.6-2.7 3.6-5 5-8 5-3.6 0-5.9-1.6-7.3-3.9C1.5 37.1.8 34.5.8 31.6l4.7-.2Z"/>
-            <path fill="#0064E1" d="M8.4 15.9c2.4-3.8 5.9-6.4 9.9-6.4 2.3 0 4.6.7 7 2.7 2.6 2.2 5.4 5.9 8.9 11.9l1.2 2.1c3 5.1 4.7 7.8 5.7 9 1.3 1.6 2.2 2.1 3.4 2.1 3 0 3.8-2.8 3.8-6l4.6-.1c0 3.3-.7 5.7-1.8 7.7-1.1 1.8-3.2 3.7-6.7 3.7-2.2 0-4.1-.5-6.3-2.5-1.7-1.6-3.6-4.4-5.1-6.9l-4.5-7.5c-2.2-3.8-4.3-6.6-5.5-7.9-1.3-1.4-2.9-3.1-5.6-3.1-2.1 0-3.9 1.5-5.4 3.8l-4.6-2.6Z"/>
-            <path fill="#0082FB" d="M18.2 14.7c-2.1 0-3.9 1.5-5.4 3.8-2.1 3.2-3.4 8-3.4 12.7 0 1.7.4 3 .9 3.8L6.5 38c-1.4-2.3-2.1-5-2.1-7.8 0-5.4 1.5-11.1 4.3-15.5C11.1 11 14.4 9.5 17.8 9.5l.4 5.2Z"/>
           </svg>
         </div>
         <p class="credential__name">Meta Business Partner</p>
-        <p class="credential__verified">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-          Verified Member
-        </p>
+        <p class="credential__meta">Verified Member</p>
       </div>
 
     </div>
 
-    <!-- Credential cards stack below the copy on tablet and mobile. -->
     <div class="hero__credentials-mobile">
       <div class="credential">
         <div class="credential__logo">
-          <svg width="34" height="34" viewBox="0 0 48 48" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 48 48" aria-hidden="true">
             <path fill="#4285F4" d="M45.1 24.5c0-1.6-.1-2.7-.4-3.9H24v7.1h12.1c-.2 1.8-1.6 4.6-4.5 6.4l6.9 5.4c4.1-3.8 6.6-9.4 6.6-15Z"/>
             <path fill="#34A853" d="M24 46c5.9 0 10.9-2 14.5-5.3l-6.9-5.4c-1.9 1.3-4.4 2.2-7.6 2.2-5.8 0-10.7-3.8-12.5-9.1l-7.1 5.5C8 41.4 15.4 46 24 46Z"/>
             <path fill="#FBBC05" d="M11.5 28.4c-.5-1.4-.7-2.9-.7-4.4s.3-3 .7-4.4l-7.1-5.5C2.9 17 2 20.4 2 24s.9 7 2.4 9.9l7.1-5.5Z"/>
@@ -262,521 +199,399 @@
       </div>
       <div class="credential">
         <div class="credential__logo">
-          <svg width="34" height="34" viewBox="0 0 48 48" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 48 48" aria-hidden="true">
             <path fill="#0081FB" d="M9.4 31.2c0 1.7.4 3 .9 3.8.7 1.1 1.7 1.5 2.7 1.5 1.4 0 2.6-.3 5-3.7 1.9-2.7 4.2-6.4 5.7-8.8l2.5-3.9c1.8-2.8 3.9-5.9 6.3-8 2-1.7 4.1-2.6 6.2-2.6 3.6 0 7 2.1 9.6 6 2.9 4.3 4.3 9.7 4.3 15.3 0 3.3-.7 5.7-1.8 7.7-1.1 1.8-3.2 3.7-6.7 3.7v-5.2c3 0 3.8-2.8 3.8-6 0-4.5-1.1-9.6-3.4-13.2-1.7-2.5-3.8-4.1-6.2-4.1-2.5 0-4.6 1.9-6.9 5.3-1.2 1.8-2.5 4-3.9 6.5l-1.5 2.6c-3 5.3-3.8 6.5-5.3 8.6-2.7 3.6-5 5-8 5-3.6 0-5.9-1.6-7.3-3.9C1.5 37.1.8 34.5.8 31.6l4.7-.2Z"/>
           </svg>
         </div>
         <p class="credential__name">Meta Business Partner</p>
       </div>
     </div>
+
   </div>
 </section>
 
-<!-- ================================================= CLIENT LOGO CAROUSEL -->
-<section class="logos" aria-label="Clients we work with">
-  <div class="container">
-    <p class="logos__label">Trusted by ambitious UK businesses</p>
-  </div>
-
-  <!-- Duplicated set so the marquee loops seamlessly. -->
-  <div class="marquee" aria-hidden="false">
-    <span class="logo-tile" title="Placeholder client">
-      <svg width="132" height="30" viewBox="0 0 132 30" role="img" aria-label="Northgate Retail"><text x="0" y="21" font-family="Poppins,sans-serif" font-size="19" font-weight="700" fill="currentColor">NORTHGATE</text></svg>
-    </span>
-    <span class="logo-tile" title="Placeholder client">
-      <svg width="120" height="30" viewBox="0 0 120 30" role="img" aria-label="Verano Group"><text x="0" y="21" font-family="Poppins,sans-serif" font-size="19" font-weight="300" letter-spacing="2" fill="currentColor">VERANO</text></svg>
-    </span>
-    <span class="logo-tile" title="Placeholder client">
-      <svg width="118" height="30" viewBox="0 0 118 30" role="img" aria-label="Halden Dental"><text x="0" y="21" font-family="Poppins,sans-serif" font-size="19" font-weight="600" fill="currentColor">Halden</text><circle cx="100" cy="14" r="7" fill="currentColor"/></svg>
-    </span>
-    <span class="logo-tile" title="Placeholder client">
-      <svg width="126" height="30" viewBox="0 0 126 30" role="img" aria-label="Kestrel Legal"><rect x="0" y="6" width="17" height="17" rx="4" fill="currentColor"/><text x="24" y="21" font-family="Poppins,sans-serif" font-size="18" font-weight="600" fill="currentColor">Kestrel</text></svg>
-    </span>
-    <span class="logo-tile" title="Placeholder client">
-      <svg width="130" height="30" viewBox="0 0 130 30" role="img" aria-label="Bluewater SaaS"><text x="0" y="21" font-family="Poppins,sans-serif" font-size="18" font-weight="700" fill="currentColor">bluewater</text></svg>
-    </span>
-    <span class="logo-tile" title="Placeholder client">
-      <svg width="122" height="30" viewBox="0 0 122 30" role="img" aria-label="The Copper Table"><text x="0" y="14" font-family="Poppins,sans-serif" font-size="10" letter-spacing="3" fill="currentColor">THE</text><text x="0" y="27" font-family="Poppins,sans-serif" font-size="15" font-weight="600" fill="currentColor">COPPER TABLE</text></svg>
-    </span>
-    <span class="logo-tile" title="Placeholder client">
-      <svg width="116" height="30" viewBox="0 0 116 30" role="img" aria-label="Ardent Build"><text x="0" y="21" font-family="Poppins,sans-serif" font-size="19" font-weight="600" fill="currentColor">ARDENT</text></svg>
-    </span>
-    <span class="logo-tile" title="Placeholder client">
-      <svg width="124" height="30" viewBox="0 0 124 30" role="img" aria-label="Lumen Health"><circle cx="10" cy="15" r="9" fill="none" stroke="currentColor" stroke-width="2.5"/><text x="26" y="21" font-family="Poppins,sans-serif" font-size="18" font-weight="500" fill="currentColor">Lumen</text></svg>
-    </span>
-
-    <!-- Duplicate set for the seamless loop -->
-    <span class="logo-tile" aria-hidden="true"><svg width="132" height="30" viewBox="0 0 132 30"><text x="0" y="21" font-family="Poppins,sans-serif" font-size="19" font-weight="700" fill="currentColor">NORTHGATE</text></svg></span>
-    <span class="logo-tile" aria-hidden="true"><svg width="120" height="30" viewBox="0 0 120 30"><text x="0" y="21" font-family="Poppins,sans-serif" font-size="19" font-weight="300" letter-spacing="2" fill="currentColor">VERANO</text></svg></span>
-    <span class="logo-tile" aria-hidden="true"><svg width="118" height="30" viewBox="0 0 118 30"><text x="0" y="21" font-family="Poppins,sans-serif" font-size="19" font-weight="600" fill="currentColor">Halden</text><circle cx="100" cy="14" r="7" fill="currentColor"/></svg></span>
-    <span class="logo-tile" aria-hidden="true"><svg width="126" height="30" viewBox="0 0 126 30"><rect x="0" y="6" width="17" height="17" rx="4" fill="currentColor"/><text x="24" y="21" font-family="Poppins,sans-serif" font-size="18" font-weight="600" fill="currentColor">Kestrel</text></svg></span>
-    <span class="logo-tile" aria-hidden="true"><svg width="130" height="30" viewBox="0 0 130 30"><text x="0" y="21" font-family="Poppins,sans-serif" font-size="18" font-weight="700" fill="currentColor">bluewater</text></svg></span>
-    <span class="logo-tile" aria-hidden="true"><svg width="122" height="30" viewBox="0 0 122 30"><text x="0" y="14" font-family="Poppins,sans-serif" font-size="10" letter-spacing="3" fill="currentColor">THE</text><text x="0" y="27" font-family="Poppins,sans-serif" font-size="15" font-weight="600" fill="currentColor">COPPER TABLE</text></svg></span>
-    <span class="logo-tile" aria-hidden="true"><svg width="116" height="30" viewBox="0 0 116 30"><text x="0" y="21" font-family="Poppins,sans-serif" font-size="19" font-weight="600" fill="currentColor">ARDENT</text></svg></span>
-    <span class="logo-tile" aria-hidden="true"><svg width="124" height="30" viewBox="0 0 124 30"><circle cx="10" cy="15" r="9" fill="none" stroke="currentColor" stroke-width="2.5"/><text x="26" y="21" font-family="Poppins,sans-serif" font-size="18" font-weight="500" fill="currentColor">Lumen</text></svg></span>
-  </div>
-</section>
-
-<!-- ========================================================= STATISTICS BAND -->
-<section class="section section--tight stats">
-  <div class="container">
-    <div class="stats__grid">
-      <div class="stat" data-reveal>
-        <p class="stat__value"><span class="unit">£</span><span data-count-to="12.4" data-count-decimals="1">0</span><span class="unit">M+</span></p>
-        <p class="stat__label">Tracked revenue generated for clients</p>
-      </div>
-      <div class="stat" data-reveal data-reveal-delay="60">
-        <p class="stat__value"><span data-count-to="200">0</span><span class="unit">+</span></p>
-        <p class="stat__label">Campaigns delivered across the UK</p>
-      </div>
-      <div class="stat" data-reveal data-reveal-delay="120">
-        <p class="stat__value"><span data-count-to="4.8" data-count-decimals="1">0</span><span class="unit">x</span></p>
-        <p class="stat__label">Average return on ad spend</p>
-      </div>
-      <div class="stat" data-reveal data-reveal-delay="180">
-        <p class="stat__value"><span data-count-to="94">0</span><span class="unit">%</span></p>
-        <p class="stat__label">Client retention beyond 12 months</p>
+<!-- ====================================================== CLIENT LOGO STRIP -->
+<section class="clients section--tight" aria-label="Clients">
+  <div class="container clients__inner">
+    <p class="t-label">Trusted by UK businesses</p>
+    <div class="marquee-mask">
+      <div class="marquee">
+        <span class="logo-tile"><svg width="118" height="26" viewBox="0 0 118 26" role="img" aria-label="Client logo placeholder"><text x="0" y="19" font-family="Poppins,sans-serif" font-size="17" font-weight="600" fill="currentColor">CLIENT ONE</text></svg></span>
+        <span class="logo-tile"><svg width="104" height="26" viewBox="0 0 104 26" role="img" aria-label="Client logo placeholder"><text x="0" y="19" font-family="Poppins,sans-serif" font-size="17" font-weight="300" letter-spacing="2" fill="currentColor">CLIENT</text></svg></span>
+        <span class="logo-tile"><svg width="112" height="26" viewBox="0 0 112 26" role="img" aria-label="Client logo placeholder"><circle cx="9" cy="13" r="8" fill="none" stroke="currentColor" stroke-width="2"/><text x="24" y="19" font-family="Poppins,sans-serif" font-size="16" font-weight="500" fill="currentColor">Client</text></svg></span>
+        <span class="logo-tile"><svg width="120" height="26" viewBox="0 0 120 26" role="img" aria-label="Client logo placeholder"><rect x="0" y="5" width="15" height="15" rx="3" fill="currentColor"/><text x="22" y="19" font-family="Poppins,sans-serif" font-size="16" font-weight="600" fill="currentColor">Client</text></svg></span>
+        <span class="logo-tile"><svg width="126" height="26" viewBox="0 0 126 26" role="img" aria-label="Client logo placeholder"><text x="0" y="19" font-family="Poppins,sans-serif" font-size="17" font-weight="700" fill="currentColor">clientmark</text></svg></span>
+        <span class="logo-tile"><svg width="108" height="26" viewBox="0 0 108 26" role="img" aria-label="Client logo placeholder"><text x="0" y="19" font-family="Poppins,sans-serif" font-size="17" font-weight="600" fill="currentColor">CLIENT</text></svg></span>
+        <span class="logo-tile" aria-hidden="true"><svg width="118" height="26" viewBox="0 0 118 26"><text x="0" y="19" font-family="Poppins,sans-serif" font-size="17" font-weight="600" fill="currentColor">CLIENT ONE</text></svg></span>
+        <span class="logo-tile" aria-hidden="true"><svg width="104" height="26" viewBox="0 0 104 26"><text x="0" y="19" font-family="Poppins,sans-serif" font-size="17" font-weight="300" letter-spacing="2" fill="currentColor">CLIENT</text></svg></span>
+        <span class="logo-tile" aria-hidden="true"><svg width="112" height="26" viewBox="0 0 112 26"><circle cx="9" cy="13" r="8" fill="none" stroke="currentColor" stroke-width="2"/><text x="24" y="19" font-family="Poppins,sans-serif" font-size="16" font-weight="500" fill="currentColor">Client</text></svg></span>
+        <span class="logo-tile" aria-hidden="true"><svg width="120" height="26" viewBox="0 0 120 26"><rect x="0" y="5" width="15" height="15" rx="3" fill="currentColor"/><text x="22" y="19" font-family="Poppins,sans-serif" font-size="16" font-weight="600" fill="currentColor">Client</text></svg></span>
+        <span class="logo-tile" aria-hidden="true"><svg width="126" height="26" viewBox="0 0 126 26"><text x="0" y="19" font-family="Poppins,sans-serif" font-size="17" font-weight="700" fill="currentColor">clientmark</text></svg></span>
+        <span class="logo-tile" aria-hidden="true"><svg width="108" height="26" viewBox="0 0 108 26"><text x="0" y="19" font-family="Poppins,sans-serif" font-size="17" font-weight="600" fill="currentColor">CLIENT</text></svg></span>
       </div>
     </div>
-    <p class="stats__note">Figures are placeholders for this prototype. Every published number must be defensible and independently verifiable.</p>
   </div>
 </section>
 
-<!-- ================================================================ SERVICES -->
+<!-- ==========================================================================
+     SERVICES — indexed editorial list.
+     Client's four service cards AND their four repeated bullet sections are
+     merged here: one row per service, expanding to that service's own copy.
+     ========================================================================== -->
 <section class="section" id="services">
   <div class="container">
 
-    <div class="section-head section-head--center" data-reveal>
-      <p class="t-overline section-head__eyebrow">What we do</p>
-      <h2 class="t-h2">One partner for the whole growth stack</h2>
-      <p class="t-body-lg section-head__lead">
-        Most agencies hand you a channel. We connect search, paid media and the
-        technology underneath it — so the whole system compounds instead of competing.
-      </p>
+    <div class="grid12" style="row-gap:var(--space-8)">
+      <div class="c-5">
+        <p class="t-label">01 — Services</p>
+        <h2 class="t-h1 mt-5">Services We Provide</h2>
+      </div>
+      <div class="c-6 start-7" style="align-self:end">
+        <p class="t-lead">
+          We offer complete digital solutions to help businesses grow, scale, and succeed
+          online. From marketing to development, our services are designed to improve
+          visibility, attract the right audience, and drive measurable results. Whether you
+          need SEO, paid advertising, social media marketing, web development, or custom
+          software solutions, we deliver strategies tailored to your business goals with a
+          strong focus on performance and ROI.
+        </p>
+      </div>
     </div>
 
-    <div class="grid grid--3">
+    <div class="mt-16">
 
-      <!-- Flagship service, given full visual priority. -->
-      <article class="card card--hover service-card service-card--flagship" data-reveal>
+      <!-- 01 -->
+      <article class="svc is-open" data-svc>
+        <button class="svc__head" type="button" data-svc-toggle aria-expanded="true" aria-controls="svc-1">
+          <span class="svc__index">01</span>
+          <span class="svc__name">Digital Marketing</span>
+          <span class="svc__blurb">SEO, Google Ads, Meta &amp; TikTok Ads, social media marketing</span>
+          <span class="svc__toggle" aria-hidden="true">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          </span>
+        </button>
 
-        <div class="service-card__main">
-          <div class="service-card__icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 17 6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg>
-          </div>
+        <div class="svc__panel" id="svc-1">
+          <div class="svc__panel-inner">
+            <div class="svc__body">
+              <div>
+                <p class="t-body" style="max-width:56ch">
+                  GTech Digital helps businesses grow online with performance-focused digital
+                  marketing services that increase visibility, drive targeted traffic, and
+                  boost conversions.
+                </p>
+                <ul class="svc__list mt-8">
+                  <li>Google Ads campaigns for high-intent leads</li>
+                  <li>Meta Ads (Facebook &amp; Instagram) for targeted reach</li>
+                  <li>TikTok Ads for fast brand awareness and engagement</li>
+                  <li>SEO &amp; Social Media Marketing (SMM) for growth and visibility</li>
+                  <li>Local SEO &amp; link building to improve local rankings</li>
+                  <li>Advanced keyword research &amp; SEO optimisation</li>
+                  <li>Hospitality SEO for restaurants, tourism &amp; more</li>
+                  <li>Affordable digital marketing packages tailored to your needs</li>
+                </ul>
+                <div class="svc__cta">
+                  <a class="btn btn--ink" href="service-single.html">Read More</a>
+                </div>
+              </div>
 
-          <span class="tag tag--brand" style="align-self:flex-start">Flagship service</span>
-          <h3 class="t-h3 service-card__title mt-3">SEO &amp; Paid Media</h3>
-          <p class="service-card__outcome">
-            We buy and earn the attention of people already looking for what you sell —
-            then keep cutting the cost of acquiring each one. Organic and paid run on a
-            single strategy and a single report, not two disconnected retainers.
-          </p>
-
-          <div class="service-card__tags">
-            <span class="tag">Technical SEO</span>
-            <span class="tag">Local SEO</span>
-            <span class="tag">Google Ads</span>
-            <span class="tag">Meta Ads</span>
-            <span class="tag">TikTok Ads</span>
-            <span class="tag">Link building</span>
-            <span class="tag">AEO &amp; GEO</span>
-          </div>
-
-          <div class="service-card__foot">
-            <a class="btn btn--secondary" href="service-single.html">See how we do it</a>
-            <span class="service-card__engagement">Monthly retainer · from £1,800/mo</span>
-          </div>
-        </div>
-
-        <div class="service-card__aside">
-          <div class="service-card__metrics">
-            <div>
-              <p class="metric__value">+184<span style="font-size:0.62em">%</span></p>
-              <p class="metric__label">Median organic traffic</p>
-              <p class="metric__timeframe">First 12 months</p>
-            </div>
-            <div>
-              <p class="metric__value">4.8<span style="font-size:0.62em">x</span></p>
-              <p class="metric__label">Average return on ad spend</p>
-              <p class="metric__timeframe">Rolling 90 days</p>
-            </div>
-            <div>
-              <p class="metric__value">−37<span style="font-size:0.62em">%</span></p>
-              <p class="metric__label">Cost per acquisition</p>
-              <p class="metric__timeframe">Within 6 months</p>
+              <figure>
+                <div class="media media--3x2">
+                  <div class="media__spec">
+                    <b>digital-marketing.jpg</b>
+                    <span>3:2 — campaign dashboard, GA4/Ads screenshot, or team working. Replace the megaphone illustration from the current site.</span>
+                  </div>
+                </div>
+                <figcaption class="media__caption">Suggested: a real reporting dashboard rather than stock illustration.</figcaption>
+              </figure>
             </div>
           </div>
         </div>
-
       </article>
 
-      <article class="card card--hover service-card" data-reveal data-reveal-delay="60">
-        <div class="service-card__icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="m7 8 2 2-2 2M13 12h4"/></svg>
-        </div>
-        <h3 class="t-h4 service-card__title">Web Development</h3>
-        <p class="service-card__outcome">
-          Sites that load fast, rank well and convert the traffic you already pay for.
-          Built accessible and measurable from the first commit.
-        </p>
-        <div class="service-card__proof">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-          Avg. +52% conversion rate post-rebuild
-        </div>
-        <div class="service-card__tags">
-          <span class="tag">Headless</span>
-          <span class="tag">WordPress</span>
-          <span class="tag">Shopify</span>
-          <span class="tag">Core Web Vitals</span>
-        </div>
-        <div class="service-card__foot">
-          <a class="link-arrow" href="service-single.html">
-            See web results
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-          <span class="service-card__engagement">Project · from £8,500</span>
-        </div>
-      </article>
+      <!-- 02 -->
+      <article class="svc" data-svc>
+        <button class="svc__head" type="button" data-svc-toggle aria-expanded="false" aria-controls="svc-2">
+          <span class="svc__index">02</span>
+          <span class="svc__name">Web Design and Development</span>
+          <span class="svc__blurb">Responsive, SEO-friendly websites built to convert</span>
+          <span class="svc__toggle" aria-hidden="true">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          </span>
+        </button>
 
-      <article class="card card--hover service-card" data-reveal data-reveal-delay="120">
-        <div class="service-card__icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>
-        </div>
-        <h3 class="t-h4 service-card__title">Mobile Apps</h3>
-        <p class="service-card__outcome">
-          Native and cross-platform apps that people actually keep. Shipped with
-          analytics, ASO and a retention plan, not just a store listing.
-        </p>
-        <div class="service-card__proof">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-          4.7★ average store rating across launches
-        </div>
-        <div class="service-card__tags">
-          <span class="tag">Swift</span>
-          <span class="tag">Kotlin</span>
-          <span class="tag">Flutter</span>
-          <span class="tag">React Native</span>
-        </div>
-        <div class="service-card__foot">
-          <a class="link-arrow" href="service-single.html">
-            See app work
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-          <span class="service-card__engagement">Project · from £24,000</span>
+        <div class="svc__panel" id="svc-2">
+          <div class="svc__panel-inner">
+            <div class="svc__body">
+              <div>
+                <p class="t-body" style="max-width:56ch">
+                  We provide professional web design and development services, creating
+                  modern, user-friendly, and responsive websites that help businesses build
+                  trust, improve engagement, and convert visitors into customers.
+                </p>
+                <ul class="svc__list mt-8">
+                  <li>Custom interactive websites tailored to your business</li>
+                  <li>Fully responsive and mobile-friendly designs</li>
+                  <li>Secure, platform-independent web development</li>
+                  <li>UX-focused design for better customer experience</li>
+                  <li>SEO-friendly website structure</li>
+                  <li>Fast, performance-optimised websites for better UX and conversions</li>
+                  <li>Strong brand identity creation that leaves a lasting impression</li>
+                </ul>
+                <div class="svc__cta">
+                  <a class="btn btn--ink" href="service-single.html">Read More</a>
+                </div>
+              </div>
+
+              <figure>
+                <div class="media media--3x2">
+                  <div class="media__spec">
+                    <b>web-development.jpg</b>
+                    <span>3:2 — a real site you built, shown on desktop + mobile. Pull from the existing /portfolio page.</span>
+                  </div>
+                </div>
+                <figcaption class="media__caption">Strongest option: an actual client site, named.</figcaption>
+              </figure>
+            </div>
+          </div>
         </div>
       </article>
 
-      <article class="card card--hover service-card" data-reveal data-reveal-delay="180">
-        <div class="service-card__icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1A1.7 1.7 0 0 0 9 19.4a1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1A1.7 1.7 0 0 0 4.6 9a1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z"/></svg>
-        </div>
-        <h3 class="t-h4 service-card__title">Custom Software</h3>
-        <p class="service-card__outcome">
-          Systems that take the manual work out of your operation — integrations,
-          automation and internal tools built around how your team actually works.
-        </p>
-        <div class="service-card__proof">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-          ~1,400 staff hours saved per client, per year
-        </div>
-        <div class="service-card__tags">
-          <span class="tag">API integration</span>
-          <span class="tag">Workflow automation</span>
-          <span class="tag">Internal tools</span>
-        </div>
-        <div class="service-card__foot">
-          <a class="link-arrow" href="service-single.html">
-            See software work
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-          <span class="service-card__engagement">Scoped · from £15,000</span>
+      <!-- 03 -->
+      <article class="svc" data-svc>
+        <button class="svc__head" type="button" data-svc-toggle aria-expanded="false" aria-controls="svc-3">
+          <span class="svc__index">03</span>
+          <span class="svc__name">Custom Software Development</span>
+          <span class="svc__blurb">Tailored systems, integrations and workflow automation</span>
+          <span class="svc__toggle" aria-hidden="true">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          </span>
+        </button>
+
+        <div class="svc__panel" id="svc-3">
+          <div class="svc__panel-inner">
+            <div class="svc__body">
+              <div>
+                <p class="t-body" style="max-width:56ch">
+                  Our Custom software development services focus on building tailored systems
+                  that help businesses streamline operations, improve efficiency, and scale
+                  with confidence, and are delivered by our expert team.
+                </p>
+                <ul class="svc__list mt-8">
+                  <li>System analysis and software audit for business needs</li>
+                  <li>Scalable architecture and solution design</li>
+                  <li>Custom product and application development</li>
+                  <li>Cost-effective software solutions tailored to your business goals</li>
+                  <li>Full SDLC with ongoing support</li>
+                  <li>Secure, scalable enterprise systems</li>
+                  <li>API integration and workflow automation</li>
+                </ul>
+                <div class="svc__cta">
+                  <a class="btn btn--ink" href="service-single.html">Read More</a>
+                </div>
+              </div>
+
+              <figure>
+                <div class="media media--3x2">
+                  <div class="media__spec">
+                    <b>custom-software.jpg</b>
+                    <span>3:2 — a real interface you shipped, or the team at work. Avoid generic code-on-screen stock.</span>
+                  </div>
+                </div>
+                <figcaption class="media__caption">Abstract code imagery reads as stock; a real UI does not.</figcaption>
+              </figure>
+            </div>
+          </div>
         </div>
       </article>
 
-    </div>
+      <!-- 04 -->
+      <article class="svc" data-svc>
+        <button class="svc__head" type="button" data-svc-toggle aria-expanded="false" aria-controls="svc-4">
+          <span class="svc__index">04</span>
+          <span class="svc__name">Mobile App Development</span>
+          <span class="svc__blurb">Native and cross-platform apps, built to perform</span>
+          <span class="svc__toggle" aria-hidden="true">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          </span>
+        </button>
 
-    <div class="text-center mt-12" data-reveal>
-      <a class="btn btn--outline btn--lg" href="services.html">Compare all services and tiers</a>
+        <div class="svc__panel" id="svc-4">
+          <div class="svc__panel-inner">
+            <div class="svc__body">
+              <div>
+                <p class="t-body" style="max-width:56ch">
+                  We provide mobile app development services, building high-performing apps
+                  that deliver real value and support your business goals.
+                </p>
+                <ul class="svc__list mt-8">
+                  <li>Native Android &amp; iOS app development (Kotlin, Swift)</li>
+                  <li>Cross-platform app development (Flutter, React Native)</li>
+                  <li>UX research &amp; UI design for better user experience</li>
+                  <li>App performance optimization &amp; security</li>
+                  <li>App Store Optimisation (ASO)</li>
+                  <li>Backend integration with scalable APIs and cloud services</li>
+                </ul>
+                <div class="svc__cta">
+                  <a class="btn btn--ink" href="service-single.html">Read More</a>
+                </div>
+              </div>
+
+              <figure>
+                <div class="media media--3x2">
+                  <div class="media__spec">
+                    <b>mobile-app.jpg</b>
+                    <span>3:2 — real app screens in device frames. Store listing screenshots work well here.</span>
+                  </div>
+                </div>
+                <figcaption class="media__caption">Include the store rating if the app is live.</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
 
-<!-- ======================================================= PROCESS FRAMEWORK -->
-<section class="section section--alt process" id="process">
+<!-- ========================================================== FIGURES BAND -->
+<section class="section section--dark section--tight">
   <div class="container">
-
-    <div class="section-head section-head--center" data-reveal>
-      <p class="t-overline section-head__eyebrow">How we work</p>
-      <h2 class="t-h2">A method, not a mystery</h2>
-      <p class="t-body-lg section-head__lead">
-        Every engagement runs on the same five-stage framework. You know what happens
-        each week, what lands on your desk, and how it is measured — from day one.
-      </p>
-      <p class="process__framework-name">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 2.6 6.6L21 10l-5 4.6 1.4 6.4L12 17.8 6.6 21 8 14.6 3 10l6.4-1.4Z"/></svg>
-        The GTech Growth Loop™
-      </p>
-    </div>
-
-    <ol class="process__track">
-      <li class="stage is-active" data-stage tabindex="0">
-        <span class="stage__marker">01</span>
-        <div>
-          <h3 class="stage__name">Discover</h3>
-          <p class="stage__timing">Weeks 1–2</p>
-          <p class="stage__summary">We audit what you have and size what is actually available.</p>
-          <ul class="stage__detail">
-            <li>Technical &amp; content audit</li>
-            <li>Competitor gap analysis</li>
-            <li>Opportunity sizing model</li>
-          </ul>
-        </div>
-      </li>
-
-      <li class="stage" data-stage tabindex="0">
-        <span class="stage__marker">02</span>
-        <div>
-          <h3 class="stage__name">Strategise</h3>
-          <p class="stage__timing">Weeks 3–4</p>
-          <p class="stage__summary">A roadmap with named targets, not a list of tactics.</p>
-          <ul class="stage__detail">
-            <li>12-month channel roadmap</li>
-            <li>KPI &amp; attribution framework</li>
-            <li>Budget allocation plan</li>
-          </ul>
-        </div>
-      </li>
-
-      <li class="stage" data-stage tabindex="0">
-        <span class="stage__marker">03</span>
-        <div>
-          <h3 class="stage__name">Build</h3>
-          <p class="stage__timing">Weeks 5–8</p>
-          <p class="stage__summary">Implementation starts. Fixes ship, campaigns go live.</p>
-          <ul class="stage__detail">
-            <li>Technical fixes deployed</li>
-            <li>Campaign build &amp; launch</li>
-            <li>Tracking &amp; dashboards live</li>
-          </ul>
-        </div>
-      </li>
-
-      <li class="stage" data-stage tabindex="0">
-        <span class="stage__marker">04</span>
-        <div>
-          <h3 class="stage__name">Optimise</h3>
-          <p class="stage__timing">Ongoing</p>
-          <p class="stage__summary">We test, cut what fails, and put budget behind what works.</p>
-          <ul class="stage__detail">
-            <li>Continuous A/B testing</li>
-            <li>Bid &amp; creative iteration</li>
-            <li>Conversion rate optimisation</li>
-          </ul>
-        </div>
-      </li>
-
-      <li class="stage" data-stage tabindex="0">
-        <span class="stage__marker">05</span>
-        <div>
-          <h3 class="stage__name">Report &amp; Scale</h3>
-          <p class="stage__timing">Monthly</p>
-          <p class="stage__summary">Plain-English reporting, then we widen what is winning.</p>
-          <ul class="stage__detail">
-            <li>Live dashboard access</li>
-            <li>Monthly strategy review</li>
-            <li>Expansion planning</li>
-          </ul>
-        </div>
-      </li>
-    </ol>
-
-    <div class="text-center mt-12" data-reveal>
-      <a class="link-arrow" href="#about">
-        Read the full framework
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
+    <div class="figures">
+      <div>
+        <p class="t-figure figure__value"><span class="unit">£</span><span data-count-to="12.4" data-count-decimals="1">0</span><span class="unit">M+</span></p>
+        <p class="figure__label">Tracked revenue generated for clients <em class="text-muted">(placeholder)</em></p>
+      </div>
+      <div>
+        <p class="t-figure figure__value"><span data-count-to="200">0</span><span class="unit">+</span></p>
+        <p class="figure__label">Campaigns delivered across the UK <em class="text-muted">(placeholder)</em></p>
+      </div>
+      <div>
+        <p class="t-figure figure__value"><span data-count-to="11">0</span></p>
+        <p class="figure__label">Years building for UK businesses, since 2014</p>
+      </div>
+      <div>
+        <p class="t-figure figure__value"><span data-count-to="2">0</span></p>
+        <p class="figure__label">Verified platform partnerships — Google &amp; Meta</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ========================================================== CASE STUDIES -->
-<section class="section" id="case-studies">
-  <div class="container">
+<!-- ==========================================================================
+     WHY PARTNER — sticky heading left, hairline-separated reasons right.
+     Client copy verbatim.
+     ========================================================================== -->
+<section class="section" id="why">
+  <div class="container grid12" style="row-gap:var(--space-10)">
 
-    <div class="section-head section-head--center" data-reveal>
-      <p class="t-overline section-head__eyebrow">Proof, not promises</p>
-      <h2 class="t-h2">What the work actually produced</h2>
-      <p class="t-body-lg section-head__lead">
-        Every figure below is tied to a timeframe and a measurement basis. If a number
-        looks too good without one, it usually is.
-      </p>
+    <div class="c-4">
+      <div class="why__sticky">
+        <p class="t-label">02 — Why us</p>
+        <h2 class="t-h2 mt-5">Why Partner with GTech Digital</h2>
+        <p class="t-lead mt-6">
+          You need growth; we provide the assist. It’s the perfect combination. You focus on
+          running your business, while we handle the complex digital landscape — from SEO and
+          paid ads to custom development.
+        </p>
+        <a class="btn btn--ink mt-8" href="#contact">Book Intro Call</a>
+      </div>
     </div>
 
-    <div class="grid grid--3">
-
-      <article class="card card--flush card--hover case-card" data-reveal>
-        <div class="case-card__head">
-          <p class="case-card__client">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg>
-            The Copper Table
-          </p>
-          <p class="case-card__sector">Hospitality · 6 sites · SEO + Local + Meta Ads</p>
+    <div class="c-7 start-6">
+      <div class="reason">
+        <span class="reason__index">01</span>
+        <div>
+          <h3 class="reason__title">Trusted Partnership</h3>
+          <p class="reason__text">GTech Digital is a verified Google Partner Agency and Meta Ads Agency in the UK, ensuring industry-standard strategies and reliable execution across all projects.</p>
         </div>
-        <div class="case-card__body">
-          <div class="case-card__hero-metric">
-            <p class="metric__value">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 15 7-7 7 7"/></svg>
-              340%
-            </p>
-            <p class="metric__label">Organic covers booked</p>
-            <p class="metric__timeframe">7 months · vs. same period prior year</p>
-            <div class="sparkbars" aria-hidden="true">
-              <span style="height:22%"></span><span style="height:28%"></span><span style="height:34%"></span>
-              <span style="height:48%"></span><span style="height:61%"></span><span style="height:78%"></span>
-              <span style="height:100%"></span>
-            </div>
-          </div>
-          <div class="case-card__supporting">
-            <div>
-              <p class="metric__value">−41%</p>
-              <p class="metric__label">Cost per booking</p>
-            </div>
-            <div>
-              <p class="metric__value">£486k</p>
-              <p class="metric__label">Attributed revenue</p>
-            </div>
-          </div>
-          <p class="case-card__summary">
-            A regional restaurant group was paying an aggregator for bookings it should
-            have owned. We rebuilt local visibility site by site and moved demand direct.
-          </p>
-          <div class="case-card__foot">
-            <a class="link-arrow" href="portfolio.html">
-              Read the case study
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </a>
-          </div>
+      </div>
+      <div class="reason">
+        <span class="reason__index">02</span>
+        <div>
+          <h3 class="reason__title">Local Expertise</h3>
+          <p class="reason__text">As a leading SEO and Social Media Marketing Agency in the UK, we understand local markets and deliver strategies aligned with customer behaviour.</p>
         </div>
-      </article>
-
-      <article class="card card--flush card--hover case-card" data-reveal data-reveal-delay="60">
-        <div class="case-card__head">
-          <p class="case-card__client">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2 3h3l2.7 12.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6L21 7H6"/></svg>
-            Northgate Retail
-          </p>
-          <p class="case-card__sector">E-commerce · Shopify Plus · SEO + Google Ads</p>
+      </div>
+      <div class="reason">
+        <span class="reason__index">03</span>
+        <div>
+          <h3 class="reason__title">Performance-Driven Solutions</h3>
+          <p class="reason__text">SEO, Google Ads, Meta Ads, TikTok Ads, web and app development under one powerful digital ecosystem.</p>
         </div>
-        <div class="case-card__body">
-          <div class="case-card__hero-metric">
-            <p class="metric__value">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 15 7-7 7 7"/></svg>
-              6.2x
-            </p>
-            <p class="metric__label">Return on ad spend</p>
-            <p class="metric__timeframe">Rolling 90 days · from 2.1x baseline</p>
-            <div class="sparkbars" aria-hidden="true">
-              <span style="height:30%"></span><span style="height:36%"></span><span style="height:44%"></span>
-              <span style="height:52%"></span><span style="height:70%"></span><span style="height:84%"></span>
-              <span style="height:100%"></span>
-            </div>
-          </div>
-          <div class="case-card__supporting">
-            <div>
-              <p class="metric__value">+128%</p>
-              <p class="metric__label">Non-brand revenue</p>
-            </div>
-            <div>
-              <p class="metric__value">£1.9M</p>
-              <p class="metric__label">Attributed revenue</p>
-            </div>
-          </div>
-          <p class="case-card__summary">
-            Ad spend was propping up branded search that would have converted anyway. We
-            rebuilt the account around incremental demand and grew organic underneath it.
-          </p>
-          <div class="case-card__foot">
-            <a class="link-arrow" href="portfolio.html">
-              Read the case study
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </a>
-          </div>
+      </div>
+      <div class="reason">
+        <span class="reason__index">04</span>
+        <div>
+          <h3 class="reason__title">Data-Driven Approach</h3>
+          <p class="reason__text">Every campaign is guided by analytics, insights, and continuous optimisation for better ROI and performance.</p>
         </div>
-      </article>
-
-      <article class="card card--flush card--hover case-card" data-reveal data-reveal-delay="120">
-        <div class="case-card__head">
-          <p class="case-card__client">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg>
-            Halden Dental Group
-          </p>
-          <p class="case-card__sector">Healthcare · 11 practices · Local SEO + Web</p>
+      </div>
+      <div class="reason">
+        <span class="reason__index">05</span>
+        <div>
+          <h3 class="reason__title">End-to-End Support</h3>
+          <p class="reason__text">From strategy to execution, we provide complete support for business growth and digital success.</p>
         </div>
-        <div class="case-card__body">
-          <div class="case-card__hero-metric">
-            <p class="metric__value">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 15 7-7 7 7"/></svg>
-              +212%
-            </p>
-            <p class="metric__label">New patient enquiries</p>
-            <p class="metric__timeframe">9 months · form + call tracking</p>
-            <div class="sparkbars" aria-hidden="true">
-              <span style="height:26%"></span><span style="height:30%"></span><span style="height:41%"></span>
-              <span style="height:55%"></span><span style="height:66%"></span><span style="height:82%"></span>
-              <span style="height:100%"></span>
-            </div>
-          </div>
-          <div class="case-card__supporting">
-            <div>
-              <p class="metric__value">#1–3</p>
-              <p class="metric__label">Map pack, 9 of 11 sites</p>
-            </div>
-            <div>
-              <p class="metric__value">1.4s</p>
-              <p class="metric__label">LCP after rebuild</p>
-            </div>
-          </div>
-          <p class="case-card__summary">
-            Eleven practices competing with each other in search. We separated their local
-            footprints and rebuilt the site to load in under two seconds on 4G.
-          </p>
-          <div class="case-card__foot">
-            <a class="link-arrow" href="portfolio.html">
-              Read the case study
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </a>
-          </div>
-        </div>
-      </article>
-
+      </div>
     </div>
 
-    <div class="text-center mt-12" data-reveal>
-      <a class="btn btn--secondary btn--lg" href="portfolio.html">View all case studies</a>
+  </div>
+</section>
+
+<!-- ============================================================ TESTIMONIAL -->
+<section class="section section--alt" id="testimonial">
+  <div class="container grid12" style="row-gap:var(--space-10)">
+
+    <div class="c-4">
+      <p class="t-label">03 — Testimonial</p>
+      <div class="media media--4x5 mt-6">
+        <div class="media__spec">
+          <b>client-portrait.jpg</b>
+          <span>4:5 — headshot of the person quoted. A real face is what makes a testimonial land.</span>
+        </div>
+      </div>
     </div>
+
+    <div class="c-7 start-6">
+      <blockquote class="quote">
+        <span class="quote__mark" aria-hidden="true">“</span>
+        Replace with a full client testimonial. Keep the specific detail — what changed, over
+        what period — and attribute it properly.
+      </blockquote>
+
+      <figcaption class="quote__author">
+        <span class="quote__avatar" aria-hidden="true">—</span>
+        <span>
+          <span class="quote__name">Full name required</span>
+          <span class="quote__role">Job title, Company — first-name-only attribution reads as fabricated</span>
+        </span>
+      </figcaption>
+    </div>
+
   </div>
 </section>
 
 <!-- ========================================================= ROI CALCULATOR -->
-<section class="section section--alt" id="roi-calculator">
+<section class="section" id="roi-calculator">
   <div class="container">
 
-    <div class="section-head section-head--center" data-reveal>
-      <p class="t-overline section-head__eyebrow">Interactive tool</p>
-      <h2 class="t-h2">What is growth actually worth to you?</h2>
-      <p class="t-body-lg section-head__lead">
-        Model your projected return in under a minute. The headline figure is free and
-        ungated — no email, no gate, no follow-up unless you ask for one.
-      </p>
+    <div class="section-marker">
+      <p class="t-label">04 — Interactive tool</p>
+      <p class="t-label">Free, no email required</p>
     </div>
 
-    <div class="calc" data-reveal>
+    <div class="grid12" style="row-gap:var(--space-8);margin-bottom:var(--space-16)">
+      <div class="c-6"><h2 class="t-h2">What is growth actually worth to you?</h2></div>
+      <div class="c-5 start-8" style="align-self:end">
+        <p class="t-lead">Model your projected return in under a minute. Assumptions are stated openly below — argue with them.</p>
+      </div>
+    </div>
 
-      <!-- Inputs -->
-      <form class="calc__inputs" data-calc>
-        <h3 class="t-h4" style="margin-bottom:24px">Your numbers</h3>
+    <div class="calc">
 
+      <form data-calc>
         <div class="calc__row">
           <label class="field__label" for="calc-industry">Industry</label>
           <select class="select" id="calc-industry" data-calc-field="industry">
@@ -787,7 +602,6 @@
             <option value="b2bsaas">B2B SaaS</option>
             <option value="trades">Trades &amp; Home Services</option>
           </select>
-          <p class="field__hint">Sets the benchmark conversion rate and order value below.</p>
         </div>
 
         <div class="calc__row">
@@ -796,10 +610,8 @@
             <span class="calc__row-value" data-calc-display>25,000</span>
           </div>
           <div class="calc__pair">
-            <input class="range" type="range" id="calc-traffic" data-calc-field="traffic"
-                   min="500" max="100000" step="500" value="25000" aria-label="Monthly website visitors">
-            <input class="input" type="number" data-calc-field="trafficNum"
-                   min="500" max="100000" step="500" value="25000" aria-label="Monthly website visitors, exact value">
+            <input class="range" type="range" id="calc-traffic" data-calc-field="traffic" min="500" max="100000" step="500" value="25000" aria-label="Monthly website visitors">
+            <input class="input" type="number" data-calc-field="trafficNum" min="500" max="100000" step="500" value="25000" aria-label="Monthly website visitors, exact value">
           </div>
         </div>
 
@@ -809,10 +621,8 @@
             <span class="calc__row-value" data-calc-display>2%</span>
           </div>
           <div class="calc__pair">
-            <input class="range" type="range" id="calc-cvr" data-calc-field="cvr"
-                   min="0.5" max="10" step="0.1" value="2" aria-label="Current conversion rate, percent">
-            <input class="input" type="number" data-calc-field="cvrNum"
-                   min="0.5" max="10" step="0.1" value="2" aria-label="Current conversion rate, exact percent">
+            <input class="range" type="range" id="calc-cvr" data-calc-field="cvr" min="0.5" max="10" step="0.1" value="2" aria-label="Current conversion rate, percent">
+            <input class="input" type="number" data-calc-field="cvrNum" min="0.5" max="10" step="0.1" value="2" aria-label="Current conversion rate, exact percent">
           </div>
         </div>
 
@@ -822,10 +632,8 @@
             <span class="calc__row-value" data-calc-display>£65</span>
           </div>
           <div class="calc__pair">
-            <input class="range" type="range" id="calc-aov" data-calc-field="aov"
-                   min="5" max="10000" step="5" value="65" aria-label="Average order or deal value in pounds">
-            <input class="input" type="number" data-calc-field="aovNum"
-                   min="5" max="10000" step="5" value="65" aria-label="Average order value, exact">
+            <input class="range" type="range" id="calc-aov" data-calc-field="aov" min="5" max="10000" step="5" value="65" aria-label="Average order or deal value in pounds">
+            <input class="input" type="number" data-calc-field="aovNum" min="5" max="10000" step="5" value="65" aria-label="Average order value, exact">
           </div>
         </div>
 
@@ -835,118 +643,83 @@
             <span class="calc__row-value" data-calc-display>£5,000</span>
           </div>
           <div class="calc__pair">
-            <input class="range" type="range" id="calc-budget" data-calc-field="budget"
-                   min="1000" max="50000" step="500" value="5000" aria-label="Monthly marketing budget in pounds">
-            <input class="input" type="number" data-calc-field="budgetNum"
-                   min="1000" max="50000" step="500" value="5000" aria-label="Monthly marketing budget, exact">
+            <input class="range" type="range" id="calc-budget" data-calc-field="budget" min="1000" max="50000" step="500" value="5000" aria-label="Monthly marketing budget in pounds">
+            <input class="input" type="number" data-calc-field="budgetNum" min="1000" max="50000" step="500" value="5000" aria-label="Monthly marketing budget, exact">
           </div>
         </div>
 
-        <fieldset style="border:0;padding:0;margin:0">
-          <legend class="calc__row-label" style="margin-bottom:12px">Primary goal</legend>
+        <fieldset class="calc__row" style="border:0;padding-left:0;padding-right:0;margin:0">
+          <legend class="calc__row-label" style="margin-bottom:10px">Primary goal</legend>
           <div class="calc__radios">
-            <label class="calc__radio">
-              <input type="radio" name="goal" value="traffic">
-              <span>Grow traffic</span>
-            </label>
-            <label class="calc__radio">
-              <input type="radio" name="goal" value="conversion">
-              <span>Improve conversion</span>
-            </label>
-            <label class="calc__radio">
-              <input type="radio" name="goal" value="both" checked>
-              <span>Both</span>
-            </label>
+            <label class="calc__radio"><input type="radio" name="goal" value="traffic"><span>Grow traffic</span></label>
+            <label class="calc__radio"><input type="radio" name="goal" value="conversion"><span>Improve conversion</span></label>
+            <label class="calc__radio"><input type="radio" name="goal" value="both" checked><span>Both</span></label>
           </div>
         </fieldset>
 
         <details class="calc__assumptions">
           <summary>How this is calculated</summary>
           <p class="mt-2">
-            Uplift assumptions are drawn from industry benchmarks and set deliberately at
-            the low end. Larger budgets are scaled with a square-root curve to reflect
-            diminishing returns rather than a straight line, and capped at 1.5×. Month 6
-            is modelled at 60% of the 12-month uplift, because search and paid campaigns
-            ramp rather than switch on.
+            Uplift assumptions come from industry benchmarks, set deliberately at the low end.
+            Larger budgets scale on a square-root curve capped at 1.5× to reflect diminishing
+            returns. Month 6 is modelled at 60% of the 12-month uplift, because campaigns ramp
+            rather than switch on.
           </p>
           <p class="mt-2">
-            <strong>ROI is calculated on gross profit, not revenue</strong>, using a
-            typical contribution margin for your sector. Quoting ROI on revenue is
-            standard practice in agency calculators and overstates the return by roughly
-            two to three times. Above 500% the model is extrapolating past what it can
-            support, so we show a floor instead of a precise number.
+            <strong>ROI is calculated on gross profit, not revenue</strong>, using a typical
+            contribution margin for your sector. In lead-generation sectors a conversion is an
+            <em>enquiry</em>, so a sector close rate is applied before counting revenue. Above
+            500% the model is extrapolating, so a floor is shown rather than false precision.
           </p>
           <p class="mt-2">
-            In lead-generation sectors a conversion is an <em>enquiry</em>, not a sale,
-            so we apply a sector close rate before counting revenue — 25% for
-            professional services, 20% for B2B SaaS, 30% for trades, 35% for healthcare.
-            E-commerce and hospitality are treated as transactional, where the
-            conversion is the sale.
-          </p>
-          <p class="mt-2">
-            Nothing here is a lead-capture trick: the numbers move down as readily as up,
-            and the assumptions are on this page so you can argue with them.
-          </p>
-          <p class="mt-2">
-            <strong>This is an estimate, not a guarantee.</strong> Actual results depend
-            on your market, competition, offer and starting position. In this prototype
-            the benchmark figures are placeholders and must be replaced with GTech's own
-            campaign data before launch.
+            An estimate, not a guarantee. Benchmark figures are placeholders until replaced
+            with GTech's own campaign data.
           </p>
         </details>
       </form>
 
-      <!-- Results — live, and free -->
-      <div class="calc__results" aria-live="polite">
-        <div class="calc__headline">
-          <p class="calc__headline-label">Additional monthly revenue</p>
-          <p class="calc__headline-value" data-calc-out="uplift">£0</p>
-          <p class="calc__headline-sub">Projected at month 12, over your current baseline</p>
-        </div>
+      <div aria-live="polite">
+        <p class="calc__out-label">Additional monthly revenue</p>
+        <p class="t-figure calc__out-headline" data-calc-out="uplift">£0</p>
+        <p class="t-sm text-muted">Projected at month 12, over your current baseline</p>
 
-        <div class="calc__figures">
-          <div>
-            <p class="calc__figure-label">ROI on gross profit</p>
-            <p class="calc__figure-value" data-calc-out="roi">+0%</p>
-          </div>
-          <div>
-            <p class="calc__figure-label">Return ratio</p>
-            <p class="calc__figure-value" data-calc-out="ratio">0:1</p>
-          </div>
-          <div>
-            <p class="calc__figure-label">Break-even</p>
-            <p class="calc__figure-value" data-calc-out="breakeven">—</p>
-          </div>
-          <div>
-            <p class="calc__figure-label">Extra revenue, year 1</p>
-            <p class="calc__figure-value" data-calc-out="annual">£0</p>
-          </div>
-        </div>
-
-        <p class="calc__headline-sub" style="margin:-16px 0 24px" data-calc-cap hidden>
-          Your inputs put this well beyond what the model can estimate reliably, so
-          we've shown a floor rather than a precise figure. Worth a conversation.
+        <p class="t-sm text-muted mt-4" data-calc-cap hidden>
+          Your inputs put this beyond what the model estimates reliably, so a floor is shown.
         </p>
 
-        <div class="calc__chart">
+        <div class="calc__figs">
+          <div>
+            <p class="calc__fig-label">ROI on gross profit</p>
+            <p class="calc__fig-value" data-calc-out="roi">+0%</p>
+          </div>
+          <div>
+            <p class="calc__fig-label">Return ratio</p>
+            <p class="calc__fig-value" data-calc-out="ratio">0:1</p>
+          </div>
+          <div>
+            <p class="calc__fig-label">Break-even</p>
+            <p class="calc__fig-value" data-calc-out="breakeven">—</p>
+          </div>
+          <div>
+            <p class="calc__fig-label">Extra revenue, year 1</p>
+            <p class="calc__fig-value" data-calc-out="annual">£0</p>
+          </div>
+        </div>
+
+        <div class="calc__bars">
           <div class="calc__bar-row">
             <span>Today</span>
-            <div class="calc__bar-track">
-              <div class="calc__bar-fill calc__bar-fill--current" data-calc-bar="current" style="width:30%">£0</div>
-            </div>
+            <div class="calc__bar-track"><div class="calc__bar-fill calc__bar-fill--current" data-calc-bar="current" style="width:40%">£0</div></div>
           </div>
           <div class="calc__bar-row">
             <span>Month 12</span>
-            <div class="calc__bar-track">
-              <div class="calc__bar-fill calc__bar-fill--projected" data-calc-bar="projected" style="width:100%">£0</div>
-            </div>
+            <div class="calc__bar-track"><div class="calc__bar-fill calc__bar-fill--projected" data-calc-bar="projected" style="width:100%">£0</div></div>
           </div>
         </div>
 
-        <!-- Only the detail is gated. The headline result above is free. -->
         <form class="calc__gate" data-calc-gate>
-          <h4>Want the full 12-month breakdown?</h4>
-          <p>Month-by-month projection, channel split and a personalised roadmap — as a PDF.</p>
+          <p class="t-h4">Want the full 12-month breakdown?</p>
+          <p class="t-sm text-muted mt-2">Month-by-month projection, channel split and a roadmap, as a PDF.</p>
           <div class="calc__gate-form">
             <label class="visually-hidden" for="calc-email">Work email</label>
             <input class="input" type="email" id="calc-email" placeholder="you@company.com" required>
@@ -959,581 +732,133 @@
   </div>
 </section>
 
-<!-- ============================================================== WHY GTECH -->
-<section class="section section--dark" id="about">
-  <div class="container">
+<!-- ==================================================================== CTA -->
+<section class="section cta" id="contact">
+  <div class="container grid12" style="row-gap:var(--space-10)">
 
-    <div class="section-head section-head--center" data-reveal>
-      <p class="t-overline section-head__eyebrow">Why partner with us</p>
-      <h2 class="t-h2">You run the business. We handle the growth.</h2>
-      <p class="t-body-lg section-head__lead">
-        Five reasons clients stay with us past the first year — each one with something
-        behind it, not just a claim.
+    <div class="c-6">
+      <p class="t-label">05 — Next step</p>
+      <h2 class="t-h1 mt-5">Let’s talk about what growth looks like for you.</h2>
+      <p class="t-lead mt-6" style="color:rgba(255,255,255,0.74)">
+        A 30-minute call, no obligation. We’ll look at where you are now and what is
+        realistically available.
       </p>
-    </div>
 
-    <div class="grid grid--2" style="gap:48px">
-
-      <div class="reason" data-reveal>
-        <span class="reason__icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
-        </span>
+      <div class="mt-10 flex gap-6 wrap">
         <div>
-          <h3 class="reason__title">Trusted partnership</h3>
-          <p class="reason__text">
-            Verified Google Partner and Meta Business Partner. Both are audited
-            credentials with spend, certification and performance thresholds — not
-            badges you can self-declare.
-          </p>
-          <span class="reason__proof">Independently verifiable on Google &amp; Meta directories</span>
+          <p class="t-label" style="color:rgba(255,255,255,0.6)">Call</p>
+          <a class="t-h4 text-white mt-2" style="display:block" href="tel:+442035985956">0203 598 5956</a>
         </div>
-      </div>
-
-      <div class="reason" data-reveal data-reveal-delay="60">
-        <span class="reason__icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-        </span>
         <div>
-          <h3 class="reason__title">Local expertise</h3>
-          <p class="reason__text">
-            We work UK markets daily — London, Manchester, Birmingham, Leeds and
-            Glasgow — so we know how local intent, seasonality and competition actually
-            behave in each.
-          </p>
-          <span class="reason__proof">200+ UK campaigns across 14 sectors</span>
+          <p class="t-label" style="color:rgba(255,255,255,0.6)">Email</p>
+          <a class="t-h4 text-white mt-2" style="display:block" href="mailto:info@gtechdigital.co.uk">info@gtechdigital.co.uk</a>
         </div>
       </div>
-
-      <div class="reason" data-reveal data-reveal-delay="120">
-        <span class="reason__icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg>
-        </span>
-        <div>
-          <h3 class="reason__title">Performance-driven</h3>
-          <p class="reason__text">
-            SEO, Google Ads, Meta, TikTok, web and app under one roof — on one strategy
-            and one report. No blaming the other agency when the numbers move.
-          </p>
-          <span class="reason__proof">4.8x average ROAS across managed accounts</span>
-        </div>
-      </div>
-
-      <div class="reason" data-reveal data-reveal-delay="180">
-        <span class="reason__icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 17v-5M12 17V7M16 17v-8"/></svg>
-        </span>
-        <div>
-          <h3 class="reason__title">Data-driven approach</h3>
-          <p class="reason__text">
-            You get live dashboard access from week one — the same numbers we work from,
-            not a curated monthly slide. Every decision traces back to a measurement.
-          </p>
-          <span class="reason__proof">Live GA4 &amp; Looker Studio dashboards, always on</span>
-        </div>
-      </div>
-
-      <div class="reason" data-reveal data-reveal-delay="240">
-        <span class="reason__icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </span>
-        <div>
-          <h3 class="reason__title">End-to-end support</h3>
-          <p class="reason__text">
-            A named strategist and a dedicated account team from strategy through to
-            execution. You always know who is on your account and how to reach them.
-          </p>
-          <span class="reason__proof">94% client retention beyond 12 months</span>
-        </div>
-      </div>
-
-      <div class="reason" data-reveal data-reveal-delay="300">
-        <span class="reason__icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-        </span>
-        <div>
-          <h3 class="reason__title">Since 2014</h3>
-          <p class="reason__text">
-            Over a decade building and marketing websites for UK businesses — through
-            four major algorithm eras and the shift into AI-driven search.
-          </p>
-          <span class="reason__proof">11 years, independently owned</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- =========================================================== TESTIMONIALS -->
-<section class="section" id="testimonials">
-  <div class="container">
-
-    <div class="section-head section-head--center" data-reveal>
-      <p class="t-overline section-head__eyebrow">In their words</p>
-      <h2 class="t-h2">What clients say when the results are in</h2>
-      <p class="t-body-lg section-head__lead">
-        Full names, job titles and companies — because an anonymous testimonial is
-        worth roughly nothing.
-      </p>
     </div>
 
-    <div class="testimonial-grid">
-
-      <figure class="testimonial" data-reveal>
-        <div class="testimonial__stars" aria-label="5 out of 5 stars">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
+    <div class="c-5 start-8">
+      <form data-stub-form>
+        <div class="mt-4">
+          <label class="field__label" style="color:#fff" for="cta-name">Name</label>
+          <input class="input" type="text" id="cta-name" required>
         </div>
-        <blockquote class="testimonial__quote">
-          "I was genuinely sceptical about SEO — we'd been burned twice before. GTech
-          were the first agency to show me the maths before asking for a budget. Seven
-          months in, direct bookings overtook the aggregators for the first time."
-        </blockquote>
-        <figcaption class="testimonial__author">
-          <span class="testimonial__avatar" aria-hidden="true">AM</span>
-          <span>
-            <span class="testimonial__name">Angela Mitchell</span>
-            <span class="testimonial__role">Operations Director, The Copper Table</span>
-          </span>
-        </figcaption>
-        <span class="testimonial__result">+340% organic covers in 7 months</span>
-      </figure>
-
-      <figure class="testimonial" data-reveal data-reveal-delay="60">
-        <div class="testimonial__stars" aria-label="5 out of 5 stars">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
+        <div class="mt-5">
+          <label class="field__label" style="color:#fff" for="cta-email">Work email</label>
+          <input class="input" type="email" id="cta-email" required>
         </div>
-        <blockquote class="testimonial__quote">
-          "They cut our ad spend in the first month. Any agency willing to reduce its own
-          managed budget because the spend wasn't incremental has my attention."
-        </blockquote>
-        <figcaption class="testimonial__author">
-          <span class="testimonial__avatar" aria-hidden="true">DO</span>
-          <span>
-            <span class="testimonial__name">Daniel Okafor</span>
-            <span class="testimonial__role">Head of Ecommerce, Northgate Retail</span>
-          </span>
-        </figcaption>
-        <span class="testimonial__result">2.1x → 6.2x ROAS</span>
-      </figure>
-
-      <figure class="testimonial" data-reveal data-reveal-delay="120">
-        <div class="testimonial__stars" aria-label="5 out of 5 stars">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
+        <div class="mt-5">
+          <label class="field__label" style="color:#fff" for="cta-company">Company</label>
+          <input class="input" type="text" id="cta-company" required>
         </div>
-        <blockquote class="testimonial__quote">
-          "Eleven practices, and we'd been quietly competing with ourselves in search for
-          years without realising. GTech spotted it in the audit — before we'd signed
-          anything."
-        </blockquote>
-        <figcaption class="testimonial__author">
-          <span class="testimonial__avatar" aria-hidden="true">SR</span>
-          <span>
-            <span class="testimonial__name">Dr Sarah Reyes</span>
-            <span class="testimonial__role">Managing Partner, Halden Dental Group</span>
-          </span>
-        </figcaption>
-        <span class="testimonial__result">+212% new patient enquiries</span>
-      </figure>
-
-      <figure class="testimonial" data-reveal data-reveal-delay="180">
-        <div class="testimonial__stars" aria-label="5 out of 5 stars">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
-        </div>
-        <blockquote class="testimonial__quote">
-          "The internal tool they built saved our ops team about two days a week. It paid
-          for itself inside five months and nobody has asked to go back."
-        </blockquote>
-        <figcaption class="testimonial__author">
-          <span class="testimonial__avatar" aria-hidden="true">PK</span>
-          <span>
-            <span class="testimonial__name">Priya Kaur</span>
-            <span class="testimonial__role">COO, Ardent Build Services</span>
-          </span>
-        </figcaption>
-        <span class="testimonial__result">~1,400 staff hours saved per year</span>
-      </figure>
-
-      <figure class="testimonial" data-reveal data-reveal-delay="240">
-        <div class="testimonial__stars" aria-label="5 out of 5 stars">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
-        </div>
-        <blockquote class="testimonial__quote">
-          "Monthly reporting we can actually read, and a strategist who answers the phone.
-          After three agencies, that turned out to be the differentiator."
-        </blockquote>
-        <figcaption class="testimonial__author">
-          <span class="testimonial__avatar" aria-hidden="true">JW</span>
-          <span>
-            <span class="testimonial__name">James Whitfield</span>
-            <span class="testimonial__role">Marketing Director, Kestrel Legal</span>
-          </span>
-        </figcaption>
-        <span class="testimonial__result">+96% qualified enquiries</span>
-      </figure>
-
-      <figure class="testimonial" data-reveal data-reveal-delay="300">
-        <div class="testimonial__stars" aria-label="5 out of 5 stars">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
-        </div>
-        <blockquote class="testimonial__quote">
-          "We came for a website and left with a growth plan. The site was the easy part —
-          the strategy behind it is what changed the numbers."
-        </blockquote>
-        <figcaption class="testimonial__author">
-          <span class="testimonial__avatar" aria-hidden="true">MH</span>
-          <span>
-            <span class="testimonial__name">Marcus Hale</span>
-            <span class="testimonial__role">Founder, Bluewater SaaS</span>
-          </span>
-        </figcaption>
-        <span class="testimonial__result">+52% conversion rate</span>
-      </figure>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================== INDUSTRIES -->
-<section class="section section--alt" id="industries">
-  <div class="container">
-
-    <div class="section-head section-head--center" data-reveal>
-      <p class="t-overline section-head__eyebrow">Sector expertise</p>
-      <h2 class="t-h2">We already know your market</h2>
-      <p class="t-body-lg section-head__lead">
-        Benchmarks, seasonality and buying behaviour differ enormously by sector. We
-        bring the pattern library, so you are not paying us to learn on your budget.
-      </p>
+        <button class="btn btn--primary btn--block btn--lg mt-6" type="submit">Get Offer</button>
+        <p class="t-xs mt-4" style="color:rgba(255,255,255,0.55)">We never share your details.</p>
+        <p class="t-xs mt-3" style="color:var(--brand-cyan)" data-stub-note hidden>Prototype only — not connected to a backend.</p>
+      </form>
     </div>
 
-    <div class="grid grid--3">
-
-      <a class="industry" href="services.html" data-reveal>
-        <span class="industry__icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11h18M5 11V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v4M6 11v8M18 11v8M3 19h18"/></svg>
-        </span>
-        <p class="industry__name">Hospitality &amp; Leisure</p>
-        <p class="industry__metric">Avg. +186% direct bookings</p>
-      </a>
-
-      <a class="industry" href="services.html" data-reveal data-reveal-delay="60">
-        <span class="industry__icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2 3h3l2.7 12.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6L21 7H6"/></svg>
-        </span>
-        <p class="industry__name">E-commerce &amp; Retail</p>
-        <p class="industry__metric">Avg. 5.4x return on ad spend</p>
-      </a>
-
-      <a class="industry" href="services.html" data-reveal data-reveal-delay="120">
-        <span class="industry__icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-        </span>
-        <p class="industry__name">Professional Services</p>
-        <p class="industry__metric">Avg. −44% cost per lead</p>
-      </a>
-
-      <a class="industry" href="services.html" data-reveal data-reveal-delay="180">
-        <span class="industry__icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
-        </span>
-        <p class="industry__name">Healthcare &amp; Dental</p>
-        <p class="industry__metric">Avg. +212% patient enquiries</p>
-      </a>
-
-      <a class="industry" href="services.html" data-reveal data-reveal-delay="240">
-        <span class="industry__icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 16V8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 2 8v8a2 2 0 0 0 1 1.7l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 20 16Z"/><path d="m3.3 7 8.7 5 8.7-5M12 22V12"/></svg>
-        </span>
-        <p class="industry__name">B2B SaaS &amp; Tech</p>
-        <p class="industry__metric">Avg. +73% pipeline generated</p>
-      </a>
-
-      <a class="industry" href="services.html" data-reveal data-reveal-delay="300">
-        <span class="industry__icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M10 21v-6h4v6"/></svg>
-        </span>
-        <p class="industry__name">Trades &amp; Home Services</p>
-        <p class="industry__metric">Avg. +154% qualified calls</p>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-<!-- ==================================================== CERTIFICATIONS STRIP -->
-<section class="section section--tight" id="resources">
-  <div class="container">
-    <p class="logos__label" style="margin-bottom:32px">Accreditations &amp; compliance</p>
-
-    <div class="certs">
-      <div class="cert" data-reveal>
-        <span class="cert__icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
-        </span>
-        <span>
-          <span class="cert__name">Google Partner</span><br>
-          <span class="cert__meta">Verified · Ads certified</span>
-        </span>
-      </div>
-
-      <div class="cert" data-reveal data-reveal-delay="60">
-        <span class="cert__icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-        </span>
-        <span>
-          <span class="cert__name">Meta Business Partner</span><br>
-          <span class="cert__meta">Verified member</span>
-        </span>
-      </div>
-
-      <div class="cert" data-reveal data-reveal-delay="120">
-        <span class="cert__icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-        </span>
-        <span>
-          <span class="cert__name">GDPR Compliant</span><br>
-          <span class="cert__meta">DPA available on request</span>
-        </span>
-      </div>
-
-      <div class="cert" data-reveal data-reveal-delay="180">
-        <span class="cert__icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.4 9.4 8 10 4.6-.6 8-5 8-10V6Z"/></svg>
-        </span>
-        <span>
-          <span class="cert__name">Cyber Essentials</span><br>
-          <span class="cert__meta">Placeholder — confirm if held</span>
-        </span>
-      </div>
-
-      <div class="cert" data-reveal data-reveal-delay="240">
-        <span class="cert__icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M8.2 13.8 7 22l5-3 5 3-1.2-8.2"/></svg>
-        </span>
-        <span>
-          <span class="cert__name">UK Search Awards</span><br>
-          <span class="cert__meta">Placeholder — confirm if held</span>
-        </span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- =========================================================== FINAL CTA BAND -->
-<section class="section cta-band" id="book">
-  <div class="container">
-    <div class="cta-band__inner">
-
-      <div data-reveal>
-        <p class="t-overline" style="color:var(--brand-cyan);margin-bottom:12px">Next step</p>
-        <h2 class="t-h1">Let's find out what you're leaving on the table.</h2>
-        <p class="t-body-lg cta-band__lead">
-          A 30-minute call and a free growth audit. We'll show you where the gaps are and
-          what they're worth — whether or not you work with us.
-        </p>
-
-        <ul class="cta-band__list">
-          <li>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand-cyan)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-            No contracts, no pressure, no sales script
-          </li>
-          <li>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand-cyan)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-            A written audit you keep, whatever you decide
-          </li>
-          <li>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand-cyan)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-            You'll speak to a strategist, not an account manager
-          </li>
-        </ul>
-      </div>
-
-      <div class="cta-band__card" data-reveal data-reveal-delay="60">
-        <h3>Book your free growth audit</h3>
-        <p>We'll be in touch within one working day.</p>
-
-        <form data-stub-form>
-          <div class="field">
-            <label class="field__label" style="color:#fff" for="cta-name">Name</label>
-            <input class="input" type="text" id="cta-name" placeholder="Your name" required>
-          </div>
-          <div class="field">
-            <label class="field__label" style="color:#fff" for="cta-email">Work email</label>
-            <input class="input" type="email" id="cta-email" placeholder="you@company.com" required>
-          </div>
-          <div class="field">
-            <label class="field__label" style="color:#fff" for="cta-company">Company</label>
-            <input class="input" type="text" id="cta-company" placeholder="Company name" required>
-          </div>
-
-          <button class="btn btn--primary btn--block btn--lg" type="submit">Book my free audit</button>
-
-          <p class="t-body-sm mt-4" style="color:rgba(255,255,255,0.62)">
-            Or call <a href="tel:+442035985956" style="color:var(--brand-cyan)">0203 598 5956</a>.
-            We never share your details.
-          </p>
-          <p class="t-body-sm mt-4" style="color:var(--brand-cyan)" data-stub-note hidden>
-            Prototype only — this form is not connected to a backend.
-          </p>
-        </form>
-      </div>
-
-    </div>
   </div>
 </section>
 
 </main>
 
-<!-- ================================================================ FOOTER -->
-<footer class="site-footer">
+<!-- ================================================================= FOOTER -->
+<footer class="site-footer" id="insights">
   <div class="container">
 
-    <div class="footer__grid">
+    <div class="footer__top grid12" style="row-gap:var(--space-10)">
 
-      <div>
+      <div class="c-4">
         <span class="logo" style="color:#fff">
-          <span class="logo__mark" aria-hidden="true">G</span>
+          <span class="logo__mark" style="background:#fff;color:var(--neutral-900)" aria-hidden="true">G</span>
           <span style="color:#fff">G<span class="logo__accent">Tech</span> Digital</span>
         </span>
-        <p class="footer__brand-text">
-          A Google Partner and Meta Business Partner agency helping ambitious UK
-          businesses grow through search, paid media and the technology underneath it.
-          Building for UK businesses since 2014.
+        <p class="t-sm mt-5" style="max-width:34ch;color:var(--neutral-400)">
+          A verified Google Partner Agency and Meta Ads Agency in the UK. Building and
+          marketing for UK businesses since 2014.
         </p>
-        <div class="social">
-          <a href="#" aria-label="GTech Digital on Facebook">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1Z"/></svg>
-          </a>
-          <a href="#" aria-label="GTech Digital on X">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.2 2H21l-6.4 7.3L22.2 22h-6l-4.7-6.2L6.1 22H3.3l6.9-7.9L2.2 2h6.1l4.3 5.7Zm-1 18h1.6L7.9 3.7H6.2Z"/></svg>
-          </a>
-          <a href="#" aria-label="GTech Digital on Instagram">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-          </a>
-          <a href="#" aria-label="GTech Digital on LinkedIn">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.9 8.5H3.7V21h3.2ZM5.3 3a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8ZM20.3 13.5c0-3.2-1.7-4.7-4-4.7a3.5 3.5 0 0 0-3.1 1.7V8.5H10V21h3.2v-6.6c0-1.5.8-2.4 2-2.4s1.9.9 1.9 2.4V21h3.2Z"/></svg>
-          </a>
+        <div class="social mt-8">
+          <a href="#" aria-label="Facebook"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1Z"/></svg></a>
+          <a href="#" aria-label="X"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.2 2H21l-6.4 7.3L22.2 22h-6l-4.7-6.2L6.1 22H3.3l6.9-7.9L2.2 2h6.1l4.3 5.7Zm-1 18h1.6L7.9 3.7H6.2Z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.9 8.5H3.7V21h3.2ZM5.3 3a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8ZM20.3 13.5c0-3.2-1.7-4.7-4-4.7a3.5 3.5 0 0 0-3.1 1.7V8.5H10V21h3.2v-6.6c0-1.5.8-2.4 2-2.4s1.9.9 1.9 2.4V21h3.2Z"/></svg></a>
         </div>
       </div>
 
-      <div>
+      <div class="c-2 start-6">
         <p class="footer__title">Services</p>
         <ul class="footer__links">
-          <li><a href="service-single.html">SEO</a></li>
-          <li><a href="service-single.html">Paid Media</a></li>
-          <li><a href="service-single.html">Social Media Marketing</a></li>
-          <li><a href="service-single.html">Link Building</a></li>
+          <li><a href="service-single.html">Digital Marketing</a></li>
           <li><a href="service-single.html">Web Development</a></li>
-          <li><a href="service-single.html">Mobile Apps</a></li>
-          <li><a href="service-single.html">Custom Software</a></li>
-          <li><a href="service-single.html">AEO &amp; GEO</a></li>
+          <li><a href="service-single.html">App Development</a></li>
+          <li><a href="service-single.html">Software Development</a></li>
         </ul>
       </div>
 
-      <div>
-        <p class="footer__title">Industries</p>
-        <ul class="footer__links">
-          <li><a href="#industries">Hospitality &amp; Leisure</a></li>
-          <li><a href="#industries">E-commerce &amp; Retail</a></li>
-          <li><a href="#industries">Professional Services</a></li>
-          <li><a href="#industries">Healthcare &amp; Dental</a></li>
-          <li><a href="#industries">B2B SaaS &amp; Tech</a></li>
-          <li><a href="#industries">Trades &amp; Home Services</a></li>
-        </ul>
-      </div>
-
-      <div>
+      <div class="c-2">
         <p class="footer__title">Company</p>
         <ul class="footer__links">
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#process">Our Process</a></li>
-          <li><a href="portfolio.html">Case Studies</a></li>
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="#resources">Resources</a></li>
-          <li><a href="#roi-calculator">ROI Calculator</a></li>
-          <li><a href="#book">Contact Us</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="pricing.html">Seo Packages</a></li>
+          <li><a href="#">Blog</a></li>
           <li><a href="#">FAQ</a></li>
+          <li><a href="#contact">Contact Us</a></li>
         </ul>
       </div>
 
-      <div>
-        <p class="footer__title">Get in touch</p>
-        <p class="footer__contact">
+      <div class="c-3">
+        <p class="footer__title">Newsletter</p>
+        <p class="t-sm" style="color:var(--neutral-400)">
+          What actually changed in UK search, once a month. Unsubscribe anytime.
+        </p>
+        <form class="newsletter__form mt-5" data-stub-form>
+          <label class="visually-hidden" for="news-email">Email address</label>
+          <input class="input" type="email" id="news-email" placeholder="you@company.com" required>
+          <button class="btn btn--white btn--sm" type="submit">Join</button>
+        </form>
+        <p class="t-sm mt-6" style="color:var(--neutral-400)">
           <a href="tel:+442035985956">0203 598 5956</a><br>
           <a href="mailto:info@gtechdigital.co.uk">info@gtechdigital.co.uk</a>
         </p>
-        <p class="footer__contact mt-4" style="color:var(--neutral-400)">
-          Registered address<br>
-          <em>To be confirmed — see audit §5.7</em>
-        </p>
-
-        <div class="mt-8">
-          <p class="footer__title">Newsletter</p>
-          <p class="newsletter__pitch">
-            One email a month: what actually changed in UK search, and what to do
-            about it. No filler, unsubscribe anytime.
-          </p>
-          <form class="newsletter__form" data-stub-form>
-            <label class="visually-hidden" for="news-email">Email address</label>
-            <input class="input" type="email" id="news-email" placeholder="you@company.com" required>
-            <button class="btn btn--primary btn--sm" type="submit" aria-label="Subscribe">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </button>
-          </form>
-        </div>
       </div>
 
     </div>
 
     <div class="footer__legal">
-      <p>© 2026 GTech Digital. All rights reserved.</p>
+      <p>© 2026 GTech Digital. All Rights Reserved.</p>
       <div class="footer__legal-links">
         <a href="#">Privacy Policy</a>
-        <a href="#">Cookie Policy</a>
-        <a href="#">Terms of Service</a>
-        <a href="#">Accessibility</a>
+        <a href="#">How do we use cookies?</a>
+        <a href="#">Terms</a>
       </div>
     </div>
-
-    <p class="footer__company">
-      GTech Digital is a trading name of Global Tech Digital Ltd. Company registration
-      number and VAT number to be confirmed — see audit §5.4 and §5.7.
-    </p>
 
   </div>
 </footer>
 
-<!-- Sticky mobile CTA -->
 <div class="mobile-cta" data-mobile-cta>
-  <a class="btn btn--outline" href="tel:+442035985956">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
-    Call
-  </a>
-  <a class="btn btn--primary" href="#book">Book free audit</a>
+  <a class="btn btn--outline btn--sm" href="tel:+442035985956">Call</a>
+  <a class="btn btn--primary btn--sm" href="#contact">Book Intro Call</a>
 </div>
 
 <script src="assets/js/main.js"></script>
