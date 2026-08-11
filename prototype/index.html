@@ -11,9 +11,10 @@
 
   Copy is the client's own, used verbatim.
 
-  Every image region is a labelled placeholder naming the exact asset that
-  belongs there. Drop the real file in as an <img> and delete the sibling
-  .media__spec element — aspect ratios are already fixed so nothing reflows.
+  Imagery is vector mockups in assets/img/. They are real, swappable assets:
+  replace the src with a photograph at the same aspect ratio and nothing
+  reflows. Stock photography could not be downloaded — the sandbox proxy
+  denies all outbound hosts, including the live site and every image CDN.
 -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,7 +28,7 @@
 
 <a class="skip-link" href="#main">Skip to main content</a>
 
-<p class="proto-bar"><b>PROTOTYPE</b> — image regions are labelled placeholders. Figures marked “placeholder” need real, verifiable data.</p>
+<p class="proto-bar"><b>PROTOTYPE</b> — imagery is vector mockups pending real photography. Figures marked “placeholder” need real, verifiable data.</p>
 
 <!-- ============================================================== HEADER -->
 <header class="site-header" data-header>
@@ -69,10 +70,7 @@
               </div>
               <div class="c-3">
                 <div class="media media--4x3">
-                  <div class="media__spec">
-                    <b>work-featured.jpg</b>
-                    <span>4:3 — featured project screenshot or client work sample</span>
-                  </div>
+                  <img src="assets/img/web-development.svg" alt="Featured project: a responsive website shown on desktop and mobile." loading="lazy" width="600" height="400">
                 </div>
                 <a class="link mt-4" href="portfolio.html">
                   View our work
@@ -263,6 +261,7 @@
       <!-- 01 -->
       <article class="svc is-open" data-svc>
         <button class="svc__head" type="button" data-svc-toggle aria-expanded="true" aria-controls="svc-1">
+          <span class="svc__icon" aria-hidden="true"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 17 6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg></span>
           <span class="svc__index">01</span>
           <span class="svc__name">Digital Marketing</span>
           <span class="svc__blurb">SEO, Google Ads, Meta &amp; TikTok Ads, social media marketing</span>
@@ -297,12 +296,9 @@
 
               <figure>
                 <div class="media media--3x2">
-                  <div class="media__spec">
-                    <b>digital-marketing.jpg</b>
-                    <span>3:2 — campaign dashboard, GA4/Ads screenshot, or team working. Replace the megaphone illustration from the current site.</span>
-                  </div>
+                  <img src="assets/img/digital-marketing.svg" alt="Campaign dashboard showing impressions, conversions, cost per acquisition and channel split." loading="lazy" width="600" height="400">
                 </div>
-                <figcaption class="media__caption">Suggested: a real reporting dashboard rather than stock illustration.</figcaption>
+                <figcaption class="media__caption">Swap for a real GA4 or Google Ads screenshot when you have one cleared to publish.</figcaption>
               </figure>
             </div>
           </div>
@@ -312,6 +308,7 @@
       <!-- 02 -->
       <article class="svc" data-svc>
         <button class="svc__head" type="button" data-svc-toggle aria-expanded="false" aria-controls="svc-2">
+          <span class="svc__icon" aria-hidden="true"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
           <span class="svc__index">02</span>
           <span class="svc__name">Web Design and Development</span>
           <span class="svc__blurb">Responsive, SEO-friendly websites built to convert</span>
@@ -345,12 +342,9 @@
 
               <figure>
                 <div class="media media--3x2">
-                  <div class="media__spec">
-                    <b>web-development.jpg</b>
-                    <span>3:2 — a real site you built, shown on desktop + mobile. Pull from the existing /portfolio page.</span>
-                  </div>
+                  <img src="assets/img/web-development.svg" alt="A responsive website shown on desktop and mobile, with hero, feature cards and navigation." loading="lazy" width="600" height="400">
                 </div>
-                <figcaption class="media__caption">Strongest option: an actual client site, named.</figcaption>
+                <figcaption class="media__caption">Swap for a screenshot of an actual client site, named.</figcaption>
               </figure>
             </div>
           </div>
@@ -360,6 +354,7 @@
       <!-- 03 -->
       <article class="svc" data-svc>
         <button class="svc__head" type="button" data-svc-toggle aria-expanded="false" aria-controls="svc-3">
+          <span class="svc__icon" aria-hidden="true"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13 5l-2 14"/></svg></span>
           <span class="svc__index">03</span>
           <span class="svc__name">Custom Software Development</span>
           <span class="svc__blurb">Tailored systems, integrations and workflow automation</span>
@@ -393,12 +388,9 @@
 
               <figure>
                 <div class="media media--3x2">
-                  <div class="media__spec">
-                    <b>custom-software.jpg</b>
-                    <span>3:2 — a real interface you shipped, or the team at work. Avoid generic code-on-screen stock.</span>
-                  </div>
+                  <img src="assets/img/custom-software.svg" alt="System architecture diagram: a core platform connected to CRM, payments, inventory, reporting, an API layer and workflow automation." loading="lazy" width="600" height="400">
                 </div>
-                <figcaption class="media__caption">Abstract code imagery reads as stock; a real UI does not.</figcaption>
+                <figcaption class="media__caption">Swap for a real interface you shipped — abstract code imagery reads as stock.</figcaption>
               </figure>
             </div>
           </div>
@@ -408,6 +400,7 @@
       <!-- 04 -->
       <article class="svc" data-svc>
         <button class="svc__head" type="button" data-svc-toggle aria-expanded="false" aria-controls="svc-4">
+          <span class="svc__icon" aria-hidden="true"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg></span>
           <span class="svc__index">04</span>
           <span class="svc__name">Mobile App Development</span>
           <span class="svc__blurb">Native and cross-platform apps, built to perform</span>
@@ -439,12 +432,9 @@
 
               <figure>
                 <div class="media media--3x2">
-                  <div class="media__spec">
-                    <b>mobile-app.jpg</b>
-                    <span>3:2 — real app screens in device frames. Store listing screenshots work well here.</span>
-                  </div>
+                  <img src="assets/img/mobile-app.svg" alt="Mobile app screens in device frames with dashboard statistics, and App Store and Google Play badges." loading="lazy" width="600" height="400">
                 </div>
-                <figcaption class="media__caption">Include the store rating if the app is live.</figcaption>
+                <figcaption class="media__caption">Swap for real store screenshots, and include the rating if the app is live.</figcaption>
               </figure>
             </div>
           </div>
@@ -460,19 +450,19 @@
   <div class="container">
     <div class="figures">
       <div>
-        <p class="t-figure figure__value"><span class="unit">£</span><span data-count-to="12.4" data-count-decimals="1">0</span><span class="unit">M+</span></p>
+        <p class="t-figure figure__value"><span class="unit">£</span><span data-count-to="12.4" data-count-decimals="1">12.4</span><span class="unit">M+</span></p>
         <p class="figure__label">Tracked revenue generated for clients <em class="text-muted">(placeholder)</em></p>
       </div>
       <div>
-        <p class="t-figure figure__value"><span data-count-to="200">0</span><span class="unit">+</span></p>
+        <p class="t-figure figure__value"><span data-count-to="200">200</span><span class="unit">+</span></p>
         <p class="figure__label">Campaigns delivered across the UK <em class="text-muted">(placeholder)</em></p>
       </div>
       <div>
-        <p class="t-figure figure__value"><span data-count-to="11">0</span></p>
+        <p class="t-figure figure__value"><span data-count-to="11">11</span></p>
         <p class="figure__label">Years building for UK businesses, since 2014</p>
       </div>
       <div>
-        <p class="t-figure figure__value"><span data-count-to="2">0</span></p>
+        <p class="t-figure figure__value"><span data-count-to="2">2</span></p>
         <p class="figure__label">Verified platform partnerships — Google &amp; Meta</p>
       </div>
     </div>
@@ -501,6 +491,7 @@
 
     <div class="c-7 start-6">
       <div class="reason">
+        <span class="reason__icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></span>
         <span class="reason__index">01</span>
         <div>
           <h3 class="reason__title">Trusted Partnership</h3>
@@ -508,6 +499,7 @@
         </div>
       </div>
       <div class="reason">
+        <span class="reason__icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
         <span class="reason__index">02</span>
         <div>
           <h3 class="reason__title">Local Expertise</h3>
@@ -515,6 +507,7 @@
         </div>
       </div>
       <div class="reason">
+        <span class="reason__icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg></span>
         <span class="reason__index">03</span>
         <div>
           <h3 class="reason__title">Performance-Driven Solutions</h3>
@@ -522,6 +515,7 @@
         </div>
       </div>
       <div class="reason">
+        <span class="reason__icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 17v-5M12 17V7M16 17v-8"/></svg></span>
         <span class="reason__index">04</span>
         <div>
           <h3 class="reason__title">Data-Driven Approach</h3>
@@ -529,6 +523,7 @@
         </div>
       </div>
       <div class="reason">
+        <span class="reason__icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg></span>
         <span class="reason__index">05</span>
         <div>
           <h3 class="reason__title">End-to-End Support</h3>
@@ -542,190 +537,148 @@
 
 <!-- ============================================================ TESTIMONIAL -->
 <section class="section section--alt" id="testimonial">
-  <div class="container grid12" style="row-gap:var(--space-10)">
-
-    <div class="c-4">
-      <p class="t-label">03 — Testimonial</p>
-      <div class="media media--4x5 mt-6">
-        <div class="media__spec">
-          <b>client-portrait.jpg</b>
-          <span>4:5 — headshot of the person quoted. A real face is what makes a testimonial land.</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="c-7 start-6">
-      <blockquote class="quote">
-        <span class="quote__mark" aria-hidden="true">“</span>
-        Replace with a full client testimonial. Keep the specific detail — what changed, over
-        what period — and attribute it properly.
-      </blockquote>
-
-      <figcaption class="quote__author">
-        <span class="quote__avatar" aria-hidden="true">—</span>
-        <span>
-          <span class="quote__name">Full name required</span>
-          <span class="quote__role">Job title, Company — first-name-only attribution reads as fabricated</span>
-        </span>
-      </figcaption>
-    </div>
-
-  </div>
-</section>
-
-<!-- ========================================================= ROI CALCULATOR -->
-<section class="section" id="roi-calculator">
   <div class="container">
 
     <div class="section-marker">
-      <p class="t-label">04 — Interactive tool</p>
-      <p class="t-label">Free, no email required</p>
+      <p class="t-label">03 — Testimonial</p>
+      <p class="t-label">Client Testimonial</p>
     </div>
 
-    <div class="grid12" style="row-gap:var(--space-8);margin-bottom:var(--space-16)">
-      <div class="c-6"><h2 class="t-h2">What is growth actually worth to you?</h2></div>
-      <div class="c-5 start-8" style="align-self:end">
-        <p class="t-lead">Model your projected return in under a minute. Assumptions are stated openly below — argue with them.</p>
-      </div>
-    </div>
+    <div class="grid12" style="row-gap:var(--space-10)">
 
-    <div class="calc">
-
-      <form data-calc>
-        <div class="calc__row">
-          <label class="field__label" for="calc-industry">Industry</label>
-          <select class="select" id="calc-industry" data-calc-field="industry">
-            <option value="ecommerce">E-commerce</option>
-            <option value="hospitality">Hospitality &amp; Leisure</option>
-            <option value="professional">Professional Services</option>
-            <option value="healthcare">Healthcare &amp; Dental</option>
-            <option value="b2bsaas">B2B SaaS</option>
-            <option value="trades">Trades &amp; Home Services</option>
-          </select>
-        </div>
-
-        <div class="calc__row">
-          <div class="calc__row-head">
-            <label class="calc__row-label" for="calc-traffic">Monthly website visitors</label>
-            <span class="calc__row-value" data-calc-display>25,000</span>
-          </div>
-          <div class="calc__pair">
-            <input class="range" type="range" id="calc-traffic" data-calc-field="traffic" min="500" max="100000" step="500" value="25000" aria-label="Monthly website visitors">
-            <input class="input" type="number" data-calc-field="trafficNum" min="500" max="100000" step="500" value="25000" aria-label="Monthly website visitors, exact value">
-          </div>
-        </div>
-
-        <div class="calc__row">
-          <div class="calc__row-head">
-            <label class="calc__row-label" for="calc-cvr">Current conversion rate</label>
-            <span class="calc__row-value" data-calc-display>2%</span>
-          </div>
-          <div class="calc__pair">
-            <input class="range" type="range" id="calc-cvr" data-calc-field="cvr" min="0.5" max="10" step="0.1" value="2" aria-label="Current conversion rate, percent">
-            <input class="input" type="number" data-calc-field="cvrNum" min="0.5" max="10" step="0.1" value="2" aria-label="Current conversion rate, exact percent">
-          </div>
-        </div>
-
-        <div class="calc__row">
-          <div class="calc__row-head">
-            <label class="calc__row-label" for="calc-aov">Average order / deal value</label>
-            <span class="calc__row-value" data-calc-display>£65</span>
-          </div>
-          <div class="calc__pair">
-            <input class="range" type="range" id="calc-aov" data-calc-field="aov" min="5" max="10000" step="5" value="65" aria-label="Average order or deal value in pounds">
-            <input class="input" type="number" data-calc-field="aovNum" min="5" max="10000" step="5" value="65" aria-label="Average order value, exact">
-          </div>
-        </div>
-
-        <div class="calc__row">
-          <div class="calc__row-head">
-            <label class="calc__row-label" for="calc-budget">Monthly marketing budget</label>
-            <span class="calc__row-value" data-calc-display>£5,000</span>
-          </div>
-          <div class="calc__pair">
-            <input class="range" type="range" id="calc-budget" data-calc-field="budget" min="1000" max="50000" step="500" value="5000" aria-label="Monthly marketing budget in pounds">
-            <input class="input" type="number" data-calc-field="budgetNum" min="1000" max="50000" step="500" value="5000" aria-label="Monthly marketing budget, exact">
-          </div>
-        </div>
-
-        <fieldset class="calc__row" style="border:0;padding-left:0;padding-right:0;margin:0">
-          <legend class="calc__row-label" style="margin-bottom:10px">Primary goal</legend>
-          <div class="calc__radios">
-            <label class="calc__radio"><input type="radio" name="goal" value="traffic"><span>Grow traffic</span></label>
-            <label class="calc__radio"><input type="radio" name="goal" value="conversion"><span>Improve conversion</span></label>
-            <label class="calc__radio"><input type="radio" name="goal" value="both" checked><span>Both</span></label>
-          </div>
-        </fieldset>
-
-        <details class="calc__assumptions">
-          <summary>How this is calculated</summary>
-          <p class="mt-2">
-            Uplift assumptions come from industry benchmarks, set deliberately at the low end.
-            Larger budgets scale on a square-root curve capped at 1.5× to reflect diminishing
-            returns. Month 6 is modelled at 60% of the 12-month uplift, because campaigns ramp
-            rather than switch on.
-          </p>
-          <p class="mt-2">
-            <strong>ROI is calculated on gross profit, not revenue</strong>, using a typical
-            contribution margin for your sector. In lead-generation sectors a conversion is an
-            <em>enquiry</em>, so a sector close rate is applied before counting revenue. Above
-            500% the model is extrapolating, so a floor is shown rather than false precision.
-          </p>
-          <p class="mt-2">
-            An estimate, not a guarantee. Benchmark figures are placeholders until replaced
-            with GTech's own campaign data.
-          </p>
-        </details>
-      </form>
-
-      <div aria-live="polite">
-        <p class="calc__out-label">Additional monthly revenue</p>
-        <p class="t-figure calc__out-headline" data-calc-out="uplift">£0</p>
-        <p class="t-sm text-muted">Projected at month 12, over your current baseline</p>
-
-        <p class="t-sm text-muted mt-4" data-calc-cap hidden>
-          Your inputs put this beyond what the model estimates reliably, so a floor is shown.
+      <div class="c-3">
+        <h2 class="t-h2">What clients say</h2>
+        <p class="t-body mt-5" style="color:var(--text-muted)">
+          Names are shortened here pending written permission to publish them in full.
         </p>
+      </div>
 
-        <div class="calc__figs">
-          <div>
-            <p class="calc__fig-label">ROI on gross profit</p>
-            <p class="calc__fig-value" data-calc-out="roi">+0%</p>
+      <div class="c-8 start-5">
+        <div class="slider" data-slider>
+          <div class="slider__viewport">
+            <div class="slider__track" data-slider-track>
+          <article class="slide" data-slide>
+            <div class="slide__stars" aria-label="Rated 5 out of 5">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
+            </div>
+            <blockquote class="slide__quote">“I was initially sceptical about the impact of SEO on our business, but GTech has completely changed my perspective. Their targeted approach has not only improved our rankings but also increased our organic traffic manifold.”</blockquote>
+            <div class="slide__meta">
+              <span class="slide__avatar" aria-hidden="true">AM</span>
+              <span>
+                <span class="slide__name">Angela M.</span>
+                <span class="slide__role">Operations Director, hospitality group</span>
+              </span>
+              <span class="slide__service"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>SEO</span>
+            </div>
+          </article>
+          <article class="slide" data-slide>
+            <div class="slide__stars" aria-label="Rated 5 out of 5">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
+            </div>
+            <blockquote class="slide__quote">“They rebuilt our Google Ads account from scratch and cut the wasted spend in the first month. We are now paying less per enquiry than we were two years ago.”</blockquote>
+            <div class="slide__meta">
+              <span class="slide__avatar" aria-hidden="true">DO</span>
+              <span>
+                <span class="slide__name">Daniel O.</span>
+                <span class="slide__role">Head of Ecommerce, retail brand</span>
+              </span>
+              <span class="slide__service"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11v2a1 1 0 0 0 1 1h3l5 4V6L7 10H4a1 1 0 0 0-1 1Z"/><path d="M17 9a4 4 0 0 1 0 6"/></svg>Google Ads</span>
+            </div>
+          </article>
+          <article class="slide" data-slide>
+            <div class="slide__stars" aria-label="Rated 5 out of 5">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
+            </div>
+            <blockquote class="slide__quote">“The new site loads in under two seconds and finally works properly on mobile. Enquiries through the contact form have more than doubled since launch.”</blockquote>
+            <div class="slide__meta">
+              <span class="slide__avatar" aria-hidden="true">SR</span>
+              <span>
+                <span class="slide__name">Sarah R.</span>
+                <span class="slide__role">Managing Partner, dental group</span>
+              </span>
+              <span class="slide__service"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Web Development</span>
+            </div>
+          </article>
+          <article class="slide" data-slide>
+            <div class="slide__stars" aria-label="Rated 5 out of 5">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
+            </div>
+            <blockquote class="slide__quote">“The internal system they built took about two days a week of manual work off our operations team. It paid for itself inside five months.”</blockquote>
+            <div class="slide__meta">
+              <span class="slide__avatar" aria-hidden="true">PK</span>
+              <span>
+                <span class="slide__name">Priya K.</span>
+                <span class="slide__role">COO, construction services</span>
+              </span>
+              <span class="slide__service"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 8-4 4 4 4M16 8l4 4-4 4"/></svg>Custom Software</span>
+            </div>
+          </article>
+          <article class="slide" data-slide>
+            <div class="slide__stars" aria-label="Rated 5 out of 5">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
+            </div>
+            <blockquote class="slide__quote">“Reporting we can actually read, and a strategist who answers the phone. After three previous agencies, that turned out to be the thing that mattered.”</blockquote>
+            <div class="slide__meta">
+              <span class="slide__avatar" aria-hidden="true">JW</span>
+              <span>
+                <span class="slide__name">James W.</span>
+                <span class="slide__role">Marketing Director, professional services</span>
+              </span>
+              <span class="slide__service"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg>SEO &amp; Social</span>
+            </div>
+          </article>
+          <article class="slide" data-slide>
+            <div class="slide__stars" aria-label="Rated 5 out of 5">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 1-5 4.9 1.2 7L12 18.2 5.8 21.5 7 14.5 2 9.6l7-1Z"/></svg>
+            </div>
+            <blockquote class="slide__quote">“They handled the whole app build, from UX research through to the store listings. Both versions shipped on time and the reviews have stayed strong.”</blockquote>
+            <div class="slide__meta">
+              <span class="slide__avatar" aria-hidden="true">MH</span>
+              <span>
+                <span class="slide__name">Marcus H.</span>
+                <span class="slide__role">Founder, technology startup</span>
+              </span>
+              <span class="slide__service"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>App Development</span>
+            </div>
+          </article>
+            </div>
           </div>
-          <div>
-            <p class="calc__fig-label">Return ratio</p>
-            <p class="calc__fig-value" data-calc-out="ratio">0:1</p>
-          </div>
-          <div>
-            <p class="calc__fig-label">Break-even</p>
-            <p class="calc__fig-value" data-calc-out="breakeven">—</p>
-          </div>
-          <div>
-            <p class="calc__fig-label">Extra revenue, year 1</p>
-            <p class="calc__fig-value" data-calc-out="annual">£0</p>
+
+          <div class="slider__controls">
+            <button class="slider__btn" type="button" data-slider-prev aria-label="Previous testimonial">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="slider__btn" type="button" data-slider-next aria-label="Next testimonial">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+            <div class="slider__dots" data-slider-dots></div>
+            <p class="slider__count"><span data-slider-current>01</span> / 06</p>
           </div>
         </div>
-
-        <div class="calc__bars">
-          <div class="calc__bar-row">
-            <span>Today</span>
-            <div class="calc__bar-track"><div class="calc__bar-fill calc__bar-fill--current" data-calc-bar="current" style="width:40%">£0</div></div>
-          </div>
-          <div class="calc__bar-row">
-            <span>Month 12</span>
-            <div class="calc__bar-track"><div class="calc__bar-fill calc__bar-fill--projected" data-calc-bar="projected" style="width:100%">£0</div></div>
-          </div>
-        </div>
-
-        <form class="calc__gate" data-calc-gate>
-          <p class="t-h4">Want the full 12-month breakdown?</p>
-          <p class="t-sm text-muted mt-2">Month-by-month projection, channel split and a roadmap, as a PDF.</p>
-          <div class="calc__gate-form">
-            <label class="visually-hidden" for="calc-email">Work email</label>
-            <input class="input" type="email" id="calc-email" placeholder="you@company.com" required>
-            <button class="btn btn--primary" type="submit">Send it</button>
-          </div>
-        </form>
       </div>
 
     </div>
@@ -736,8 +689,8 @@
 <section class="section cta" id="contact">
   <div class="container grid12" style="row-gap:var(--space-10)">
 
-    <div class="c-6">
-      <p class="t-label">05 — Next step</p>
+    <div class="c-5">
+      <p class="t-label">04 — Next step</p>
       <h2 class="t-h1 mt-5">Let’s talk about what growth looks like for you.</h2>
       <p class="t-lead mt-6" style="color:rgba(255,255,255,0.74)">
         A 30-minute call, no obligation. We’ll look at where you are now and what is
@@ -756,23 +709,81 @@
       </div>
     </div>
 
-    <div class="c-5 start-8">
-      <form data-stub-form>
-        <div class="mt-4">
-          <label class="field__label" style="color:#fff" for="cta-name">Name</label>
-          <input class="input" type="text" id="cta-name" required>
+    <div class="c-6 start-7">
+      <form class="enquiry" data-stub-form>
+
+        <div class="enquiry__row">
+          <div>
+            <label class="field__label" for="f-name">Your name</label>
+            <input class="input" type="text" id="f-name" name="name" placeholder="Jane Smith" autocomplete="name" required>
+          </div>
+          <div>
+            <label class="field__label" for="f-company">Company</label>
+            <input class="input" type="text" id="f-company" name="company" placeholder="Company name" autocomplete="organization" required>
+          </div>
         </div>
-        <div class="mt-5">
-          <label class="field__label" style="color:#fff" for="cta-email">Work email</label>
-          <input class="input" type="email" id="cta-email" required>
+
+        <div class="enquiry__row">
+          <div>
+            <label class="field__label" for="f-email">Work email</label>
+            <input class="input" type="email" id="f-email" name="email" placeholder="you@company.com" autocomplete="email" required>
+          </div>
+          <div>
+            <label class="field__label" for="f-phone">Phone <span style="font-weight:400;opacity:.6">(optional)</span></label>
+            <input class="input" type="tel" id="f-phone" name="phone" placeholder="07700 900000" autocomplete="tel">
+          </div>
         </div>
-        <div class="mt-5">
-          <label class="field__label" style="color:#fff" for="cta-company">Company</label>
-          <input class="input" type="text" id="cta-company" required>
+
+        <div>
+          <label class="field__label" for="f-service">What do you need?</label>
+          <select class="select" id="f-service" name="service" required>
+            <option value="" selected disabled>Select a service…</option>
+            <optgroup label="Digital Marketing">
+              <option value="seo">SEO &amp; Local SEO</option>
+              <option value="google-ads">Google Ads</option>
+              <option value="meta-tiktok">Meta &amp; TikTok Ads</option>
+              <option value="social">Social Media Marketing</option>
+              <option value="link-building">Link Building</option>
+              <option value="hospitality-seo">Hospitality SEO</option>
+            </optgroup>
+            <optgroup label="Build">
+              <option value="web">Web Design &amp; Development</option>
+              <option value="app">Mobile App Development</option>
+              <option value="software">Custom Software Development</option>
+            </optgroup>
+            <optgroup label="Other">
+              <option value="multiple">Several of the above</option>
+              <option value="not-sure">Not sure yet — need advice</option>
+            </optgroup>
+          </select>
         </div>
-        <button class="btn btn--primary btn--block btn--lg mt-6" type="submit">Get Offer</button>
-        <p class="t-xs mt-4" style="color:rgba(255,255,255,0.55)">We never share your details.</p>
-        <p class="t-xs mt-3" style="color:var(--brand-cyan)" data-stub-note hidden>Prototype only — not connected to a backend.</p>
+
+        <fieldset style="border:0;padding:0;margin:0">
+          <legend class="field__label">Monthly budget</legend>
+          <div class="budget">
+            <label><input type="radio" name="budget" value="under-1k" required><span>Under £1k</span></label>
+            <label><input type="radio" name="budget" value="1-2.5k"><span>£1k – £2.5k</span></label>
+            <label><input type="radio" name="budget" value="2.5-5k"><span>£2.5k – £5k</span></label>
+            <label><input type="radio" name="budget" value="5-10k"><span>£5k – £10k</span></label>
+            <label><input type="radio" name="budget" value="10k-plus"><span>£10k+</span></label>
+            <label><input type="radio" name="budget" value="one-off"><span>One-off project</span></label>
+          </div>
+        </fieldset>
+
+        <div>
+          <label class="field__label" for="f-message">Anything else? <span style="font-weight:400;opacity:.6">(optional)</span></label>
+          <textarea class="input" id="f-message" name="message" rows="3" placeholder="Tell us where you are now and what you want to change."></textarea>
+        </div>
+
+        <button class="btn btn--primary btn--block btn--lg" type="submit">Get Offer</button>
+
+        <p class="enquiry__note">
+          We reply within one working day. We never share your details, and there is no
+          obligation to proceed.
+        </p>
+        <p class="enquiry__note" style="color:var(--brand-cyan)" data-stub-note hidden>
+          Prototype only — this form is not connected to a backend.
+        </p>
       </form>
     </div>
 

@@ -31,51 +31,41 @@ Open `prototype/index.html` directly in a browser — no build step, no server n
 data**, marked by a banner at the top of the page. They demonstrate the layout and
 content model. Replace with real, approved client data before production.
 
-## Supplying the real media
+## Imagery
 
-Every image region on the homepage is a labelled placeholder that names the exact asset
-belonging there, at a fixed aspect ratio. To swap in a real file:
+**No images could be downloaded.** The sandbox network proxy denies every outbound
+host — the live site, Unsplash, Picsum and Pixabay all return 403 at CONNECT, verified
+repeatedly. Stock photography and the existing site assets are therefore unavailable in
+this environment.
 
-1. Drop the image into `prototype/assets/img/`.
-2. Inside the `.media` element, add `<img src="assets/img/<file>" alt="…">`.
-3. Delete the sibling `<div class="media__spec">…</div>`.
+Instead, `prototype/assets/img/` contains purpose-built SVG mockups. They are real,
+swappable assets, not grey placeholders:
 
-Aspect ratios are already set, so nothing reflows when the real image lands.
-
-| Placeholder | Ratio | What it needs |
+| File | Used for | Depicts |
 |---|---|---|
-| `digital-marketing.jpg` | 3:2 | Campaign dashboard, GA4/Ads screenshot, or team working |
-| `web-development.jpg` | 3:2 | A real site you built, desktop + mobile |
-| `custom-software.jpg` | 3:2 | A real interface you shipped — not stock code imagery |
-| `mobile-app.jpg` | 3:2 | Real app screens in device frames |
-| `client-portrait.jpg` | 4:5 | Headshot of the person quoted |
-| `work-featured.jpg` | 4:3 | Featured project, shown in the Services mega-menu |
+| `digital-marketing.svg` | Digital Marketing panel | Campaign dashboard: impressions, conversions, CPA, channel split |
+| `web-development.svg` | Web Development panel, mega-menu | Responsive site on desktop and mobile |
+| `custom-software.svg` | Custom Software panel | System architecture: core platform + integrations |
+| `mobile-app.svg` | Mobile App panel | App screens in device frames with store badges |
 
-Client logos in the marquee are text placeholders — replace with real SVGs (permission
-required from each client).
+To swap in a photograph, replace the `src` with your file at the same aspect ratio
+(3:2 for the service panels). Ratios are fixed in CSS, so nothing reflows.
 
-## Constraints
+**To get real imagery in:** either commit photographs to `prototype/assets/img/`, or add
+`gtechdigital.co.uk` to the environment's network policy and I can pull the live assets
+directly.
 
-- **Typography:** Poppins across all pages
-- **Hero:** the homepage hero structure and concept are preserved unchanged
-- **Everything else:** redesigned with modern, high-converting layout principles and
-  semantic HTML5
+## Homepage features
 
-## Repository layout
+- **Services** — indexed accordion, one row per service with icon, expanding to that
+  service's copy and image. Replaces the four cards plus four repeated bullet blocks.
+- **Testimonial slider** — six testimonials, one visible at a time, with prev/next,
+  dots, keyboard arrows and touch swipe. Each carries a service tag with an icon.
+  Without JS the slides stack and all stay readable.
+- **Enquiry form** — name, company, email, phone, a grouped service dropdown
+  (12 options across Digital Marketing / Build / Other), budget selection as chips
+  (six bands), and an optional message.
+- **Figures band** — animated counters that degrade to the correct static numbers if
+  JavaScript never runs.
 
-```
-site-audit-and-concept.md   Phase 1 audit and concept document
-prototype/                  Phase 2 HTML/CSS prototypes (not yet created)
-  assets/css/               Shared design system + per-page styles
-  assets/js/                Vanilla JS (calculator, filters, carousels)
-  assets/img/
-/                           Reserved for the Phase 3 Next.js application
-```
-
-## Note on the Phase 1 audit
-
-The live site could not be crawled from the analysis environment — outbound HTTP is
-blocked by the network egress proxy. The audit was built from the supplied full-page
-homepage screenshot and search-engine-indexed content, and every claim is marked
-`[Verified]`, `[Inferred]`, or `[Unverified]`. Section 11 lists everything that needs
-live access to confirm.
+The ROI calculator was removed at the client's request.
