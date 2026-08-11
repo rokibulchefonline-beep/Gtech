@@ -10,9 +10,26 @@ continuity intact while redesigning everything else.
 
 | Phase | Deliverable | Status |
 |---|---|---|
-| **1 — Audit & Strategy** | [`site-audit-and-concept.md`](./site-audit-and-concept.md) | ✅ Complete — awaiting approval |
-| **2 — HTML/CSS Prototypes** | `/prototype` — index, services, service-single, portfolio, pricing | ⏳ Blocked on Phase 1 approval |
+| **1 — Audit & Strategy** | [`site-audit-and-concept.md`](./site-audit-and-concept.md) | ✅ Complete |
+| **2 — HTML/CSS Prototypes** | `/prototype` — index, services, service-single, portfolio, pricing | 🟡 In progress — **homepage built**, four pages remain |
 | **3 — Next.js Migration** | React application with reusable components and dynamic routing | ⏳ Blocked on Phase 2 approval |
+
+### Phase 2 progress
+
+| Page | File | Status |
+|---|---|---|
+| Design system | `prototype/assets/css/design-system.css` | ✅ Built |
+| Homepage | `prototype/index.html` | ✅ Built |
+| Services overview | `prototype/services.html` | ⏳ Not started |
+| Single service | `prototype/service-single.html` | ⏳ Not started |
+| Portfolio / case studies | `prototype/portfolio.html` | ⏳ Not started |
+| Pricing | `prototype/pricing.html` | ⏳ Not started |
+
+Open `prototype/index.html` directly in a browser — no build step, no server needed.
+
+**All metrics, client names, logos and testimonials in the prototype are placeholder
+data**, marked by a banner at the top of the page. They demonstrate the layout and
+content model. Replace with real, approved client data before production.
 
 ## Constraints
 
