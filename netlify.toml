@@ -1,0 +1,24 @@
+# Netlify configuration — GTech Digital
+#
+# The Phase 2 prototypes live in /prototype, not the repo root. Without this,
+# Netlify publishes the repo root, finds no index.html, and every request to /
+# returns 404 while the real page sits at /prototype/index.html.
+#
+# There is no build step: these are standalone HTML/CSS/JS files.
+
+[build]
+  publish = "prototype"
+
+# Long-lived caching for fingerprint-free static assets is not safe yet — these
+# files change on every design iteration, so keep them revalidating.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
