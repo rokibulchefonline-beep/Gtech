@@ -26,6 +26,7 @@
   /* The accent fails AA as text on the dark grounds (3.72:1). This tint
      holds 6.6:1 — use it for any accent text on a dark surface. */
   --brand-accent-on-dark: #ff6b60;
+  --brand-accent-050: #fdeceb;
 
   --brand-cyan: #22d3ee;
 
@@ -155,34 +156,44 @@ h1, h2, h3, h4 {
   text-wrap: balance;
 }
 
+/* Element defaults match the spec, so a heading is the right size from its
+   semantics alone. The .t-* utilities exist to override deliberately, not to
+   supply the baseline. Clamped so the ceiling is the spec value and small
+   screens still scale down. */
+h1 { font-size: clamp(28px, 4.2vw, 45px); line-height: 1.02; letter-spacing: -0.042em; }
+h2 { font-size: clamp(23px, 3.1vw, 35px); line-height: 1.08; letter-spacing: -0.038em; }
+h3 { font-size: clamp(19px, 1.9vw, 25px); line-height: 1.22; letter-spacing: -0.025em; }
+h4 { font-size: 18px; line-height: 1.35; letter-spacing: -0.015em; }
+
 .t-display {
-  font-size: clamp(36px, 5.6vw, 72px);
+  font-size: clamp(28px, 4.2vw, 45px);
   font-weight: 600;
   line-height: 0.98;
   letter-spacing: -0.045em;
 }
 
 .t-h1 {
-  font-size: clamp(29px, 4.2vw, 52px);
+  font-size: clamp(28px, 4.2vw, 45px);
   font-weight: 600;
   line-height: 1.02;
   letter-spacing: -0.042em;
 }
 
 .t-h2 {
-  font-size: clamp(24px, 3.1vw, 37px);
+  font-size: clamp(23px, 3.1vw, 35px);
   font-weight: 600;
   line-height: 1.08;
   letter-spacing: -0.038em;
 }
 
 .t-h3 {
-  font-size: clamp(19px, 1.9vw, 23px);
+  font-size: clamp(19px, 1.9vw, 25px);
   font-weight: 600;
   line-height: 1.22;
   letter-spacing: -0.025em;
 }
 
+/* Proportional step down from h3 (25 x 0.72). */
 .t-h4 {
   font-size: 18px;
   font-weight: 600;
@@ -213,7 +224,7 @@ h1, h2, h3, h4 {
 
 /* Oversized figures. Tabular so columns of numbers align. */
 .t-figure {
-  font-size: clamp(42px, 6vw, 78px);
+  font-size: clamp(38px, 5.2vw, 64px);
   font-weight: 600;
   line-height: 0.86;
   letter-spacing: -0.05em;
