@@ -172,8 +172,39 @@
    * predictable height and the page keeps an editorial rhythm.
    */
   function initServices() {
-    var items = document.querySelectorAll("[data-svc]");
+    var items = Array.prototype.slice.call(document.querySelectorAll("[data-svc]"));
     if (!items.length) return;
+
+    var isPhone = function () { return window.matchMedia("(max-width: 767px)").matches; };
+
+    function close(item) {
+      item.classList.remove("is-open");
+      var t = item.querySelector("[data-svc-toggle]");
+      if (t) t.setAttribute("aria-expanded", "false");
+    }
+
+    function open(item) {
+      item.classList.add("is-open");
+      var t = item.querySelector("[data-svc-toggle]");
+      if (t) t.setAttribute("aria-expanded", "true");
+    }
+
+    /*
+     * On a phone the open panel is roughly a full screen tall, so leaving one
+     * open by default buries the other three below the fold. Start fully
+     * collapsed there: the visitor sees all four services at once and picks.
+     * On desktop the first stays open, because the space is free.
+     */
+    function applyDefault() {
+      if (isPhone()) items.forEach(close);
+    }
+
+    applyDefault();
+    window.addEventListener("resize", function () {
+      if (isPhone()) return;
+      // Coming back to desktop with nothing open leaves an empty-looking list.
+      if (!items.some(function (i) { return i.classList.contains("is-open"); })) open(items[0]);
+    });
 
     items.forEach(function (item) {
       var trigger = item.querySelector("[data-svc-toggle]");
@@ -181,16 +212,20 @@
 
       trigger.addEventListener("click", function () {
         var willOpen = !item.classList.contains("is-open");
+        items.forEach(close);
+        if (!willOpen) return;
 
-        items.forEach(function (other) {
-          other.classList.remove("is-open");
-          var t = other.querySelector("[data-svc-toggle]");
-          if (t) t.setAttribute("aria-expanded", "false");
-        });
+        open(item);
 
-        if (willOpen) {
-          item.classList.add("is-open");
-          trigger.setAttribute("aria-expanded", "true");
+        // On a phone, opening a row lower down would otherwise push its own
+        // header off-screen. Bring the header back to just under the sticky bar.
+        if (isPhone()) {
+          var header = document.querySelector("[data-header]");
+          var offset = (header ? header.getBoundingClientRect().height : 0) + 8;
+          window.requestAnimationFrame(function () {
+            var top = window.scrollY + trigger.getBoundingClientRect().top - offset;
+            window.scrollTo({ top: top, behavior: reduceMotion ? "auto" : "smooth" });
+          });
         }
       });
     });

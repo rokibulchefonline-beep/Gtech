@@ -106,7 +106,7 @@
 
 @media (max-width: 1099px) {
   .nav, .header__actions { display: none; }
-  .nav-toggle { display: grid; }
+  .nav-toggle { display: grid; width: 44px; height: 44px; }
 }
 
 .mobile-nav {
@@ -1244,3 +1244,240 @@
 .contact-card__label { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--neutral-400); font-weight: 600; }
 .contact-card__value { font-size: 15.5px; font-weight: 600; color: #fff; margin-top: 3px; }
 .contact-card__value a:hover { color: var(--brand-cyan); }
+
+/* ==========================================================================
+   MOBILE OPTIMISATION
+   The page measured 19,500px on a 375px viewport — roughly 52 screens. Most
+   of that was section padding and card min-heights sized for desktop.
+   ========================================================================== */
+
+@media (max-width: 767px) {
+
+  /* Section rhythm: 64px top and bottom on every section was ~1,900px of
+     padding alone across fifteen sections. */
+  :root {
+    --section: 44px;
+    --section-tight: 30px;
+    --section-loose: 52px;
+    --space-20: 48px;
+    --space-24: 56px;
+  }
+
+  /* Heading blocks sat on desktop-sized bottom margins. */
+  .grid12[style*="margin-bottom"] { margin-bottom: var(--space-8) !important; }
+  .mt-20 { margin-top: var(--space-12); }
+  .mt-16 { margin-top: var(--space-10); }
+  .mt-12 { margin-top: var(--space-8); }
+
+  /* Cards: drop the desktop min-heights, which forced empty space. */
+  .bento__tile { min-height: 118px; padding: var(--space-5); }
+  .bento__tile--tall { min-height: 118px; }
+  .bento__value { font-size: 27px; }
+  .bento__label { font-size: 12.5px; margin-top: var(--space-2); }
+
+  .industry { min-height: 0; padding: var(--space-5); gap: var(--space-4); }
+  .industry__icon { width: 40px; height: 40px; }
+
+  .solution { min-height: 0; padding: var(--space-6); }
+  .story__body { padding: var(--space-5); }
+  .post { padding: var(--space-5); }
+
+  .tech { padding: var(--space-4) var(--space-2); }
+  .tech__name { font-size: 11.5px; }
+
+  .band { padding: var(--space-8) var(--space-6); border-radius: var(--radius-lg); }
+
+  /* Ticker was reading as a second heading at desktop size. */
+  .ticker { padding-block: 12px; }
+  .ticker__item { font-size: 14px; gap: var(--space-6); }
+  .ticker__track { gap: var(--space-6); }
+
+  /* Proof figures: four across at 375px left each one very narrow. */
+  .figures { gap: var(--space-6) var(--space-4); }
+
+  /* Tap targets. iOS guidance is 44px; several links were 16-24px. */
+  .footer__links a,
+  .mobile-nav__sub a,
+  .mega__link,
+  .story__result,
+  .post__more,
+  .contact-card__value a { display: block; min-height: 44px; line-height: 44px; }
+
+  .footer__links li { margin-bottom: 0; }
+  .footer__contact a { display: inline-block; min-height: 40px; line-height: 40px; }
+
+  /* Slider dots were 7px tall — impossible to hit accurately. The visible dot
+     stays small; the hit area around it does not. */
+  .slider__dot {
+    height: 7px;
+    position: relative;
+  }
+  .slider__dot::after {
+    content: "";
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px; height: 44px;
+  }
+  .slider__dots { gap: 10px; }
+
+  /* Quote and section leads were running long at desktop sizes. */
+  .slide__quote { font-size: 18px; }
+  .t-lead { font-size: 15.5px; }
+
+  /* The FAQ question needs room for the sign at narrow widths. */
+  .faq__q { gap: var(--space-4); font-size: 15.5px; padding: var(--space-5) 0; }
+}
+
+/* ==========================================================================
+   SERVICES — compact
+   ========================================================================== */
+
+.svc__head { padding: clamp(16px, 1.9vw, 24px) 0; }
+.svc__body { padding-bottom: var(--space-10); gap: var(--space-8); }
+.svc__list li { margin-bottom: 8px; font-size: 14px; }
+.svc__chips { margin-top: var(--space-4); }
+.svc__chip { padding: 7px 13px; font-size: 12.5px; }
+.svc__cta { margin-top: var(--space-6); }
+
+@media (max-width: 767px) {
+  /* Row: icon, name and toggle only. The name wraps rather than shrinking to
+     an unreadable size. */
+  .svc__head {
+    grid-template-columns: 44px minmax(0, 1fr) 36px;
+    gap: var(--space-4);
+    padding: 14px 0;
+    align-items: center;
+  }
+
+  .svc__icon { width: 44px; height: 44px; border-radius: 11px; }
+  .svc__icon svg { width: 21px; height: 21px; }
+  .svc__name { font-size: 17px; line-height: 1.25; }
+  .svc__toggle { width: 36px; height: 36px; }
+
+  .svc__body { padding: 0 0 var(--space-8); gap: var(--space-6); }
+  .svc__body > div > .t-body { font-size: 14.5px; }
+  .svc__list { columns: 1; }
+  .svc__list li { margin-bottom: 7px; }
+
+  /* Chips are the quickest way to scan a service on a phone, so they stay —
+     but capped in height and scrollable rather than wrapping to six rows. */
+  .svc__chips {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 4px;
+    margin-inline: calc(var(--gutter) * -1);
+    padding-inline: var(--gutter);
+  }
+  .svc__chips::-webkit-scrollbar { display: none; }
+  .svc__chip { flex: none; }
+
+  .svc__cta { flex-direction: column; align-items: stretch; }
+  .svc__cta .btn { width: 100%; }
+  .svc__cta__note { margin-left: 0; text-align: center; }
+}
+
+/* --------------------------------------------------------------------------
+   Mobile carousels
+   Three stacked cards at ~500px each is 1,500px of scrolling for content the
+   visitor may not want. Swiping sideways keeps all of it one gesture away.
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 767px) {
+  .stories,
+  .solutions,
+  .posts,
+  .industries {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 82%;
+    grid-template-columns: none;
+    gap: var(--space-3);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    /* Bleed to the screen edge so the next card peeks in. */
+    margin-inline: calc(var(--gutter) * -1);
+    padding-inline: var(--gutter);
+    padding-bottom: var(--space-2);
+  }
+
+  .stories::-webkit-scrollbar,
+  .solutions::-webkit-scrollbar,
+  .posts::-webkit-scrollbar,
+  .industries::-webkit-scrollbar { display: none; }
+
+  .story, .solution, .post, .industry { scroll-snap-align: start; }
+
+  /* Swipe hint, since a cut-off card is the only affordance otherwise. */
+  .swipe-hint {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: var(--space-4);
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+}
+
+@media (min-width: 768px) { .swipe-hint { display: none; } }
+
+/* --------------------------------------------------------------------------
+   Tap targets — everything interactive clears 44px on touch.
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 767px) {
+  /* The dot stays visually small; its hit box does not. Padding rather than a
+     pseudo-element, so the real box is 44px and not just the pointer area. */
+  .slider__dot {
+    height: auto;
+    padding-block: 18px;
+    background: none;
+    display: flex;
+    align-items: center;
+  }
+  .slider__dot::before {
+    content: "";
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--neutral-300);
+    transition: all var(--dur) var(--ease);
+  }
+  .slider__dot.is-active { width: auto; }
+  .slider__dot.is-active::before { background: var(--brand-accent); width: 24px; border-radius: var(--radius-pill); }
+
+  /* Contact block links in the dark CTA were 16-24px tall. */
+  /* Every phone/email link on the page, not just the ones in the CTA — the
+     footer pair were 16px tall. */
+  a[href^="tel"], a[href^="mailto"] {
+    display: inline-block;
+    min-height: 44px;
+    line-height: 44px;
+  }
+
+  .footer__legal a,
+  .footer__legal-links a { display: inline-block; min-height: 44px; line-height: 44px; }
+
+  .logo img { height: 40px; }
+  .social a { width: 44px; height: 44px; }
+}
+
+@media (max-width: 767px) {
+  /* 28 chips wrapped to ten rows at 375px. */
+  .cloud { gap: 7px; }
+  .cloud span { padding: 8px 14px; font-size: 12.5px; }
+
+  /* The h3 scale (25px) is right on desktop but heavy for five stacked
+     steps on a phone. */
+  .reason__title { font-size: 18px; }
+  .reason { padding: var(--space-5) 0; }
+  .reason__text { font-size: 14px; }
+  .reason__body { padding-bottom: var(--space-5); }
+
+  .footer__top { padding-block: var(--space-12) var(--space-8); }
+  .enquiry__note { font-size: 11.5px; }
+}

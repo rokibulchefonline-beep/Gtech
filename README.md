@@ -88,6 +88,27 @@ Interactive: service accordion, testimonial slider, solution tabs (arrow-key
 navigable), FAQ accordion, animated counters, mega-menu, mobile drawer, sticky mobile
 CTA. All degrade to readable static content without JavaScript.
 
+## Mobile
+
+The page measured 19,514px on a 375px viewport — roughly 52 screens. Now 13,793px,
+a 29% reduction, with no content removed:
+
+- Section padding cut from 64px to 44px on phones (fifteen sections carried ~1,900px
+  of padding alone)
+- Card min-heights dropped, so tiles size to their content instead of forcing gaps
+- Stories, solutions, blog posts and industries become horizontal scroll-snap
+  carousels with a "Swipe for more" hint and the next card peeking in
+- Service chips scroll sideways rather than wrapping to six rows
+
+**Services accordion on mobile:** all rows start collapsed, so all four services are
+visible at once rather than three being pushed below an open panel. Opening a row
+scrolls its header to just beneath the sticky bar. Desktop is unchanged — the first
+row stays open, since the space is free.
+
+**Tap targets:** everything interactive clears 44px on touch. The slider dots were
+7px; they keep their small visual but now sit in a 44px hit box. Phone and email links
+across the page were 16px.
+
 ## Content still needed
 
 Sections 6, 7, 8, 10, 13 and 15 use **placeholder copy** written to demonstrate the
