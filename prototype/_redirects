@@ -1,0 +1,6 @@
+﻿# Cloudflare Pages / Netlify Redirects and Rewrites
+/services/digital-marketing/seo              /services/digital-marketing/seo/index.html              200
+/services/digital-marketing/google-meta-ads  /services/digital-marketing/google-meta-ads/index.html  200
+/services/digital-marketing                  /services/digital-marketing/index.html                  200
+/service-digital-marketing                   /services/digital-marketing/index.html                  301
+/services                                    /services.html                                          200
