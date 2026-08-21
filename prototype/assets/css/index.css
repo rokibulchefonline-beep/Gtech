@@ -1033,29 +1033,71 @@
 @media (max-width: 1023px) { .industries { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 639px)  { .industries { grid-template-columns: minmax(0, 1fr); } }
 
-/* Technologies ---------------------------------------------------------- */
+/* Technologies — single-line auto marquee ------------------------------- */
 
-.tech-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: var(--space-3); }
-
-.tech {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: var(--space-5) var(--space-3);
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: all var(--dur) var(--ease);
+.tech-rail {
+  overflow: hidden;
+  /* Fades both ends so tiles enter and leave rather than being cut off. */
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
 }
 
-.tech:hover { background: rgba(255, 255, 255, 0.11); transform: translateY(-3px); }
-.tech__mark { color: var(--brand-cyan); }
-.tech__name { font-size: 12.5px; font-weight: 500; color: var(--neutral-300); text-align: center; }
+.tech-rail__track {
+  display: flex;
+  align-items: stretch;
+  width: max-content;
+  /* Spacing lives on the tiles as margin, NOT as `gap` on the track. With gap,
+     n tiles have n-1 gaps, so -50% of the total lands half a gap short of the
+     duplicate and the loop visibly jumps. With margin, each tile's box carries
+     its own spacing, so half the track is exactly one set. */
+  animation: tech-rail 46s linear infinite;
+}
 
-@media (max-width: 1023px) { .tech-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
-@media (max-width: 639px)  { .tech-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.tech-rail__track .tech { margin-right: var(--space-3); }
+
+.tech-rail:hover .tech-rail__track,
+.tech-rail:focus-within .tech-rail__track { animation-play-state: paused; }
+
+@keyframes tech-rail { to { transform: translateX(-50%); } }
+
+/* Horizontal pill: icon and label on one line, as the rail is single-row. */
+.tech {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  flex: none;
+  padding: 15px 22px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+
+.tech:hover { background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.26); }
+.tech__mark { display: grid; place-items: center; flex: none; }
+.tech__name { font-size: 14px; font-weight: 500; color: var(--neutral-300); white-space: nowrap; }
+
+@media (max-width: 767px) {
+  .tech { padding: 12px 17px; gap: 10px; }
+  .tech__name { font-size: 13px; }
+  .tech__mark svg { width: 21px; height: 21px; }
+  .tech-rail__track { animation-duration: 34s; }
+}
+
+/* Motion off: the rail becomes a static wrapped set, and the duplicated copy
+   is hidden so nothing reads twice. */
+@media (prefers-reduced-motion: reduce) {
+  .tech-rail { -webkit-mask-image: none; mask-image: none; }
+  .tech-rail__track {
+    animation: none;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: var(--space-3);
+  }
+  .tech-rail__track .tech[aria-hidden="true"] { display: none; }
+}
 
 /* Success stories ------------------------------------------------------- */
 

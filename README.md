@@ -77,7 +77,7 @@ content:
 | 7 | Success Stories | Paper | Three project cards |
 | 8 | Solutions | White | Tabs (Startups / SMEs / Enterprise) over pastel cards |
 | 9 | Why Partner | Paper-deep | Numbered connected flow |
-| 10 | Technologies | Dark | Platform grid |
+| 10 | Technologies | Dark | Single-line auto-scrolling rail |
 | 11 | Testimonials | White | Six-slide carousel |
 | 12 | Capabilities + CTA band | Paper | Chip cloud, mid-page CTA |
 | 13 | Blog | White | Three post cards |
@@ -85,13 +85,20 @@ content:
 | 15 | FAQ | Paper | Six-question accordion |
 
 Interactive: service accordion, testimonial slider, solution tabs (arrow-key
-navigable), FAQ accordion, animated counters, mega-menu, mobile drawer, sticky mobile
-CTA. All degrade to readable static content without JavaScript.
+navigable), FAQ accordion, technology rail, animated counters, mega-menu, mobile
+drawer, sticky mobile CTA. All degrade to readable static content without JavaScript.
+
+The technology rail is pure CSS — the tile set is duplicated in the markup and the
+track translates exactly -50%, so it loops without a seam. Spacing sits on each tile as
+`margin-right` rather than as `gap` on the track: with `gap`, n tiles have n-1 gaps, so
+-50% lands half a gap short of the duplicate and the loop jumps. It pauses on hover and
+focus, and collapses to a static wrapped set under `prefers-reduced-motion` with the
+duplicate hidden so nothing is announced twice.
 
 ## Mobile
 
-The page measured 19,514px on a 375px viewport — roughly 52 screens. Now 13,793px,
-a 29% reduction, with no content removed:
+The page measured 19,514px on a 375px viewport — roughly 52 screens. Now 13,192px,
+a 32% reduction, with no content removed:
 
 - Section padding cut from 64px to 44px on phones (fifteen sections carried ~1,900px
   of padding alone)
