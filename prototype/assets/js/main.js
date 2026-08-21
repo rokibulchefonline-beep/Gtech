@@ -231,14 +231,16 @@
         var headerH = header ? header.getBoundingClientRect().height : 0;
 
         if (isPhone() && willOpen) {
-          // On a phone the panel is about a screenful, so pin the header just
-          // under the sticky bar to give the content maximum room.
-          window.requestAnimationFrame(function () {
+          // On mobile, smoothly bring the top of the clicked service into view at the first fold
+          setTimeout(function () {
+            var header = document.querySelector("[data-header]");
+            var headerH = header ? header.getBoundingClientRect().height : 0;
+            var targetY = window.pageYOffset + item.getBoundingClientRect().top - headerH - 8;
             window.scrollTo({
-              top: window.scrollY + trigger.getBoundingClientRect().top - headerH - 8,
+              top: targetY,
               behavior: reduceMotion ? "auto" : "smooth"
             });
-          });
+          }, 100);
           return;
         }
 
@@ -428,6 +430,36 @@
     });
   }
 
+  /* ----------------------------------------------- Mobile carousel controls */
+
+  function initCarouselControls() {
+    var navs = Array.prototype.slice.call(document.querySelectorAll("[data-carousel-controls]"));
+    navs.forEach(function (nav) {
+      var parent = nav.parentElement;
+      var track = parent ? parent.querySelector(".stories, .posts, .solutions, .industries") : null;
+      if (!track) return;
+
+      var prev = nav.querySelector("[data-carousel-prev]");
+      var next = nav.querySelector("[data-carousel-next]");
+
+      if (prev) {
+        prev.addEventListener("click", function () {
+          var card = track.firstElementChild;
+          var step = card ? card.getBoundingClientRect().width + 12 : track.clientWidth * 0.85;
+          track.scrollBy({ left: -step, behavior: reduceMotion ? "auto" : "smooth" });
+        });
+      }
+
+      if (next) {
+        next.addEventListener("click", function () {
+          var card = track.firstElementChild;
+          var step = card ? card.getBoundingClientRect().width + 12 : track.clientWidth * 0.85;
+          track.scrollBy({ left: step, behavior: reduceMotion ? "auto" : "smooth" });
+        });
+      }
+    });
+  }
+
   /* ---------------------------------------------------------------- Boot */
 
   function boot() {
@@ -438,6 +470,7 @@
     initServices();
     initMegaOffset();
     initSlider();
+    initCarouselControls();
     initMegaPanes();
     initFaq();
     initMobileCta();

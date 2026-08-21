@@ -1938,6 +1938,34 @@
 
   .story, .solution, .post, .industry { scroll-snap-align: start; }
 
+  .carousel-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--space-3);
+    margin-top: var(--space-5);
+  }
+
+  .carousel-nav .slider__btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid var(--neutral-300);
+    background: #fff;
+    color: var(--neutral-900);
+    display: grid;
+    place-items: center;
+    box-shadow: 0 2px 6px rgba(16, 19, 26, 0.06);
+    transition: all var(--dur) var(--ease);
+  }
+
+  .carousel-nav .slider__btn:active {
+    background: var(--neutral-900);
+    border-color: var(--neutral-900);
+    color: #fff;
+    transform: scale(0.95);
+  }
+
   /* Swipe hint, since a cut-off card is the only affordance otherwise. */
   .swipe-hint {
     display: flex;
@@ -1949,6 +1977,7 @@
   }
 }
 
+.carousel-nav { display: none; }
 @media (min-width: 768px) { .swipe-hint { display: none; } }
 
 /* --------------------------------------------------------------------------
