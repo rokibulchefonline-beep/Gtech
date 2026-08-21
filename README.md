@@ -61,17 +61,40 @@ tidy fallback instead of a broken image. Confirm the real filename.
 Service artwork is rendered with `object-fit: contain` on a tinted panel, because the
 intrinsic ratios are unknown and `cover` would crop the illustrations.
 
-## Homepage features
+## Homepage sections
 
-- **Services** — indexed accordion, one row per service with icon, expanding to that
-  service's copy and image. Replaces the four cards plus four repeated bullet blocks.
-- **Testimonial slider** — six testimonials, one visible at a time, with prev/next,
-  dots, keyboard arrows and touch swipe. Each carries a service tag with an icon.
-  Without JS the slides stack and all stay readable.
-- **Enquiry form** — name, company, email, phone, a grouped service dropdown
-  (12 options across Digital Marketing / Build / Other), budget selection as chips
-  (six bands), and an optional message.
-- **Figures band** — animated counters that degrade to the correct static numbers if
-  JavaScript never runs.
+Fourteen sections, structured after the reference UI and populated with GTech's own
+content:
 
-The ROI calculator was removed at the client's request.
+| # | Section | Ground | Pattern |
+|---|---|---|---|
+| 1 | Hero | Gradient | Preserved from the live site |
+| 2 | Proof band | Dark | Figures + client logos, merged |
+| 3 | Ticker | Dark | Scrolling capability strip |
+| 4 | Services | Paper | Accordion with sub-service chips |
+| 5 | Who We Are | White | Bento stat grid |
+| 6 | Industries We Serve | Dark | Six sector cards |
+| 7 | Success Stories | Paper | Three project cards |
+| 8 | Solutions | White | Tabs (Startups / SMEs / Enterprise) over pastel cards |
+| 9 | Why Partner | Paper-deep | Numbered connected flow |
+| 10 | Technologies | Dark | Platform grid |
+| 11 | Testimonials | White | Six-slide carousel |
+| 12 | Capabilities + CTA band | Paper | Chip cloud, mid-page CTA |
+| 13 | Blog | White | Three post cards |
+| 14 | Contact | Dark | Enquiry form with service + budget selection |
+| 15 | FAQ | Paper | Six-question accordion |
+
+Interactive: service accordion, testimonial slider, solution tabs (arrow-key
+navigable), FAQ accordion, animated counters, mega-menu, mobile drawer, sticky mobile
+CTA. All degrade to readable static content without JavaScript.
+
+## Content still needed
+
+Sections 6, 7, 8, 10, 13 and 15 use **placeholder copy** written to demonstrate the
+layout. Replace before launch:
+
+- Success story results and client names
+- Blog posts (pull from the existing `/blog`)
+- FAQ answers, particularly pricing
+- Technology marks (simplified paths, pending official assets)
+- The £12.4M and 200+ figures, both labelled `(placeholder)` on the page

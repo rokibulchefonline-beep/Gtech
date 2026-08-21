@@ -214,12 +214,14 @@ h4 { font-size: 18px; line-height: 1.35; letter-spacing: -0.015em; }
 .t-xs { font-size: 12.5px; line-height: 1.5; }
 
 /* Small-caps label — the editorial alternative to a coloured pill. */
+/* neutral-600, not --text-muted: at 11.5px this needs 4.5:1, and the muted
+   tone only reaches 4.31:1 against the deeper paper ground. */
 .t-label {
   font-size: 11.5px;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--neutral-600);
 }
 
 /* Oversized figures. Tabular so columns of numbers align. */
@@ -542,6 +544,7 @@ h4 { font-size: 18px; line-height: 1.35; letter-spacing: -0.015em; }
 
 /* 11. Utilities ========================================================== */
 
+.text-center { text-align: center; }
 .text-accent { color: var(--brand-accent); }
 .text-muted { color: var(--text-muted); }
 .text-strong { color: var(--text-strong); }
@@ -557,3 +560,48 @@ h4 { font-size: 18px; line-height: 1.35; letter-spacing: -0.015em; }
 .items-end{align-items:flex-end}.between{justify-content:space-between}
 .gap-2{gap:var(--space-2)}.gap-3{gap:var(--space-3)}.gap-4{gap:var(--space-4)}
 .gap-6{gap:var(--space-6)}.gap-8{gap:var(--space-8)}
+
+/* ==========================================================================
+   v3 additions — reference-aligned tokens
+   Paper ground instead of white, plus a pastel set for solution cards.
+   ========================================================================== */
+
+:root {
+  --paper: #f7f4ef;
+  --paper-deep: #efeae1;
+
+  /* Pastel card fills. Each pairs with an ink dark enough for AA body text. */
+  --pastel-violet: #e9e4fb;  --ink-violet: #3f28a8;
+  --pastel-amber:  #fbf0cf;  --ink-amber:  #7a5a00;
+  --pastel-rose:   #fce4ec;  --ink-rose:   #a32350;
+  --pastel-sky:    #ddeffa;  --ink-sky:    #0a6079;
+  --pastel-mint:   #ddf3e8;  --ink-mint:   #05704f;
+
+  --radius-lg: 18px;
+  --radius-xl: 26px;
+}
+
+body { background: var(--paper); }
+
+.section--paper { background: var(--paper); }
+.section--paper-deep { background: var(--paper-deep); }
+.section--white { background: #fff; }
+
+/* Pill button with a circular arrow, as used throughout the reference. */
+.btn--arrow {
+  border-radius: var(--radius-pill);
+  padding-right: 8px;
+  gap: 14px;
+}
+
+.btn--arrow .btn__arrow {
+  width: 34px; height: 34px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  transition: transform var(--dur) var(--ease);
+}
+
+.btn--arrow:hover .btn__arrow { transform: translateX(3px); }
+.btn--outline.btn--arrow .btn__arrow { background: var(--neutral-150); }
+.btn--outline.btn--arrow:hover .btn__arrow { background: rgba(255,255,255,0.2); }

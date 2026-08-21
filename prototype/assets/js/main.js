@@ -294,6 +294,51 @@
     go(0);
   }
 
+  /* ------------------------------------------------------------------ Tabs */
+
+  function initTabs() {
+    var tabs = Array.prototype.slice.call(document.querySelectorAll("[data-tab]"));
+    if (!tabs.length) return;
+
+    function show(name) {
+      tabs.forEach(function (t) {
+        t.setAttribute("aria-selected", String(t.dataset.tab === name));
+      });
+      document.querySelectorAll("[data-tabpanel]").forEach(function (panel) {
+        panel.hidden = panel.dataset.tabpanel !== name;
+      });
+    }
+
+    tabs.forEach(function (tab, i) {
+      tab.addEventListener("click", function () { show(tab.dataset.tab); });
+
+      // Left/right arrows move between tabs, per the WAI-ARIA tabs pattern.
+      tab.addEventListener("keydown", function (e) {
+        var next = null;
+        if (e.key === "ArrowRight") next = tabs[(i + 1) % tabs.length];
+        if (e.key === "ArrowLeft") next = tabs[(i - 1 + tabs.length) % tabs.length];
+        if (!next) return;
+        e.preventDefault();
+        next.focus();
+        show(next.dataset.tab);
+      });
+    });
+  }
+
+  /* ------------------------------------------------------------------- FAQ */
+
+  function initFaq() {
+    document.querySelectorAll("[data-faq]").forEach(function (item) {
+      var trigger = item.querySelector("[data-faq-toggle]");
+      if (!trigger) return;
+
+      trigger.addEventListener("click", function () {
+        var open = item.classList.toggle("is-open");
+        trigger.setAttribute("aria-expanded", String(open));
+      });
+    });
+  }
+
   /* ------------------------------------------------------- Sticky mobile CTA */
 
   function initMobileCta() {
@@ -335,6 +380,8 @@
     initServices();
     initMegaOffset();
     initSlider();
+    initTabs();
+    initFaq();
     initMobileCta();
     initStubForms();
   }
