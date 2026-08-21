@@ -2462,227 +2462,89 @@
   }
 }
 
-/* Visual Process Section — Executive Flow Framework ---------------- */
+/* Visual Process Section — Pure 3-Step Numbered Cards (No Icons) ---- */
 .process-header {
   text-align: left;
 }
 
-.process-timeline {
-  position: relative;
-}
-
-/* Continuous Subtle Progress Track behind headers on desktop */
-.process-timeline__line {
-  position: absolute;
-  top: 36px;
-  left: 5%;
-  right: 5%;
-  height: 2px;
-  background: linear-gradient(90deg, #0081FB 0%, #00C2FF 50%, #059669 100%);
-  opacity: 0.18;
-  z-index: 1;
-  border-radius: 2px;
-}
-
 .process-steps {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(16px, 1.8vw, 24px);
-  position: relative;
-  z-index: 2;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(18px, 2.5vw, 32px);
 }
 
 .process-card {
   background: #ffffff;
-  border: 1px solid rgba(0, 129, 251, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 16px;
-  padding: 24px 20px 22px;
+  padding: clamp(28px, 3.5vw, 38px) clamp(22px, 2.8vw, 32px);
   display: flex;
   flex-direction: column;
   height: 100%;
   position: relative;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.02);
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.02);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   overflow: hidden;
 }
 
-/* Top colored accent line */
 .process-card::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #0081FB 0%, #00C2FF 100%);
-  opacity: 0.85;
-  transition: opacity 0.3s ease, height 0.3s ease;
-}
-
-.process-card:last-child::before {
-  background: linear-gradient(90deg, #00C2FF 0%, #059669 100%);
+  height: 3px;
+  background: #0081FB;
+  opacity: 0;
+  transition: opacity 0.25s ease;
 }
 
 .process-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(0, 129, 251, 0.35);
-  box-shadow: 0 16px 36px rgba(0, 129, 251, 0.09), 0 2px 6px rgba(0, 0, 0, 0.04);
+  transform: translateY(-5px);
+  border-color: #0081FB;
+  box-shadow: 0 16px 36px rgba(0, 129, 251, 0.08);
 }
 
 .process-card:hover::before {
   opacity: 1;
-  height: 5px;
 }
 
-/* Top Header in Card */
-.process-card__head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 16px;
-}
-
-.process-card__node {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 10px;
-  border-radius: 20px;
-  background: #f0f7ff;
-  border: 1px solid rgba(0, 129, 251, 0.25);
-  transition: all 0.3s ease;
-}
-
-.process-card__num {
-  font-size: 13px;
+.process-card__number {
+  font-size: clamp(34px, 4vw, 48px);
   font-weight: 800;
   color: #0081FB;
-  letter-spacing: -0.01em;
-}
-
-.process-card__phase {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--text-muted, #64748b);
-}
-
-.process-card:hover .process-card__node {
-  background: #0081FB;
-  border-color: #0081FB;
-}
-
-.process-card:hover .process-card__num {
-  color: #ffffff;
-}
-
-.process-card:last-child .process-card__node {
-  background: #ecfdf5;
-  border-color: rgba(5, 150, 105, 0.25);
-}
-
-.process-card:last-child .process-card__num {
-  color: #059669;
-}
-
-.process-card:last-child:hover .process-card__node {
-  background: #059669;
-  border-color: #059669;
-}
-
-.process-card:last-child:hover .process-card__num {
-  color: #ffffff;
-}
-
-.process-card__body {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.process-card__icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, rgba(0, 129, 251, 0.08) 0%, rgba(0, 194, 255, 0.06) 100%);
-  border: 1px solid rgba(0, 129, 251, 0.15);
-  display: grid;
-  place-items: center;
-  margin-bottom: 14px;
-  flex: none;
-  transition: transform 0.3s ease;
-}
-
-.process-card:hover .process-card__icon {
-  transform: scale(1.06);
-}
-
-.process-card:last-child .process-card__icon {
-  background: linear-gradient(135deg, rgba(5, 150, 105, 0.08) 0%, rgba(0, 194, 255, 0.06) 100%);
-  border-color: rgba(5, 150, 105, 0.2);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  margin-bottom: 20px;
+  display: block;
 }
 
 .process-card__title {
-  font-size: 17px;
+  font-size: clamp(18px, 1.4vw, 21px);
   font-weight: 700;
   color: #0f172a;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   line-height: 1.3;
 }
 
 .process-card__desc {
-  font-size: 13.5px;
-  line-height: 1.55;
+  font-size: 14.5px;
+  line-height: 1.6;
   color: #475569;
-  margin-bottom: 16px;
-  flex-grow: 1;
-}
-
-.process-card__tags {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding-top: 14px;
-  border-top: 1px solid #f1f5f9;
-  margin-top: auto;
-}
-
-.process-card__tag-item {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  font-size: 12px;
-  font-weight: 500;
-  color: #334155;
-  line-height: 1.3;
-}
-
-.process-card__tag-item svg {
-  flex: none;
+  margin: 0;
 }
 
 @media (max-width: 1023px) {
-  .process-timeline__line {
-    display: none;
-  }
-
   .process-steps {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 }
 
 @media (max-width: 639px) {
-  .process-steps {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
   .process-card {
-    padding: 20px 16px;
+    padding: 24px 20px;
   }
-}
 }
 
 /* ==========================================================================
