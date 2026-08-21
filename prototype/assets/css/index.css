@@ -689,140 +689,127 @@
    ========================================================================== */
 
 /* ==========================================================================
-   SERVICES — 9-Card Interactive Capabilities Grid (Blue Hover State)
+   SERVICES — 9-Card Stock Image Grid with Brand Blue Hover State
    ========================================================================== */
 
 .svc-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(20px, 2.2vw, 30px);
+  gap: clamp(20px, 2.4vw, 32px);
   margin-top: clamp(36px, 4.5vw, 56px);
 }
 
 .svc-card {
   position: relative;
-  background: #ffffff;
-  border: 1px solid var(--border);
-  border-radius: 22px;
-  padding: clamp(24px, 2.4vw, 32px);
-  min-height: 440px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  border-radius: 20px;
+  min-height: 400px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(16, 19, 26, 0.04);
-  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.38s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.38s ease;
+  box-shadow: 0 8px 30px rgba(16, 19, 26, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
   text-decoration: none;
   color: inherit;
+  display: flex;
+  flex-direction: column;
 }
 
 .svc-card:hover,
 .svc-card:focus-within {
   transform: translateY(-6px);
-  box-shadow: 0 24px 50px rgba(0, 129, 251, 0.22);
-  border-color: rgba(0, 129, 251, 0.3);
+  box-shadow: 0 24px 50px rgba(0, 129, 251, 0.28);
 }
 
-.svc-card__header {
-  position: relative;
+/* Stock Background Image */
+.svc-card__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1;
+}
+
+.svc-card:hover .svc-card__bg,
+.svc-card:focus-within .svc-card__bg {
+  transform: scale(1.08);
+}
+
+/* Dark Gradient Overlay for Default State Contrast */
+.svc-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(16, 19, 26, 0.1) 0%, rgba(16, 19, 26, 0.35) 45%, rgba(16, 19, 26, 0.88) 100%);
   z-index: 2;
+  transition: opacity 0.4s ease;
 }
 
-.svc-card__num {
-  font-size: 11.5px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #0081FB;
-  margin-bottom: 6px;
-  display: block;
+/* Default State: Only Heading at Bottom */
+.svc-card__default {
+  position: relative;
+  z-index: 3;
+  margin-top: auto;
+  padding: clamp(24px, 2.5vw, 32px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.svc-card:hover .svc-card__default,
+.svc-card:focus-within .svc-card__default {
+  opacity: 0;
+  transform: translateY(-10px);
 }
 
 .svc-card__title {
-  font-size: clamp(20px, 1.7vw, 24px);
+  font-size: clamp(22px, 1.85vw, 26px);
   font-weight: 700;
-  color: var(--neutral-900);
+  color: #ffffff;
   line-height: 1.25;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
   margin: 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
 }
 
-/* Lower Visual Preview / Mockup Area */
-.svc-card__visual {
-  position: relative;
-  margin-top: auto;
-  padding-top: 20px;
-  height: 250px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  z-index: 1;
-  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
-}
-
-.svc-card:hover .svc-card__visual {
-  transform: scale(0.95);
-  opacity: 0.15;
-}
-
-/* Interactive Hover State Overlay (GTech Brand Blue) */
+/* Hover State: Brand Blue Ground with Heading, Text, and Button */
 .svc-card__hover {
   position: absolute;
   inset: 0;
-  background: linear-gradient(145deg, #0081FB 0%, #0056b3 100%);
+  z-index: 4;
+  background: linear-gradient(145deg, #0081fb 0%, #0056b3 100%);
   color: #ffffff;
   padding: clamp(28px, 3vw, 36px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-radius: 22px;
   opacity: 0;
-  pointer-events: none;
-  transform: translateY(12px);
-  transition: opacity 0.34s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.34s cubic-bezier(0.16, 1, 0.3, 1);
-  z-index: 5;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transform: translateY(100%);
+  transition: opacity 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 
 .svc-card:hover .svc-card__hover,
 .svc-card:focus-within .svc-card__hover {
   opacity: 1;
-  pointer-events: auto;
   transform: translateY(0);
 }
 
-.svc-card__hover-top {
-  display: flex;
-  flex-direction: column;
-}
-
-.svc-card__hover-num {
-  font-size: 11.5px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 6px;
-}
-
 .svc-card__hover-title {
-  font-size: clamp(22px, 1.8vw, 26px);
+  font-size: clamp(22px, 1.85vw, 26px);
   font-weight: 700;
   color: #ffffff;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
   margin: 0;
 }
 
 .svc-card__hover-desc {
   font-size: 14.5px;
   line-height: 1.65;
-  color: rgba(255, 255, 255, 0.94);
-  margin-top: 14px;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 14px 0 auto;
 }
 
 .svc-card__hover-btn {
@@ -830,15 +817,15 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 11px 24px;
+  padding: 12px 26px;
   background: #ffffff;
-  color: #0081FB;
+  color: #0081fb;
   font-weight: 600;
   font-size: 13.5px;
   border-radius: var(--radius-pill);
   text-decoration: none;
   width: fit-content;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
   transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
 }
 
@@ -846,123 +833,6 @@
   background: var(--neutral-900);
   color: #ffffff;
   transform: translateX(4px);
-}
-
-/* Individual Mockup Container Styling */
-.svc-mockup {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-}
-
-.svc-mockup__base {
-  width: 100%;
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 14px;
-  padding: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-  position: relative;
-}
-
-.svc-mockup__header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
-
-.svc-mockup__pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  padding: 4px 10px;
-  background: #eff6ff;
-  color: #0081fb;
-  border-radius: 999px;
-  font-size: 11px;
-  font-weight: 600;
-}
-
-.svc-mockup__pill--green {
-  background: #ecfdf5;
-  color: #059669;
-}
-
-.svc-mockup__pill--purple {
-  background: #f5f3ff;
-  color: #7c3aed;
-}
-
-.svc-mockup__pill--amber {
-  background: #fffbeb;
-  color: #d97706;
-}
-
-.svc-mockup__pill--pink {
-  background: #fdf2f8;
-  color: #db2777;
-}
-
-.svc-mockup__stat {
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--neutral-900);
-  letter-spacing: -0.03em;
-  margin: 4px 0 2px;
-}
-
-.svc-mockup__subtext {
-  font-size: 11px;
-  color: var(--text-muted);
-}
-
-.svc-mockup__bar-track {
-  height: 6px;
-  background: #e2e8f0;
-  border-radius: 3px;
-  overflow: hidden;
-  margin-top: 10px;
-}
-
-.svc-mockup__bar-fill {
-  height: 100%;
-  background: linear-gradient(90deg, #0081fb, #38bdf8);
-  border-radius: 3px;
-}
-
-.svc-mockup__float-badge {
-  position: absolute;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 10px;
-  padding: 8px 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 11.5px;
-  font-weight: 600;
-  color: var(--neutral-900);
-  z-index: 2;
-}
-
-.svc-mockup__float-badge--top {
-  top: -12px;
-  right: 8px;
-}
-
-.svc-mockup__float-badge--left {
-  top: 10px;
-  left: -8px;
-}
-
-.svc-mockup__float-badge--bottom {
-  bottom: -10px;
-  left: 12px;
 }
 
 /* Service Bottom CTA */
@@ -996,7 +866,7 @@
     gap: var(--space-4);
   }
   .svc-card {
-    min-height: 400px;
+    min-height: 350px;
   }
 }
 
