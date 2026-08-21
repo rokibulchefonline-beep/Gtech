@@ -1488,9 +1488,10 @@
 .bento__label { font-size: 13px; line-height: 1.45; font-weight: 500; margin-top: 10px; opacity: 0.88; }
 .bento__label em { font-style: italic; opacity: 0.75; }
 
-.bento__tile--violet { background: var(--pastel-violet); color: var(--ink-violet); }
-.bento__tile--amber  { background: var(--pastel-amber);  color: var(--ink-amber); }
-.bento__tile--sky    { background: var(--pastel-sky);    color: var(--ink-sky); }
+.bento__tile--violet  { background: var(--pastel-violet); color: var(--ink-violet); }
+.bento__tile--amber   { background: var(--pastel-amber);  color: var(--ink-amber); }
+.bento__tile--sky     { background: var(--pastel-sky);    color: var(--ink-sky); }
+.bento__tile--emerald { background: #ecfdf5; color: #047857; }
 
 @media (max-width: 1023px) {
   .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 168px; }
