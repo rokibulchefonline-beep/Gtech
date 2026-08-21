@@ -2302,28 +2302,29 @@
 /* Why Choose GTech Digital Section ------------------------------------ */
 .why-choose-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
-  gap: clamp(32px, 5vw, 64px);
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+  gap: clamp(24px, 4vw, 48px);
   align-items: center;
 }
 
 .why-choose__media {
   position: relative;
+  max-width: 420px;
+  width: 100%;
 }
 
 .why-choose__media-card {
   position: relative;
-  border-radius: var(--radius-xl);
+  border-radius: 16px;
   overflow: hidden;
   background: var(--neutral-900);
   border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.07);
 }
 
 .why-choose__media-card img {
   width: 100%;
-  height: 100%;
-  min-height: 400px;
+  height: 260px;
   object-fit: cover;
   display: block;
   transition: transform var(--dur-slow) var(--ease);
@@ -2337,51 +2338,56 @@
   position: absolute;
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 10px 16px;
+  gap: 8px;
+  padding: 6px 12px;
   background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(0, 129, 251, 0.2);
-  border-radius: var(--radius-lg);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-  font-size: 13px;
-  line-height: 1.3;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-size: 11.5px;
+  line-height: 1.25;
   z-index: 2;
   animation: floatSvc 5s ease-in-out infinite alternate;
 }
 
 .why-badge strong {
   display: block;
-  font-size: 13.5px;
+  font-size: 12px;
   color: var(--neutral-900);
   font-weight: 600;
 }
 
 .why-badge small {
   display: block;
-  font-size: 11.5px;
+  font-size: 10.5px;
   color: var(--neutral-500);
 }
 
 .why-badge__icon {
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
   background: #f0f7ff;
   display: grid;
   place-items: center;
   flex: none;
 }
 
+.why-badge__icon svg {
+  width: 13px;
+  height: 13px;
+}
+
 .why-badge--top-left {
-  top: 24px;
-  left: 20px;
+  top: 14px;
+  left: 14px;
 }
 
 .why-badge--bottom-right {
-  bottom: 24px;
-  right: 20px;
+  bottom: 14px;
+  right: 14px;
   animation-delay: -2.5s;
 }
 
