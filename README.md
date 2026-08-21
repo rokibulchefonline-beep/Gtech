@@ -69,11 +69,11 @@ content:
 | # | Section | Ground | Pattern |
 |---|---|---|---|
 | 1 | Hero | Gradient | Preserved from the live site |
-| 2 | Proof band | Dark | Figures + client logos, merged |
+| 2 | Company numbers | Paper | Intro pair, figures on a rule, client marks |
 | 3 | Ticker | Dark | Scrolling capability strip |
 | 4 | Services | Paper | Accordion with sub-service chips |
-| 5 | Who We Are | White | Bento stat grid |
-| 6 | Industries We Serve | Dark | Six sector cards |
+| 5 | Who We Are | White | Bento: feature tile + stats + media |
+| 6 | Industries We Serve | Dark | Numbered cards with tags and arrow |
 | 7 | Success Stories | Paper | Three project cards |
 | 8 | Solutions | White | Tabs (Startups / SMEs / Enterprise) over pastel cards |
 | 9 | Why Partner | Paper-deep | Numbered connected flow |
@@ -85,8 +85,8 @@ content:
 | 15 | FAQ | Paper | Six-question accordion |
 
 Interactive: service accordion, testimonial slider, solution tabs (arrow-key
-navigable), FAQ accordion, technology rail, animated counters, mega-menu, mobile
-drawer, sticky mobile CTA. All degrade to readable static content without JavaScript.
+navigable), FAQ accordion, technology rail, animated counters, two-pane mega-menu,
+mobile drawer, sticky mobile CTA. All degrade to readable static content without JavaScript.
 
 The technology rail is pure CSS — the tile set is duplicated in the markup and the
 track translates exactly -50%, so it loops without a seam. Spacing sits on each tile as
@@ -106,6 +106,13 @@ a 32% reduction, with no content removed:
 - Stories, solutions, blog posts and industries become horizontal scroll-snap
   carousels with a "Swipe for more" hint and the next card peeking in
 - Service chips scroll sideways rather than wrapping to six rows
+
+**Service accordion scroll:** closing the open row removes ~1,400px from the document.
+If it sits above the row being clicked, everything below shifts up while the scroll
+position stays put — the page appears to leap downwards. The trigger's viewport
+position is now measured before the change and re-anchored every frame until the
+520ms height transition settles, so the row you clicked holds still. Measured drift:
+0px.
 
 **Services accordion on mobile:** all rows start collapsed, so all four services are
 visible at once rather than three being pushed below an open panel. Opening a row

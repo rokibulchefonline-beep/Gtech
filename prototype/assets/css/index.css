@@ -84,19 +84,79 @@
   opacity: 1; visibility: visible; pointer-events: auto; transform: none;
 }
 
-.mega__col-title {
-  padding-bottom: 10px;
-  margin-bottom: var(--space-4);
-  border-bottom: 1px solid var(--rule);
+/* Two-pane mega menu: service list left, its sub-services right. */
+.mega__inner {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 64px);
+  align-items: start;
 }
 
-.mega__link { display: block; padding: 9px 0; }
-.mega__link b {
-  display: block; font-size: 15px; font-weight: 600;
-  color: var(--text-strong); letter-spacing: -0.015em;
+.mega__rows { display: grid; gap: 2px; }
+
+.mega__row {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr) 18px;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  text-align: left;
+  color: var(--text-body);
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease);
 }
-.mega__link span { display: block; font-size: 13px; color: var(--text-muted); }
-.mega__link:hover b { color: var(--brand-accent); }
+
+.mega__row-icon {
+  width: 34px; height: 34px;
+  display: grid; place-items: center;
+  border-radius: 9px;
+  background: var(--neutral-100);
+  color: var(--neutral-700);
+  transition: all var(--dur) var(--ease);
+}
+
+.mega__row-name { font-size: 14.5px; font-weight: 600; letter-spacing: -0.015em; }
+.mega__row-chevron { color: var(--neutral-300); transition: transform var(--dur) var(--ease), color var(--dur) var(--ease); }
+
+.mega__row:hover,
+.mega__row.is-active {
+  background: var(--brand-primary-050);
+  color: var(--brand-primary);
+}
+
+.mega__row:hover .mega__row-icon,
+.mega__row.is-active .mega__row-icon {
+  background: var(--brand-primary);
+  color: #fff;
+}
+
+.mega__row:hover .mega__row-chevron,
+.mega__row.is-active .mega__row-chevron { color: var(--brand-primary); transform: translateX(3px); }
+
+.mega__panels { padding-top: var(--space-2); min-height: 250px; }
+.mega__panel-title { margin-bottom: var(--space-5); }
+
+.mega__panel-links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px var(--space-6);
+}
+
+.mega__panel-links a {
+  padding: 9px 0;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--text-strong);
+  transition: color var(--dur) var(--ease), padding-left var(--dur) var(--ease);
+}
+
+.mega__panel-links a:hover { color: var(--brand-accent); padding-left: 5px; }
+.mega__panel-cta { margin-top: var(--space-8); }
+
+@media (max-width: 1199px) {
+  .mega__inner { grid-template-columns: 260px minmax(0, 1fr); }
+  .mega__panel-links { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
 
 .header__actions { display: flex; align-items: center; gap: var(--space-5); flex: none; }
 .header__phone { font-size: 14px; font-weight: 600; color: var(--neutral-700); white-space: nowrap; }
@@ -857,22 +917,6 @@
   object-fit: contain;
 }
 
-/* ==========================================================================
-   PROOF BAND — figures and client logos merged into one dark section.
-   ========================================================================== */
-
-.proof__clients {
-  margin-top: clamp(32px, 4vw, 52px);
-  padding-top: clamp(24px, 3vw, 36px);
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
-  display: grid;
-  grid-template-columns: 220px minmax(0, 1fr);
-  align-items: center;
-  gap: var(--space-8);
-}
-
-.proof__clients .t-label { color: var(--neutral-400); }
-
 /* Logos now sit on the dark ground, so they need a light tone. */
 .proof .logo-tile { color: var(--neutral-400); }
 .proof .logo-tile:hover { color: #fff; }
@@ -949,11 +993,16 @@
 
 .svc__chip:hover { border-color: var(--neutral-900); color: var(--text-strong); }
 
-/* Bento — Who We Are ---------------------------------------------------- */
+/* Bento — Who We Are ----------------------------------------------------
+   A feature tile carrying the headline fact, with supporting stats and one
+   image tile around it. Unequal weight is the point: an even grid of six
+   identical tiles is just a stat row with rounded corners.
+   ------------------------------------------------------------------------ */
 
 .bento {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: 186px;
   gap: var(--space-4);
 }
 
@@ -963,39 +1012,93 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 156px;
+  gap: var(--space-5);
+  overflow: hidden;
   transition: transform var(--dur) var(--ease);
 }
 
 .bento__tile:hover { transform: translateY(-4px); }
 
-.bento__tile--wide { grid-column: span 2; }
-.bento__tile--tall { grid-row: span 2; min-height: 328px; }
+/* Feature: two columns wide, two rows tall. */
+.bento__tile--feature {
+  grid-column: span 2;
+  grid-row: span 2;
+  background: var(--neutral-900);
+  color: #fff;
+  padding: var(--space-8);
+}
 
-.bento__tile--violet { background: var(--pastel-violet); color: var(--ink-violet); }
-.bento__tile--amber  { background: var(--pastel-amber);  color: var(--ink-amber); }
-.bento__tile--rose   { background: var(--pastel-rose);   color: var(--ink-rose); }
-.bento__tile--sky    { background: var(--pastel-sky);    color: var(--ink-sky); }
-.bento__tile--mint   { background: var(--pastel-mint);   color: var(--ink-mint); }
-.bento__tile--ink    { background: var(--neutral-900);   color: #fff; }
+.bento__feature-value {
+  font-size: clamp(38px, 4.4vw, 58px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.045em;
+  color: #fff;
+  margin-top: var(--space-4);
+  font-variant-numeric: tabular-nums;
+}
+
+.bento__feature-text {
+  margin-top: var(--space-5);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--neutral-400);
+  max-width: 42ch;
+}
+
+.bento__pills { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.bento__pills li {
+  padding: 7px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius-pill);
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--neutral-300);
+}
+
+.bento__tile--media {
+  padding: 0;
+  background: var(--brand-primary-050);
+}
+
+.bento__tile--media img { width: 100%; height: 100%; object-fit: contain; padding: var(--space-5); }
+
+.bento__icon {
+  width: 40px; height: 40px;
+  display: grid; place-items: center;
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.55);
+  flex: none;
+}
 
 .bento__value {
-  font-size: clamp(30px, 3.4vw, 44px);
+  font-size: clamp(28px, 2.9vw, 38px);
   font-weight: 700;
   line-height: 1;
   letter-spacing: -0.04em;
   font-variant-numeric: tabular-nums;
 }
 
-.bento__label { font-size: 13.5px; line-height: 1.45; font-weight: 500; margin-top: var(--space-3); opacity: 0.85; }
-.bento__tile--ink .bento__label { opacity: 1; color: var(--neutral-400); }
+.bento__label { font-size: 13px; line-height: 1.45; font-weight: 500; margin-top: 10px; opacity: 0.88; }
+.bento__label em { font-style: italic; opacity: 0.75; }
 
-.bento__media { padding: 0; overflow: hidden; }
-.bento__media img { width: 100%; height: 100%; object-fit: contain; padding: var(--space-5); }
+.bento__tile--violet { background: var(--pastel-violet); color: var(--ink-violet); }
+.bento__tile--amber  { background: var(--pastel-amber);  color: var(--ink-amber); }
+.bento__tile--sky    { background: var(--pastel-sky);    color: var(--ink-sky); }
 
-@media (max-width: 767px) {
-  .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .bento__tile--tall { grid-row: span 1; min-height: 156px; }
+@media (max-width: 1023px) {
+  .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 168px; }
+  .bento__tile--feature { grid-column: span 2; grid-row: span 1; min-height: 260px; }
+  .bento__tile--media { grid-column: span 2; }
+}
+
+@media (max-width: 639px) {
+  .bento { grid-auto-rows: auto; gap: var(--space-3); }
+  .bento__tile { padding: var(--space-5); gap: var(--space-4); min-height: 148px; }
+  .bento__tile--feature { padding: var(--space-6); min-height: 0; }
+  .bento__tile--media { min-height: 180px; }
+  .bento__icon { width: 34px; height: 34px; }
 }
 
 /* Industries ------------------------------------------------------------ */
@@ -1004,34 +1107,81 @@
 
 .industry {
   position: relative;
-  display: block;
-  border-radius: var(--radius-lg);
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  gap: var(--space-4);
   padding: var(--space-6);
-  min-height: 190px;
-  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.045);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   overflow: hidden;
-  transition: all var(--dur) var(--ease);
+  transition: background var(--dur) var(--ease), border-color var(--dur) var(--ease),
+    transform var(--dur) var(--ease);
 }
 
-.industry:hover { background: rgba(255, 255, 255, 0.1); border-color: rgba(255,255,255,0.28); transform: translateY(-4px); }
+.industry:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-4px);
+}
+
+.industry__num {
+  position: absolute;
+  top: var(--space-5); right: var(--space-6);
+  font-size: 12px; font-weight: 700;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.28);
+  font-variant-numeric: tabular-nums;
+}
 
 .industry__icon {
   width: 46px; height: 46px;
   display: grid; place-items: center;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.09);
   color: var(--brand-cyan);
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease);
 }
 
-.industry__name { font-size: 17px; font-weight: 600; color: #fff; letter-spacing: -0.02em; }
-.industry__meta { font-size: 13px; color: var(--neutral-400); margin-top: 5px; }
+.industry:hover .industry__icon { background: var(--brand-cyan); color: var(--brand-ink); }
+
+.industry__name {
+  display: block;
+  font-size: 17px; font-weight: 600;
+  letter-spacing: -0.022em;
+  color: #fff;
+}
+
+.industry__desc {
+  display: block;
+  font-size: 13.5px; line-height: 1.5;
+  color: var(--neutral-400);
+  margin-top: 6px;
+}
+
+.industry__foot {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* neutral-400, not 500: on this dark ground 500 measures 3.32:1 and fails AA
+   for 12px text. */
+.industry__tags { font-size: 12px; line-height: 1.45; color: var(--neutral-400); }
+
+.industry__arrow {
+  width: 32px; height: 32px; flex: none;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  transition: all var(--dur) var(--ease);
+}
+
+.industry:hover .industry__arrow { background: #fff; border-color: #fff; color: var(--brand-ink); transform: translateX(3px); }
 
 @media (max-width: 1023px) { .industries { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 639px)  { .industries { grid-template-columns: minmax(0, 1fr); } }
 
 /* Technologies — single-line auto marquee ------------------------------- */
 
@@ -1065,9 +1215,10 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 12px;
+  gap: 11px;
   flex: none;
-  padding: 15px 22px;
+  height: 54px;
+  padding: 0 22px;
   border-radius: var(--radius-pill);
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -1075,13 +1226,22 @@
 }
 
 .tech:hover { background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.26); }
-.tech__mark { display: grid; place-items: center; flex: none; }
-.tech__name { font-size: 14px; font-weight: 500; color: var(--neutral-300); white-space: nowrap; }
+/* Mixed viewBoxes (24 and 48) rendered at different optical sizes. A fixed
+   box with the SVG stretched to fill normalises them. */
+.tech__mark {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 24px;
+  height: 24px;
+}
+.tech__mark svg { width: 100%; height: 100%; }
+.tech__name { font-size: 14px; font-weight: 500; line-height: 1; color: var(--neutral-300); white-space: nowrap; }
 
 @media (max-width: 767px) {
-  .tech { padding: 12px 17px; gap: 10px; }
+  .tech { height: 46px; padding: 0 17px; gap: 9px; }
   .tech__name { font-size: 13px; }
-  .tech__mark svg { width: 21px; height: 21px; }
+  .tech__mark { width: 21px; height: 21px; }
   .tech-rail__track { animation-duration: 34s; }
 }
 
@@ -1158,11 +1318,13 @@
 
 .solution {
   border-radius: var(--radius-lg);
-  padding: var(--space-8) var(--space-6);
+  padding: var(--space-8);
   display: flex; flex-direction: column;
-  min-height: 260px;
-  transition: transform var(--dur) var(--ease);
+  min-height: 300px;
+  transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
 }
+
+.solution:hover { box-shadow: var(--shadow-2); }
 
 .solution:hover { transform: translateY(-5px); }
 .solution--violet { background: var(--pastel-violet); color: var(--ink-violet); }
@@ -1170,12 +1332,33 @@
 .solution--rose   { background: var(--pastel-rose);   color: var(--ink-rose); }
 .solution--sky    { background: var(--pastel-sky);    color: var(--ink-sky); }
 
-.solution__num { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; opacity: 0.7; }
-.solution__title { font-size: 19px; font-weight: 700; letter-spacing: -0.025em; margin: var(--space-4) 0 var(--space-3); }
+.solution__icon {
+  width: 44px; height: 44px;
+  display: grid; place-items: center;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.6);
+  margin-bottom: var(--space-5);
+}
+
+.solution__num {
+  font-size: 11.5px; font-weight: 700;
+  letter-spacing: 0.12em;
+  opacity: 0.6;
+}
+
+.solution__title { font-size: 20px; font-weight: 700; letter-spacing: -0.028em; margin: 8px 0 var(--space-3); }
 .solution__text { font-size: 14px; line-height: 1.6; opacity: 0.92; }
-.solution__list { margin-top: auto; padding-top: var(--space-5); font-size: 13px; }
-.solution__list li { display: flex; gap: 8px; margin-bottom: 6px; opacity: 0.92; }
-.solution__list li::before { content: "→"; font-weight: 700; }
+
+.solution__list {
+  margin-top: auto;
+  padding-top: var(--space-5);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 13px;
+}
+
+.solution__list li { display: flex; gap: 9px; margin-bottom: 8px; opacity: 0.94; }
+.solution__list li:last-child { margin-bottom: 0; }
+.solution__list li::before { content: "→"; font-weight: 700; opacity: 0.55; }
 
 @media (max-width: 1023px) { .solutions { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 639px)  { .solutions { grid-template-columns: minmax(0, 1fr); } }
@@ -1522,4 +1705,63 @@
 
   .footer__top { padding-block: var(--space-12) var(--space-8); }
   .enquiry__note { font-size: 11.5px; }
+}
+
+/* ==========================================================================
+   COMPANY NUMBERS
+   Figures sit on a left rule, as in the reference: the rule does the
+   separating, so the tiles need no borders or fills.
+   ========================================================================== */
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-8);
+  margin-top: clamp(40px, 5vw, 72px);
+}
+
+.stat { padding-left: var(--space-6); border-left: 2px solid var(--neutral-900); }
+
+.stat__value {
+  display: flex;
+  align-items: baseline;
+  gap: 1px;
+  font-size: clamp(34px, 4vw, 52px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.045em;
+  color: var(--text-strong);
+  font-variant-numeric: tabular-nums;
+}
+
+.stat__affix { font-size: 0.62em; font-weight: 700; }
+
+.stat__label {
+  margin-top: var(--space-4);
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--text-strong);
+}
+
+.stat__note { font-weight: 400; color: var(--text-muted); font-style: italic; }
+
+.clients-strip {
+  margin-top: clamp(48px, 6vw, 88px);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.clients-strip .logo-tile { color: var(--neutral-400); }
+.clients-strip .logo-tile:hover { color: var(--neutral-900); }
+
+@media (max-width: 1023px) { .stats-row { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-8) var(--space-6); } }
+@media (max-width: 767px) {
+  .clients-strip { grid-template-columns: minmax(0, 1fr); gap: var(--space-5); }
+  .stat { padding-left: var(--space-4); }
+  .stat__label { margin-top: var(--space-3); font-size: 12.5px; }
 }

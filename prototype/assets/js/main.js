@@ -212,21 +212,49 @@
 
       trigger.addEventListener("click", function () {
         var willOpen = !item.classList.contains("is-open");
+
+        /*
+         * Closing the currently-open row removes ~1,400px from the document.
+         * If that row sits ABOVE the one being clicked, everything below it
+         * shifts up by that amount while the scroll position stays put — so
+         * the page appears to leap downwards and the row you clicked vanishes
+         * off the top. Measure the trigger's viewport position before the
+         * mutation and restore it afterwards, so the row you touched stays
+         * exactly where your eye already is.
+         */
+        var beforeTop = trigger.getBoundingClientRect().top;
+
         items.forEach(close);
-        if (!willOpen) return;
+        if (willOpen) open(item);
 
-        open(item);
+        var header = document.querySelector("[data-header]");
+        var headerH = header ? header.getBoundingClientRect().height : 0;
 
-        // On a phone, opening a row lower down would otherwise push its own
-        // header off-screen. Bring the header back to just under the sticky bar.
-        if (isPhone()) {
-          var header = document.querySelector("[data-header]");
-          var offset = (header ? header.getBoundingClientRect().height : 0) + 8;
+        if (isPhone() && willOpen) {
+          // On a phone the panel is about a screenful, so pin the header just
+          // under the sticky bar to give the content maximum room.
           window.requestAnimationFrame(function () {
-            var top = window.scrollY + trigger.getBoundingClientRect().top - offset;
-            window.scrollTo({ top: top, behavior: reduceMotion ? "auto" : "smooth" });
+            window.scrollTo({
+              top: window.scrollY + trigger.getBoundingClientRect().top - headerH - 8,
+              behavior: reduceMotion ? "auto" : "smooth"
+            });
           });
+          return;
         }
+
+        /*
+         * The panel animates its height over ~520ms, so the layout keeps
+         * shifting frame by frame. Correcting once on the next frame catches
+         * the animation mid-flight and lands in the wrong place — so re-anchor
+         * every frame until it settles.
+         */
+        var deadline = performance.now() + 620;
+
+        (function pin() {
+          var delta = trigger.getBoundingClientRect().top - beforeTop;
+          if (Math.abs(delta) > 0.5) window.scrollBy({ top: delta, behavior: "auto" });
+          if (performance.now() < deadline) window.requestAnimationFrame(pin);
+        })();
       });
     });
   }
@@ -329,6 +357,32 @@
     go(0);
   }
 
+  /* -------------------------------------------------------- Mega-menu panes */
+
+  // The service list on the left drives the sub-service pane on the right.
+  // Hover and focus both switch it, so it works for pointer and keyboard.
+  function initMegaPanes() {
+    var rows = Array.prototype.slice.call(document.querySelectorAll("[data-mega-tab]"));
+    if (!rows.length) return;
+
+    var panels = document.querySelectorAll("[data-mega-panel]");
+
+    function show(key) {
+      rows.forEach(function (r) {
+        var on = r.dataset.megaTab === key;
+        r.classList.toggle("is-active", on);
+        r.setAttribute("aria-selected", String(on));
+      });
+      panels.forEach(function (pnl) { pnl.hidden = pnl.dataset.megaPanel !== key; });
+    }
+
+    rows.forEach(function (row) {
+      row.addEventListener("mouseenter", function () { show(row.dataset.megaTab); });
+      row.addEventListener("focus", function () { show(row.dataset.megaTab); });
+      row.addEventListener("click", function () { show(row.dataset.megaTab); });
+    });
+  }
+
   /* ------------------------------------------------------------------ Tabs */
 
   function initTabs() {
@@ -415,6 +469,7 @@
     initServices();
     initMegaOffset();
     initSlider();
+    initMegaPanes();
     initTabs();
     initFaq();
     initMobileCta();
