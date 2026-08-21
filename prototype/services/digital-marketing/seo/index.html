@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-GB" class="no-js">
+<html lang="en-GB">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,72 +14,44 @@
   <!-- Fonts & Core Styles -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="/assets/css/design-system.css">
   <link rel="stylesheet" href="/assets/css/index.css">
-
-  <script>document.documentElement.classList.remove('no-js');</script>
 </head>
 <body>
 
-  <!-- ====================================================================
-       TOP CONTACT & PARTNER BAR
-       ==================================================================== -->
-  <aside class="topbar" aria-label="Quick contact and partner accreditations">
-    <div class="container topbar__inner">
-      <div class="topbar__meta">
-        <span class="topbar__item">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          24/7 Dedicated Support
-        </span>
-        <span class="topbar__sep" aria-hidden="true">&bull;</span>
-        <a class="topbar__item topbar__link" href="tel:+442035985956">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          0203 598 5956
-        </a>
-      </div>
-      <div class="topbar__badges">
-        <span class="topbar__badge">Google Certified Professional</span>
-        <span class="topbar__badge">AI Search (AEO/GEO) Ready</span>
-      </div>
-    </div>
-  </aside>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-  <!-- ====================================================================
-       SITE HEADER
-       ==================================================================== -->
+  <p class="proto-bar"><b>PROTOTYPE</b> — images load from gtechdigital.co.uk. Figures marked “placeholder” need real, verifiable data.</p>
+
+  <!-- ============================================================== HEADER -->
   <header class="site-header" data-header>
     <div class="container site-header__inner">
-      <a class="logo" href="/index.html" aria-label="GTech Digital Homepage">
-        <span class="logo__mark">
-          <svg width="22" height="22" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-            <rect width="28" height="28" rx="6" fill="#0081FB"/>
-            <path d="M7 8h14v3H10v3h9v3H10v5H7V8z" fill="#fff"/>
-          </svg>
-        </span>
-        <span class="logo__text">GTech<strong>Digital</strong></span>
+
+      <a class="logo" href="/index.html">
+        <img src="https://www.gtechdigital.co.uk/assets/frontend/images/logo.png" alt="GTech Digital" width="200" height="52">
       </a>
 
-      <nav class="site-nav" aria-label="Primary navigation">
-        <ul class="nav-list">
-          <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
-          <li class="nav-item nav-item--has-mega">
-            <button class="nav-link is-active" type="button" aria-expanded="false" aria-controls="mega-services" data-mega-trigger>
+      <nav class="nav" aria-label="Primary">
+        <ul class="nav__list">
+          <li class="nav__item" data-megamenu>
+            <a class="nav__link is-active" href="/services.html" aria-expanded="false" aria-haspopup="true">
               Services
-              <span class="nav-link__chevron" aria-hidden="true">
-                <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="m1 1 4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-              </span>
-            </button>
-            <div class="mega" id="mega-services" role="region" aria-label="All Services" data-mega-menu>
-              <div class="mega__tabs" role="tablist">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </a>
+
+            <div class="mega">
+              <div class="container mega__inner">
+
+                <div class="mega__rows" role="tablist" aria-label="Services">
                 <button class="mega__row is-active" type="button" role="tab" aria-selected="true" data-mega-tab="marketing">
                   <span class="mega__row-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg></span>
                   <span class="mega__row-name">Digital Marketing</span>
                   <span class="mega__row-chevron" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></span>
                 </button>
                 <button class="mega__row" type="button" role="tab" aria-selected="false" data-mega-tab="web">
-                  <span class="mega__row-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span>
+                  <span class="mega__row-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
                   <span class="mega__row-name">Web Development</span>
                   <span class="mega__row-chevron" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></span>
                 </button>
@@ -98,15 +70,15 @@
                   <span class="mega__row-name">Graphic Design</span>
                   <span class="mega__row-chevron" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></span>
                 </button>
-              </div>
+                </div>
 
-              <div class="mega__panels">
+                <div class="mega__panels">
                 <div class="mega__panel" data-mega-panel="marketing">
                   <p class="t-label mega__panel-title">Digital Marketing Sub-Services</p>
                   <div class="mega__panel-links">
                     <a href="/services/digital-marketing/seo" style="color:#0081FB;font-weight:600">&bull; Technical &amp; Local SEO</a>
-                    <a href="/services/digital-marketing/google-meta-ads">&bull; Google Ads &amp; Meta Ads</a>
-                    <a href="/services/digital-marketing#aeo-geo">&bull; AEO &amp; AI Search Engine Optimization</a>
+                    <a href="/services/digital-marketing/google-meta-ads" style="color:#0081FB;font-weight:600">&bull; Google Ads &amp; Meta Ads</a>
+                    <a href="/services/digital-marketing#aeo-geo">&bull; AEO &amp; AI Search Optimization</a>
                     <a href="/services/digital-marketing#cro">&bull; Conversion Rate Optimization (CRO)</a>
                   </div>
                   <a class="link mega__panel-cta" href="/services/digital-marketing">
@@ -121,59 +93,112 @@
                     <a href="/services.html#web-development">Next.js &amp; React</a>
                     <a href="/services.html#web-development">WordPress &amp; WooCommerce</a>
                     <a href="/services.html#web-development">Shopify Stores</a>
+                    <a href="/services.html#web-development">UX/UI Architecture</a>
+                    <a href="/services.html#web-development">Core Web Vitals</a>
                   </div>
-                  <a class="link mega__panel-cta" href="/services.html#web-development">Explore Web Development</a>
+                  <a class="link mega__panel-cta" href="/services.html#web-development">
+                    Explore Web Development
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                  </a>
                 </div>
                 <div class="mega__panel" data-mega-panel="app" hidden>
                   <p class="t-label mega__panel-title">Mobile App Development</p>
                   <div class="mega__panel-links">
-                    <a href="/services.html#app-development">Native iOS &amp; Android</a>
-                    <a href="/services.html#app-development">Flutter &amp; React Native</a>
+                    <a href="/services.html#app-development">Native iOS (Swift)</a>
+                    <a href="/services.html#app-development">Native Android (Kotlin)</a>
+                    <a href="/services.html#app-development">Flutter Apps</a>
+                    <a href="/services.html#app-development">React Native</a>
                     <a href="/services.html#app-development">App Store Optimization</a>
+                    <a href="/services.html#app-development">API &amp; Cloud Sync</a>
                   </div>
-                  <a class="link mega__panel-cta" href="/services.html#app-development">Explore Mobile Apps</a>
+                  <a class="link mega__panel-cta" href="/services.html#app-development">
+                    Explore Mobile App Development
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                  </a>
                 </div>
                 <div class="mega__panel" data-mega-panel="software" hidden>
                   <p class="t-label mega__panel-title">Custom Software</p>
                   <div class="mega__panel-links">
                     <a href="/services.html#software">Custom Web Platforms</a>
-                    <a href="/services.html#software">API Integrations</a>
+                    <a href="/services.html#software">Enterprise API Integration</a>
                     <a href="/services.html#software">Workflow Automation</a>
+                    <a href="/services.html#software">Database Architecture</a>
+                    <a href="/services.html#software">Cloud Infrastructure</a>
+                    <a href="/services.html#software">24/7 SLA Support</a>
                   </div>
-                  <a class="link mega__panel-cta" href="/services.html#software">Explore Custom Software</a>
+                  <a class="link mega__panel-cta" href="/services.html#software">
+                    Explore Custom Software
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                  </a>
                 </div>
                 <div class="mega__panel" data-mega-panel="design" hidden>
                   <p class="t-label mega__panel-title">Graphic Design</p>
                   <div class="mega__panel-links">
                     <a href="/services.html#graphic-design">Brand Identity &amp; Logos</a>
-                    <a href="/services.html#graphic-design">Ad Creatives &amp; Social</a>
+                    <a href="/services.html#graphic-design">Marketing Collateral</a>
+                    <a href="/services.html#graphic-design">Social Ad Creative</a>
                     <a href="/services.html#graphic-design">UI/UX Systems</a>
+                    <a href="/services.html#graphic-design">Vector Assets</a>
+                    <a href="/services.html#graphic-design">Print &amp; Packaging</a>
                   </div>
-                  <a class="link mega__panel-cta" href="/services.html#graphic-design">Explore Graphic Design</a>
+                  <a class="link mega__panel-cta" href="/services.html#graphic-design">
+                    Explore Graphic Design
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                  </a>
                 </div>
+                </div>
+
               </div>
             </div>
           </li>
-          <li class="nav-item"><a class="nav-link" href="/portfolio.html">Portfolio</a></li>
-          <li class="nav-item"><a class="nav-link" href="/pricing.html">Pricing</a></li>
-          <li class="nav-item"><a class="nav-link" href="/about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="/blog.html">Blog</a></li>
+
+          <li class="nav__item"><a class="nav__link" href="/pricing.html">Seo Packages</a></li>
+          <li class="nav__item"><a class="nav__link" href="/portfolio.html">Portfolio</a></li>
+          <li class="nav__item"><a class="nav__link" href="/index.html#insights">Blog</a></li>
+          <li class="nav__item"><a class="nav__link" href="#contact">Contact Us</a></li>
         </ul>
       </nav>
 
-      <div class="site-header__actions">
-        <a class="btn btn--primary btn--sm btn--arrow" href="#contact">
-          Free SEO Audit
-          <span class="btn__arrow" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" data-menu-toggle aria-label="Toggle navigation">
-          <span></span><span></span><span></span>
-        </button>
+      <div class="header__actions">
+        <a class="header__phone" href="tel:+442035985956">0203 598 5956</a>
+        <a class="btn btn--primary btn--sm" href="#contact">Book Intro Call</a>
       </div>
+
+      <button class="nav-toggle" data-nav-open aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+
     </div>
   </header>
 
-  <main id="main-content">
+  <div class="mobile-nav" id="mobile-nav" data-mobile-nav aria-hidden="true">
+    <div class="mobile-nav__head">
+      <span class="logo"><img src="https://www.gtechdigital.co.uk/assets/frontend/images/logo.png" alt="GTech Digital" width="180" height="47"></span>
+      <button class="nav-toggle" style="display:grid" data-nav-close aria-label="Close menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <a class="mobile-nav__link" href="/services.html">Services</a>
+    <div class="mobile-nav__sub">
+      <a href="/services/digital-marketing">Digital Marketing Hub</a>
+      <a href="/services/digital-marketing/seo">SEO &amp; AI Search</a>
+      <a href="/services/digital-marketing/google-meta-ads">Google &amp; Meta Ads</a>
+      <a href="/services.html#web-development">Web Development</a>
+      <a href="/services.html#app-development">App Development</a>
+      <a href="/services.html#software">Custom Software</a>
+      <a href="/services.html#graphic-design">Graphic Design</a>
+    </div>
+    <a class="mobile-nav__link" href="/pricing.html">Seo Packages</a>
+    <a class="mobile-nav__link" href="/portfolio.html">Portfolio</a>
+    <a class="mobile-nav__link" href="/index.html#insights">Blog</a>
+    <a class="mobile-nav__link" href="#contact">Contact Us</a>
+    <div class="mt-10 flex gap-3" style="flex-direction:column">
+      <a class="btn btn--primary btn--block" href="#contact">Book Intro Call</a>
+      <a class="btn btn--outline btn--block" href="tel:+442035985956">0203 598 5956</a>
+    </div>
+  </div>
+
+  <main id="main">
 
     <!-- ====================================================================
          HERO SECTION: Enterprise SEO & AI Search (AEO/GEO)
@@ -774,10 +799,7 @@
         
         <div class="c-4">
           <a class="logo logo--footer" href="/index.html">
-            <span class="logo__mark">
-              <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="#0081FB"/><path d="M7 8h14v3H10v3h9v3H10v5H7V8z" fill="#fff"/></svg>
-            </span>
-            <span class="logo__text text-white">GTech<strong>Digital</strong></span>
+            <img src="https://www.gtechdigital.co.uk/assets/frontend/images/logo.png" alt="GTech Digital" width="180" height="47">
           </a>
           <p class="mt-4" style="font-size:14px;line-height:1.6;color:var(--neutral-400)">
             Enterprise SEO, Google Maps 3-Pack, and AI search optimization (AEO/GEO) engineered for predictable UK growth.
@@ -798,10 +820,10 @@
         <div class="c-2">
           <p class="footer__title">Company</p>
           <ul class="footer__links">
-            <li><a href="/about.html">About Us</a></li>
+            <li><a href="/index.html#why">About Us</a></li>
             <li><a href="/portfolio.html">Portfolio</a></li>
             <li><a href="/pricing.html">Pricing</a></li>
-            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/index.html#insights">Blog</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
