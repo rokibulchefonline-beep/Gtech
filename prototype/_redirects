@@ -1,9 +1,3 @@
-/services/digital-marketing/seo              /services/digital-marketing/seo/index.html              200
-/services/digital-marketing/google-meta-ads  /services/digital-marketing/google-meta-ads/index.html  200
-/services/digital-marketing                  /services/digital-marketing/index.html                  200
-/services/web-development                    /services/web-development/index.html                    200
-/services/custom-software                    /services/custom-software/index.html                    200
-/services/graphic-design                     /services/graphic-design/index.html                     200
-/service-digital-marketing                   /services/digital-marketing/index.html                  301
-/services.html                               /services                                               301
-/services                                    /services/index.html                                    200
+/service-digital-marketing /services/digital-marketing 301
+/services.html /services 301
+/portfolio.html /#work 302
