@@ -1419,104 +1419,251 @@
 .bento {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  grid-auto-rows: 230px;
-  gap: clamp(16px, 2vw, 24px);
+  grid-auto-rows: 250px;
+  gap: clamp(18px, 2.2vw, 28px);
 }
 
 .bento__tile {
-  border-radius: 20px;
-  padding: var(--space-8);
+  position: relative;
+  border-radius: 22px;
+  padding: clamp(24px, 2.6vw, 32px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: var(--space-5);
   overflow: hidden;
-  transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease), border-color var(--dur) var(--ease);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.bento__tile:hover { transform: translateY(-5px); }
+.bento__tile:hover { transform: translateY(-6px); }
 
 /* Feature: two columns wide, two rows tall. */
 .bento__tile--feature {
   grid-column: span 2;
   grid-row: span 2;
-  background: linear-gradient(135deg, #d42d23 0%, #ab1e15 100%);
+  background: radial-gradient(circle at 15% 15%, #f23d32 0%, #cb2218 50%, #820904 100%);
   color: #fff;
-  padding: clamp(32px, 3.8vw, 48px);
-  box-shadow: 0 16px 40px rgba(212, 45, 35, 0.28);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: clamp(34px, 4vw, 50px);
+  box-shadow: 0 20px 50px -10px rgba(212, 45, 35, 0.42), 0 0 0 1px rgba(255, 255, 255, 0.16) inset;
+  border: 1px solid rgba(255, 255, 255, 0.22);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+  z-index: 1;
 }
 
-.bento__feature-value {
-  font-size: clamp(42px, 4.8vw, 64px);
+.bento__tile--feature::before {
+  content: "";
+  position: absolute;
+  top: -40%;
+  right: -40%;
+  width: 90%;
+  height: 90%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.16) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.bento__feature-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-pill);
+  font-size: 11.5px;
   font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.045em;
-  color: #fff;
-  margin-top: var(--space-4);
-  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffffff;
+  width: fit-content;
 }
 
-.bento__feature-text {
-  margin-top: var(--space-5);
+.bento__feature-hero {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-top: clamp(16px, 2.4vw, 26px);
+}
+
+.bento__feature-num {
+  font-size: clamp(56px, 6.5vw, 84px);
+  font-weight: 800;
+  line-height: 0.92;
+  letter-spacing: -0.05em;
+  color: #ffffff;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.22);
+}
+
+.bento__feature-unit {
+  font-size: clamp(26px, 3vw, 40px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.bento__feature-lead {
+  margin-top: clamp(14px, 1.8vw, 22px);
   font-size: clamp(15px, 1.2vw, 17px);
   line-height: 1.65;
-  color: rgba(255, 255, 255, 0.94);
-  max-width: 44ch;
+  color: rgba(255, 255, 255, 0.92);
+  max-width: 46ch;
 }
 
+.bento__feature-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: clamp(20px, 2.5vw, 32px);
+}
+
+.bento__feature-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 600;
+  color: #ffffff;
+  backdrop-filter: blur(4px);
+}
+
+/* 4 Small Cards — Premium Glassmorphic Blue Cards */
 .bento__tile--blue {
-  background: linear-gradient(145deg, #f0f7ff 0%, #e2f0fd 100%);
+  background: linear-gradient(145deg, #ffffff 0%, #f4f9ff 50%, #eaf4ff 100%);
   border: 1px solid rgba(0, 129, 251, 0.16);
-  color: #0b3fb0;
-  box-shadow: 0 4px 20px rgba(0, 129, 251, 0.05);
+  box-shadow: 0 10px 30px -10px rgba(0, 129, 251, 0.1),
+              0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+  color: var(--neutral-900);
+}
+
+.bento__tile--blue::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle at 100% 0%, rgba(0, 129, 251, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+  transition: opacity 0.4s ease;
 }
 
 .bento__tile--blue:hover {
-  background: #dbebff;
-  border-color: #0081fb;
-  box-shadow: 0 12px 30px rgba(0, 129, 251, 0.16);
+  background: linear-gradient(145deg, #ffffff 0%, #eaf3ff 50%, #d8ecff 100%);
+  border-color: rgba(0, 129, 251, 0.42);
+  box-shadow: 0 20px 45px -12px rgba(0, 129, 251, 0.24),
+              0 0 0 1px rgba(0, 129, 251, 0.2) inset;
 }
 
-.bento__tile--blue .bento__icon {
-  width: 46px;
-  height: 46px;
-  border-radius: 12px;
-  background: #0081fb;
+.bento__tile--blue:hover::before {
+  opacity: 1;
+  background: radial-gradient(circle at 100% 0%, rgba(0, 129, 251, 0.26) 0%, transparent 70%);
+}
+
+.bento__tile-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.bento__icon-wrap {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #0081fb 0%, #005bb5 100%);
   color: #ffffff;
-  box-shadow: 0 4px 14px rgba(0, 129, 251, 0.25);
+  box-shadow: 0 6px 16px rgba(0, 129, 251, 0.32);
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
 }
 
-.bento__tile--blue .bento__value {
+.bento__tile:hover .bento__icon-wrap {
+  transform: scale(1.08) rotate(3deg);
+  box-shadow: 0 8px 22px rgba(0, 129, 251, 0.45);
+}
+
+.bento__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 11px;
+  background: rgba(0, 129, 251, 0.08);
+  border: 1px solid rgba(0, 129, 251, 0.18);
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 600;
   color: #0081fb;
-  font-size: clamp(32px, 3.2vw, 44px);
-  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.bento__chip--live {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: rgba(16, 185, 129, 0.28);
+  color: #059669;
+}
+
+.bento__pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  animation: pulse-dot-anim 1.8s infinite;
+}
+
+@keyframes pulse-dot-anim {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.6; }
+}
+
+.bento__tile-bottom {
+  margin-top: auto;
+}
+
+.bento__metric {
+  font-size: clamp(34px, 3.4vw, 44px);
+  font-weight: 800;
   line-height: 1;
   letter-spacing: -0.04em;
+  color: #0081fb;
   font-variant-numeric: tabular-nums;
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
 }
 
-.bento__tile--blue .bento__label {
-  color: var(--neutral-800);
-  font-size: 14px;
-  line-height: 1.45;
-  font-weight: 600;
+.bento__metric-affix {
+  font-size: 0.72em;
+  font-weight: 700;
+  color: #005bb5;
+}
+
+.bento__desc {
   margin-top: 8px;
+  font-size: 13.5px;
+  line-height: 1.48;
+  font-weight: 600;
+  color: var(--neutral-700);
 }
 
 @media (max-width: 1023px) {
-  .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 190px; }
-  .bento__tile--feature { grid-column: span 2; grid-row: span 1; min-height: 280px; }
+  .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 210px; }
+  .bento__tile--feature { grid-column: span 2; grid-row: span 1; min-height: 300px; }
 }
 
 @media (max-width: 639px) {
   .bento { grid-auto-rows: auto; gap: var(--space-4); }
-  .bento__tile { padding: var(--space-6); gap: var(--space-4); min-height: 160px; }
-  .bento__tile--feature { padding: var(--space-6); min-height: 0; }
-  .bento__icon { width: 38px; height: 38px; }
+  .bento__tile { padding: var(--space-6); gap: var(--space-4); min-height: 175px; }
+  .bento__tile--feature { padding: var(--space-7) var(--space-6); min-height: 0; }
+  .bento__icon-wrap { width: 42px; height: 42px; }
 }
 
 
