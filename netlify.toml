@@ -30,6 +30,21 @@
   status = 200
 
 [[redirects]]
+  from = "/services/digital-marketing/seo"
+  to = "/services/digital-marketing/seo/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/services/digital-marketing/google-meta-ads"
+  to = "/services/digital-marketing/google-meta-ads/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/services/digital-marketing/google-meta"
+  to = "/services/digital-marketing/google-meta-ads"
+  status = 301
+
+[[redirects]]
   from = "/service-digital-marketing"
   to = "/services/digital-marketing"
   status = 301
