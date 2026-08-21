@@ -212,7 +212,7 @@
   width: 650px;
   height: 650px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(232, 89, 12, 0.05) 0%, rgba(11, 63, 176, 0.03) 50%, transparent 70%);
+  background: radial-gradient(circle, rgba(0, 129, 251, 0.07) 0%, rgba(10, 63, 168, 0.03) 50%, transparent 70%);
   pointer-events: none;
   z-index: 0;
 }
@@ -293,15 +293,15 @@
 .hero--split .hero__ctas {
   display: flex;
   align-items: center;
-  gap: var(--space-4);
-  margin-top: clamp(28px, 3.5vw, 40px);
+  gap: var(--space-3);
+  margin-top: clamp(24px, 3vw, 36px);
   flex-wrap: wrap;
 }
 
 .hero--split .hero__ctas .btn {
   border-radius: var(--radius-md);
-  padding: 14px 28px;
-  font-size: 15px;
+  padding: 11px 22px;
+  font-size: 14px;
   font-weight: 600;
 }
 
@@ -309,14 +309,14 @@
   background: var(--brand-accent);
   color: #fff;
   border-color: var(--brand-accent);
-  box-shadow: 0 4px 14px rgba(212, 45, 35, 0.25);
+  box-shadow: 0 3px 12px rgba(212, 45, 35, 0.22);
 }
 
 .hero--split .hero__ctas .btn--primary:hover {
   background: var(--brand-accent-dark);
   border-color: var(--brand-accent-dark);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(212, 45, 35, 0.35);
+  box-shadow: 0 6px 18px rgba(212, 45, 35, 0.32);
 }
 
 .hero--split .hero__ctas .btn--outline {
@@ -332,8 +332,8 @@
 
 /* Partner Trust Pills beneath CTAs */
 .hero__stacks-label {
-  margin-top: clamp(28px, 3.5vw, 44px);
-  padding-top: var(--space-5);
+  margin-top: clamp(24px, 3vw, 36px);
+  padding-top: var(--space-4);
   border-top: 1px solid var(--border);
   width: 100%;
 }
@@ -349,18 +349,18 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .partner-pill {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 14px;
+  gap: 7px;
+  padding: 5px 12px;
   border: 1px solid var(--border);
   border-radius: var(--radius-pill);
   background: var(--neutral-050);
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: 600;
   color: var(--neutral-800);
   transition: all var(--dur) var(--ease);
@@ -399,15 +399,15 @@
 }
 
 .flow-path-base {
-  stroke: #e3e6eb;
-  stroke-width: 1.8;
+  stroke: #e2e8f0;
+  stroke-width: 1.6;
   stroke-dasharray: 4 4;
   fill: none;
 }
 
 .flow-path-active {
   stroke: url(#flowGrad);
-  stroke-width: 2.4;
+  stroke-width: 2.2;
   stroke-dasharray: 10 16;
   stroke-linecap: round;
   fill: none;
@@ -421,7 +421,7 @@
 }
 
 .flow-particle {
-  filter: drop-shadow(0 0 4px currentColor);
+  filter: drop-shadow(0 0 5px currentColor);
 }
 
 /* Center Hub */
@@ -430,8 +430,8 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 90px;
-  height: 90px;
+  width: 86px;
+  height: 86px;
   display: grid;
   place-items: center;
   z-index: 10;
@@ -444,16 +444,16 @@
 }
 
 .hub-ring--outer {
-  width: 90px;
-  height: 90px;
-  border: 1.5px dashed rgba(232, 89, 12, 0.35);
+  width: 86px;
+  height: 86px;
+  border: 1.5px dashed rgba(0, 129, 251, 0.4);
   animation: rotateHub 24s linear infinite;
 }
 
 .hub-ring--inner {
-  width: 72px;
-  height: 72px;
-  border: 1.5px solid rgba(232, 89, 12, 0.2);
+  width: 68px;
+  height: 68px;
+  border: 1.5px solid rgba(0, 129, 251, 0.22);
   animation: pulseHub 3s ease-in-out infinite alternate;
 }
 
@@ -467,18 +467,20 @@
 }
 
 .hub-core {
-  width: 52px;
-  height: 52px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #ff7a18 0%, #e8590c 50%, #d42d23 100%);
+  background: linear-gradient(135deg, #38bdf8 0%, #0081fb 50%, #0a3fa8 100%);
   display: grid;
   place-items: center;
-  box-shadow: 0 0 24px rgba(232, 89, 12, 0.45), 0 4px 12px rgba(212, 45, 35, 0.3);
+  box-shadow: 0 0 22px rgba(0, 129, 251, 0.5), 0 3px 10px rgba(10, 63, 168, 0.35);
   transition: transform var(--dur) var(--ease);
+  cursor: pointer;
 }
 
 .hub-center:hover .hub-core {
-  transform: scale(1.08);
+  transform: scale(1.1);
+  box-shadow: 0 0 28px rgba(0, 129, 251, 0.65), 0 4px 14px rgba(10, 63, 168, 0.45);
 }
 
 /* 8 Floating Technology & Marketing Nodes */
@@ -486,12 +488,12 @@
   position: absolute;
   display: inline-flex;
   align-items: center;
-  gap: 9px;
-  padding: 8px 16px 8px 12px;
+  gap: 7px;
+  padding: 6px 13px 6px 9px;
   background: #ffffff;
   border: 1px solid var(--border);
   border-radius: var(--radius-pill);
-  box-shadow: 0 4px 18px rgba(16, 19, 26, 0.07);
+  box-shadow: 0 3px 12px rgba(16, 19, 26, 0.06);
   z-index: 5;
   cursor: default;
   user-select: none;
@@ -499,21 +501,21 @@
 }
 
 .flow-node:hover {
-  transform: translateY(-3px) scale(1.04);
-  box-shadow: 0 10px 28px rgba(16, 19, 26, 0.12);
-  border-color: var(--neutral-400);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 20px rgba(0, 129, 251, 0.16);
+  border-color: rgba(0, 129, 251, 0.45);
 }
 
 .flow-node__icon {
   display: grid;
   place-items: center;
   flex: none;
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
 }
 
 .flow-node__label {
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 600;
   color: var(--neutral-900);
   white-space: nowrap;
@@ -1359,66 +1361,87 @@
 
 
 
-/* Technologies — single-line auto marquee ------------------------------- */
+/* Technologies — dual-line auto marquee --------------------------------- */
 
 .tech-rail {
   overflow: hidden;
   /* Fades both ends so tiles enter and leave rather than being cut off. */
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+
+.tech-rail--dual {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
 }
 
 .tech-rail__track {
   display: flex;
   align-items: stretch;
   width: max-content;
-  /* Spacing lives on the tiles as margin, NOT as `gap` on the track. With gap,
-     n tiles have n-1 gaps, so -50% of the total lands half a gap short of the
-     duplicate and the loop visibly jumps. With margin, each tile's box carries
-     its own spacing, so half the track is exactly one set. */
-  animation: tech-rail 46s linear infinite;
 }
 
-.tech-rail__track .tech { margin-right: var(--space-3); }
+.tech-rail__track--1 {
+  animation: tech-rail-left 36s linear infinite;
+}
+
+.tech-rail__track--2 {
+  animation: tech-rail-right 40s linear infinite;
+}
+
+.tech-rail__track .tech { margin-right: 12px; }
 
 .tech-rail:hover .tech-rail__track,
 .tech-rail:focus-within .tech-rail__track { animation-play-state: paused; }
 
-@keyframes tech-rail { to { transform: translateX(-50%); } }
+@keyframes tech-rail-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
 
-/* Horizontal pill: icon and label on one line, as the rail is single-row. */
+@keyframes tech-rail-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* Horizontal pill: icon and label on one line */
 .tech {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 11px;
+  gap: 10px;
   flex: none;
-  height: 54px;
-  padding: 0 22px;
+  height: 48px;
+  padding: 0 18px;
   border-radius: var(--radius-pill);
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: background var(--dur) var(--ease), border-color var(--dur) var(--ease);
+  transition: all var(--dur) var(--ease);
 }
 
-.tech:hover { background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.26); }
-/* Mixed viewBoxes (24 and 48) rendered at different optical sizes. A fixed
-   box with the SVG stretched to fill normalises them. */
+.tech:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
 .tech__mark {
   display: grid;
   place-items: center;
   flex: none;
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
 }
 .tech__mark svg { width: 100%; height: 100%; }
-.tech__name { font-size: 14px; font-weight: 500; line-height: 1; color: var(--neutral-300); white-space: nowrap; }
+.tech__name { font-size: 13.5px; font-weight: 500; line-height: 1; color: var(--neutral-300); white-space: nowrap; }
 
 @media (max-width: 767px) {
-  .tech { height: 46px; padding: 0 17px; gap: 9px; }
-  .tech__name { font-size: 13px; }
-  .tech__mark { width: 21px; height: 21px; }
-  .tech-rail__track { animation-duration: 34s; }
+  .tech { height: 42px; padding: 0 14px; gap: 8px; }
+  .tech__name { font-size: 12.5px; }
+  .tech__mark { width: 19px; height: 19px; }
+  .tech-rail__track--1 { animation-duration: 28s; }
+  .tech-rail__track--2 { animation-duration: 32s; }
 }
 
 /* Motion off: the rail becomes a static wrapped set, and the duplicated copy
