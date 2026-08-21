@@ -376,17 +376,21 @@
    RIGHT COLUMN: Interactive Connected Flow Ecosystem
    ========================================================================== */
 
+/* ==========================================================================
+   RIGHT COLUMN: Interactive Connected Flow Ecosystem (12 Nodes)
+   ========================================================================== */
+
 .hero__visual {
   position: relative;
   width: 100%;
-  max-width: 600px;
+  max-width: 520px;
   margin-inline: auto;
 }
 
 .flow-ecosystem {
   position: relative;
   width: 100%;
-  aspect-ratio: 600 / 520;
+  aspect-ratio: 540 / 460;
 }
 
 .flow-svg {
@@ -400,28 +404,28 @@
 
 .flow-path-base {
   stroke: #e2e8f0;
-  stroke-width: 1.6;
+  stroke-width: 1.4;
   stroke-dasharray: 4 4;
   fill: none;
 }
 
 .flow-path-active {
   stroke: url(#flowGrad);
-  stroke-width: 2.2;
-  stroke-dasharray: 10 16;
+  stroke-width: 2;
+  stroke-dasharray: 8 14;
   stroke-linecap: round;
   fill: none;
-  animation: flowStream 18s linear infinite;
+  animation: flowStream 16s linear infinite;
 }
 
 @keyframes flowStream {
   to {
-    stroke-dashoffset: -260;
+    stroke-dashoffset: -220;
   }
 }
 
 .flow-particle {
-  filter: drop-shadow(0 0 5px currentColor);
+  filter: drop-shadow(0 0 4px currentColor);
 }
 
 /* Center Hub */
@@ -430,8 +434,8 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 86px;
-  height: 86px;
+  width: 76px;
+  height: 76px;
   display: grid;
   place-items: center;
   z-index: 10;
@@ -444,16 +448,16 @@
 }
 
 .hub-ring--outer {
-  width: 86px;
-  height: 86px;
+  width: 76px;
+  height: 76px;
   border: 1.5px dashed rgba(0, 129, 251, 0.4);
   animation: rotateHub 24s linear infinite;
 }
 
 .hub-ring--inner {
-  width: 68px;
-  height: 68px;
-  border: 1.5px solid rgba(0, 129, 251, 0.22);
+  width: 60px;
+  height: 60px;
+  border: 1.5px solid rgba(0, 129, 251, 0.25);
   animation: pulseHub 3s ease-in-out infinite alternate;
 }
 
@@ -462,38 +466,38 @@
 }
 
 @keyframes pulseHub {
-  0% { transform: scale(0.92); opacity: 0.6; }
-  100% { transform: scale(1.08); opacity: 1; }
+  0% { transform: scale(0.94); opacity: 0.7; }
+  100% { transform: scale(1.06); opacity: 1; }
 }
 
 .hub-core {
-  width: 48px;
-  height: 48px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   background: linear-gradient(135deg, #38bdf8 0%, #0081fb 50%, #0a3fa8 100%);
   display: grid;
   place-items: center;
-  box-shadow: 0 0 22px rgba(0, 129, 251, 0.5), 0 3px 10px rgba(10, 63, 168, 0.35);
+  box-shadow: 0 0 20px rgba(0, 129, 251, 0.5), 0 3px 8px rgba(10, 63, 168, 0.35);
   transition: transform var(--dur) var(--ease);
   cursor: pointer;
 }
 
 .hub-center:hover .hub-core {
-  transform: scale(1.1);
-  box-shadow: 0 0 28px rgba(0, 129, 251, 0.65), 0 4px 14px rgba(10, 63, 168, 0.45);
+  transform: scale(1.08);
+  box-shadow: 0 0 26px rgba(0, 129, 251, 0.65), 0 4px 12px rgba(10, 63, 168, 0.45);
 }
 
-/* 8 Floating Technology & Marketing Nodes */
+/* 12 Floating Technology & Marketing Nodes */
 .flow-node {
   position: absolute;
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  padding: 6px 13px 6px 9px;
+  gap: 5px;
+  padding: 4px 10px 4px 7px;
   background: #ffffff;
   border: 1px solid var(--border);
   border-radius: var(--radius-pill);
-  box-shadow: 0 3px 12px rgba(16, 19, 26, 0.06);
+  box-shadow: 0 2px 8px rgba(16, 19, 26, 0.05);
   z-index: 5;
   cursor: default;
   user-select: none;
@@ -502,7 +506,7 @@
 
 .flow-node:hover {
   transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 6px 20px rgba(0, 129, 251, 0.16);
+  box-shadow: 0 5px 16px rgba(0, 129, 251, 0.16);
   border-color: rgba(0, 129, 251, 0.45);
 }
 
@@ -510,28 +514,32 @@
   display: grid;
   place-items: center;
   flex: none;
-  width: 20px;
-  height: 20px;
+  width: 17px;
+  height: 17px;
 }
 
 .flow-node__label {
-  font-size: 13px;
+  font-size: 11.5px;
   font-weight: 600;
   color: var(--neutral-900);
   white-space: nowrap;
   letter-spacing: -0.01em;
 }
 
-/* Node coordinates corresponding to SVG viewBox 600x520 */
-.node-1 { left: 4%; top: 8%; }    /* Google Ads */
-.node-2 { left: 2%; top: 33%; }   /* Meta Ads */
-.node-3 { left: 2%; top: 58%; }   /* SEO */
-.node-4 { left: 4%; top: 83%; }   /* AEO */
+/* Node coordinates corresponding to SVG viewBox 540x460 */
+.node-1 { left: 2%; top: 3%; }     /* Google Ads */
+.node-2 { left: 0%; top: 19%; }    /* Meta Ads */
+.node-3 { left: 0%; top: 35%; }    /* TikTok Ads */
+.node-4 { left: 0%; top: 51%; }    /* SEO */
+.node-5 { left: 0%; top: 67%; }    /* AEO */
+.node-6 { left: 2%; top: 83%; }    /* GEO */
 
-.node-5 { right: 4%; top: 8%; }   /* GEO */
-.node-6 { right: 2%; top: 33%; }  /* Laravel */
-.node-7 { right: 2%; top: 58%; }  /* React.js */
-.node-8 { right: 4%; top: 83%; }  /* Next.js */
+.node-7 { right: 2%; top: 3%; }    /* GA4 */
+.node-8 { right: 0%; top: 19%; }   /* Semrush */
+.node-9 { right: 0%; top: 35%; }   /* WordPress */
+.node-10 { right: 0%; top: 51%; }  /* Shopify */
+.node-11 { right: 0%; top: 67%; }  /* React.js */
+.node-12 { right: 2%; top: 83%; }  /* Next.js */
 
 @media (max-width: 1023px) {
   .hero--split .hero__grid {
@@ -685,48 +693,100 @@
 
 .svc__body {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-  gap: clamp(24px, 3.5vw, 48px);
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.95fr);
+  gap: clamp(24px, 4vw, 56px);
   padding: var(--space-2) 0 var(--space-10) 84px;
-  align-items: start;
-}
-
-.svc__list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px 24px;
-  margin-top: var(--space-6);
-  padding: 0;
-  list-style: none;
-}
-
-.svc__list li {
-  position: relative;
-  padding-left: 18px;
-  font-size: 13.5px;
-  line-height: 1.5;
-  color: var(--text-body);
-  margin-bottom: 0;
-}
-
-.svc__list li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 7px;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #0081FB;
+  align-items: center;
 }
 
 .svc__cta { margin-top: var(--space-6); }
+
+/* Service visual showcase with circulating animated badges */
+.svc__showcase {
+  position: relative;
+  width: 100%;
+}
+
+.svc__showcase-media {
+  position: relative;
+  border-radius: var(--radius-lg);
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 20px rgba(16, 19, 26, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(16px, 2.5vw, 28px);
+}
+
+.svc__showcase-media img {
+  width: 100%;
+  height: auto;
+  max-height: 260px;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  transition: transform var(--dur-slow) var(--ease);
+}
+
+.svc:hover .svc__showcase-media img {
+  transform: scale(1.02);
+}
+
+.svc__badge-circle {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 13px 6px 9px;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 129, 251, 0.22);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 8px 24px rgba(0, 129, 251, 0.12), 0 2px 6px rgba(0, 0, 0, 0.04);
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--neutral-900);
+  white-space: nowrap;
+  z-index: 3;
+}
+
+.svc__badge-icon {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(0, 129, 251, 0.1);
+  color: #0081fb;
+  flex: none;
+}
+
+.svc__badge-circle--1 {
+  top: -10px;
+  left: 10px;
+  animation: badgeFloat1 4s ease-in-out infinite alternate;
+}
+
+.svc__badge-circle--2 {
+  bottom: -10px;
+  right: 10px;
+  animation: badgeFloat2 4.5s ease-in-out infinite alternate;
+}
+
+@keyframes badgeFloat1 {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-6px) rotate(1deg); }
+}
+
+@keyframes badgeFloat2 {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(6px) rotate(-1deg); }
+}
 
 @media (max-width: 1023px) {
   .svc__head { grid-template-columns: 56px minmax(0, 1fr) 38px; }
   .svc__blurb { display: none; }
   .svc__body { grid-template-columns: minmax(0, 1fr); padding-left: 0; }
-  .svc__list { grid-template-columns: 1fr; }
 }
 @media (max-width: 639px) {
   .svc__head { grid-template-columns: 44px minmax(0, 1fr) 34px; gap: var(--space-3); }
@@ -1760,8 +1820,6 @@
 
   .svc__body { padding: 0 0 var(--space-8); gap: var(--space-6); }
   .svc__body > div > .t-body { font-size: 14.5px; }
-  .svc__list { grid-template-columns: 1fr; }
-  .svc__list li { margin-bottom: 7px; }
 
   /* Chips are the quickest way to scan a service on a phone, so they stay —
      but capped in height and scrollable rather than wrapping to six rows. */
