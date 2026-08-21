@@ -640,38 +640,39 @@
 /* Columns: icon · name · blurb · toggle */
 .svc__head {
   display: grid;
-  grid-template-columns: 62px minmax(0, 1fr) minmax(0, 0.82fr) 44px;
+  grid-template-columns: 56px minmax(0, 1.15fr) minmax(0, 0.85fr) 40px;
   align-items: center;
-  gap: var(--space-6);
+  gap: clamp(16px, 2vw, 28px);
   width: 100%;
-  padding: clamp(20px, 2.4vw, 30px) 0;
+  padding: clamp(18px, 2vw, 26px) 0;
   text-align: left;
   transition: color var(--dur) var(--ease);
 }
 
 .svc__name {
-  font-size: clamp(21px, 2.4vw, 30px);
+  font-size: clamp(20px, 2.2vw, 28px);
   font-weight: 600;
-  line-height: 1.05;
-  letter-spacing: -0.038em;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
   color: var(--text-strong);
-  transition: color var(--dur) var(--ease), transform var(--dur) var(--ease);
+  transition: color var(--dur) var(--ease);
 }
 
-.svc__blurb { font-size: 14.5px; line-height: 1.55; color: var(--text-muted); }
+.svc__blurb { font-size: 14px; line-height: 1.5; color: var(--text-muted); }
 
 .svc__toggle {
-  width: 40px; height: 40px;
+  width: 38px; height: 38px;
   display: grid; place-items: center;
   border: 1px solid var(--neutral-300);
   border-radius: 50%;
   color: var(--neutral-700);
   transition: all var(--dur) var(--ease);
+  justify-self: end;
 }
 
-.svc__head:hover .svc__name { color: var(--brand-accent); }
-.svc__head:hover .svc__toggle { border-color: var(--neutral-900); background: var(--neutral-900); color: #fff; }
-.svc.is-open .svc__toggle { background: var(--brand-accent); border-color: var(--brand-accent); color: #fff; transform: rotate(45deg); }
+.svc__head:hover .svc__name { color: #0081FB; }
+.svc__head:hover .svc__toggle { border-color: #0081FB; background: #0081FB; color: #fff; }
+.svc.is-open .svc__toggle { background: #0081FB; border-color: #0081FB; color: #fff; transform: rotate(45deg); }
 
 /* Panel uses grid-template-rows 0fr→1fr so it animates without a fixed height. */
 .svc__panel {
@@ -684,43 +685,52 @@
 
 .svc__body {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
-  gap: clamp(24px, 4vw, 64px);
-  /* Aligns the panel with the service name: 38 + 20 + 26 + 20 */
-  /* Aligns the panel with the service name: 62 + 24 */
-  padding: 0 0 var(--space-12) 86px;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: clamp(24px, 3.5vw, 48px);
+  padding: var(--space-2) 0 var(--space-10) 84px;
+  align-items: start;
 }
 
-.svc__list { columns: 2; column-gap: var(--space-8); }
+.svc__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 24px;
+  margin-top: var(--space-6);
+  padding: 0;
+  list-style: none;
+}
 
 .svc__list li {
-  break-inside: avoid;
   position: relative;
-  padding-left: 20px;
-  margin-bottom: 11px;
-  font-size: 14.5px;
-  line-height: 1.55;
+  padding-left: 18px;
+  font-size: 13.5px;
+  line-height: 1.5;
   color: var(--text-body);
+  margin-bottom: 0;
 }
 
 .svc__list li::before {
   content: "";
-  position: absolute; left: 0; top: 9px;
-  width: 8px; height: 1px;
-  background: var(--brand-accent);
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #0081FB;
 }
 
-.svc__cta { margin-top: var(--space-8); }
+.svc__cta { margin-top: var(--space-6); }
 
 @media (max-width: 1023px) {
-  .svc__head { grid-template-columns: 62px minmax(0, 1fr) 40px; }
+  .svc__head { grid-template-columns: 56px minmax(0, 1fr) 38px; }
   .svc__blurb { display: none; }
-  .svc__body { grid-template-columns: minmax(0, 1fr); padding-left: 86px; }
-  .svc__list { columns: 1; }
+  .svc__body { grid-template-columns: minmax(0, 1fr); padding-left: 0; }
+  .svc__list { grid-template-columns: 1fr; }
 }
 @media (max-width: 639px) {
-  .svc__head { grid-template-columns: 48px minmax(0, 1fr) 36px; gap: var(--space-4); }
-  .svc__icon { width: 48px; height: 48px; border-radius: 12px; }
+  .svc__head { grid-template-columns: 44px minmax(0, 1fr) 34px; gap: var(--space-3); }
+  .svc__icon { width: 44px; height: 44px; border-radius: 10px; }
   .svc__body { padding-left: 0; }
 }
 
@@ -928,11 +938,11 @@
    brand accent on hover and while open. Per-service colours were dropped so
    the accent stays the page's only signal colour. */
 .svc__icon {
-  width: 62px; height: 62px;
+  width: 56px; height: 56px;
   display: grid; place-items: center;
-  border-radius: 14px;
+  border-radius: 12px;
   background: var(--neutral-100);
-  color: #000;
+  color: var(--neutral-800);
   transition: color var(--dur) var(--ease), background var(--dur) var(--ease),
     transform var(--dur) var(--ease);
 }
@@ -940,9 +950,9 @@
 .svc__head:hover .svc__icon,
 .svc__head:focus-visible .svc__icon,
 .svc.is-open .svc__icon {
-  background: var(--brand-accent-050, #fdeceb);
-  color: var(--brand-accent);
-  transform: scale(1.04);
+  background: rgba(0, 129, 251, 0.1);
+  color: #0081FB;
+  transform: scale(1.03);
 }
 
 /* Section CTAs beneath the list. */
@@ -1153,10 +1163,14 @@
    ========================================================================== */
 
 .media--illustration {
-  background: linear-gradient(160deg, var(--brand-primary-050), var(--neutral-100));
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
   display: grid;
   place-items: center;
   padding: var(--space-6);
+  box-shadow: 0 4px 16px rgba(16, 19, 26, 0.04);
+  overflow: hidden;
 }
 
 .media--illustration > img {
@@ -1225,31 +1239,40 @@
 
 /* Service chips (reference pattern) ------------------------------------- */
 
-.svc__chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: var(--space-5); }
+.svc__chips { display: flex; flex-wrap: wrap; gap: 7px; margin-top: var(--space-4); }
 
 .svc__chip {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  padding: 9px 15px;
-  border: 1px solid var(--border);
+  gap: 6px;
+  padding: 5px 12px;
+  border: 1px solid rgba(0, 129, 251, 0.22);
   border-radius: var(--radius-pill);
-  background: #fff;
-  font-size: 13.5px;
+  background: #ffffff;
+  font-size: 12.5px;
   font-weight: 500;
-  color: var(--text-body);
+  color: var(--neutral-800);
+  box-shadow: 0 1px 3px rgba(0, 129, 251, 0.04);
   transition: all var(--dur) var(--ease);
+}
+
+.svc__chip:hover {
+  border-color: #0081fb;
+  color: #0081fb;
+  background: #f0f7ff;
+  transform: translateY(-1px);
 }
 
 .svc__chip::before {
   content: "";
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: var(--brand-accent);
+  display: inline-block;
+  width: 14px;
+  height: 14px;
   flex: none;
+  background-color: #0081FB;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath fill-rule='evenodd' d='M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z' clip-rule='evenodd'/%3E%3C/svg%3E") no-repeat center / contain;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath fill-rule='evenodd' d='M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z' clip-rule='evenodd'/%3E%3C/svg%3E") no-repeat center / contain;
 }
-
-.svc__chip:hover { border-color: var(--neutral-900); color: var(--text-strong); }
 
 /* Bento — Who We Are ----------------------------------------------------
    A feature tile carrying the headline fact, with supporting stats and one
@@ -1721,16 +1744,8 @@
    SERVICES — compact
    ========================================================================== */
 
-.svc__head { padding: clamp(16px, 1.9vw, 24px) 0; }
-.svc__body { padding-bottom: var(--space-10); gap: var(--space-8); }
-.svc__list li { margin-bottom: 8px; font-size: 14px; }
-.svc__chips { margin-top: var(--space-4); }
-.svc__chip { padding: 7px 13px; font-size: 12.5px; }
-.svc__cta { margin-top: var(--space-6); }
-
 @media (max-width: 767px) {
-  /* Row: icon, name and toggle only. The name wraps rather than shrinking to
-     an unreadable size. */
+  /* Row: icon, name and toggle only. */
   .svc__head {
     grid-template-columns: 44px minmax(0, 1fr) 36px;
     gap: var(--space-4);
@@ -1745,7 +1760,7 @@
 
   .svc__body { padding: 0 0 var(--space-8); gap: var(--space-6); }
   .svc__body > div > .t-body { font-size: 14.5px; }
-  .svc__list { columns: 1; }
+  .svc__list { grid-template-columns: 1fr; }
   .svc__list li { margin-bottom: 7px; }
 
   /* Chips are the quickest way to scan a service on a phone, so they stay —
