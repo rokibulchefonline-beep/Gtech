@@ -1641,40 +1641,56 @@
 .bento__partner-badges {
   margin-top: clamp(14px, 1.8vw, 22px);
   padding-top: clamp(12px, 1.4vw, 16px);
-  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 8px;
+  gap: 10px;
 }
 
 .bento__badge-item {
-  background: rgba(0, 0, 0, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(0, 0, 0, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 8px;
-  padding: 4px 8px;
-  height: 34px;
+  padding: 0 12px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease, border-color 0.3s ease;
-  overflow: hidden;
+  gap: 8px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+  user-select: none;
 }
 
 .bento__badge-item:hover {
-  background: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.12);
   border-color: rgba(255, 255, 255, 0.45);
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
-.bento__badge-item svg,
-.bento__badge-item img {
-  max-width: 100%;
-  max-height: 20px;
-  width: auto;
-  height: auto;
-  object-fit: contain;
+.bento__badge-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+}
+
+.bento__badge-icon svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+.bento__badge-text {
+  font-family: var(--font-heading, 'Poppins', sans-serif);
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: -0.2px;
+  white-space: nowrap;
 }
 
 /* Footer 4 Partner Badges */
@@ -1682,35 +1698,26 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
-  max-width: 260px;
+  max-width: 290px;
 }
 
 .footer__partner-badges .footer__badge-item {
   background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 8px;
-  padding: 6px 10px;
-  height: 38px;
+  padding: 0 10px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 7px;
   transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
-  overflow: hidden;
 }
 
 .footer__partner-badges .footer__badge-item:hover {
-  background: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.16);
   border-color: rgba(255, 255, 255, 0.35);
-  transform: translateY(-2px);
-}
-
-.footer__partner-badges img {
-  max-width: 100%;
-  max-height: 24px;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  filter: brightness(1.1);
+  transform: translateY(-1px);
 }
 
 /* 4 Metric Cards — Blue Gradient Same as Service Card Hover */
@@ -1834,18 +1841,24 @@
     margin-top: 14px;
     padding-top: 10px;
     grid-template-columns: repeat(2, 1fr);
-    gap: 6px;
+    gap: 8px;
   }
 
   .bento__badge-item {
-    height: 30px;
-    padding: 3px 6px;
+    height: 34px;
+    padding: 0 8px;
+    gap: 6px;
     border-radius: 6px;
   }
 
-  .bento__badge-item svg,
-  .bento__badge-item img {
-    max-height: 16px;
+  .bento__badge-text {
+    font-size: 11.5px;
+  }
+
+  .bento__badge-icon,
+  .bento__badge-icon svg {
+    width: 15px;
+    height: 15px;
   }
 
   .bento__metric {
