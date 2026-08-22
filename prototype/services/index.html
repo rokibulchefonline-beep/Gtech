@@ -210,221 +210,112 @@
         </div>
       </div>
 
-      <!-- Right Column: Interactive Connected Flow Ecosystem (12 Nodes) -->
+      <!-- Right Column: Interactive 10-Service Architecture Matrix Hub -->
       <div class="hero__visual" aria-hidden="true">
-        <div class="flow-ecosystem">
+        <div class="svc-matrix-hub">
           
-          <!-- Animated SVG Flow Lines -->
-          <svg class="flow-svg" viewBox="0 0 540 460" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="flowGradSvc" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#0081fb" stop-opacity="0.95"/>
-                <stop offset="50%" stop-color="#38bdf8" stop-opacity="1"/>
-                <stop offset="100%" stop-color="#0b3fb0" stop-opacity="0.75"/>
-              </linearGradient>
-              <radialGradient id="centerGlowSvc" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#0081fb" stop-opacity="0.25"/>
-                <stop offset="60%" stop-color="#0b3fb0" stop-opacity="0.08"/>
-                <stop offset="100%" stop-color="#0081fb" stop-opacity="0"/>
-              </radialGradient>
-            </defs>
+          <div class="svc-matrix-glow"></div>
 
-            <!-- Radial Background Aura -->
-            <circle cx="270" cy="230" r="130" fill="url(#centerGlowSvc)" />
+          <!-- Floating Satellite Capability Badges -->
+          <div class="svc-matrix-chip svc-chip-1">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="m12 8 4 4-4 4M8 12h8"/></svg>
+            01. AI Search &amp; GEO
+          </div>
+          <div class="svc-matrix-chip svc-chip-2">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="2.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            03. Performance Ads
+          </div>
+          <div class="svc-matrix-chip svc-chip-3">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            07. Web &amp; Apps
+          </div>
+          <div class="svc-matrix-chip svc-chip-4">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            10. Custom SaaS
+          </div>
 
-            <!-- Connecting Paths (Static base dashed lines) -->
-            <!-- Left 6 -->
-            <path class="flow-path-base" d="M 270 230 C 190 230, 160 42, 110 42" />
-            <path class="flow-path-base" d="M 270 230 C 180 230, 150 115, 95 115" />
-            <path class="flow-path-base" d="M 270 230 C 175 230, 145 188, 85 188" />
-            <path class="flow-path-base" d="M 270 230 C 175 230, 145 262, 85 262" />
-            <path class="flow-path-base" d="M 270 230 C 180 230, 150 335, 95 335" />
-            <path class="flow-path-base" d="M 270 230 C 190 230, 160 410, 110 410" />
-
-            <!-- Right 6 -->
-            <path class="flow-path-base" d="M 270 230 C 350 230, 380 42, 430 42" />
-            <path class="flow-path-base" d="M 270 230 C 360 230, 390 115, 445 115" />
-            <path class="flow-path-base" d="M 270 230 C 365 230, 395 188, 455 188" />
-            <path class="flow-path-base" d="M 270 230 C 365 230, 395 262, 455 262" />
-            <path class="flow-path-base" d="M 270 230 C 360 230, 390 335, 445 335" />
-            <path class="flow-path-base" d="M 270 230 C 350 230, 380 410, 430 410" />
-
-            <!-- Animated Flowing Gradient Paths -->
-            <path class="flow-path-active" d="M 270 230 C 190 230, 160 42, 110 42" />
-            <path class="flow-path-active" d="M 270 230 C 180 230, 150 115, 95 115" />
-            <path class="flow-path-active" d="M 270 230 C 175 230, 145 188, 85 188" />
-            <path class="flow-path-active" d="M 270 230 C 175 230, 145 262, 85 262" />
-            <path class="flow-path-active" d="M 270 230 C 180 230, 150 335, 95 335" />
-            <path class="flow-path-active" d="M 270 230 C 190 230, 160 410, 110 410" />
-            <path class="flow-path-active" d="M 270 230 C 350 230, 380 42, 430 42" />
-            <path class="flow-path-active" d="M 270 230 C 360 230, 390 115, 445 115" />
-            <path class="flow-path-active" d="M 270 230 C 365 230, 395 188, 455 188" />
-            <path class="flow-path-active" d="M 270 230 C 365 230, 395 262, 455 262" />
-            <path class="flow-path-active" d="M 270 230 C 360 230, 390 335, 445 335" />
-            <path class="flow-path-active" d="M 270 230 C 350 230, 380 410, 430 410" />
-
-            <!-- Pulsing Energy Particles Flowing Along Lines -->
-            <circle class="flow-particle" r="3.2" fill="#0081fb">
-              <animateMotion dur="2.4s" repeatCount="indefinite" path="M 270 230 C 190 230, 160 42, 110 42" keyTimes="0;1" keyPoints="0;1" calcMode="linear"/>
-            </circle>
-            <circle class="flow-particle" r="3.2" fill="#38bdf8">
-              <animateMotion dur="2.1s" repeatCount="indefinite" path="M 270 230 C 180 230, 150 115, 95 115" keyTimes="0;1" keyPoints="0;1" calcMode="linear"/>
-            </circle>
-            <circle class="flow-particle" r="3.2" fill="#25f4ee">
-              <animateMotion dur="2.6s" repeatCount="indefinite" path="M 270 230 C 175 230, 145 188, 85 188" keyTimes="0;1" keyPoints="0;1" calcMode="linear"/>
-            </circle>
-            <circle class="flow-particle" r="3.2" fill="#10b981">
-              <animateMotion dur="2.3s" repeatCount="indefinite" path="M 270 230 C 175 230, 145 262, 85 262" keyTimes="0;1" keyPoints="0;1" calcMode="linear"/>
-            </circle>
-            <circle class="flow-particle" r="3.2" fill="#f59e0b">
-              <animateMotion dur="2.5s" repeatCount="indefinite" path="M 270 230 C 180 230, 150 335, 95 335" keyTimes="0;1" keyPoints="0;1" calcMode="linear"/>
-            </circle>
-            <circle class="flow-particle" r="3.2" fill="#8b5cf6">
-              <animateMotion dur="2.2s" repeatCount="indefinite" path="M 270 230 C 190 230, 160 410, 110 410" keyTimes="0;1" keyPoints="0;1" calcMode="linear"/>
-            </circle>
-            <circle class="flow-particle" r="3.2" fill="#f9ab00">
-              <animateMotion dur="2.7s" repeatCount="indefinite" path="M 270 230 C 350 230, 380 42, 430 42" keyTimes="0;1" keyPoints="0;1" calcMode="linear"/>
-            </circle>
-            <circle class="flow-particle" r="3.2" fill="#ff642d">
-              <animateMotion dur="2.4s" repeatCount="indefinite" path="M 270 230 C 360 230, 390 115, 445 115" keyTimes="0;1" keyPoints="0;1" calcMode="linear"/>
-            </circle>
-            <circle class="flow-particle" r="3.2" fill="#3858e9">
-              <animateMotion dur="2.5s" repeatCount="indefinite" path="M 270 230 C 365 230, 395 188, 455 188" keyTimes="0;1" keyPoints="0;1" calcMode="linear"/>
-            </circle>
-            <circle class="flow-particle" r="3.2" fill="#95bf47">
-              <animateMotion dur="2.2s" repeatCount="indefinite" path="M 270 230 C 365 230, 395 262, 455 262" keyTimes="0;1" keyPoints="0;1" calcMode="linear"/>
-            </circle>
-            <circle class="flow-particle" r="3.2" fill="#0081fb">
-              <animateMotion dur="2.6s" repeatCount="indefinite" path="M 270 230 C 360 230, 390 335, 445 335" keyTimes="0;1" keyPoints="0;1" calcMode="linear"/>
-            </circle>
-            <circle class="flow-particle" r="3.2" fill="#0b3fb0">
-              <animateMotion dur="2.3s" repeatCount="indefinite" path="M 270 230 C 350 230, 380 410, 430 410" keyTimes="0;1" keyPoints="0;1" calcMode="linear"/>
-            </circle>
-          </svg>
-
-          <!-- Center Glowing Hub with Growth Icon -->
-          <div class="hub-center">
-            <div class="hub-ring hub-ring--outer"></div>
-            <div class="hub-ring hub-ring--inner"></div>
-            <div class="hub-core" title="Growth Engine">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
-                <polyline points="17 6 23 6 23 12"></polyline>
-              </svg>
+          <!-- Central Glass Matrix Board -->
+          <div class="svc-matrix-board">
+            
+            <div class="svc-matrix-header">
+              <span class="svc-matrix-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                GTech Service Matrix
+              </span>
+              <span class="svc-matrix-status">
+                <span class="svc-matrix-status-dot"></span>
+                10 Streams Active
+              </span>
             </div>
-          </div>
 
-          <!-- 12 Connected Capability Nodes -->
-          <div class="flow-node node-1">
-            <span class="flow-node__icon">
-              <svg width="17" height="17" viewBox="0 0 48 48" aria-hidden="true">
-                <path fill="#4285F4" d="M45.1 24.5c0-1.6-.1-2.7-.4-3.9H24v7.1h12.1c-.2 1.8-1.6 4.6-4.5 6.4l6.9 5.4c4.1-3.8 6.6-9.4 6.6-15Z"/>
-                <path fill="#34A853" d="M24 46c5.9 0 10.9-2 14.5-5.3l-6.9-5.4c-1.9 1.3-4.4 2.2-7.6 2.2-5.8 0-10.7-3.8-12.5-9.1l-7.1 5.5C8 41.4 15.4 46 24 46Z"/>
-                <path fill="#FBBC05" d="M11.5 28.4c-.5-1.4-.7-2.9-.7-4.4s.3-3 .7-4.4l-7.1-5.5C2.9 17 2 20.4 2 24s.9 7 2.4 9.9l7.1-5.5Z"/>
-                <path fill="#EA4335" d="M24 10.5c4.1 0 6.9 1.8 8.5 3.3l6.2-6C34.9 4.4 29.9 2 24 2 15.4 2 8 6.6 4.4 14.1l7.1 5.5c1.8-5.3 6.7-9.1 12.5-9.1Z"/>
-              </svg>
-            </span>
-            <span class="flow-node__label">Google Ads</span>
-          </div>
+            <div class="svc-matrix-grid">
+              
+              <!-- Card 1: Organic & AI Search Authority -->
+              <div class="svc-matrix-card">
+                <div class="svc-matrix-card__top">
+                  <span class="svc-matrix-card__icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                  </span>
+                  <span class="svc-matrix-card__num">01&bull;02&bull;05&bull;06</span>
+                </div>
+                <h3 class="svc-matrix-card__title">Search Authority &amp; AEO</h3>
+                <p class="svc-matrix-card__sub">Google AI Overviews, GEO, Map 3-Pack &amp; PR</p>
+                <span class="svc-matrix-card__stat">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>
+                  +380% AI Citations
+                </span>
+              </div>
 
-          <div class="flow-node node-2">
-            <span class="flow-node__icon">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="#0081FB" aria-hidden="true">
-                <path d="M6.86 4c-2.02 0-3.82.94-4.99 2.5C.67 8.08 0 10.3 0 12.63c0 2.37.7 4.6 2.01 6.25C3.26 20.6 5.12 21.6 7.2 21.6c2.4 0 4.25-1.27 5.71-3.15l.09-.12.09.12c1.46 1.88 3.31 3.15 5.71 3.15 2.08 0 3.94-1 5.19-2.72 1.31-1.65 2.01-3.88 2.01-6.25 0-2.33-.67-4.55-1.87-6.13C23.01 4.94 21.21 4 19.19 4c-2.48 0-4.43 1.34-5.89 3.28l-.3.4-.3-.4C11.24 5.34 9.29 4 6.86 4zm-.1 2.45c1.7 0 3.12 1.05 4.3 2.92l.94 1.49-1.39 1.76c-1.07 1.36-2.26 2.5-3.87 2.5-1.58 0-2.92-.85-3.72-2.18-.75-1.26-1.06-2.8-1.06-4.31 0-1.5.31-3.03 1.05-4.28.8-1.34 2.15-2.2 3.75-2.2zm12.48 0c1.6 0 2.95.86 3.75 2.2.74 1.25 1.05 2.78 1.05 4.28 0 1.51-.31 3.05-1.06 4.31-.8 1.33-2.14 2.18-3.72 2.18-1.61 0-2.8-1.14-3.87-2.5l-1.39-1.76.94-1.49c1.18-1.87 2.6-2.92 4.3-2.92z"/>
-              </svg>
-            </span>
-            <span class="flow-node__label">Meta Ads</span>
-          </div>
+              <!-- Card 2: Paid Acquisition & Social -->
+              <div class="svc-matrix-card">
+                <div class="svc-matrix-card__top">
+                  <span class="svc-matrix-card__icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
+                  </span>
+                  <span class="svc-matrix-card__num">03&bull;04</span>
+                </div>
+                <h3 class="svc-matrix-card__title">Paid Media &amp; Social</h3>
+                <p class="svc-matrix-card__sub">Google Ads, Meta CAPI, TikTok Funnels</p>
+                <span class="svc-matrix-card__stat" style="color:#ec4899;background:rgba(236,72,153,0.1)">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>
+                  4.8x Avg ROAS
+                </span>
+              </div>
 
-          <div class="flow-node node-3">
-            <span class="flow-node__icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="#25F4EE" aria-hidden="true">
-                <path d="M16.2 2c.3 2.3 1.6 3.7 3.8 3.9v2.6c-1.3.1-2.5-.3-3.8-1.1v5.9c0 4.5-4.4 6.9-8 4.8-2.3-1.4-3-4.7-1.5-7 1.2-1.9 3.5-2.7 5.6-2.2v2.7c-.3-.1-.7-.2-1-.2-1.3-.1-2.5.9-2.5 2.2 0 1.3 1 2.3 2.3 2.3 1.3 0 2.4-1 2.4-2.4V2h2.7Z"/>
-              </svg>
-            </span>
-            <span class="flow-node__label">TikTok Ads</span>
-          </div>
+              <!-- Card 3: Web & Mobile Engineering -->
+              <div class="svc-matrix-card">
+                <div class="svc-matrix-card__top">
+                  <span class="svc-matrix-card__icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                  </span>
+                  <span class="svc-matrix-card__num">07&bull;09</span>
+                </div>
+                <h3 class="svc-matrix-card__title">Web &amp; Mobile Apps</h3>
+                <p class="svc-matrix-card__sub">Next.js Web, iOS Swift, Android &amp; Flutter</p>
+                <span class="svc-matrix-card__stat" style="color:#10b981;background:rgba(16,185,129,0.1)">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                  100/100 Web Vitals
+                </span>
+              </div>
 
-          <div class="flow-node node-4">
-            <span class="flow-node__icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6M8 11h6"/>
-              </svg>
-            </span>
-            <span class="flow-node__label">SEO &amp; Local</span>
-          </div>
+              <!-- Card 4: Custom Software & Brand UI/UX -->
+              <div class="svc-matrix-card">
+                <div class="svc-matrix-card__top">
+                  <span class="svc-matrix-card__icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                  </span>
+                  <span class="svc-matrix-card__num">08&bull;10</span>
+                </div>
+                <h3 class="svc-matrix-card__title">Software &amp; UI/UX</h3>
+                <p class="svc-matrix-card__sub">Bespoke SaaS Platforms, APIs &amp; Figma Design</p>
+                <span class="svc-matrix-card__stat" style="color:#f59e0b;background:rgba(245,158,11,0.1)">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                  99.99% Cloud SLA
+                </span>
+              </div>
 
-          <div class="flow-node node-5">
-            <span class="flow-node__icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b" aria-hidden="true">
-                <path d="M12 2L14.4 8.6L21 11L14.4 13.4L12 20L9.6 13.4L3 11L9.6 8.6L12 2Z"/>
-              </svg>
-            </span>
-            <span class="flow-node__label">AEO &amp; GEO</span>
-          </div>
+            </div>
 
-          <div class="flow-node node-6">
-            <span class="flow-node__icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>
-              </svg>
-            </span>
-            <span class="flow-node__label">CRO &amp; Funnels</span>
-          </div>
-
-          <div class="flow-node node-7">
-            <span class="flow-node__icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0081fb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
-              </svg>
-            </span>
-            <span class="flow-node__label">Web Design</span>
-          </div>
-
-          <div class="flow-node node-8">
-            <span class="flow-node__icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <circle cx="12" cy="12" r="10"/><path d="m9 16 6-8v8"/>
-              </svg>
-            </span>
-            <span class="flow-node__label">Next.js &amp; React</span>
-          </div>
-
-          <div class="flow-node node-9">
-            <span class="flow-node__icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
-                <circle cx="12" cy="12" r="10" fill="none" stroke="#3858E9" stroke-width="1.6"/>
-                <path d="m4.6 8.4 3.9 10.7 2.3-6.8-1.9-3.9H4.6Zm7.9 0 3.9 10.7 1.6-5.2c.4-1.4.2-2.4-.3-3.6l-.8-1.9h-4.4Z" fill="#3858E9"/>
-              </svg>
-            </span>
-            <span class="flow-node__label">WordPress &amp; CMS</span>
-          </div>
-
-          <div class="flow-node node-10">
-            <span class="flow-node__icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#95BF47" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/>
-              </svg>
-            </span>
-            <span class="flow-node__label">Graphic Design</span>
-          </div>
-
-          <div class="flow-node node-11">
-            <span class="flow-node__icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0081fb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/>
-              </svg>
-            </span>
-            <span class="flow-node__label">Mobile Apps</span>
-          </div>
-
-          <div class="flow-node node-12">
-            <span class="flow-node__icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
-              </svg>
-            </span>
-            <span class="flow-node__label">24/7 Support</span>
           </div>
 
         </div>

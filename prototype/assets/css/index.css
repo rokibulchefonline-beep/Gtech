@@ -1639,38 +1639,39 @@
 
 /* 4 Partner Badges inside Feature Bento Card (2x2 Grid) */
 .bento__partner-badges {
-  margin-top: clamp(20px, 2.4vw, 28px);
-  padding-top: clamp(14px, 1.6vw, 20px);
-  border-top: 1px solid rgba(255, 255, 255, 0.22);
+  margin-top: clamp(14px, 1.8vw, 22px);
+  padding-top: clamp(12px, 1.4vw, 16px);
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
+  gap: 8px;
 }
 
 .bento__badge-item {
-  background: rgba(255, 255, 255, 0.18);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 12px;
-  padding: 8px 14px;
-  height: 48px;
+  background: rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  padding: 4px 8px;
+  height: 34px;
   display: flex;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease, border-color 0.3s ease;
   overflow: hidden;
 }
 
 .bento__badge-item:hover {
-  background: rgba(255, 255, 255, 0.32);
-  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.45);
   transform: translateY(-2px);
 }
 
+.bento__badge-item svg,
 .bento__badge-item img {
   max-width: 100%;
-  max-height: 32px;
+  max-height: 20px;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -1830,20 +1831,21 @@
   }
 
   .bento__partner-badges {
-    margin-top: 18px;
-    padding-top: 14px;
+    margin-top: 14px;
+    padding-top: 10px;
     grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
+    gap: 6px;
   }
 
   .bento__badge-item {
-    height: 44px;
-    padding: 6px 10px;
-    border-radius: 10px;
+    height: 30px;
+    padding: 3px 6px;
+    border-radius: 6px;
   }
 
+  .bento__badge-item svg,
   .bento__badge-item img {
-    max-height: 26px;
+    max-height: 16px;
   }
 
   .bento__metric {
@@ -2679,20 +2681,230 @@
 }
 
 /* ==========================================================================
+   SERVICES PAGE HERO VISUAL — 10-Service Architecture Matrix Hub
+   ========================================================================== */
+.svc-matrix-hub {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  margin-inline: auto;
+  aspect-ratio: 1.12 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.svc-matrix-glow {
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(circle at 50% 50%, rgba(0, 129, 251, 0.28), rgba(56, 189, 248, 0.1) 45%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.svc-matrix-board {
+  position: relative;
+  width: 100%;
+  background: rgba(15, 23, 42, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 20px;
+  padding: 18px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 2;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.svc-matrix-board:hover {
+  transform: translateY(-4px);
+  border-color: rgba(56, 189, 248, 0.45);
+  box-shadow: 0 32px 70px rgba(0, 129, 251, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.svc-matrix-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 12px;
+}
+
+.svc-matrix-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #38bdf8;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.svc-matrix-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #34d399;
+  background: rgba(16, 185, 129, 0.12);
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.svc-matrix-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  animation: matrix-pulse 2s infinite;
+}
+
+.svc-matrix-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.svc-matrix-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.svc-matrix-card:hover {
+  background: rgba(0, 129, 251, 0.12);
+  border-color: rgba(56, 189, 248, 0.4);
+  transform: translateY(-2px);
+}
+
+.svc-matrix-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.svc-matrix-card__icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.svc-matrix-card:nth-child(1) .svc-matrix-card__icon { color: #38bdf8; background: rgba(56, 189, 248, 0.15); }
+.svc-matrix-card:nth-child(2) .svc-matrix-card__icon { color: #ec4899; background: rgba(236, 72, 153, 0.15); }
+.svc-matrix-card:nth-child(3) .svc-matrix-card__icon { color: #10b981; background: rgba(16, 185, 129, 0.15); }
+.svc-matrix-card:nth-child(4) .svc-matrix-card__icon { color: #f59e0b; background: rgba(245, 158, 11, 0.15); }
+
+.svc-matrix-card__num {
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.4);
+  font-family: var(--font-mono, monospace);
+}
+
+.svc-matrix-card__title {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.25;
+}
+
+.svc-matrix-card__sub {
+  font-size: 10.5px;
+  color: rgba(255, 255, 255, 0.62);
+  line-height: 1.35;
+}
+
+.svc-matrix-card__stat {
+  margin-top: 3px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+.svc-matrix-chip {
+  position: absolute;
+  padding: 5px 11px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  background: rgba(15, 23, 42, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 3;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.svc-matrix-chip:hover {
+  transform: scale(1.06);
+  border-color: #38bdf8;
+}
+
+.svc-chip-1 { top: -12px; left: 8%; animation: matrix-float 4s ease-in-out infinite; }
+.svc-chip-2 { bottom: -10px; right: 10%; animation: matrix-float 4.5s ease-in-out infinite 1s; }
+.svc-chip-3 { top: 40%; right: -16px; animation: matrix-float 5s ease-in-out infinite 2s; }
+.svc-chip-4 { bottom: 30%; left: -16px; animation: matrix-float 4.2s ease-in-out infinite 1.5s; }
+
+@keyframes matrix-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes matrix-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+@media (max-width: 767px) {
+  .svc-matrix-hub { max-width: 100%; aspect-ratio: auto; padding: 6px 0; }
+  .svc-matrix-chip { display: none; }
+  .svc-matrix-card__title { font-size: 11.5px; }
+  .svc-matrix-card__sub { font-size: 9.5px; }
+}
+
+/* ==========================================================================
    SERVICES PAGE — Reference Layout (Alternating Editorial Split with Numbered Sub-Services)
    ========================================================================== */
 
 .svc-showcase-list {
   display: flex;
   flex-direction: column;
-  gap: clamp(48px, 5.5vw, 80px);
-  margin-top: clamp(40px, 4.5vw, 64px);
+  gap: clamp(28px, 3.2vw, 44px);
+  margin-top: clamp(24px, 2.5vw, 36px);
 }
 
 .svc-showcase {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.12fr);
-  gap: clamp(36px, 5vw, 72px);
+  gap: clamp(28px, 3.5vw, 52px);
   align-items: center;
   position: relative;
 }
@@ -2717,7 +2929,7 @@
   background: var(--neutral-100);
   border: 1px solid rgba(0, 0, 0, 0.06);
   aspect-ratio: 1.12 / 1;
-  max-height: 460px;
+  max-height: 420px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2760,24 +2972,24 @@
 }
 
 .svc-showcase__title {
-  font-size: clamp(26px, 2.8vw, 38px);
+  font-size: clamp(24px, 2.5vw, 34px);
   font-weight: 700;
-  line-height: 1.15;
+  line-height: 1.18;
   letter-spacing: -0.035em;
   color: var(--neutral-900);
-  margin-bottom: clamp(10px, 1.2vw, 14px);
+  margin-bottom: clamp(8px, 1vw, 12px);
 }
 
 .svc-showcase__desc {
-  font-size: clamp(14px, 1.02vw, 15px);
-  line-height: 1.6;
+  font-size: clamp(14px, 1vw, 15px);
+  line-height: 1.55;
   color: var(--neutral-600);
-  margin-bottom: clamp(16px, 2vw, 22px);
+  margin-bottom: clamp(12px, 1.4vw, 16px);
   max-width: 54ch;
 }
 
 .svc-showcase__actions {
-  margin-top: clamp(18px, 2.2vw, 24px);
+  margin-top: clamp(14px, 1.6vw, 18px);
   display: flex;
   align-items: center;
   gap: 14px;
@@ -2884,7 +3096,7 @@
   width: 100%;
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.08) 15%, rgba(0, 0, 0, 0.08) 85%, transparent);
-  margin-block: clamp(24px, 3.5vw, 48px);
+  margin-block: clamp(14px, 1.8vw, 24px);
 }
 
 @media (max-width: 1023px) {
