@@ -94,114 +94,145 @@
           <li class="nav__item" data-megamenu>
             <a class="nav__link is-active" href="/services" aria-expanded="false" aria-haspopup="true">
               Services
-              <span class="nav__caret" aria-hidden="true"><svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="m1 1 4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
             </a>
-            
-            <div class="megamenu" data-megamenu-panel>
-              <div class="container megamenu__grid">
-                
-                <div class="megamenu__col">
-                  <a class="megamenu__cat" href="/services/performance-marketing">
-                    <span class="megamenu__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0081FB" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
-                    Performance Marketing
-                  </a>
-                  <ul class="megamenu__list">
-                    <li><a href="/services/performance-marketing">Google Search &amp; Shopping (PMax)</a></li>
-                    <li><a href="/services/performance-marketing">Meta Ads (Facebook &amp; Instagram)</a></li>
-                    <li><a href="/services/performance-marketing">TikTok Ads &amp; Spark Funnels</a></li>
-                    <li><a href="/services/performance-marketing">Server-Side Meta CAPI Tracking</a></li>
-                  </ul>
+
+            <div class="mega">
+              <div class="container mega__inner">
+
+                <div class="mega__rows" role="tablist" aria-label="Services">
+                  <button class="mega__row is-active" type="button" role="tab" aria-selected="true" data-mega-tab="performance">
+                    <span class="mega__row-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg></span>
+                    <span class="mega__row-name">Performance Marketing</span>
+                    <span class="mega__row-chevron" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></span>
+                  </button>
+                  <button class="mega__row" type="button" role="tab" aria-selected="false" data-mega-tab="seo">
+                    <span class="mega__row-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg></span>
+                    <span class="mega__row-name">SEO, AEO &amp; GEO</span>
+                    <span class="mega__row-chevron" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></span>
+                  </button>
+                  <button class="mega__row" type="button" role="tab" aria-selected="false" data-mega-tab="web">
+                    <span class="mega__row-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
+                    <span class="mega__row-name">Web Development</span>
+                    <span class="mega__row-chevron" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></span>
+                  </button>
+                  <button class="mega__row" type="button" role="tab" aria-selected="false" data-mega-tab="design">
+                    <span class="mega__row-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/></svg></span>
+                    <span class="mega__row-name">Brand &amp; UI/UX Design</span>
+                    <span class="mega__row-chevron" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></span>
+                  </button>
                 </div>
 
-                <div class="megamenu__col">
-                  <a class="megamenu__cat is-current" href="/services/seo">
-                    <span class="megamenu__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0081FB" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span>
-                    SEO, AEO &amp; GEO
-                  </a>
-                  <ul class="megamenu__list">
-                    <li><a href="/services/seo">Enterprise Technical SEO</a></li>
-                    <li><a href="/services/seo">Generative Engine Optimization (GEO)</a></li>
-                    <li><a href="/services/local-seo" class="is-active">Local SEO &amp; Map 3-Pack</a></li>
-                    <li><a href="/services/restaurant-seo">Restaurant &amp; Hospitality SEO</a></li>
-                    <li><a href="/services/link-building">Link Building &amp; Digital PR</a></li>
-                  </ul>
-                </div>
+                <div class="mega__panels">
+                  <!-- Panel 1: Performance Marketing -->
+                  <div class="mega__panel" data-mega-panel="performance">
+                    <p class="t-label mega__panel-title">Paid Media &amp; Performance Acquisition</p>
+                    <div class="mega__panel-links">
+                      <a href="/services/performance-marketing" style="color:#0081FB;font-weight:600">&bull; Performance Marketing Overview</a>
+                      <a href="/services/performance-marketing#google-ads" style="color:#0081FB;font-weight:600">&bull; Google Ads (Search, Display, PMax)</a>
+                      <a href="/services/performance-marketing#meta-ads" style="color:#0081FB;font-weight:600">&bull; Meta Ads (Facebook &amp; Instagram)</a>
+                      <a href="/services/performance-marketing#tiktok-ads">&bull; TikTok Advertising &amp; Video Funnels</a>
+                      <a href="/services/performance-marketing#server-side-tracking">&bull; Multi-Touch GA4 Attribution</a>
+                      <a href="/services/performance-marketing#cro-optimization">&bull; Conversion Rate Optimization (CRO)</a>
+                    </div>
+                    <a class="link mega__panel-cta" href="/services/performance-marketing">
+                      Explore Performance Marketing
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                  </div>
 
-                <div class="megamenu__col">
-                  <a class="megamenu__cat" href="/services/web-development">
-                    <span class="megamenu__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0081FB" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
-                    Web Development
-                  </a>
-                  <ul class="megamenu__list">
-                    <li><a href="/services/web-development">Next.js &amp; Headless React</a></li>
-                    <li><a href="/services/web-development">Shopify Plus &amp; WooCommerce</a></li>
-                    <li><a href="/services/web-development">100/100 Core Web Vitals</a></li>
-                    <li><a href="/services/web-development">Custom CMS &amp; Cloud APIs</a></li>
-                  </ul>
-                </div>
+                  <!-- Panel 2: SEO, AEO & GEO -->
+                  <div class="mega__panel" data-mega-panel="seo" hidden>
+                    <p class="t-label mega__panel-title">Search Authority &amp; AI Visibility</p>
+                    <div class="mega__panel-links">
+                      <a href="/services/seo" style="color:#0081FB;font-weight:600">&bull; Technical SEO &amp; Core Web Vitals</a>
+                      <a href="/services/seo" style="color:#0081FB;font-weight:600">&bull; Generative Engine Optimization (GEO &amp; AEO)</a>
+                      <a href="/services/local-seo" style="color:#0081FB;font-weight:600">&bull; Local SEO &amp; Google Maps 3-Pack</a>
+                      <a href="/services/restaurant-seo" style="color:#0081FB;font-weight:600">&bull; Restaurant &amp; Hospitality SEO</a>
+                      <a href="/services/link-building" style="color:#0081FB;font-weight:600">&bull; Link Building &amp; Digital PR</a>
+                    </div>
+                    <a class="link mega__panel-cta" href="/services/seo">
+                      Explore SEO &amp; AI Search
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                  </div>
 
-                <div class="megamenu__col">
-                  <a class="megamenu__cat" href="/services/brand-design">
-                    <span class="megamenu__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0081FB" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg></span>
-                    Brand &amp; UI/UX Design
-                  </a>
-                  <ul class="megamenu__list">
-                    <li><a href="/services/brand-design">Brand Guidelines &amp; Master Logo</a></li>
-                    <li><a href="/services/brand-design">UI/UX Research &amp; Wireframing</a></li>
-                    <li><a href="/services/brand-design">Interactive Figma UI Prototypes</a></li>
-                    <li><a href="/services/social-media-marketing">Social Media Marketing</a></li>
-                  </ul>
+                  <!-- Panel 3: Web Development -->
+                  <div class="mega__panel" data-mega-panel="web" hidden>
+                    <p class="t-label mega__panel-title">Engineering &amp; CMS Platforms</p>
+                    <div class="mega__panel-links">
+                      <a href="/services/web-development" style="color:#0081FB;font-weight:600">&bull; Web Development Overview</a>
+                      <a href="/services/web-development#nextjs-react" style="color:#0081FB;font-weight:600">&bull; Next.js &amp; Headless React Platforms</a>
+                      <a href="/services/web-development#wordpress-cms">&bull; WordPress &amp; WooCommerce Stores</a>
+                      <a href="/services/web-development#shopify-ecommerce">&bull; Shopify Custom Development</a>
+                      <a href="/services/web-development#speed-optimization">&bull; 100/100 Core Web Vitals &amp; Speed</a>
+                      <a href="/services/web-development#custom-software">&bull; Custom API &amp; Cloud Architecture</a>
+                    </div>
+                    <a class="link mega__panel-cta" href="/services/web-development">
+                      Explore Web Development
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                  </div>
+
+                  <!-- Panel 4: Brand & UI/UX Design -->
+                  <div class="mega__panel" data-mega-panel="design" hidden>
+                    <p class="t-label mega__panel-title">Brand Identity &amp; Product Experience</p>
+                    <div class="mega__panel-links">
+                      <a href="/services/brand-design" style="color:#0081FB;font-weight:600">&bull; Brand Identity Guidelines &amp; Logos</a>
+                      <a href="/services/brand-design#ui-ux-research" style="color:#0081FB;font-weight:600">&bull; UI/UX Research &amp; User Journeys</a>
+                      <a href="/services/brand-design#figma-prototyping">&bull; Wireframing &amp; Figma Prototypes</a>
+                      <a href="/services/social-media-marketing" style="color:#0081FB;font-weight:600">&bull; Social Media Marketing</a>
+                      <a href="/services/brand-design#design-systems">&bull; Scalable Design Systems</a>
+                    </div>
+                    <a class="link mega__panel-cta" href="/services/brand-design">
+                      Explore Brand &amp; UI/UX Design
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                  </div>
                 </div>
 
               </div>
             </div>
           </li>
-          
+
           <li class="nav__item"><a class="nav__link" href="/pricing.html">SEO Packages</a></li>
-          <li class="nav__item"><a class="nav__link" href="/index.html#who-we-are">About Us</a></li>
+          <li class="nav__item"><a class="nav__link" href="/index.html#about">About Us</a></li>
           <li class="nav__item"><a class="nav__link" href="#contact">Contact Us</a></li>
         </ul>
       </nav>
 
-      <div class="site-header__actions">
-        <a class="phone-link" href="tel:+442035985956">
-          <span class="phone-link__icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
-          0203 598 5956
-        </a>
-        <a class="btn btn--primary btn--arrow" href="#contact">
-          Book Intro Call
-          <span class="btn__arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
+      <div class="header__actions">
+        <a class="header__phone" href="tel:+442035985956">0203 598 5956</a>
+        <a class="btn btn--primary btn--sm" href="#contact">Book Intro Call</a>
       </div>
 
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation" data-mobile-toggle>
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <button class="nav-toggle" data-nav-open aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
 
     </div>
   </header>
 
-  <!-- Mobile Drawer -->
-  <div class="mobile-nav" id="mobile-menu" data-mobile-nav>
-    <div class="mobile-nav__header">
-      <img src="https://www.gtechdigital.co.uk/assets/frontend/images/logo.png" alt="GTech Digital" width="160" height="42">
-      <button class="mobile-nav__close" type="button" aria-label="Close menu" data-mobile-close>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+  <div class="mobile-nav" id="mobile-nav" data-mobile-nav aria-hidden="true">
+    <div class="mobile-nav__head">
+      <span class="logo"><img src="https://www.gtechdigital.co.uk/assets/frontend/images/logo.png" alt="GTech Digital" width="180" height="47"></span>
+      <button class="nav-toggle" style="display:grid" data-nav-close aria-label="Close menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
       </button>
     </div>
     <a class="mobile-nav__link" href="/services">All Services</a>
     <div class="mobile-nav__sub">
       <a href="/services/performance-marketing">Performance Marketing</a>
-      <a href="/services/seo">SEO, AEO &amp; GEO</a>
+      <a href="/services/social-media-marketing">Social Media Marketing</a>
+      <a href="/services/seo">SEO, AEO &amp; GEO (AI Search)</a>
       <a href="/services/local-seo">Local SEO &amp; Map 3-Pack</a>
-      <a href="/services/restaurant-seo">Restaurant SEO</a>
+      <a href="/services/restaurant-seo">Restaurant SEO Services</a>
       <a href="/services/link-building">Link Building &amp; Digital PR</a>
       <a href="/services/web-development">Web Development</a>
       <a href="/services/brand-design">Brand &amp; UI/UX Design</a>
-      <a href="/services/social-media-marketing">Social Media Marketing</a>
     </div>
     <a class="mobile-nav__link" href="/pricing.html">SEO Packages</a>
-    <a class="mobile-nav__link" href="/index.html#who-we-are">About Us</a>
+    <a class="mobile-nav__link" href="/index.html#about">About Us</a>
     <a class="mobile-nav__link" href="/index.html#faq">FAQ</a>
     <a class="mobile-nav__link" href="#contact">Contact Us</a>
     <div class="mt-10 flex gap-3" style="flex-direction:column">
