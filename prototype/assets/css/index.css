@@ -1637,22 +1637,22 @@
   max-width: 48ch;
 }
 
-/* 6 Partner Badges inside Feature Bento Card */
+/* 4 Partner Badges inside Feature Bento Card (2x2 Grid) */
 .bento__partner-badges {
   margin-top: clamp(20px, 2.4vw, 28px);
   padding-top: clamp(14px, 1.6vw, 20px);
   border-top: 1px solid rgba(255, 255, 255, 0.22);
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
 }
 
 .bento__badge-item {
-  background: rgba(255, 255, 255, 0.16);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 10px;
-  padding: 6px 12px;
-  height: 44px;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 8px 14px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1663,22 +1663,53 @@
 }
 
 .bento__badge-item:hover {
-  background: rgba(255, 255, 255, 0.28);
-  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.32);
+  border-color: rgba(255, 255, 255, 0.6);
   transform: translateY(-2px);
 }
 
 .bento__badge-item img {
   max-width: 100%;
-  max-height: 28px;
+  max-height: 32px;
   width: auto;
   height: auto;
   object-fit: contain;
 }
 
-.bento__badge-item svg {
+/* Footer 4 Partner Badges */
+.footer__partner-badges {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  max-width: 260px;
+}
+
+.footer__partner-badges .footer__badge-item {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 6px 10px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+  overflow: hidden;
+}
+
+.footer__partner-badges .footer__badge-item:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+.footer__partner-badges img {
   max-width: 100%;
+  max-height: 24px;
+  width: auto;
   height: auto;
+  object-fit: contain;
+  filter: brightness(1.1);
 }
 
 /* 4 Metric Cards — Blue Gradient Same as Service Card Hover */
