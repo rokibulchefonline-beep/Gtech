@@ -474,6 +474,23 @@
     });
   }
 
+  /* ---------------------------------------------------- Scroll to top */
+
+  function initScrollTop() {
+    var btn = document.querySelector("[data-scroll-top]");
+    if (!btn) return;
+
+    var onScroll = function () {
+      btn.classList.toggle("is-visible", window.scrollY > 380);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    btn.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+    });
+  }
+
   /* ---------------------------------------------------------------- Boot */
 
   function boot() {
@@ -488,6 +505,7 @@
     initMegaPanes();
     initFaq();
     initMobileCta();
+    initScrollTop();
     initStubForms();
   }
 
