@@ -2685,13 +2685,14 @@
 .svc-showcase-list {
   display: flex;
   flex-direction: column;
-  gap: clamp(20px, 3vw, 36px);
+  gap: clamp(48px, 5.5vw, 80px);
+  margin-top: clamp(40px, 4.5vw, 64px);
 }
 
 .svc-showcase {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.12fr);
-  gap: clamp(28px, 4.5vw, 64px);
+  gap: clamp(36px, 5vw, 72px);
   align-items: center;
   position: relative;
 }
@@ -2712,7 +2713,7 @@
   position: relative;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 12px 32px rgba(16, 19, 26, 0.07);
+  box-shadow: 0 16px 40px rgba(16, 19, 26, 0.08);
   background: var(--neutral-100);
   border: 1px solid rgba(0, 0, 0, 0.06);
   aspect-ratio: 1.12 / 1;
@@ -2882,8 +2883,8 @@
 .svc-divider {
   width: 100%;
   height: 1px;
-  background: rgba(0, 0, 0, 0.07);
-  margin-block: clamp(12px, 1.8vw, 24px);
+  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.08) 15%, rgba(0, 0, 0, 0.08) 85%, transparent);
+  margin-block: clamp(24px, 3.5vw, 48px);
 }
 
 @media (max-width: 1023px) {
@@ -3067,28 +3068,30 @@
   }
 }
 
-/* Visual Process Section — Pure 3-Step Numbered Cards (No Icons) ---- */
+/* Visual Process Section — 4-Step / 3-Step Numbered Cards with Gradient BG ---- */
 .process-header {
   text-align: left;
 }
 
-.process-steps {
+.process-steps,
+.process-steps--4 {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(18px, 2.5vw, 32px);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(18px, 2.2vw, 28px);
+  margin-top: clamp(32px, 4vw, 56px);
 }
 
 .process-card {
-  background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 16px;
-  padding: clamp(28px, 3.5vw, 38px) clamp(22px, 2.8vw, 32px);
+  background: linear-gradient(150deg, #ffffff 0%, #f4f8fd 60%, #eaf3fd 100%);
+  border: 1px solid rgba(0, 129, 251, 0.16);
+  border-radius: 20px;
+  padding: clamp(30px, 3.2vw, 40px) clamp(22px, 2.4vw, 28px);
   display: flex;
   flex-direction: column;
   height: 100%;
   position: relative;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.02);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  box-shadow: 0 4px 20px rgba(0, 129, 251, 0.04), 0 1px 3px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
   overflow: hidden;
 }
 
@@ -3098,57 +3101,67 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
-  background: #0081FB;
-  opacity: 0;
-  transition: opacity 0.25s ease;
+  height: 4px;
+  background: linear-gradient(90deg, #0081fb 0%, #38bdf8 100%);
+  opacity: 0.85;
+  transition: opacity 0.25s ease, height 0.25s ease;
 }
 
 .process-card:hover {
-  transform: translateY(-5px);
-  border-color: #0081FB;
-  box-shadow: 0 16px 36px rgba(0, 129, 251, 0.08);
+  transform: translateY(-6px);
+  border-color: rgba(0, 129, 251, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 129, 251, 0.12);
 }
 
 .process-card:hover::before {
   opacity: 1;
+  height: 5px;
 }
 
 .process-card__number {
-  font-size: clamp(34px, 4vw, 48px);
+  font-size: clamp(36px, 3.8vw, 48px);
   font-weight: 800;
-  color: #0081FB;
+  background: linear-gradient(135deg, #0081fb 0%, #0b3fb0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   line-height: 1;
   letter-spacing: -0.04em;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   display: block;
 }
 
 .process-card__title {
-  font-size: clamp(18px, 1.4vw, 21px);
+  font-size: clamp(17px, 1.3vw, 19.5px);
   font-weight: 700;
   color: #0f172a;
   margin-bottom: 10px;
   line-height: 1.3;
+  letter-spacing: -0.02em;
 }
 
 .process-card__desc {
   font-size: 14.5px;
-  line-height: 1.6;
+  line-height: 1.55;
   color: #475569;
   margin: 0;
 }
 
 @media (max-width: 1023px) {
-  .process-steps {
-    grid-template-columns: 1fr;
+  .process-steps,
+  .process-steps--4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
   }
 }
 
 @media (max-width: 639px) {
+  .process-steps,
+  .process-steps--4 {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
   .process-card {
-    padding: 24px 20px;
+    padding: 26px 20px;
   }
 }
 
