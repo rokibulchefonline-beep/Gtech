@@ -399,19 +399,7 @@
     });
   }
 
-  /* ------------------------------------------------------- Sticky mobile CTA */
 
-  function initMobileCta() {
-    var bar = document.querySelector("[data-mobile-cta]");
-    var hero = document.querySelector(".hero");
-    if (!bar || !hero) return;
-
-    var onScroll = function () {
-      bar.classList.toggle("is-visible", window.scrollY > hero.offsetHeight * 0.7);
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-  }
 
   /* ------------------------------------------------------------ Prototype forms */
 
@@ -504,7 +492,6 @@
     initCarouselControls();
     initMegaPanes();
     initFaq();
-    initMobileCta();
     initScrollTop();
     initStubForms();
   }

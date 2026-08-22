@@ -1008,8 +1008,75 @@
 
 /* CTA ==================================================================== */
 
-.cta { background: var(--brand-ink); color: #fff; }
-.cta h2 { color: #fff; }
+.cta {
+  background: linear-gradient(145deg, #0081fb 0%, #004ea3 100%);
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta::before {
+  content: "";
+  position: absolute;
+  top: -25%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.18) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.cta h2, .cta .t-h2, .cta .t-h4 { color: #ffffff; }
+.cta .t-lead { color: rgba(255, 255, 255, 0.9); }
+.cta .t-label { color: rgba(255, 255, 255, 0.85); }
+
+.cta .input,
+.cta .select,
+.cta .textarea {
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.cta .input::placeholder,
+.cta .textarea::placeholder {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.cta .input:focus,
+.cta .select:focus,
+.cta .textarea:focus {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+  outline: none;
+}
+
+.cta .select option {
+  background: #004ea3;
+  color: #ffffff;
+}
+
+.cta .field__label {
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 600;
+}
+
+.cta .btn--primary {
+  background: #ffffff;
+  color: #0056b3;
+  border: none;
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.cta .btn--primary:hover {
+  background: #f0f7ff;
+  color: #003e85;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
 
 /* Footer ================================================================= */
 
@@ -1056,52 +1123,6 @@
 .footer__legal a:hover { color: #fff; }
 .footer__legal-links { display: flex; flex-wrap: wrap; gap: var(--space-6); }
 
-/* Sticky Mobile Floating CTA ============================================ */
-
-.mobile-cta {
-  position: fixed;
-  left: 14px;
-  right: 14px;
-  bottom: calc(10px + env(safe-area-inset-bottom, 0px));
-  z-index: 90;
-  display: none;
-  gap: 8px;
-  padding: 7px 10px;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(0, 129, 251, 0.2);
-  border-radius: 16px;
-  box-shadow: 0 10px 30px -5px rgba(16, 19, 26, 0.18), 0 0 0 1px rgba(255, 255, 255, 0.9) inset;
-  transform: translateY(130%);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  pointer-events: none;
-}
-
-.mobile-cta.is-visible {
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-.mobile-cta .btn {
-  flex: 1;
-  min-height: 42px;
-  font-size: 13.5px;
-  border-radius: 12px;
-  padding: 8px 12px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  font-weight: 600;
-  white-space: nowrap;
-}
-
-@media (max-width: 767px) {
-  .mobile-cta { display: flex; }
-  body { padding-bottom: 74px; }
-}
-
 /* Global Scroll to Top Button =========================================== */
 
 .scroll-top {
@@ -1143,10 +1164,10 @@
 
 @media (max-width: 767px) {
   .scroll-top {
-    bottom: calc(76px + env(safe-area-inset-bottom, 0px));
-    right: 14px;
-    width: 42px;
-    height: 42px;
+    bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+    right: 16px;
+    width: 44px;
+    height: 44px;
     box-shadow: 0 6px 18px -2px rgba(0, 129, 251, 0.45);
   }
 }
@@ -1413,12 +1434,12 @@
 /* Ticker ---------------------------------------------------------------- */
 
 .ticker {
-  background: var(--neutral-900);
-  color: #fff;
+  background: #021a42;
+  color: #ffffff;
   padding-block: 16px;
   overflow: hidden;
-  border-top: 1px solid var(--neutral-800);
-  border-bottom: 1px solid var(--neutral-800);
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
 }
 
 .ticker__track {
@@ -1440,15 +1461,15 @@
   font-weight: 600;
   letter-spacing: -0.015em;
   white-space: nowrap;
-  color: var(--neutral-100);
+  color: #ffffff;
 }
 
 .ticker__icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: var(--brand-accent);
-  filter: drop-shadow(0 0 6px rgba(212, 45, 35, 0.5));
+  color: #0081fb;
+  filter: drop-shadow(0 0 6px rgba(0, 129, 251, 0.6));
   flex: none;
 }
 
@@ -1577,12 +1598,12 @@
   max-width: 46ch;
 }
 
-/* 4 Metric Cards — Deep Blue Gradient with White Text */
+/* 4 Metric Cards — Blue Gradient Same as Service Card Hover */
 .bento__tile--blue {
-  background: linear-gradient(135deg, #0d3880 0%, #072252 50%, #031333 100%);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  box-shadow: 0 14px 36px -10px rgba(3, 19, 51, 0.45),
-              0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+  background: linear-gradient(145deg, #0081fb 0%, #0056b3 100%);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 14px 36px -10px rgba(0, 129, 251, 0.42),
+              0 0 0 1px rgba(255, 255, 255, 0.12) inset;
   color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -1596,21 +1617,21 @@
   right: 0;
   width: 140px;
   height: 140px;
-  background: radial-gradient(circle at 100% 0%, rgba(56, 189, 248, 0.2) 0%, transparent 70%);
+  background: radial-gradient(circle at 100% 0%, rgba(255, 255, 255, 0.25) 0%, transparent 70%);
   pointer-events: none;
   transition: opacity 0.4s ease;
 }
 
 .bento__tile--blue:hover {
-  background: linear-gradient(135deg, #104294 0%, #092a64 50%, #04183d 100%);
-  border-color: rgba(96, 165, 250, 0.45);
-  box-shadow: 0 20px 48px -10px rgba(3, 19, 51, 0.6),
-              0 0 0 1px rgba(96, 165, 250, 0.25) inset;
+  background: linear-gradient(145deg, #0090ff 0%, #0060cc 100%);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 20px 48px -10px rgba(0, 129, 251, 0.6),
+              0 0 0 1px rgba(255, 255, 255, 0.25) inset;
 }
 
 .bento__tile--blue:hover::before {
   opacity: 1;
-  background: radial-gradient(circle at 100% 0%, rgba(56, 189, 248, 0.35) 0%, transparent 70%);
+  background: radial-gradient(circle at 100% 0%, rgba(255, 255, 255, 0.35) 0%, transparent 70%);
 }
 
 .bento__metric {
@@ -1636,7 +1657,7 @@
   font-size: clamp(13.5px, 1.05vw, 15px);
   line-height: 1.5;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.92);
+  color: rgba(255, 255, 255, 0.95);
 }
 
 @media (max-width: 1023px) {
@@ -1652,7 +1673,27 @@
 
 
 
-/* Technologies — dual-line auto marquee --------------------------------- */
+/* Technologies — Section Background & Dual-Line Auto Marquee ------------ */
+
+#technologies {
+  background: linear-gradient(180deg, #041432 0%, #020a1c 100%);
+  border-top: 1px solid rgba(0, 129, 251, 0.18);
+  border-bottom: 1px solid rgba(0, 129, 251, 0.18);
+  position: relative;
+  overflow: hidden;
+}
+
+#technologies::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 400px;
+  background: radial-gradient(ellipse at center, rgba(0, 129, 251, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
 
 .tech-rail {
   overflow: hidden;
@@ -1706,15 +1747,19 @@
   height: 48px;
   padding: 0 18px;
   border-radius: var(--radius-pill);
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
   transition: all var(--dur) var(--ease);
 }
 
 .tech:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.3);
-  transform: translateY(-1px);
+  background: rgba(0, 129, 251, 0.22);
+  border-color: rgba(0, 129, 251, 0.5);
+  box-shadow: 0 6px 22px rgba(0, 129, 251, 0.35);
+  transform: translateY(-2px);
 }
 
 .tech__mark {
@@ -1725,7 +1770,7 @@
   height: 22px;
 }
 .tech__mark svg { width: 100%; height: 100%; }
-.tech__name { font-size: 13.5px; font-weight: 500; line-height: 1; color: var(--neutral-300); white-space: nowrap; }
+.tech__name { font-size: 13.5px; font-weight: 600; line-height: 1; color: #f8fafc; white-space: nowrap; }
 
 @media (max-width: 767px) {
   .tech { height: 42px; padding: 0 14px; gap: 8px; }
@@ -2306,10 +2351,71 @@
 }
 
 /* ==========================================================================
-   COMPANY NUMBERS
-   Figures sit on a left rule, as in the reference: the rule does the
-   separating, so the tiles need no borders or fills.
+   COMPANY NUMBERS (11+ Years Section)
    ========================================================================== */
+
+.section--blue-stats {
+  background: linear-gradient(145deg, #0081fb 0%, #0056b3 100%);
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.section--blue-stats::before {
+  content: "";
+  position: absolute;
+  top: -25%;
+  right: -15%;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.16) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.section--blue-stats h2, .section--blue-stats .t-h2 {
+  color: #ffffff;
+}
+
+.section--blue-stats .t-body {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.section--blue-stats .stat {
+  border-left: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.section--blue-stats .stat__value {
+  color: #ffffff;
+}
+
+.section--blue-stats .stat__affix {
+  color: #ffffff;
+  opacity: 0.95;
+}
+
+.section--blue-stats .stat__label {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.section--blue-stats .stat__note {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.section--blue-stats .clients-strip {
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.section--blue-stats .clients-strip .t-label {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.section--blue-stats .clients-strip .logo-tile {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.section--blue-stats .clients-strip .logo-tile:hover {
+  color: #ffffff;
+}
 
 .stats-row {
   display: grid;
