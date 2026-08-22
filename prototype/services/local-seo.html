@@ -277,23 +277,26 @@
           <div class="hero__visual" aria-hidden="true">
             <div class="flow-ecosystem">
               
+              <!-- Animated SVG Flow Lines -->
               <svg class="flow-svg" viewBox="0 0 540 460" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
-                  <linearGradient id="flowGradLocal" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <linearGradient id="flowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
                     <stop offset="0%" stop-color="#0081fb" stop-opacity="0.95"/>
                     <stop offset="50%" stop-color="#38bdf8" stop-opacity="1"/>
                     <stop offset="100%" stop-color="#0b3fb0" stop-opacity="0.75"/>
                   </linearGradient>
-                  <radialGradient id="centerGlowLocal" cx="50%" cy="50%" r="50%">
+                  <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" stop-color="#0081fb" stop-opacity="0.25"/>
                     <stop offset="60%" stop-color="#0b3fb0" stop-opacity="0.08"/>
-                    <stop offset="100%" stop-color="#0b3fb0" stop-opacity="0"/>
+                    <stop offset="100%" stop-color="#0081fb" stop-opacity="0"/>
                   </radialGradient>
                 </defs>
 
-                <circle cx="270" cy="230" r="130" fill="url(#centerGlowLocal)" />
+                <!-- Radial Background Aura -->
+                <circle cx="270" cy="230" r="130" fill="url(#centerGlow)" />
 
-                <!-- Left 6 Paths -->
+                <!-- Connecting Paths (Static base dashed lines) -->
+                <!-- Left 6 -->
                 <path class="flow-path-base" d="M 270 230 C 190 230, 160 42, 110 42" />
                 <path class="flow-path-base" d="M 270 230 C 180 230, 150 115, 95 115" />
                 <path class="flow-path-base" d="M 270 230 C 175 230, 145 188, 85 188" />
@@ -301,7 +304,7 @@
                 <path class="flow-path-base" d="M 270 230 C 180 230, 150 335, 95 335" />
                 <path class="flow-path-base" d="M 270 230 C 190 230, 160 410, 110 410" />
 
-                <!-- Right 6 Paths -->
+                <!-- Right 6 -->
                 <path class="flow-path-base" d="M 270 230 C 350 230, 380 42, 430 42" />
                 <path class="flow-path-base" d="M 270 230 C 360 230, 390 115, 445 115" />
                 <path class="flow-path-base" d="M 270 230 C 365 230, 395 188, 455 188" />
@@ -309,7 +312,7 @@
                 <path class="flow-path-base" d="M 270 230 C 360 230, 390 335, 445 335" />
                 <path class="flow-path-base" d="M 270 230 C 350 230, 380 410, 430 410" />
 
-                <!-- Active Flowing Lines -->
+                <!-- Animated Flowing Gradient Paths -->
                 <path class="flow-path-active" d="M 270 230 C 190 230, 160 42, 110 42" />
                 <path class="flow-path-active" d="M 270 230 C 180 230, 150 115, 95 115" />
                 <path class="flow-path-active" d="M 270 230 C 175 230, 145 188, 85 188" />
@@ -322,16 +325,56 @@
                 <path class="flow-path-active" d="M 270 230 C 365 230, 395 262, 455 262" />
                 <path class="flow-path-active" d="M 270 230 C 360 230, 390 335, 445 335" />
                 <path class="flow-path-active" d="M 270 230 C 350 230, 380 410, 430 410" />
+
+                <!-- Flowing Energy Particles -->
+                <circle class="flow-particle" r="3.2" fill="#0081fb">
+                  <animateMotion dur="2.4s" repeatCount="indefinite" path="M 270 230 C 190 230, 160 42, 110 42" keyTimes="0;1" keyPoints="0;1" calcMode="linear"/>
+                </circle>
+                <circle class="flow-particle" r="3.2" fill="#38bdf8">
+                  <animateMotion dur="2.1s" repeatCount="indefinite" path="M 270 230 C 180 230, 150 115, 95 115" keyTimes="0;1" keyPoints="0;1" calcMode="linear"/>
+                </circle>
+                <circle class="flow-particle" r="3.2" fill="#25f4ee">
+                  <animateMotion dur="2.6s" repeatCount="indefinite" path="M 270 230 C 175 230, 145 188, 85 188" keyTimes="0;1" keyPoints="0;1" calcMode="linear"/>
+                </circle>
+                <circle class="flow-particle" r="3.2" fill="#10b981">
+                  <animateMotion dur="2.3s" repeatCount="indefinite" path="M 270 230 C 175 230, 145 262, 85 262" keyTimes="0;1" keyPoints="0;1" calcMode="linear"/>
+                </circle>
+                <circle class="flow-particle" r="3.2" fill="#f59e0b">
+                  <animateMotion dur="2.5s" repeatCount="indefinite" path="M 270 230 C 180 230, 150 335, 95 335" keyTimes="0;1" keyPoints="0;1" calcMode="linear"/>
+                </circle>
+                <circle class="flow-particle" r="3.2" fill="#8b5cf6">
+                  <animateMotion dur="2.2s" repeatCount="indefinite" path="M 270 230 C 190 230, 160 410, 110 410" keyTimes="0;1" keyPoints="0;1" calcMode="linear"/>
+                </circle>
+                <circle class="flow-particle" r="3.2" fill="#ec4899">
+                  <animateMotion dur="2.7s" repeatCount="indefinite" path="M 270 230 C 350 230, 380 42, 430 42" keyTimes="0;1" keyPoints="0;1" calcMode="linear"/>
+                </circle>
+                <circle class="flow-particle" r="3.2" fill="#3b82f6">
+                  <animateMotion dur="2.4s" repeatCount="indefinite" path="M 270 230 C 360 230, 390 115, 445 115" keyTimes="0;1" keyPoints="0;1" calcMode="linear"/>
+                </circle>
+                <circle class="flow-particle" r="3.2" fill="#10b981">
+                  <animateMotion dur="2.5s" repeatCount="indefinite" path="M 270 230 C 365 230, 395 188, 455 188" keyTimes="0;1" keyPoints="0;1" calcMode="linear"/>
+                </circle>
+                <circle class="flow-particle" r="3.2" fill="#f59e0b">
+                  <animateMotion dur="2.2s" repeatCount="indefinite" path="M 270 230 C 365 230, 395 262, 455 262" keyTimes="0;1" keyPoints="0;1" calcMode="linear"/>
+                </circle>
+                <circle class="flow-particle" r="3.2" fill="#8b5cf6">
+                  <animateMotion dur="2.6s" repeatCount="indefinite" path="M 270 230 C 360 230, 390 335, 445 335" keyTimes="0;1" keyPoints="0;1" calcMode="linear"/>
+                </circle>
+                <circle class="flow-particle" r="3.2" fill="#0081fb">
+                  <animateMotion dur="2.3s" repeatCount="indefinite" path="M 270 230 C 350 230, 380 410, 430 410" keyTimes="0;1" keyPoints="0;1" calcMode="linear"/>
+                </circle>
               </svg>
 
-              <!-- Central Hub Node -->
-              <div class="flow-hub">
-                <div class="flow-hub__glow"></div>
-                <div class="flow-hub__badge">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <!-- Center Glowing Hub with Growth Icon -->
+              <div class="hub-center">
+                <div class="hub-ring hub-ring--outer"></div>
+                <div class="hub-ring hub-ring--inner"></div>
+                <div class="hub-core" title="Local Map Engine">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
                 </div>
-                <span class="flow-hub__title">Local Map Engine</span>
-                <span class="flow-hub__status">Geo-Rank Active</span>
               </div>
 
               <!-- 12 Contextual Local SEO Nodes -->
