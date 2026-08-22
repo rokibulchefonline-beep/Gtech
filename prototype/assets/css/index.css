@@ -3130,33 +3130,38 @@
   }
 }
 
-/* Why Choose GTech Digital Section ------------------------------------ */
+/* Why Choose / Why Partner Section ------------------------------------ */
 .why-choose-grid {
   display: grid;
-  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
-  gap: clamp(24px, 4vw, 48px);
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: clamp(36px, 4.5vw, 64px);
   align-items: center;
 }
 
 .why-choose__media {
   position: relative;
-  max-width: 420px;
   width: 100%;
 }
 
 .why-choose__media-card {
   position: relative;
-  border-radius: 16px;
+  border-radius: 20px;
   overflow: hidden;
-  background: var(--neutral-900);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.07);
+  background: var(--neutral-100);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 16px 40px rgba(16, 19, 26, 0.08);
+  aspect-ratio: 1.1 / 1;
+  max-height: 440px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .why-choose__media-card img {
   width: 100%;
-  height: 260px;
+  height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
   transition: transform var(--dur-slow) var(--ease);
 }
@@ -3165,67 +3170,12 @@
   transform: scale(1.03);
 }
 
-.why-badge {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 12px;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(0, 129, 251, 0.2);
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  font-size: 11.5px;
-  line-height: 1.25;
-  z-index: 2;
-  animation: floatSvc 5s ease-in-out infinite alternate;
-}
-
-.why-badge strong {
-  display: block;
-  font-size: 12px;
-  color: var(--neutral-900);
-  font-weight: 600;
-}
-
-.why-badge small {
-  display: block;
-  font-size: 10.5px;
-  color: var(--neutral-500);
-}
-
-.why-badge__icon {
-  width: 24px;
-  height: 24px;
-  border-radius: 6px;
-  background: #f0f7ff;
-  display: grid;
-  place-items: center;
-  flex: none;
-}
-
-.why-badge__icon svg {
-  width: 13px;
-  height: 13px;
-}
-
-.why-badge--top-left {
-  top: 14px;
-  left: 14px;
-}
-
-.why-badge--bottom-right {
-  bottom: 14px;
-  right: 14px;
-  animation-delay: -2.5s;
-}
-
 .why-points {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-6) var(--space-6);
+  gap: clamp(20px, 2.4vw, 32px) clamp(24px, 2.8vw, 36px);
+  margin-top: clamp(20px, 2.2vw, 30px);
+  margin-bottom: clamp(28px, 3.2vw, 40px);
 }
 
 .why-point {
@@ -3240,24 +3190,27 @@
   border-radius: 10px;
   background: rgba(0, 129, 251, 0.08);
   border: 1px solid rgba(0, 129, 251, 0.18);
-  display: grid;
-  place-items: center;
-  flex: none;
+  color: #0081fb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
   margin-top: 2px;
 }
 
 .why-point__title {
-  font-size: 15.5px;
+  font-size: clamp(14.5px, 1.05vw, 16px);
   font-weight: 600;
   color: var(--neutral-900);
   line-height: 1.35;
+  margin-bottom: 5px;
 }
 
 .why-point__text {
-  font-size: 13.5px;
+  font-size: clamp(13px, 0.9vw, 14px);
   line-height: 1.55;
-  color: var(--text-body);
-  margin-top: 5px;
+  color: var(--neutral-600);
+  margin: 0;
 }
 
 .why-choose__ctas {
@@ -3270,26 +3223,15 @@
 @media (max-width: 1023px) {
   .why-choose-grid {
     grid-template-columns: minmax(0, 1fr);
+    gap: clamp(28px, 4vw, 44px);
+  }
+  .why-choose__media-card {
+    aspect-ratio: 16 / 10;
+    max-height: 380px;
   }
   .why-points {
     grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 639px) {
-  .why-badge {
-    position: static;
-    margin: 8px 12px;
-    box-shadow: none;
-    background: #fff;
-  }
-  .why-choose__media-card {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 12px;
-  }
-  .why-choose__media-card img {
-    min-height: 220px;
+    gap: var(--space-5);
   }
 }
 
