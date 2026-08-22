@@ -79,14 +79,13 @@
 
   <a class="skip-link" href="#main">Skip to main content</a>
 
-  <p class="proto-bar"><b>PROTOTYPE</b> — images load from gtechdigital.co.uk &amp; accredited partners. Restaurant SEO Agency UK.</p>
-
   <!-- ============================================================== HEADER -->
   <header class="site-header" data-header>
     <div class="container site-header__inner">
 
       <a class="logo" href="/index.html">
-        <img src="https://www.gtechdigital.co.uk/assets/frontend/images/logo.png" alt="GTech Digital" width="200" height="52">
+        <span class="logo__mark" aria-hidden="true">G</span>
+        <span>G<span class="logo__accent">Tech</span> Digital</span>
       </a>
 
       <nav class="nav" aria-label="Primary">
@@ -601,31 +600,11 @@
           
           <div class="why-choose__media">
             <div class="why-choose__media-card">
-              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=900&q=80&fit=crop" 
-                   alt="GTech Restaurant Marketing Team UK" 
+              <img src="/assets/Uploads/Restaurant%20SEO%20Service.png" 
+                   alt="GTech Restaurant SEO Marketing Team UK" 
                    loading="lazy" 
                    width="600" 
                    height="440">
-              
-              <div class="why-badge why-badge--top-left">
-                <span class="why-badge__icon">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0081FB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
-                </span>
-                <div>
-                  <strong>11+ Years Hospitality Authority</strong>
-                  <small>500+ UK Restaurants Scaled</small>
-                </div>
-              </div>
-
-              <div class="why-badge why-badge--bottom-right">
-                <span class="why-badge__icon">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                </span>
-                <div>
-                  <strong>ChefOnline Partner Ecosystem</strong>
-                  <small>Zero Aggregator Commission</small>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -989,90 +968,122 @@
   <!-- ============================================================== FOOTER -->
   <footer class="site-footer">
     <div class="container">
-
-      <div class="footer-top grid12" style="row-gap:var(--space-10)">
+      <div class="footer__top grid12" style="row-gap:var(--space-10)">
         
         <div class="c-4">
-          <a class="logo logo--footer" href="/index.html">
-            <img src="https://www.gtechdigital.co.uk/assets/frontend/images/logo.png" alt="GTech Digital" width="200" height="52">
+          <a class="logo" href="/index.html" style="color:#fff;text-decoration:none">
+            <span class="logo__mark" style="background:#fff;color:var(--neutral-900)" aria-hidden="true">G</span>
+            <span style="color:#fff">G<span class="logo__accent">Tech</span> Digital</span>
           </a>
-          <p class="mt-4" style="color:var(--neutral-400);line-height:1.6;font-size:14px">
-            GTech Digital is a certified digital marketing and technology consultancy in the UK. Since 2014, scaling high-ROAS paid acquisition, enterprise SEO, and bespoke web platforms.
+          <p class="t-sm mt-5" style="max-width:34ch;color:var(--neutral-400)">
+            Certified Google Premier Partner &amp; Meta Advertising Partner. Delivering high-impact digital marketing, search authority, and web systems since 2014.
           </p>
 
-          <div class="footer-partner-badges mt-6">
-            <p class="footer-partner-badges__title">Certified Partners &amp; Credentials</p>
-            <div class="footer-partner-badges__grid">
-              <div class="footer-partner-badge">
-                <img src="https://www.chefonline.com/assets/new-assets/google-parner-red.svg" alt="Google Premier Partner" width="130" height="38" loading="lazy">
-              </div>
-              <div class="footer-partner-badge">
-                <img src="https://www.chefonline.com/assets/new-assets/meta-partner-red.svg" alt="Meta Business Partner" width="130" height="38" loading="lazy">
-              </div>
-              <div class="footer-partner-badge">
-                <img src="https://cdn.prod.website-files.com/66df3087fd0e68a94a8f890d/69de248b41966f0a5b02e91e_TT_partner_badge.png" alt="TikTok Marketing Partner" width="130" height="38" loading="lazy">
-              </div>
-              <div class="footer-partner-badge">
-                <img src="https://cdn.rogerwest.com/wp-content/uploads/2021/04/RWC_SEM_blog_970x459.jpg" alt="Semrush Agency Partner" width="130" height="38" loading="lazy">
-              </div>
+          <!-- 4 Accredited Partner Badges in Footer -->
+          <div class="footer__partner-badges mt-6" aria-label="Official Partner Accreditations">
+            <div class="footer__badge-item" title="Google Partner">
+              <span class="bento__badge-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                  <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                  <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                  <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                </svg>
+              </span>
+              <span class="bento__badge-text" style="font-size:12px">Google Partner</span>
             </div>
+            <div class="footer__badge-item" title="Meta Partner">
+              <span class="bento__badge-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#0081FB" aria-hidden="true">
+                  <path d="M16.96 4c-1.98 0-3.66.97-4.96 2.65C10.7 4.97 9.02 4 7.04 4 3.6 4 1 6.84 1 11.2c0 4.3 2.6 7.6 6.04 7.6 2.01 0 3.73-.99 4.96-2.68 1.23 1.69 2.95 2.68 4.96 2.68 3.44 0 6.04-3.3 6.04-7.6 0-4.36-2.6-7.2-6.04-7.2zm-9.92 12.6c-2.28 0-3.9-2.32-3.9-5.4 0-3.08 1.62-5.4 3.9-5.4 1.76 0 3.2 1.34 3.94 3.52.12.35.18.72.18 1.1 0 .64-.13 1.3-.39 1.94-.74 2.45-2.07 4.24-3.73 4.24zm9.92 0c-1.66 0-2.99-1.79-3.73-4.24-.26-.64-.39-1.3-.39-1.94 0-.38.06-.75.18-1.1.74-2.18 2.18-3.52 3.94-3.52 2.28 0 3.9 2.32 3.9 5.4 0 3.08-1.62 5.4-3.9 5.4z"/>
+                </svg>
+              </span>
+              <span class="bento__badge-text" style="font-size:12px">Meta Partner</span>
+            </div>
+            <div class="footer__badge-item" title="TikTok Partner">
+              <span class="bento__badge-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.89 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.34 0 .66.06.96.17V9.45a6.34 6.34 0 0 0-.96-.07A6.34 6.34 0 0 0 3.15 15.7a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.71a8.28 8.28 0 0 0 4.88 1.58V6.84a4.8 4.8 0 0 1-1.12-.15z" fill="#00F2FE"/>
+                  <path d="M18.89 5.99a4.83 4.83 0 0 1-3.77-4.25V1.3h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.89 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.34 0 .66.06.96.17V8.75a6.34 6.34 0 0 0-.96-.07A6.34 6.34 0 0 0 2.45 15a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.01a8.28 8.28 0 0 0 4.88 1.58V6.14a4.8 4.8 0 0 1-1.12-.15z" fill="#FE2C55"/>
+                  <path d="M19.24 6.34a4.83 4.83 0 0 1-3.77-4.25V1.65h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.89 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.34 0 .66.06.96.17V9.1a6.34 6.34 0 0 0-.96-.07A6.34 6.34 0 0 0 2.8 15.35a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.36a8.28 8.28 0 0 0 4.88 1.58V6.49a4.8 4.8 0 0 1-1.12-.15z" fill="#ffffff"/>
+                </svg>
+              </span>
+              <span class="bento__badge-text" style="font-size:12px">TikTok Partner</span>
+            </div>
+            <div class="footer__badge-item" title="Semrush Partner">
+              <span class="bento__badge-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 2C12 2 13.5 6.5 16 9C18.5 11.5 22 12 22 12C22 12 18.5 12.5 16 15C13.5 17.5 12 22 12 22C12 22 10.5 17.5 8 15C5.5 12.5 2 12 2 12C2 12 5.5 11.5 8 9C10.5 6.5 12 2 12 2Z" fill="#FF642D"/>
+                  <circle cx="12" cy="12" r="3" fill="#FFB703"/>
+                </svg>
+              </span>
+              <span class="bento__badge-text" style="font-size:12px">Semrush Partner</span>
+            </div>
+          </div>
+
+          <div class="social mt-7">
+            <a href="#" aria-label="Facebook"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1Z"/></svg></a>
+            <a href="#" aria-label="X"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.2 2H21l-6.4 7.3L22.2 22h-6l-4.7-6.2L6.1 22H3.3l6.9-7.9L2.2 2h6.1l4.3 5.7Zm-1 18h1.6L7.9 3.7H6.2Z"/></svg></a>
+            <a href="#" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+            <a href="#" aria-label="LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.9 8.5H3.7V21h3.2ZM5.3 3a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8ZM20.3 13.5c0-3.2-1.7-4.7-4-4.7a3.5 3.5 0 0 0-3.1 1.7V8.5H10V21h3.2v-6.6c0-1.5.8-2.4 2-2.4s1.9.9 1.9 2.4V21h3.2Z"/></svg></a>
           </div>
         </div>
 
-        <div class="c-2 start-6">
-          <p class="footer-heading">Services</p>
-          <ul class="footer-links">
+        <div class="c-3 start-6">
+          <p class="footer__title">Services</p>
+          <ul class="footer__links">
             <li><a href="/services/performance-marketing">Performance Marketing</a></li>
-            <li><a href="/services/seo">SEO, AEO &amp; GEO</a></li>
+            <li><a href="/services/performance-marketing">Google &amp; Meta Ads</a></li>
+            <li><a href="/services/seo">&rarr; SEO, AEO &amp; GEO (AI Search)</a></li>
             <li><a href="/services/local-seo">Local SEO &amp; Map 3-Pack</a></li>
-            <li><a href="/services/restaurant-seo">Restaurant SEO</a></li>
-            <li><a href="/services/link-building">Link Building</a></li>
+            <li><a href="/services/restaurant-seo" style="color:#0081FB;font-weight:600">&rarr; Restaurant SEO</a></li>
+            <li><a href="/services/link-building">Link Building &amp; Digital PR</a></li>
             <li><a href="/services/web-development">Web Development</a></li>
             <li><a href="/services/brand-design">Brand &amp; UI/UX Design</a></li>
-            <li><a href="/services/social-media-marketing">Social Media Marketing</a></li>
+            <li><a href="/services" style="color:#0081FB;font-weight:600">&rarr; All Services Overview</a></li>
           </ul>
         </div>
 
         <div class="c-2">
-          <p class="footer-heading">Packages &amp; Company</p>
-          <ul class="footer-links">
-            <li><a href="/pricing.html">SEO Pricing Packages</a></li>
-            <li><a href="/index.html#who-we-are">About GTech Digital</a></li>
+          <p class="footer__title">Company</p>
+          <ul class="footer__links">
+            <li><a href="/index.html#who-we-are">About Us</a></li>
+            <li><a href="/pricing.html">SEO Packages</a></li>
+            <li><a href="/index.html#why-partner">Why Partner With Us</a></li>
             <li><a href="/index.html#testimonials">Client Reviews</a></li>
-            <li><a href="/index.html#faq">Frequently Asked Questions</a></li>
-            <li><a href="#contact">Book Growth Consultation</a></li>
+            <li><a href="/index.html#faq">FAQ</a></li>
+            <li><a href="#contact">Contact Us</a></li>
           </ul>
         </div>
 
         <div class="c-3">
-          <p class="footer-heading">London HQ</p>
-          <ul class="footer-contact">
-            <li>
-              <span class="footer-contact__icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
-              <span>Unit 27, Skyline Business Village, London E14 9TS</span>
-            </li>
-            <li>
-              <span class="footer-contact__icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
-              <a href="tel:+442035985956">0203 598 5956</a>
-            </li>
-            <li>
-              <span class="footer-contact__icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
-              <a href="mailto:info@gtechdigital.co.uk">info@gtechdigital.co.uk</a>
-            </li>
-          </ul>
+          <p class="footer__title">Contact &amp; Updates</p>
+          <p class="t-sm" style="color:var(--neutral-400)">
+            Get data-backed UK digital marketing strategies &amp; search updates.
+          </p>
+          <form class="newsletter__form mt-5" data-stub-form>
+            <label class="visually-hidden" for="news-email">Email address</label>
+            <input class="input" type="email" id="news-email" placeholder="you@company.com" required>
+            <button class="btn btn--white btn--sm" type="submit">Join</button>
+          </form>
+          <p class="t-sm mt-6" style="color:var(--neutral-400)">
+            <a href="tel:+442035985956" style="color:#fff;font-weight:600">0203 598 5956</a><br>
+            <a href="mailto:info@gtechdigital.co.uk">info@gtechdigital.co.uk</a>
+          </p>
         </div>
 
       </div>
+    </div>
 
-      <div class="footer-bottom">
-        <p>&copy; 2026 GTech Digital. All rights reserved. Registered in England &amp; Wales.</p>
-        <div class="footer-bottom__links">
-          <a href="/index.html#contact">Privacy Policy</a>
-          <a href="/index.html#contact">Terms of Service</a>
-          <a href="/404.html">Site Map</a>
+    <div class="footer__legal">
+      <div class="container flex between align-center wrap gap-4" style="padding-block:var(--space-6);border-top:1px solid rgba(255,255,255,0.08);font-size:13px;color:var(--neutral-500)">
+        <p>© 2026 GTech Digital. All Rights Reserved.</p>
+        <div class="footer__legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">How do we use cookies?</a>
+          <a href="#">Terms of Service</a>
         </div>
       </div>
-
     </div>
   </footer>
 
