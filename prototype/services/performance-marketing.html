@@ -21,320 +21,23 @@
   <link rel="stylesheet" href="/assets/css/index.css">
 
   <style>
-    /* --------------------------------------------------------------------------
-       Page-Specific Performance Marketing Enhancements
-       -------------------------------------------------------------------------- */
-    .hero-dash {
-      background: linear-gradient(145deg, #0d1527 0%, #0a1120 100%);
-      border: 1px solid rgba(0, 129, 251, 0.25);
-      border-radius: 20px;
-      padding: clamp(20px, 2.5vw, 28px);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45), 0 0 30px rgba(0, 129, 251, 0.15);
-      color: #fff;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-dash::before {
-      content: "";
-      position: absolute;
-      top: -80px;
-      right: -80px;
-      width: 220px;
-      height: 220px;
-      background: radial-gradient(circle, rgba(0, 129, 251, 0.22) 0%, rgba(0, 0, 0, 0) 70%);
-      border-radius: 50%;
-      pointer-events: none;
-    }
-
-    .hero-dash__header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      padding-bottom: 14px;
-      margin-bottom: 18px;
-    }
-
-    .hero-dash__live {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      font-size: 11.5px;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: #10b981;
-      background: rgba(16, 185, 129, 0.12);
-      padding: 4px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(16, 185, 129, 0.25);
-    }
-
-    .hero-dash__live-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #10b981;
-      box-shadow: 0 0 8px #10b981;
-      animation: pulseLive 2s infinite;
-    }
-
-    @keyframes pulseLive {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.85); }
-    }
-
-    .hero-dash__timeframe {
-      font-size: 12px;
-      color: var(--neutral-400);
-      font-weight: 500;
-    }
-
-    .hero-dash__kpis {
+    /* 4-Column Process Layout on Desktop */
+    .process-steps--4 {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-bottom: 18px;
-    }
-
-    .hero-dash__kpi-card {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.07);
-      border-radius: 12px;
-      padding: 12px 14px;
-    }
-
-    .hero-dash__kpi-label {
-      font-size: 11.5px;
-      color: var(--neutral-400);
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      margin-bottom: 4px;
-    }
-
-    .hero-dash__kpi-val {
-      font-size: clamp(20px, 2vw, 24px);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      color: #fff;
-      display: flex;
-      align-items: baseline;
-      gap: 6px;
-    }
-
-    .hero-dash__kpi-val span.trend {
-      font-size: 11px;
-      font-weight: 600;
-      color: #10b981;
-      background: rgba(16, 185, 129, 0.15);
-      padding: 2px 6px;
-      border-radius: 4px;
-    }
-
-    .hero-dash__split {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: 12px;
-      padding: 12px 14px;
-      margin-bottom: 18px;
-    }
-
-    .hero-dash__split-title {
-      display: flex;
-      justify-content: space-between;
-      font-size: 11.5px;
-      font-weight: 600;
-      color: var(--neutral-300);
-      margin-bottom: 8px;
-    }
-
-    .hero-dash__bar {
-      height: 8px;
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 999px;
-      overflow: hidden;
-      display: flex;
-      gap: 2px;
-    }
-
-    .hero-dash__bar-segment--google { width: 48%; background: #0081FB; }
-    .hero-dash__bar-segment--meta { width: 34%; background: #00C2FF; }
-    .hero-dash__bar-segment--tiktok { width: 18%; background: #10b981; }
-
-    .hero-dash__legend {
-      display: flex;
-      justify-content: space-between;
-      gap: 8px;
-      font-size: 11px;
-      color: var(--neutral-400);
-      margin-top: 8px;
-    }
-
-    .hero-dash__legend-item {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .hero-dash__legend-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-    }
-
-    .hero-dash__feed {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .hero-dash__feed-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: rgba(0, 129, 251, 0.06);
-      border: 1px solid rgba(0, 129, 251, 0.15);
-      border-radius: 8px;
-      padding: 8px 12px;
-      font-size: 12px;
-    }
-
-    .hero-dash__feed-tag {
-      font-size: 10px;
-      font-weight: 700;
-      color: #00C2FF;
-      background: rgba(0, 194, 255, 0.12);
-      padding: 2px 6px;
-      border-radius: 4px;
-      letter-spacing: 0.02em;
-    }
-
-    /* Process 4-Col Steps */
-    .framework-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: clamp(16px, 2vw, 24px);
     }
 
-    .framework-card {
-      background: #fff;
-      border: 1px solid rgba(0, 0, 0, 0.08);
-      border-radius: 16px;
-      padding: clamp(24px, 2.5vw, 32px) clamp(18px, 2vw, 24px);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      transition: transform 0.25s var(--ease), border-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
-    }
-
-    .framework-card:hover {
-      transform: translateY(-4px);
-      border-color: #0081FB;
-      box-shadow: 0 12px 30px rgba(0, 129, 251, 0.1);
-    }
-
-    .framework-card__num {
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      color: #0081FB;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-
-    .framework-card__title {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--neutral-900);
-      margin-bottom: 10px;
-      line-height: 1.3;
-    }
-
-    .framework-card__desc {
-      font-size: 13.5px;
-      line-height: 1.6;
-      color: var(--neutral-600);
-    }
-
-    /* Case Studies Grid */
-    .case-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: clamp(20px, 2.5vw, 32px);
-    }
-
-    .case-card {
-      background: #fff;
-      border: 1px solid rgba(0, 0, 0, 0.08);
-      border-radius: 18px;
-      padding: clamp(28px, 3vw, 36px);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 100%;
-    }
-
-    .case-card__badge {
-      display: inline-block;
-      font-size: 11.5px;
-      font-weight: 700;
-      color: #0081FB;
-      background: rgba(0, 129, 251, 0.08);
-      padding: 4px 10px;
-      border-radius: 999px;
-      margin-bottom: 14px;
-      width: fit-content;
-    }
-
-    .case-card__metric {
-      font-size: clamp(32px, 3.5vw, 42px);
-      font-weight: 800;
-      color: var(--neutral-900);
-      line-height: 1;
-      letter-spacing: -0.03em;
-      margin-bottom: 6px;
-    }
-
-    .case-card__metric-label {
-      font-size: 13px;
-      font-weight: 600;
-      color: #10b981;
-      margin-bottom: 16px;
-    }
-
-    .case-card__quote {
-      font-size: 14px;
-      line-height: 1.6;
-      color: var(--neutral-600);
-      font-style: italic;
-      border-left: 2px solid #0081FB;
-      padding-left: 14px;
-      margin-bottom: 20px;
-    }
-
-    .case-card__author {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--neutral-900);
-    }
-
-    .case-card__role {
-      font-size: 12px;
-      color: var(--neutral-500);
-    }
-
     @media (max-width: 1023px) {
-      .framework-grid { grid-template-columns: repeat(2, 1fr); }
-      .case-grid { grid-template-columns: 1fr; }
+      .process-steps--4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
 
     @media (max-width: 639px) {
-      .framework-grid { grid-template-columns: 1fr; }
-      .hero-dash__kpis { grid-template-columns: 1fr; }
+      .process-steps--4 {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 
@@ -382,7 +85,7 @@
             "name": "What is performance marketing and how does it differ from traditional advertising?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Performance marketing is a data-driven media buying strategy where campaign spend is directly tied to measurable commercial outcomes such as sales, qualified leads, and Return On Ad Spend (ROAS). Unlike brand awareness campaigns, every pound invested is tracked via server-side attribution to optimize cost per acquisition."
+              "text": "Performance marketing is a data-driven media buying strategy where campaign spend is directly tied to measurable commercial outcomes such as sales, qualified leads, and Return On Ad Spend (ROAS). Every pound invested is tracked via server-side attribution to optimize cost per acquisition."
             }
           },
           {
@@ -589,26 +292,10 @@
     <section class="hero hero--split">
       <div class="container">
 
-        <!-- Breadcrumb Navigation -->
-        <nav class="breadcrumb mb-6" aria-label="Breadcrumbs">
-          <ol style="display:flex;gap:8px;list-style:none;padding:0;margin:0;font-size:12px;color:var(--text-muted);flex-wrap:wrap">
-            <li><a href="/index.html" style="color:var(--neutral-700)">Home</a></li>
-            <li>/</li>
-            <li><a href="/services" style="color:var(--neutral-700)">Services</a></li>
-            <li>/</li>
-            <li aria-current="page" style="color:#0081FB;font-weight:600">Performance Marketing</li>
-          </ol>
-        </nav>
-
         <div class="hero__grid">
           
-          <!-- Column 1: Copy, Main Keyword H1, Verification Badges, Dual CTAs -->
+          <!-- Column 1: Copy, Main Keyword H1, Dual CTAs (Clean, No Badges, No Breadcrumbs) -->
           <div class="hero__content">
-            <div class="svc-showcase__tag" style="margin-bottom:12px">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-              <span>Certified Google Premier &amp; Meta Business Partner</span>
-            </div>
-
             <h1 class="hero__title">
               Performance Marketing Agency in the UK <span class="hero__accent">Engineering High-ROAS Growth</span>
             </h1>
@@ -623,93 +310,252 @@
                 <span class="btn__arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
               </a>
               <a class="btn btn--outline btn--arrow" href="#capabilities">
-                Explore Channels &amp; Z-Funnels
+                Explore Core Channels
                 <span class="btn__arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
               </a>
             </div>
-
-            <!-- Trust Badge Pills in Hero -->
-            <div class="flex gap-4 align-center wrap mt-8" style="padding-top:var(--space-6);border-top:1px solid var(--border)">
-              <div class="flex align-center gap-2" style="font-size:12.5px;font-weight:600;color:var(--neutral-700)">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="#0081FB"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
-                <span>Google Premier Partner</span>
-              </div>
-              <div class="flex align-center gap-2" style="font-size:12.5px;font-weight:600;color:var(--neutral-700)">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="#00C2FF"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
-                <span>Meta Certified Agency</span>
-              </div>
-              <div class="flex align-center gap-2" style="font-size:12.5px;font-weight:600;color:var(--neutral-700)">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="#10b981"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
-                <span>TikTok Marketing Partner</span>
-              </div>
-            </div>
           </div>
 
-          <!-- Column 2: Interactive Telemetry Command Center Visual -->
-          <div class="hero__visual" aria-label="Performance Marketing Real-Time Campaign Telemetry Dashboard">
-            <div class="hero-dash">
-              <div class="hero-dash__header">
-                <div class="hero-dash__live">
-                  <span class="hero-dash__live-dot" aria-hidden="true"></span>
-                  <span>Live Campaign Telemetry</span>
+          <!-- Column 2: Connected Marketing Flow Ecosystem (Contextual Icons & Text) -->
+          <div class="hero__visual" aria-hidden="true">
+            <div class="flow-ecosystem">
+              
+              <!-- Animated SVG Flow Lines -->
+              <svg class="flow-svg" viewBox="0 0 540 460" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="flowGradPerf" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#0081fb" stop-opacity="0.95"/>
+                    <stop offset="50%" stop-color="#38bdf8" stop-opacity="1"/>
+                    <stop offset="100%" stop-color="#0b3fb0" stop-opacity="0.75"/>
+                  </linearGradient>
+                  <radialGradient id="centerGlowPerf" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#0081fb" stop-opacity="0.25"/>
+                    <stop offset="60%" stop-color="#0b3fb0" stop-opacity="0.08"/>
+                    <stop offset="100%" stop-color="#0081fb" stop-opacity="0"/>
+                  </radialGradient>
+                </defs>
+
+                <!-- Radial Background Aura -->
+                <circle cx="270" cy="230" r="130" fill="url(#centerGlowPerf)" />
+
+                <!-- Connecting Paths (Static base dashed lines) -->
+                <!-- Left 6 -->
+                <path class="flow-path-base" d="M 270 230 C 190 230, 160 42, 110 42" />
+                <path class="flow-path-base" d="M 270 230 C 180 230, 150 115, 95 115" />
+                <path class="flow-path-base" d="M 270 230 C 175 230, 145 188, 85 188" />
+                <path class="flow-path-base" d="M 270 230 C 175 230, 145 262, 85 262" />
+                <path class="flow-path-base" d="M 270 230 C 180 230, 150 335, 95 335" />
+                <path class="flow-path-base" d="M 270 230 C 190 230, 160 410, 110 410" />
+
+                <!-- Right 6 -->
+                <path class="flow-path-base" d="M 270 230 C 350 230, 380 42, 430 42" />
+                <path class="flow-path-base" d="M 270 230 C 360 230, 390 115, 445 115" />
+                <path class="flow-path-base" d="M 270 230 C 365 230, 395 188, 455 188" />
+                <path class="flow-path-base" d="M 270 230 C 365 230, 395 262, 455 262" />
+                <path class="flow-path-base" d="M 270 230 C 360 230, 390 335, 445 335" />
+                <path class="flow-path-base" d="M 270 230 C 350 230, 380 410, 430 410" />
+
+                <!-- Animated Flowing Gradient Paths -->
+                <path class="flow-path-active" d="M 270 230 C 190 230, 160 42, 110 42" />
+                <path class="flow-path-active" d="M 270 230 C 180 230, 150 115, 95 115" />
+                <path class="flow-path-active" d="M 270 230 C 175 230, 145 188, 85 188" />
+                <path class="flow-path-active" d="M 270 230 C 175 230, 145 262, 85 262" />
+                <path class="flow-path-active" d="M 270 230 C 180 230, 150 335, 95 335" />
+                <path class="flow-path-active" d="M 270 230 C 190 230, 160 410, 110 410" />
+                <path class="flow-path-active" d="M 270 230 C 350 230, 380 42, 430 42" />
+                <path class="flow-path-active" d="M 270 230 C 360 230, 390 115, 445 115" />
+                <path class="flow-path-active" d="M 270 230 C 365 230, 395 188, 455 188" />
+                <path class="flow-path-active" d="M 270 230 C 365 230, 395 262, 455 262" />
+                <path class="flow-path-active" d="M 270 230 C 360 230, 390 335, 445 335" />
+                <path class="flow-path-active" d="M 270 230 C 350 230, 380 410, 430 410" />
+
+                <!-- Flowing Energy Particles -->
+                <circle class="flow-particle" r="3.2" fill="#0081fb">
+                  <animateMotion dur="2.4s" repeatCount="indefinite" path="M 270 230 C 190 230, 160 42, 110 42" keyTimes="0;1" keyPoints="0;1" calcMode="linear"/>
+                </circle>
+                <circle class="flow-particle" r="3.2" fill="#38bdf8">
+                  <animateMotion dur="2.1s" repeatCount="indefinite" path="M 270 230 C 180 230, 150 115, 95 115" keyTimes="0;1" keyPoints="0;1" calcMode="linear"/>
+                </circle>
+                <circle class="flow-particle" r="3.2" fill="#25f4ee">
+                  <animateMotion dur="2.6s" repeatCount="indefinite" path="M 270 230 C 175 230, 145 188, 85 188" keyTimes="0;1" keyPoints="0;1" calcMode="linear"/>
+                </circle>
+                <circle class="flow-particle" r="3.2" fill="#10b981">
+                  <animateMotion dur="2.3s" repeatCount="indefinite" path="M 270 230 C 175 230, 145 262, 85 262" keyTimes="0;1" keyPoints="0;1" calcMode="linear"/>
+                </circle>
+                <circle class="flow-particle" r="3.2" fill="#f59e0b">
+                  <animateMotion dur="2.5s" repeatCount="indefinite" path="M 270 230 C 180 230, 150 335, 95 335" keyTimes="0;1" keyPoints="0;1" calcMode="linear"/>
+                </circle>
+                <circle class="flow-particle" r="3.2" fill="#8b5cf6">
+                  <animateMotion dur="2.2s" repeatCount="indefinite" path="M 270 230 C 190 230, 160 410, 110 410" keyTimes="0;1" keyPoints="0;1" calcMode="linear"/>
+                </circle>
+                <circle class="flow-particle" r="3.2" fill="#ec4899">
+                  <animateMotion dur="2.7s" repeatCount="indefinite" path="M 270 230 C 350 230, 380 42, 430 42" keyTimes="0;1" keyPoints="0;1" calcMode="linear"/>
+                </circle>
+                <circle class="flow-particle" r="3.2" fill="#3b82f6">
+                  <animateMotion dur="2.4s" repeatCount="indefinite" path="M 270 230 C 360 230, 390 115, 445 115" keyTimes="0;1" keyPoints="0;1" calcMode="linear"/>
+                </circle>
+                <circle class="flow-particle" r="3.2" fill="#10b981">
+                  <animateMotion dur="2.5s" repeatCount="indefinite" path="M 270 230 C 365 230, 395 188, 455 188" keyTimes="0;1" keyPoints="0;1" calcMode="linear"/>
+                </circle>
+                <circle class="flow-particle" r="3.2" fill="#f59e0b">
+                  <animateMotion dur="2.2s" repeatCount="indefinite" path="M 270 230 C 365 230, 395 262, 455 262" keyTimes="0;1" keyPoints="0;1" calcMode="linear"/>
+                </circle>
+                <circle class="flow-particle" r="3.2" fill="#8b5cf6">
+                  <animateMotion dur="2.6s" repeatCount="indefinite" path="M 270 230 C 360 230, 390 335, 445 335" keyTimes="0;1" keyPoints="0;1" calcMode="linear"/>
+                </circle>
+                <circle class="flow-particle" r="3.2" fill="#0081fb">
+                  <animateMotion dur="2.3s" repeatCount="indefinite" path="M 270 230 C 350 230, 380 410, 430 410" keyTimes="0;1" keyPoints="0;1" calcMode="linear"/>
+                </circle>
+              </svg>
+
+              <!-- Center Glowing Hub -->
+              <div class="hub-center">
+                <div class="hub-ring hub-ring--outer"></div>
+                <div class="hub-ring hub-ring--inner"></div>
+                <div class="hub-core" title="ROAS Growth Engine">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                    <polyline points="17 6 23 6 23 12"></polyline>
+                  </svg>
                 </div>
-                <div class="hero-dash__timeframe">UK Enterprise Portfolio</div>
               </div>
 
-              <!-- Top KPI Grid -->
-              <div class="hero-dash__kpis">
-                <div class="hero-dash__kpi-card">
-                  <p class="hero-dash__kpi-label">Attributed Revenue</p>
-                  <p class="hero-dash__kpi-val">£482,950 <span class="trend">+34.8%</span></p>
-                </div>
-                <div class="hero-dash__kpi-card">
-                  <p class="hero-dash__kpi-label">Blended Multi-ROAS</p>
-                  <p class="hero-dash__kpi-val" style="color:#00C2FF">4.82x <span class="trend" style="background:rgba(0,194,255,0.15);color:#00C2FF">Scaled</span></p>
-                </div>
-                <div class="hero-dash__kpi-card">
-                  <p class="hero-dash__kpi-label">Average CPA / CPL</p>
-                  <p class="hero-dash__kpi-val" style="color:#10b981">£14.20 <span class="trend">-42.1%</span></p>
-                </div>
-                <div class="hero-dash__kpi-card">
-                  <p class="hero-dash__kpi-label">Managed Monthly Spend</p>
-                  <p class="hero-dash__kpi-val">£100,195 <span class="trend" style="background:rgba(255,255,255,0.1);color:#fff">100% Attributed</span></p>
-                </div>
+              <!-- 12 Contextual Marketing & Attribution Nodes -->
+              
+              <!-- Node 1: Google Search -->
+              <div class="flow-node node-1">
+                <span class="flow-node__icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                  </svg>
+                </span>
+                <span class="flow-node__label">Google Ads</span>
               </div>
 
-              <!-- Cross-Channel Split Bar -->
-              <div class="hero-dash__split">
-                <div class="hero-dash__split-title">
-                  <span>Channel Budget Distribution</span>
-                  <span>Smart Algorithmic Allocation</span>
-                </div>
-                <div class="hero-dash__bar" aria-label="Google Ads 48%, Meta Ads 34%, TikTok Ads 18%">
-                  <div class="hero-dash__bar-segment--google" title="Google Ads 48%"></div>
-                  <div class="hero-dash__bar-segment--meta" title="Meta Ads 34%"></div>
-                  <div class="hero-dash__bar-segment--tiktok" title="TikTok Ads 18%"></div>
-                </div>
-                <div class="hero-dash__legend">
-                  <span class="hero-dash__legend-item"><span class="hero-dash__legend-dot" style="background:#0081FB"></span> Google Ads (48%)</span>
-                  <span class="hero-dash__legend-item"><span class="hero-dash__legend-dot" style="background:#00C2FF"></span> Meta Ads (34%)</span>
-                  <span class="hero-dash__legend-item"><span class="hero-dash__legend-dot" style="background:#10b981"></span> TikTok Ads (18%)</span>
-                </div>
+              <!-- Node 2: Meta Ads -->
+              <div class="flow-node node-2">
+                <span class="flow-node__icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#0081FB" aria-hidden="true">
+                    <path d="M16.96 4c-1.98 0-3.66.97-4.96 2.65C10.7 4.97 9.02 4 7.04 4 3.6 4 1 6.84 1 11.2c0 4.3 2.6 7.6 6.04 7.6 2.01 0 3.73-.99 4.96-2.68 1.23 1.69 2.95 2.68 4.96 2.68 3.44 0 6.04-3.3 6.04-7.6 0-4.36-2.6-7.2-6.04-7.2zm-9.92 12.6c-2.28 0-3.9-2.32-3.9-5.4 0-3.08 1.62-5.4 3.9-5.4 1.76 0 3.2 1.34 3.94 3.52.12.35.18.72.18 1.1 0 .64-.13 1.3-.39 1.94-.74 2.45-2.07 4.24-3.73 4.24zm9.92 0c-1.66 0-2.99-1.79-3.73-4.24-.26-.64-.39-1.3-.39-1.94 0-.38.06-.75.18-1.1.74-2.18 2.18-3.52 3.94-3.52 2.28 0 3.9 2.32 3.9 5.4 0 3.08-1.62 5.4-3.9 5.4z"/>
+                  </svg>
+                </span>
+                <span class="flow-node__label">Meta Ads</span>
               </div>
 
-              <!-- Live Conversion Event Stream -->
-              <div class="hero-dash__feed">
-                <div class="hero-dash__feed-item">
-                  <div class="flex align-center gap-2">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
-                    <span><strong>E-Com Purchase</strong> (London) — £289.00</span>
-                  </div>
-                  <span class="hero-dash__feed-tag">CAPI Verified · 5.8x ROAS</span>
-                </div>
-                <div class="hero-dash__feed-item">
-                  <div class="flex align-center gap-2">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00C2FF" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
-                    <span><strong>B2B Enterprise Lead</strong> (Manchester) — Booking</span>
-                  </div>
-                  <span class="hero-dash__feed-tag" style="color:#10b981;background:rgba(16,185,129,0.12)">CPA £12.40 · Meta Adv+</span>
-                </div>
+              <!-- Node 3: TikTok Ads -->
+              <div class="flow-node node-3">
+                <span class="flow-node__icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.89 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.34 0 .66.06.96.17V9.45a6.34 6.34 0 0 0-.96-.07A6.34 6.34 0 0 0 3.15 15.7a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.71a8.28 8.28 0 0 0 4.88 1.58V6.84a4.8 4.8 0 0 1-1.12-.15z" fill="#00F2FE"/>
+                    <path d="M18.89 5.99a4.83 4.83 0 0 1-3.77-4.25V1.3h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.89 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.34 0 .66.06.96.17V8.75a6.34 6.34 0 0 0-.96-.07A6.34 6.34 0 0 0 2.45 15a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.01a8.28 8.28 0 0 0 4.88 1.58V6.14a4.8 4.8 0 0 1-1.12-.15z" fill="#FE2C55"/>
+                  </svg>
+                </span>
+                <span class="flow-node__label">TikTok Ads</span>
+              </div>
+
+              <!-- Node 4: Performance Max -->
+              <div class="flow-node node-4">
+                <span class="flow-node__icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                  </svg>
+                </span>
+                <span class="flow-node__label">PMax Funnels</span>
+              </div>
+
+              <!-- Node 5: Server-Side CAPI -->
+              <div class="flow-node node-5">
+                <span class="flow-node__icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                    <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                    <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                    <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                  </svg>
+                </span>
+                <span class="flow-node__label">Meta CAPI</span>
+              </div>
+
+              <!-- Node 6: GA4 Attribution -->
+              <div class="flow-node node-6">
+                <span class="flow-node__icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M18 20V10M12 20V4M6 20v-6"/>
+                  </svg>
+                </span>
+                <span class="flow-node__label">GA4 Attribution</span>
+              </div>
+
+              <!-- Node 7: Smart ROAS Bidding -->
+              <div class="flow-node node-7">
+                <span class="flow-node__icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EC4899" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="m16 10-4 4-2-2"></path>
+                  </svg>
+                </span>
+                <span class="flow-node__label">Smart ROAS</span>
+              </div>
+
+              <!-- Node 8: Shopping Feeds -->
+              <div class="flow-node node-8">
+                <span class="flow-node__icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0081FB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                  </svg>
+                </span>
+                <span class="flow-node__label">Shopping Feeds</span>
+              </div>
+
+              <!-- Node 9: Conversion CRO -->
+              <div class="flow-node node-9">
+                <span class="flow-node__icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                  </svg>
+                </span>
+                <span class="flow-node__label">Landing Page CRO</span>
+              </div>
+
+              <!-- Node 10: Looker Telemetry -->
+              <div class="flow-node node-10">
+                <span class="flow-node__icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                  </svg>
+                </span>
+                <span class="flow-node__label">Looker Dashboards</span>
+              </div>
+
+              <!-- Node 11: Negative Sculpting -->
+              <div class="flow-node node-11">
+                <span class="flow-node__icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line>
+                  </svg>
+                </span>
+                <span class="flow-node__label">Zero Ad Waste</span>
+              </div>
+
+              <!-- Node 12: Omnichannel Scaling -->
+              <div class="flow-node node-12">
+                <span class="flow-node__icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0081FB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"></path>
+                  </svg>
+                </span>
+                <span class="flow-node__label">Multi-Channel</span>
               </div>
 
             </div>
@@ -721,7 +567,7 @@
     </section>
 
     <!-- ====================================================================
-         SECTION 1: CORE CAPABILITIES — Z-SHAPE SHOWCASE CARDS
+         SECTION 1: CORE CAPABILITIES — Z-SHAPE SHOWCASE CARDS (With "Get a Quote")
          ==================================================================== -->
     <section class="section" id="capabilities" style="background:var(--surface)">
       <div class="container">
@@ -751,10 +597,6 @@
                    height="540">
             </div>
             <div class="svc-showcase__content">
-              <div class="svc-showcase__tag">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
-                <span>Channel 01 · Search &amp; Shopping</span>
-              </div>
               <h2 class="svc-showcase__title">Google Ads &amp; Performance Max (PMax)</h2>
               <p class="svc-showcase__desc">
                 Capture high-intent commercial searches at the exact moment prospects are ready to buy. We build granular Search structures, automated Performance Max (PMax) asset groups, and dynamic Shopping feeds calibrated with Smart Bidding algorithms to maximize ROAS and eliminate wasteful negative clicks.
@@ -778,8 +620,8 @@
                 </li>
               </ul>
               <div class="svc-showcase__actions">
-                <a class="btn btn--primary btn--arrow" href="/services/digital-marketing/google-meta-ads">
-                  View Google Ads Deep-Dive
+                <a class="btn btn--primary btn--arrow" href="#contact">
+                  Get a Quote
                   <span class="btn__arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                 </a>
               </div>
@@ -791,10 +633,6 @@
           <!-- 02. Meta Ads (Content Left / Image Right — REVERSE) -->
           <article class="svc-showcase svc-showcase--reverse" id="meta-ads">
             <div class="svc-showcase__content">
-              <div class="svc-showcase__tag">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
-                <span>Channel 02 · Paid Social Acquisition</span>
-              </div>
               <h2 class="svc-showcase__title">Meta Ads (Facebook &amp; Instagram Scaling)</h2>
               <p class="svc-showcase__desc">
                 Transform passive social scrolling into high-value customer transactions. We architect full-funnel Meta Advantage+ shopping campaigns, dynamic product catalog ads, and high-velocity UGC creative variations that beat ad fatigue and drive profitable customer acquisition at scale.
@@ -818,8 +656,8 @@
                 </li>
               </ul>
               <div class="svc-showcase__actions">
-                <a class="btn btn--primary btn--arrow" href="/services/digital-marketing/google-meta-ads">
-                  View Meta Ads Details
+                <a class="btn btn--primary btn--arrow" href="#contact">
+                  Get a Quote
                   <span class="btn__arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                 </a>
               </div>
@@ -847,10 +685,6 @@
                    height="540">
             </div>
             <div class="svc-showcase__content">
-              <div class="svc-showcase__tag">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
-                <span>Channel 03 · Viral Short-Form Video</span>
-              </div>
               <h2 class="svc-showcase__title">TikTok Ads &amp; Social Commerce Funnels</h2>
               <p class="svc-showcase__desc">
                 Unlock viral scale and younger demographics through authentic short-form video advertising. We script, produce, and deploy high-converting TikTok Spark Ads, TikTok Shop direct checkout campaigns, and creator collaborations designed to generate explosive top-of-funnel momentum and direct orders.
@@ -875,7 +709,7 @@
               </ul>
               <div class="svc-showcase__actions">
                 <a class="btn btn--primary btn--arrow" href="#contact">
-                  Launch TikTok Funnel
+                  Get a Quote
                   <span class="btn__arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                 </a>
               </div>
@@ -887,10 +721,6 @@
           <!-- 04. Server-Side Tracking & Meta CAPI (Content Left / Image Right — REVERSE) -->
           <article class="svc-showcase svc-showcase--reverse" id="server-side-tracking">
             <div class="svc-showcase__content">
-              <div class="svc-showcase__tag">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
-                <span>Channel 04 · Attribution &amp; Data Infrastructure</span>
-              </div>
               <h2 class="svc-showcase__title">Server-Side Tracking, Meta CAPI &amp; GA4</h2>
               <p class="svc-showcase__desc">
                 Bypass iOS ad blockers and cookie restrictions with robust server-side conversion tracking. We implement Google Tag Manager Server-Side containers, Meta Conversions API (CAPI), and GA4 multi-touch attribution models, delivering 98%+ match rates and feeding clean signals back into ad algorithms.
@@ -915,7 +745,7 @@
               </ul>
               <div class="svc-showcase__actions">
                 <a class="btn btn--primary btn--arrow" href="#contact">
-                  Audit Tracking Infrastructure
+                  Get a Quote
                   <span class="btn__arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                 </a>
               </div>
@@ -943,10 +773,6 @@
                    height="540">
             </div>
             <div class="svc-showcase__content">
-              <div class="svc-showcase__tag">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
-                <span>Channel 05 · Post-Click Conversion Engineering</span>
-              </div>
               <h2 class="svc-showcase__title">Conversion Rate Optimization (CRO) &amp; Landing Pages</h2>
               <p class="svc-showcase__desc">
                 High-converting paid ad traffic is only half the battle. We engineer lightning-fast, high-converting dedicated landing pages and perform rigorous multivariate A/B testing on checkout flows, headline value propositions, and trust signals to turn more visitors into loyal paying customers.
@@ -971,7 +797,7 @@
               </ul>
               <div class="svc-showcase__actions">
                 <a class="btn btn--primary btn--arrow" href="#contact">
-                  Boost Your Conversion Rate
+                  Get a Quote
                   <span class="btn__arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                 </a>
               </div>
@@ -984,7 +810,7 @@
     </section>
 
     <!-- ====================================================================
-         SECTION 2: WHY CHOOSE US (Performance Advantage Matrix)
+         SECTION 2: WHY CHOOSE US (Clean, No Floating Badges)
          ==================================================================== -->
     <section class="section" id="why-choose-us" style="background:var(--neutral-050)">
       <div class="container">
@@ -998,23 +824,6 @@
                    loading="lazy" 
                    width="420" 
                    height="280">
-              
-              <!-- Floating Badges -->
-              <div class="why-badge why-badge--top-left">
-                <span class="why-badge__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="#0081FB"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg></span>
-                <div>
-                  <strong>Premier Tier</strong>
-                  <small>Top 3% UK Agencies</small>
-                </div>
-              </div>
-
-              <div class="why-badge why-badge--bottom-right">
-                <span class="why-badge__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="#10b981"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></span>
-                <div>
-                  <strong>4.82x ROAS</strong>
-                  <small>Verified Client Average</small>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -1082,44 +891,87 @@
     </section>
 
     <!-- ====================================================================
-         SECTION 3: SCALE NUMBERS & PROVEN IMPACT
+         SECTION 3: HOMEPAGE STATS BAND & CLIENT LOGO TICKER
          ==================================================================== -->
-    <section class="section" id="results" style="background:var(--neutral-900);color:#fff">
+    <section class="section section--blue-stats stats-band" aria-label="Company numbers">
       <div class="container">
-        
-        <div class="text-center mb-12" style="max-width:68ch;margin-inline:auto">
-          <p class="t-label" style="color:var(--brand-cyan)">Verified Track Record</p>
-          <h2 class="t-h2 mt-3" style="color:#fff">Proven commercial numbers powering UK business growth</h2>
-          <p class="t-body-lg mt-4" style="color:var(--neutral-400)">
-            Over the last 11 years, we have architected and scaled data-backed paid acquisition funnels for high-growth UK enterprises.
-          </p>
+
+        <div class="grid12" style="row-gap:var(--space-6)">
+          <div class="c-5">
+            <h2 class="t-h2">11+ Years as a Leading Performance Marketing Agency in the UK</h2>
+          </div>
+          <div class="c-5 start-8" style="align-self:end">
+            <p class="t-body">
+              Since 2014, GTech Digital has operated as a full-service growth consultancy architecting data-driven search dominance, multi-channel paid acquisition funnels, and enterprise digital infrastructure. As an accredited multi-platform partner, we bridge technical engineering with algorithmic marketing under one cohesive commercial strategy.
+            </p>
+          </div>
         </div>
 
-        <div class="grid12" style="row-gap:var(--space-8);text-align:center">
-          <div class="c-2 start-2">
-            <p style="font-size:clamp(36px, 4vw, 52px);font-weight:800;letter-spacing:-0.03em;color:#00C2FF">£25M+</p>
-            <p style="font-size:14px;font-weight:600;color:#fff;margin-top:6px">Managed Ad Spend</p>
-            <p style="font-size:12.5px;color:var(--neutral-400);margin-top:2px">Profitable media deployment</p>
+        <div class="stats-row">
+          <div class="stat">
+            <p class="stat__value"><span data-count-to="98">98</span><span class="stat__affix">%</span></p>
+            <p class="stat__label">Client retention rate across multi-year growth retainers</p>
           </div>
-          <div class="c-2">
-            <p style="font-size:clamp(36px, 4vw, 52px);font-weight:800;letter-spacing:-0.03em;color:#10b981">4.8x</p>
-            <p style="font-size:14px;font-weight:600;color:#fff;margin-top:6px">Average Client ROAS</p>
-            <p style="font-size:12.5px;color:var(--neutral-400);margin-top:2px">Multi-channel blended return</p>
+          <div class="stat">
+            <p class="stat__value"><span data-count-to="500">500</span><span class="stat__affix">+</span></p>
+            <p class="stat__label">Revenue-focused campaigns executed across competitive sectors</p>
           </div>
-          <div class="c-2">
-            <p style="font-size:clamp(36px, 4vw, 52px);font-weight:800;letter-spacing:-0.03em;color:#0081FB">-42%</p>
-            <p style="font-size:14px;font-weight:600;color:#fff;margin-top:6px">CPA / CPL Reduction</p>
-            <p style="font-size:12.5px;color:var(--neutral-400);margin-top:2px">Within first 60 days</p>
+          <div class="stat">
+            <p class="stat__value"><span data-count-to="11">11</span><span class="stat__affix">+</span></p>
+            <p class="stat__label">Years scaling enterprise digital operations, since 2014</p>
           </div>
-          <div class="c-2">
-            <p style="font-size:clamp(36px, 4vw, 52px);font-weight:800;letter-spacing:-0.03em;color:#fff">11+</p>
-            <p style="font-size:14px;font-weight:600;color:#fff;margin-top:6px">Years of Experience</p>
-            <p style="font-size:12.5px;color:var(--neutral-400);margin-top:2px">UK digital infrastructure</p>
+          <div class="stat">
+            <p class="stat__value"><span data-count-to="4.8">4.8</span><span class="stat__affix">x</span></p>
+            <p class="stat__label">Average multi-channel ROAS delivered for UK enterprises</p>
           </div>
-          <div class="c-2">
-            <p style="font-size:clamp(36px, 4vw, 52px);font-weight:800;letter-spacing:-0.03em;color:#f59e0b">98%</p>
-            <p style="font-size:14px;font-weight:600;color:#fff;margin-top:6px">Client Retention</p>
-            <p style="font-size:12.5px;color:var(--neutral-400);margin-top:2px">Long-term commercial growth</p>
+        </div>
+
+        <div class="clients-strip" data-reveal="fade">
+          <p class="t-label">Trusted by Leading Brands &amp; Growing Enterprises</p>
+          <div class="marquee-mask marquee-mask--dual">
+            <!-- Row 1: Primary Brand Partners (scrolls left) -->
+            <div class="marquee marquee--row1">
+              <span class="logo-tile"><svg width="108" height="26" viewBox="0 0 108 26" role="img" aria-label="Northgate"><g fill="currentColor"><path d="M4 20V6l7 7V6h3v14h-3l-7-7v7Z"/></g><text x="22" y="19" font-family="Poppins,sans-serif" font-size="15" font-weight="700" letter-spacing="-0.5" fill="currentColor">Northgate</text></svg></span>
+              <span class="logo-tile"><svg width="118" height="26" viewBox="0 0 118 26" role="img" aria-label="Verano"><circle cx="10" cy="13" r="7" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="10" cy="13" r="2.2" fill="currentColor"/><text x="23" y="19" font-family="Poppins,sans-serif" font-size="15" font-weight="300" letter-spacing="3" fill="currentColor">VERANO</text></svg></span>
+              <span class="logo-tile"><svg width="96" height="26" viewBox="0 0 96 26" role="img" aria-label="Halden"><path d="M4 20V6h3v5h6V6h3v14h-3v-6H7v6Z" fill="currentColor"/><text x="21" y="19" font-family="Poppins,sans-serif" font-size="15" font-weight="600" fill="currentColor">Halden</text></svg></span>
+              <span class="logo-tile"><svg width="98" height="26" viewBox="0 0 98 26" role="img" aria-label="Kestrel"><path d="M5 20 12 5l7 15h-3.4l-1.2-2.8h-4.8L8.4 20Zm5.1-5.6h3.8L12 9.8Z" fill="currentColor"/><text x="22" y="19" font-family="Poppins,sans-serif" font-size="15" font-weight="600" letter-spacing="-0.3" fill="currentColor">Kestrel</text></svg></span>
+              <span class="logo-tile"><svg width="122" height="26" viewBox="0 0 122 26" role="img" aria-label="bluewater"><rect x="4" y="6" width="6" height="14" rx="3" fill="currentColor"/><rect x="12" y="10" width="6" height="10" rx="3" fill="currentColor" opacity=".55"/><text x="23" y="19" font-family="Poppins,sans-serif" font-size="15" font-weight="700" letter-spacing="-0.6" fill="currentColor">bluewater</text></svg></span>
+              <span class="logo-tile"><svg width="112" height="26" viewBox="0 0 112 26" role="img" aria-label="COPPER"><path d="M11 4 4 8v8l7 4 7-4V8Z" fill="none" stroke="currentColor" stroke-width="2"/><text x="23" y="19" font-family="Poppins,sans-serif" font-size="13" font-weight="600" letter-spacing="2" fill="currentColor">COPPER</text></svg></span>
+              <span class="logo-tile"><svg width="96" height="26" viewBox="0 0 96 26" role="img" aria-label="Ardent"><path d="M11 4 18 20H4Z" fill="currentColor"/><text x="22" y="19" font-family="Poppins,sans-serif" font-size="15" font-weight="600" fill="currentColor">Ardent</text></svg></span>
+              <span class="logo-tile"><svg width="108" height="26" viewBox="0 0 108 26" role="img" aria-label="LUMEN"><circle cx="11" cy="12" r="7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-dasharray="3 3"/><text x="23" y="19" font-family="Poppins,sans-serif" font-size="14" font-weight="500" letter-spacing="2.5" fill="currentColor">LUMEN</text></svg></span>
+
+              <!-- Loop duplicate for Row 1 -->
+              <span class="logo-tile" aria-hidden="true"><svg width="108" height="26" viewBox="0 0 108 26"><g fill="currentColor"><path d="M4 20V6l7 7V6h3v14h-3l-7-7v7Z"/></g><text x="22" y="19" font-family="Poppins,sans-serif" font-size="15" font-weight="700" letter-spacing="-0.5" fill="currentColor">Northgate</text></svg></span>
+              <span class="logo-tile" aria-hidden="true"><svg width="118" height="26" viewBox="0 0 118 26"><circle cx="10" cy="13" r="7" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="10" cy="13" r="2.2" fill="currentColor"/><text x="23" y="19" font-family="Poppins,sans-serif" font-size="15" font-weight="300" letter-spacing="3" fill="currentColor">VERANO</text></svg></span>
+              <span class="logo-tile" aria-hidden="true"><svg width="96" height="26" viewBox="0 0 96 26"><path d="M4 20V6h3v5h6V6h3v14h-3v-6H7v6Z" fill="currentColor"/><text x="21" y="19" font-family="Poppins,sans-serif" font-size="15" font-weight="600" fill="currentColor">Halden</text></svg></span>
+              <span class="logo-tile" aria-hidden="true"><svg width="98" height="26" viewBox="0 0 98 26"><path d="M5 20 12 5l7 15h-3.4l-1.2-2.8h-4.8L8.4 20Zm5.1-5.6h3.8L12 9.8Z" fill="currentColor"/><text x="22" y="19" font-family="Poppins,sans-serif" font-size="15" font-weight="600" letter-spacing="-0.3" fill="currentColor">Kestrel</text></svg></span>
+              <span class="logo-tile" aria-hidden="true"><svg width="122" height="26" viewBox="0 0 122 26"><rect x="4" y="6" width="6" height="14" rx="3" fill="currentColor"/><rect x="12" y="10" width="6" height="10" rx="3" fill="currentColor" opacity=".55"/><text x="23" y="19" font-family="Poppins,sans-serif" font-size="15" font-weight="700" letter-spacing="-0.6" fill="currentColor">bluewater</text></svg></span>
+              <span class="logo-tile" aria-hidden="true"><svg width="112" height="26" viewBox="0 0 112 26"><path d="M11 4 4 8v8l7 4 7-4V8Z" fill="none" stroke="currentColor" stroke-width="2"/><text x="23" y="19" font-family="Poppins,sans-serif" font-size="13" font-weight="600" letter-spacing="2" fill="currentColor">COPPER</text></svg></span>
+              <span class="logo-tile" aria-hidden="true"><svg width="96" height="26" viewBox="0 0 96 26"><path d="M11 4 18 20H4Z" fill="currentColor"/><text x="22" y="19" font-family="Poppins,sans-serif" font-size="15" font-weight="600" fill="currentColor">Ardent</text></svg></span>
+              <span class="logo-tile" aria-hidden="true"><svg width="108" height="26" viewBox="0 0 108 26"><circle cx="11" cy="12" r="7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-dasharray="3 3"/><text x="23" y="19" font-family="Poppins,sans-serif" font-size="14" font-weight="500" letter-spacing="2.5" fill="currentColor">LUMEN</text></svg></span>
+            </div>
+
+            <!-- Row 2: Enterprise & Growth Partners (scrolls right) -->
+            <div class="marquee marquee--row2">
+              <span class="logo-tile"><svg width="116" height="26" viewBox="0 0 116 26" role="img" aria-label="Vanguard"><path d="M4 6h4l5 14h-4l-1.5-4.5h-3L3 20H0l4-14Zm2.5 6.5h1.8L7.4 8.8l-.9 3.7Z" fill="currentColor"/><text x="24" y="19" font-family="Poppins,sans-serif" font-size="14" font-weight="700" letter-spacing="1.5" fill="currentColor">VANGUARD</text></svg></span>
+              <span class="logo-tile"><svg width="114" height="26" viewBox="0 0 114 26" role="img" aria-label="Meridian"><circle cx="9" cy="13" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 7v12M3 13h12" stroke="currentColor" stroke-width="1.8"/><text x="22" y="19" font-family="Poppins,sans-serif" font-size="14" font-weight="600" letter-spacing="0.5" fill="currentColor">MERIDIAN</text></svg></span>
+              <span class="logo-tile"><svg width="106" height="26" viewBox="0 0 106 26" role="img" aria-label="Solstice"><polygon points="9,4 12,11 19,11 13,15 15,22 9,18 3,22 5,15 -1,11 6,11" fill="currentColor"/><text x="22" y="19" font-family="Poppins,sans-serif" font-size="14" font-weight="500" letter-spacing="2" fill="currentColor">SOLSTICE</text></svg></span>
+              <span class="logo-tile"><svg width="124" height="26" viewBox="0 0 124 26" role="img" aria-label="Apex Digital"><polygon points="3,20 10,6 17,20" fill="none" stroke="currentColor" stroke-width="2.2"/><polygon points="7,15 10,9 13,15" fill="currentColor"/><text x="24" y="19" font-family="Poppins,sans-serif" font-size="14" font-weight="700" letter-spacing="-0.2" fill="currentColor">APEX DIGITAL</text></svg></span>
+              <span class="logo-tile"><svg width="102" height="26" viewBox="0 0 102 26" role="img" aria-label="Zenith"><polygon points="3,6 16,6 4,20 17,20" stroke="currentColor" stroke-width="2.2" fill="none"/><text x="23" y="19" font-family="Poppins,sans-serif" font-size="14" font-weight="600" letter-spacing="1.5" fill="currentColor">ZENITH</text></svg></span>
+              <span class="logo-tile"><svg width="118" height="26" viewBox="0 0 118 26" role="img" aria-label="NovaTrend"><circle cx="10" cy="13" r="6" fill="currentColor"/><text x="22" y="19" font-family="Poppins,sans-serif" font-size="14" font-weight="700" letter-spacing="-0.4" fill="currentColor">NovaTrend</text></svg></span>
+              <span class="logo-tile"><svg width="120" height="26" viewBox="0 0 120 26" role="img" aria-label="Silverline"><line x1="2" y1="13" x2="16" y2="13" stroke="currentColor" stroke-width="3"/><circle cx="9" cy="13" r="5" fill="none" stroke="currentColor" stroke-width="2"/><text x="23" y="19" font-family="Poppins,sans-serif" font-size="14" font-weight="600" letter-spacing="1" fill="currentColor">SILVERLINE</text></svg></span>
+              <span class="logo-tile"><svg width="108" height="26" viewBox="0 0 108 26" role="img" aria-label="Pulse UK"><polyline points="2,14 6,14 9,7 13,20 16,11 18,14 22,14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><text x="28" y="19" font-family="Poppins,sans-serif" font-size="14" font-weight="700" letter-spacing="-0.3" fill="currentColor">PULSE</text></svg></span>
+
+              <!-- Loop duplicate for Row 2 -->
+              <span class="logo-tile" aria-hidden="true"><svg width="116" height="26" viewBox="0 0 116 26"><path d="M4 6h4l5 14h-4l-1.5-4.5h-3L3 20H0l4-14Zm2.5 6.5h1.8L7.4 8.8l-.9 3.7Z" fill="currentColor"/><text x="24" y="19" font-family="Poppins,sans-serif" font-size="14" font-weight="700" letter-spacing="1.5" fill="currentColor">VANGUARD</text></svg></span>
+              <span class="logo-tile" aria-hidden="true"><svg width="114" height="26" viewBox="0 0 114 26"><circle cx="9" cy="13" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 7v12M3 13h12" stroke="currentColor" stroke-width="1.8"/><text x="22" y="19" font-family="Poppins,sans-serif" font-size="14" font-weight="600" letter-spacing="0.5" fill="currentColor">MERIDIAN</text></svg></span>
+              <span class="logo-tile" aria-hidden="true"><svg width="106" height="26" viewBox="0 0 106 26"><polygon points="9,4 12,11 19,11 13,15 15,22 9,18 3,22 5,15 -1,11 6,11" fill="currentColor"/><text x="22" y="19" font-family="Poppins,sans-serif" font-size="14" font-weight="500" letter-spacing="2" fill="currentColor">SOLSTICE</text></svg></span>
+              <span class="logo-tile" aria-hidden="true"><svg width="124" height="26" viewBox="0 0 124 26"><polygon points="3,20 10,6 17,20" fill="none" stroke="currentColor" stroke-width="2.2"/><polygon points="7,15 10,9 13,15" fill="currentColor"/><text x="24" y="19" font-family="Poppins,sans-serif" font-size="14" font-weight="700" letter-spacing="-0.2" fill="currentColor">APEX DIGITAL</text></svg></span>
+              <span class="logo-tile" aria-hidden="true"><svg width="102" height="26" viewBox="0 0 102 26"><polygon points="3,6 16,6 4,20 17,20" stroke="currentColor" stroke-width="2.2" fill="none"/><text x="23" y="19" font-family="Poppins,sans-serif" font-size="14" font-weight="600" letter-spacing="1.5" fill="currentColor">ZENITH</text></svg></span>
+              <span class="logo-tile" aria-hidden="true"><svg width="118" height="26" viewBox="0 0 118 26"><circle cx="10" cy="13" r="6" fill="currentColor"/><text x="22" y="19" font-family="Poppins,sans-serif" font-size="14" font-weight="700" letter-spacing="-0.4" fill="currentColor">NovaTrend</text></svg></span>
+              <span class="logo-tile" aria-hidden="true"><svg width="120" height="26" viewBox="0 0 120 26"><line x1="2" y1="13" x2="16" y2="13" stroke="currentColor" stroke-width="3"/><circle cx="9" cy="13" r="5" fill="none" stroke="currentColor" stroke-width="2"/><text x="23" y="19" font-family="Poppins,sans-serif" font-size="14" font-weight="600" letter-spacing="1" fill="currentColor">SILVERLINE</text></svg></span>
+              <span class="logo-tile" aria-hidden="true"><svg width="108" height="26" viewBox="0 0 108 26"><polyline points="2,14 6,14 9,7 13,20 16,11 18,14 22,14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><text x="28" y="19" font-family="Poppins,sans-serif" font-size="14" font-weight="700" letter-spacing="-0.3" fill="currentColor">PULSE</text></svg></span>
+            </div>
           </div>
         </div>
 
@@ -1127,9 +979,9 @@
     </section>
 
     <!-- ====================================================================
-         SECTION 4: 4-STAGE PERFORMANCE GROWTH FRAMEWORK
+         SECTION 4: 4-STAGE PERFORMANCE GROWTH FRAMEWORK (Fixed Homepage Process Style)
          ==================================================================== -->
-    <section class="section" id="framework" style="background:var(--surface)">
+    <section class="section section--paper" id="framework">
       <div class="container">
         
         <div class="grid12 mb-10">
@@ -1144,36 +996,36 @@
           </div>
         </div>
 
-        <div class="framework-grid">
+        <div class="process-steps--4">
           
-          <div class="framework-card">
-            <p class="framework-card__num">Stage 01 · Week 1-2</p>
-            <h3 class="framework-card__title">Deep Account &amp; Tracking Audit</h3>
-            <p class="framework-card__desc">
+          <div class="process-card">
+            <span class="process-card__number">01</span>
+            <h3 class="process-card__title">Deep Account &amp; Tracking Audit</h3>
+            <p class="process-card__desc">
               We diagnose tracking leaks, eliminate wasted historical ad spend, configure server-side CAPI / GA4 schemas, and establish baseline unit economics.
             </p>
           </div>
 
-          <div class="framework-card">
-            <p class="framework-card__num">Stage 02 · Week 2-4</p>
-            <h3 class="framework-card__title">Audience &amp; Creative Angle Testing</h3>
-            <p class="framework-card__desc">
+          <div class="process-card">
+            <span class="process-card__number">02</span>
+            <h3 class="process-card__title">Audience &amp; Creative Angle Testing</h3>
+            <p class="process-card__desc">
               We design modular high-impact ad creatives, script UGC hooks, and deploy multi-variant audience clusters to uncover lowest CPA customer cohorts.
             </p>
           </div>
 
-          <div class="framework-card">
-            <p class="framework-card__num">Stage 03 · Month 2</p>
-            <h3 class="framework-card__title">Algorithmic Scaling &amp; Bid Optimization</h3>
-            <p class="framework-card__desc">
+          <div class="process-card">
+            <span class="process-card__number">03</span>
+            <h3 class="process-card__title">Algorithmic Scaling &amp; Bid Optimization</h3>
+            <p class="process-card__desc">
               We deploy automated bid rules, tROAS / tCPA algorithms, and Performance Max asset scaling to multiply budget into verified profitable revenue.
             </p>
           </div>
 
-          <div class="framework-card">
-            <p class="framework-card__num">Stage 04 · Ongoing</p>
-            <h3 class="framework-card__title">Full-Funnel CRO &amp; Lifetime Value</h3>
-            <p class="framework-card__desc">
+          <div class="process-card">
+            <span class="process-card__number">04</span>
+            <h3 class="process-card__title">Full-Funnel CRO &amp; Lifetime Value</h3>
+            <p class="process-card__desc">
               We optimize post-click landing pages, checkout flows, and automated remarketing sequences to maximize repeat purchases and customer lifetime value (LTV).
             </p>
           </div>
@@ -1184,250 +1036,177 @@
     </section>
 
     <!-- ====================================================================
-         SECTION 5: CLIENT CASE STUDIES & FEEDBACKS
+         SECTION 5: FAQ SECTION (Matching Homepage & Services 2-Column Design)
          ==================================================================== -->
-    <section class="section" id="case-studies" style="background:var(--neutral-050)">
-      <div class="container">
+    <section class="section section--paper" id="faq">
+      <div class="container grid12" style="row-gap:var(--space-10)">
         
-        <div class="grid12 mb-10">
-          <div class="c-7">
-            <p class="t-label">Proven Client Results</p>
-            <h2 class="t-h2 mt-4">Real UK businesses scaling with GTech performance marketing</h2>
-          </div>
-          <div class="c-5 start-8" style="align-self:end">
-            <p class="t-lead">
-              Discover how our data-first approach and server-side tracking deliver verifiable commercial ROI.
-            </p>
-          </div>
+        <div class="c-4">
+          <p class="t-label">FAQ</p>
+          <h2 class="t-h2 mt-5">Frequently asked questions</h2>
+          <p class="t-lead mt-6">Got questions about performance marketing, ROAS expectations, or tracking? Find quick answers below or reach out directly.</p>
+          <a class="btn btn--ink btn--arrow mt-8" href="#contact">
+            Ask a question 
+            <span class="btn__arrow" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
         </div>
 
-        <div class="case-grid">
-          
-          <!-- Case 1: E-Commerce Fashion Retailer -->
-          <div class="case-card">
-            <div>
-              <span class="case-card__badge">E-Commerce Fashion</span>
-              <p class="case-card__metric">5.4x ROAS</p>
-              <p class="case-card__metric-label">+380% Revenue Growth (£15k &rarr; £140k/mo)</p>
-              <p class="case-card__quote">
-                "GTech rebuilt our Meta Advantage+ campaigns and implemented server-side CAPI. Our ad spend scaled ten-fold while keeping our blended ROAS above 5x."
-              </p>
+        <div class="c-7 start-6">
+          <div class="faq">
+            
+            <div class="faq__item" data-faq>
+              <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-p1" data-faq-toggle>
+                What is performance marketing and how does it differ from traditional advertising?
+                <span class="faq__sign" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </button>
+              <div class="faq__a" id="faq-p1"><div class="faq__a-inner"><p>Performance marketing is an outcomes-driven digital media strategy where every pound spent is tracked, attributed, and optimized toward specific commercial KPIs—such as online purchases, qualified leads, and Return On Ad Spend (ROAS). Unlike brand awareness marketing, performance campaigns are continuously calibrated to lower cost-per-acquisition (CPA) and maximize gross profitability.</p></div></div>
             </div>
-            <div>
-              <p class="case-card__author">James Thornton</p>
-              <p class="case-card__role">Managing Director, UK Apparel Brand</p>
-            </div>
-          </div>
 
-          <!-- Case 2: Multi-Location Hospitality Chain -->
-          <div class="case-card">
-            <div>
-              <span class="case-card__badge">Hospitality &amp; Restaurant Group</span>
-              <p class="case-card__metric">£2.10 CPA</p>
-              <p class="case-card__metric-label">+320% Increase in Direct Table Bookings</p>
-              <p class="case-card__quote">
-                "Their hyper-local Google Ads &amp; TikTok video funnels filled our weekend tables across all 14 UK venues at a fraction of our previous agency's acquisition cost."
-              </p>
+            <div class="faq__item" data-faq>
+              <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-p2" data-faq-toggle>
+                What ad platforms do you actively manage for performance marketing?
+                <span class="faq__sign" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </button>
+              <div class="faq__a" id="faq-p2"><div class="faq__a-inner"><p>As a certified Google Premier Partner and Meta Business Partner, we manage Google Ads (Search, Shopping, Performance Max, YouTube, Display), Meta Ads (Facebook &amp; Instagram Advantage+), TikTok Ads (Spark Ads &amp; TikTok Shop), and Microsoft Advertising. All channels are linked via Google Tag Manager Server-Side, Meta CAPI, and GA4 for unified cross-channel attribution.</p></div></div>
             </div>
-            <div>
-              <p class="case-card__author">Sarah Rahman</p>
-              <p class="case-card__role">Head of Marketing, National Restaurant Group</p>
-            </div>
-          </div>
 
-          <!-- Case 3: B2B Enterprise SaaS Platform -->
-          <div class="case-card">
-            <div>
-              <span class="case-card__badge">B2B SaaS &amp; Cloud Platform</span>
-              <p class="case-card__metric">-54% CPL</p>
-              <p class="case-card__metric-label">450+ High-Value Enterprise Qualified Leads</p>
-              <p class="case-card__quote">
-                "By pairing precision Google Search exact match with high-converting dedicated landing pages, GTech halved our cost per demo and transformed our sales pipeline."
-              </p>
+            <div class="faq__item" data-faq>
+              <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-p3" data-faq-toggle>
+                What is your minimum monthly ad spend recommendation?
+                <span class="faq__sign" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </button>
+              <div class="faq__a" id="faq-p3"><div class="faq__a-inner"><p>To feed machine-learning algorithms sufficient conversion signals for rapid optimization, we typically recommend a minimum ad budget of £1,500 to £3,000 per month across Google and Meta. For enterprise brands spending £10,000 to £100,000+ monthly, our dedicated account directors implement custom multi-tiered bid caps and creative rotation.</p></div></div>
             </div>
-            <div>
-              <p class="case-card__author">David Sterling</p>
-              <p class="case-card__role">Chief Commercial Officer, UK SaaS Enterprise</p>
-            </div>
-          </div>
 
+            <div class="faq__item" data-faq>
+              <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-p4" data-faq-toggle>
+                How does server-side CAPI tracking improve our ROAS?
+                <span class="faq__sign" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </button>
+              <div class="faq__a" id="faq-p4"><div class="faq__a-inner"><p>Browser-based pixel tracking loses between 20% to 40% of conversion signals due to iOS privacy restrictions, ad blockers, and cookie consent barriers. Server-side tracking (Meta CAPI and Google Enhanced Conversions) sends encrypted first-party purchase data directly from your server to the ad platform, allowing algorithms to target high-intent buyers and dramatically reducing wasted spend.</p></div></div>
+            </div>
+
+            <div class="faq__item" data-faq>
+              <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-p5" data-faq-toggle>
+                Do we own our ad accounts and creative assets?
+                <span class="faq__sign" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </button>
+              <div class="faq__a" id="faq-p5"><div class="faq__a-inner"><p>Yes, 100%. You retain full administrative ownership and billing rights of all ad accounts, custom pixels, GA4 telemetry, and creative assets produced. GTech Digital operates with total transparency, and you can access your real-time performance data 24/7 via Looker Studio.</p></div></div>
+            </div>
+
+            <div class="faq__item" data-faq>
+              <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-p6" data-faq-toggle>
+                How quickly will we see positive commercial returns?
+                <span class="faq__sign" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+              </button>
+              <div class="faq__a" id="faq-p6"><div class="faq__a-inner"><p>During the initial 14 to 21-day audit and setup sprint, we immediately eliminate obvious budget waste and calibrate tracking. Most clients see significant CPA reductions within the first 30 days, with full algorithmic scaling and target ROAS achieved by month two and three.</p></div></div>
+            </div>
+
+          </div>
         </div>
 
       </div>
     </section>
 
     <!-- ====================================================================
-         SECTION 6: FREQUENTLY ASKED QUESTIONS (FAQ ACCORDION)
+         SECTION 6: CTA SECTION (Exact Homepage Design & Form)
          ==================================================================== -->
-    <section class="section" id="faq" style="background:var(--surface)">
-      <div class="container">
-        
-        <div class="grid12 mb-8">
-          <div class="c-8">
-            <p class="t-label">Performance Marketing FAQs</p>
-            <h2 class="t-h2 mt-4">Frequently asked questions about our paid acquisition management</h2>
+    <section class="section cta" id="contact">
+      <div class="container grid12" style="row-gap:var(--space-10)">
+
+        <div class="c-5">
+          <p class="t-label">Schedule a Strategy Session</p>
+          <h2 class="t-h2 mt-5">Let's discuss how we can accelerate your commercial growth.</h2>
+          <p class="t-lead mt-6" style="color:rgba(255,255,255,0.88)">
+            Book a complimentary 30-minute growth consultation. We will audit your search visibility, evaluate paid ad efficiency, and identify immediate revenue opportunities.
+          </p>
+
+          <div class="mt-10 flex gap-6 wrap">
+            <div>
+              <p class="t-label" style="color:rgba(255,255,255,0.7)">Call Directly</p>
+              <a class="t-h4 text-white mt-2" style="display:block" href="tel:+442035985956">0203 598 5956</a>
+            </div>
+            <div>
+              <p class="t-label" style="color:rgba(255,255,255,0.7)">Email</p>
+              <a class="t-h4 text-white mt-2" style="display:block" href="mailto:info@gtechdigital.co.uk">info@gtechdigital.co.uk</a>
+            </div>
           </div>
         </div>
 
-        <div class="faq-list" style="max-width:860px">
-          
-          <details class="faq-item" open>
-            <summary class="faq-item__question">
-              <span>What is performance marketing and how does it differ from traditional advertising?</span>
-              <svg class="faq-item__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-            </summary>
-            <div class="faq-item__answer">
-              <p>Performance marketing is an outcomes-driven digital media strategy where every pound spent is tracked, attributed, and optimized toward specific commercial KPIs—such as online purchases, qualified leads, and Return On Ad Spend (ROAS). Unlike brand awareness marketing, performance campaigns are continuously calibrated to lower cost-per-acquisition (CPA) and maximize gross profitability.</p>
+        <div class="c-6 start-7">
+          <form class="enquiry" data-stub-form>
+
+            <div class="enquiry__row">
+              <div>
+                <label class="field__label" for="f-name">Your name</label>
+                <input class="input" type="text" id="f-name" name="name" placeholder="Jane Smith" autocomplete="name" required>
+              </div>
+              <div>
+                <label class="field__label" for="f-company">Company</label>
+                <input class="input" type="text" id="f-company" name="company" placeholder="Company name" autocomplete="organization" required>
+              </div>
             </div>
-          </details>
 
-          <details class="faq-item">
-            <summary class="faq-item__question">
-              <span>What ad platforms do you actively manage?</span>
-              <svg class="faq-item__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-            </summary>
-            <div class="faq-item__answer">
-              <p>As a certified Google Premier Partner and Meta Business Partner, we manage Google Ads (Search, Shopping, Performance Max, YouTube, Display), Meta Ads (Facebook &amp; Instagram Advantage+), TikTok Ads (Spark Ads &amp; TikTok Shop), and Microsoft Advertising. All channels are linked via Google Tag Manager Server-Side, Meta CAPI, and GA4 for unified cross-channel attribution.</p>
+            <div class="enquiry__row">
+              <div>
+                <label class="field__label" for="f-email">Work email</label>
+                <input class="input" type="email" id="f-email" name="email" placeholder="you@company.com" autocomplete="email" required>
+              </div>
+              <div>
+                <label class="field__label" for="f-phone">Phone <span style="font-weight:400;opacity:.6">(optional)</span></label>
+                <input class="input" type="tel" id="f-phone" name="phone" placeholder="07700 900000" autocomplete="tel">
+              </div>
             </div>
-          </details>
 
-          <details class="faq-item">
-            <summary class="faq-item__question">
-              <span>What is your minimum monthly ad spend recommendation?</span>
-              <svg class="faq-item__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-            </summary>
-            <div class="faq-item__answer">
-              <p>To feed machine-learning algorithms sufficient conversion signals for rapid optimization, we typically recommend a minimum ad budget of £1,500 to £3,000 per month across Google and Meta. For enterprise brands spending £10,000 to £100,000+ monthly, our dedicated account directors implement custom multi-tiered bid caps and custom creative rotation.</p>
+            <div>
+              <label class="field__label" for="f-service">What do you need?</label>
+              <select class="select" id="f-service" name="service" required>
+                <option value="" disabled>Select a service…</option>
+                <optgroup label="Performance Marketing &amp; Paid Ads">
+                  <option value="performance-marketing" selected>Performance Marketing (Google, Meta &amp; TikTok)</option>
+                  <option value="google-ads">Google Ads &amp; Performance Max (PMax)</option>
+                  <option value="meta-tiktok">Meta Ads (Facebook &amp; Instagram) &amp; TikTok</option>
+                  <option value="server-side-tracking">Server-Side Tracking &amp; Meta CAPI</option>
+                  <option value="cro-optimization">Conversion Rate Optimization (CRO)</option>
+                </optgroup>
+                <optgroup label="Search &amp; Build">
+                  <option value="seo">SEO, AEO &amp; GEO (AI Search)</option>
+                  <option value="web">Web Design &amp; Development</option>
+                  <option value="app">Mobile App Development</option>
+                  <option value="software">Custom Software Development</option>
+                </optgroup>
+                <optgroup label="Other">
+                  <option value="multiple">Several of the above</option>
+                  <option value="not-sure">Not sure yet — need advice</option>
+                </optgroup>
+              </select>
             </div>
-          </details>
 
-          <details class="faq-item">
-            <summary class="faq-item__question">
-              <span>How does server-side CAPI tracking improve our ROAS?</span>
-              <svg class="faq-item__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-            </summary>
-            <div class="faq-item__answer">
-              <p>Browser-based pixel tracking loses between 20% to 40% of conversion signals due to iOS privacy restrictions, ad blockers, and cookie consent barriers. Server-side tracking (Meta CAPI and Google Enhanced Conversions) sends encrypted first-party purchase data directly from your server to the ad platform, allowing algorithms to target high-intent buyers and dramatically reducing wasted spend.</p>
+            <fieldset style="border:0;padding:0;margin:0">
+              <legend class="field__label">Monthly ad spend budget</legend>
+              <div class="budget">
+                <label><input type="radio" name="budget" value="under-1k"><span>Under £1k</span></label>
+                <label><input type="radio" name="budget" value="1-2.5k" checked><span>£1.5k – £3k</span></label>
+                <label><input type="radio" name="budget" value="2.5-5k"><span>£3k – £5k</span></label>
+                <label><input type="radio" name="budget" value="5-10k"><span>£5k – £15k</span></label>
+                <label><input type="radio" name="budget" value="10k-plus"><span>£15k – £50k</span></label>
+                <label><input type="radio" name="budget" value="enterprise"><span>£50k+ (Enterprise)</span></label>
+              </div>
+            </fieldset>
+
+            <div>
+              <label class="field__label" for="f-message">Anything else? <span style="font-weight:400;opacity:.6">(optional)</span></label>
+              <textarea class="textarea" id="f-message" name="message" rows="3" placeholder="Tell us about your current campaigns, target ROAS, or commercial growth goals…"></textarea>
             </div>
-          </details>
 
-          <details class="faq-item">
-            <summary class="faq-item__question">
-              <span>Do we own our ad accounts and creative assets?</span>
-              <svg class="faq-item__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-            </summary>
-            <div class="faq-item__answer">
-              <p>Yes, 100%. You retain full administrative ownership and billing rights of all ad accounts, custom pixels, GA4 telemetry, and creative assets produced. GTech Digital operates with total transparency, and you can access your real-time performance data 24/7 via Looker Studio.</p>
-            </div>
-          </details>
+            <button class="btn btn--white btn--lg btn--block mt-4" type="submit">
+              Submit Strategy Enquiry
+            </button>
 
-          <details class="faq-item">
-            <summary class="faq-item__question">
-              <span>How quickly will we see positive commercial returns?</span>
-              <svg class="faq-item__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-            </summary>
-            <div class="faq-item__answer">
-              <p>During the initial 14 to 21-day audit and setup sprint, we immediately eliminate obvious budget waste and calibrate tracking. Most clients see significant CPA reductions within the first 30 days, with full algorithmic scaling and target ROAS achieved by month two and three.</p>
-            </div>
-          </details>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ====================================================================
-         SECTION 7: FREE PPC & ROAS AUDIT FORM (HIGH-CONVERTING CTA)
-         ==================================================================== -->
-    <section class="section section--dark" id="contact" style="background:linear-gradient(135deg, #09152b 0%, #060d1b 100%);color:#fff">
-      <div class="container">
-        
-        <div class="grid12 align-center" style="row-gap:var(--space-10)">
-          
-          <div class="c-6">
-            <div class="svc-showcase__tag" style="background:rgba(0,194,255,0.1);border-color:rgba(0,194,255,0.3);color:#00C2FF">
-              <span>Free Performance Media Audit</span>
-            </div>
-            <h2 class="t-h2 mt-4" style="color:#fff">Ready to unlock scalable ROAS from your paid marketing?</h2>
-            <p class="t-body-lg mt-4" style="color:var(--neutral-300)">
-              Request a comprehensive, no-obligation audit of your existing Google Ads, Meta Ads, or TikTok campaigns. Our senior media directors will identify tracking gaps, wasted spend, and untapped scale opportunities.
+            <p class="enquiry__note" style="color:var(--brand-cyan)" data-stub-note hidden>
+              Prototype only — this form is not connected to a backend.
             </p>
-
-            <div class="mt-8 flex flex-col gap-4">
-              <div class="flex align-center gap-3">
-                <div style="width:24px;height:24px;border-radius:50%;background:rgba(16,185,129,0.15);color:#10b981;display:grid;place-items:center;flex-shrink:0">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                </div>
-                <span style="font-size:14px;color:var(--neutral-300)">Complete review of Search, Shopping, PMax &amp; Advantage+ campaign setups</span>
-              </div>
-              <div class="flex align-center gap-3">
-                <div style="width:24px;height:24px;border-radius:50%;background:rgba(16,185,129,0.15);color:#10b981;display:grid;place-items:center;flex-shrink:0">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                </div>
-                <span style="font-size:14px;color:var(--neutral-300)">First-party Server-Side CAPI and GA4 tracking health diagnostics</span>
-              </div>
-              <div class="flex align-center gap-3">
-                <div style="width:24px;height:24px;border-radius:50%;background:rgba(16,185,129,0.15);color:#10b981;display:grid;place-items:center;flex-shrink:0">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                </div>
-                <span style="font-size:14px;color:var(--neutral-300)">Custom 90-day ROAS scaling roadmap with direct unit-economic modeling</span>
-              </div>
-            </div>
-
-            <div class="mt-8" style="font-size:14px;color:var(--neutral-400)">
-              Prefer to talk immediately? Call our London office: <br>
-              <a href="tel:+442035985956" style="color:#fff;font-weight:700;font-size:18px">0203 598 5956</a>
-            </div>
-          </div>
-
-          <div class="c-5 start-8">
-            <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:clamp(24px, 3vw, 36px);box-shadow:0 20px 40px rgba(0,0,0,0.3)">
-              <h3 style="font-size:20px;font-weight:700;color:#fff;margin-bottom:6px">Claim Your Free ROAS Audit</h3>
-              <p style="font-size:13.5px;color:var(--neutral-400);margin-bottom:20px">Delivered within 48 business hours by senior UK media directors.</p>
-
-              <form data-stub-form class="flex flex-col gap-4">
-                <div>
-                  <label for="audit-name" style="display:block;font-size:12.5px;font-weight:600;color:var(--neutral-300);margin-bottom:4px">Full Name *</label>
-                  <input class="input" type="text" id="audit-name" placeholder="Sarah Jenkins" required style="width:100%">
-                </div>
-
-                <div>
-                  <label for="audit-email" style="display:block;font-size:12.5px;font-weight:600;color:var(--neutral-300);margin-bottom:4px">Work Email *</label>
-                  <input class="input" type="email" id="audit-email" placeholder="sarah@yourcompany.co.uk" required style="width:100%">
-                </div>
-
-                <div>
-                  <label for="audit-url" style="display:block;font-size:12.5px;font-weight:600;color:var(--neutral-300);margin-bottom:4px">Website URL *</label>
-                  <input class="input" type="url" id="audit-url" placeholder="https://yourcompany.co.uk" required style="width:100%">
-                </div>
-
-                <div>
-                  <label for="audit-spend" style="display:block;font-size:12.5px;font-weight:600;color:var(--neutral-300);margin-bottom:4px">Monthly Ad Spend Tier</label>
-                  <select class="input" id="audit-spend" style="width:100%;color:var(--neutral-900)">
-                    <option value="1k-5k">£1,500 – £5,000 / month</option>
-                    <option value="5k-15k">£5,000 – £15,000 / month</option>
-                    <option value="15k-50k">£15,000 – £50,000 / month</option>
-                    <option value="50k+">£50,000+ / month (Enterprise)</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label for="audit-phone" style="display:block;font-size:12.5px;font-weight:600;color:var(--neutral-300);margin-bottom:4px">Phone Number</label>
-                  <input class="input" type="tel" id="audit-phone" placeholder="07123 456789" style="width:100%">
-                </div>
-
-                <button class="btn btn--primary btn--block btn--arrow mt-2" type="submit" style="justify-content:center">
-                  Request Free ROAS Audit
-                  <span class="btn__arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-                </button>
-
-                <p style="font-size:11.5px;color:var(--neutral-400);text-align:center;margin-top:4px">
-                  🔒 100% Confidential. Zero spam. We never share your data.
-                </p>
-              </form>
-            </div>
-          </div>
-
+          </form>
         </div>
 
       </div>
