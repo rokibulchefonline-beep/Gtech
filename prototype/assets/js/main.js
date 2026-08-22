@@ -430,22 +430,32 @@
     });
   }
 
-  /* ----------------------------------------------- Mobile carousel controls */
+  /* ---------------------------------------------------- Carousel controls */
 
   function initCarouselControls() {
     var navs = Array.prototype.slice.call(document.querySelectorAll("[data-carousel-controls]"));
     navs.forEach(function (nav) {
-      var parent = nav.parentElement;
-      var track = parent ? parent.querySelector(".stories, .posts, .solutions, .industries") : null;
+      var section = nav.closest("section, .container") || nav.parentElement;
+      var track = section ? section.querySelector("[data-carousel-track], .stories, .posts, .solutions, .industries") : null;
       if (!track) return;
 
       var prev = nav.querySelector("[data-carousel-prev]");
       var next = nav.querySelector("[data-carousel-next]");
 
+      function updateDisabled() {
+        if (prev) {
+          prev.disabled = track.scrollLeft <= 6;
+        }
+        if (next) {
+          var maxScroll = track.scrollWidth - track.clientWidth - 6;
+          next.disabled = track.scrollLeft >= maxScroll;
+        }
+      }
+
       if (prev) {
         prev.addEventListener("click", function () {
           var card = track.firstElementChild;
-          var step = card ? card.getBoundingClientRect().width + 12 : track.clientWidth * 0.85;
+          var step = card ? card.getBoundingClientRect().width + 24 : track.clientWidth * 0.85;
           track.scrollBy({ left: -step, behavior: reduceMotion ? "auto" : "smooth" });
         });
       }
@@ -453,10 +463,14 @@
       if (next) {
         next.addEventListener("click", function () {
           var card = track.firstElementChild;
-          var step = card ? card.getBoundingClientRect().width + 12 : track.clientWidth * 0.85;
+          var step = card ? card.getBoundingClientRect().width + 24 : track.clientWidth * 0.85;
           track.scrollBy({ left: step, behavior: reduceMotion ? "auto" : "smooth" });
         });
       }
+
+      track.addEventListener("scroll", updateDisabled, { passive: true });
+      window.addEventListener("resize", updateDisabled);
+      updateDisabled();
     });
   }
 
