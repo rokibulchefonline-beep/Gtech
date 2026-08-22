@@ -667,26 +667,65 @@
 
 .marquee-mask {
   overflow: hidden;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  position: relative;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
 }
 
-.marquee { display: flex; gap: var(--space-16); width: max-content; animation: marquee 52s linear infinite; }
-.marquee:hover { animation-play-state: paused; }
-@keyframes marquee { to { transform: translateX(-50%); } }
+.marquee-mask--dual {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.marquee {
+  display: flex;
+  gap: var(--space-16);
+  width: max-content;
+  animation: marquee-left 44s linear infinite;
+}
+
+.marquee--row1 {
+  animation: marquee-left 42s linear infinite;
+}
+
+.marquee--row2 {
+  animation: marquee-right 46s linear infinite;
+}
+
+.marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
 
 .logo-tile {
-  display: grid; place-items: center; height: 34px; flex: none;
+  display: grid;
+  place-items: center;
+  height: 34px;
+  flex: none;
   color: var(--neutral-400);
-  transition: color var(--dur) var(--ease);
+  transition: color var(--dur) var(--ease), transform var(--dur) var(--ease);
 }
-.logo-tile:hover { color: var(--neutral-900); }
+
+.logo-tile:hover {
+  color: var(--neutral-900);
+  transform: scale(1.04);
+}
 
 @media (max-width: 767px) {
   .clients__inner { grid-template-columns: minmax(0, 1fr); gap: var(--space-5); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .marquee { animation: none; flex-wrap: wrap; width: 100%; gap: var(--space-8); }
+  .marquee, .marquee--row1, .marquee--row2 { animation: none; flex-wrap: wrap; width: 100%; gap: var(--space-8); }
 }
 
 /* ==========================================================================
@@ -1697,9 +1736,14 @@
 
 .tech-rail {
   overflow: hidden;
-  /* Fades both ends so tiles enter and leave rather than being cut off. */
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 18px;
+  padding: 6px 0;
+  /* Fades within container boundary so pills enter and leave smoothly */
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 5%, #000 95%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 5%, #000 95%, transparent 100%);
 }
 
 .tech-rail--dual {

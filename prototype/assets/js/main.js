@@ -89,6 +89,28 @@
   /* -------------------------------------------------------- Scroll reveals */
 
   function initReveal() {
+    // Automatically equip key UI components with staggered scroll-reveal
+    var staggerSelectors = [
+      ".svc-grid > .svc-card",
+      ".bento > .bento__tile",
+      ".stats-row > .stat",
+      ".cards-carousel > .card-work",
+      ".process__step",
+      ".reason",
+      ".post-card",
+      ".growth-card"
+    ];
+
+    staggerSelectors.forEach(function (sel) {
+      var els = document.querySelectorAll(sel);
+      els.forEach(function (el, idx) {
+        if (!el.hasAttribute("data-reveal")) {
+          el.setAttribute("data-reveal", "");
+          el.setAttribute("data-reveal-delay", String((idx % 4) * 80));
+        }
+      });
+    });
+
     var items = document.querySelectorAll("[data-reveal]");
     if (!items.length) return;
 
@@ -101,15 +123,18 @@
       function (entries) {
         entries.forEach(function (entry) {
           if (!entry.isIntersecting) return;
-          // Stagger siblings by 60ms.
           var delay = Number(entry.target.dataset.revealDelay || 0);
-          setTimeout(function () {
+          if (delay > 0) {
+            setTimeout(function () {
+              entry.target.classList.add("is-visible");
+            }, delay);
+          } else {
             entry.target.classList.add("is-visible");
-          }, delay);
+          }
           observer.unobserve(entry.target);
         });
       },
-      { rootMargin: "0px 0px -10% 0px", threshold: 0.1 }
+      { rootMargin: "0px 0px -40px 0px", threshold: 0.08 }
     );
 
     items.forEach(function (el) { observer.observe(el); });
