@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Custom Software Development Agency UK | SaaS, Cloud &amp; APIs | GTech Digital</title>
+  <meta name="description" content="Custom software development and cloud engineering in the UK. We build bespoke enterprise SaaS applications, high-throughput REST/GraphQL APIs, workflow automation, and AWS cloud architectures.">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="Custom Software Development Agency UK | SaaS, Cloud &amp; APIs | GTech Digital">
+  <meta property="og:description" content="Custom software development and cloud engineering in the UK. We build bespoke enterprise SaaS applications, secure APIs, and scalable cloud solutions.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.gtechdigital.co.uk/services/custom-software-development">
+
+  <!-- Fonts & Core Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/assets/css/design-system.css">
+  <link rel="stylesheet" href="/assets/css/index.css">
+
+  <style>
+    .process-steps--4 {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: clamp(16px, 2vw, 24px);
+    }
+    @media (max-width: 1023px) {
+      .process-steps--4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    @media (max-width: 639px) {
+      .process-steps--4 {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <!-- Schema.org JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://www.gtechdigital.co.uk/services/custom-software-development#service",
+        "name": "Custom Software Development Services UK",
+        "provider": {
+          "@type": "Organization",
+          "name": "GTech Digital",
+          "url": "https://www.gtechdigital.co.uk"
+        },
+        "description": "Bespoke enterprise software, scalable SaaS platforms, high-concurrency cloud architectures, and secure API integrations engineered for UK businesses.",
+        "areaServed": "GB",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Custom Software Capabilities",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bespoke SaaS & Enterprise Web Application Architecture" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "RESTful & GraphQL High-Throughput API Backends" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cloud Infrastructure, Serverless & DevOps (AWS / GCP / Azure)" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Legacy System Modernization & CRM / ERP Integrations" } }
+          ]
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What programming languages and frameworks do you use for custom software?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We build scalable, enterprise-grade backends using Node.js/TypeScript, Python (FastAPI/Django), Go, and modern relational/NoSQL databases (PostgreSQL, Redis, DynamoDB). Frontend architectures are built with React and Next.js."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you guarantee the security and compliance of custom software?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "All custom software is engineered to OWASP Top 10 security standards, GDPR compliance, end-to-end data encryption at rest and in transit (AES-256 / TLS 1.3), role-based access control (RBAC), and automated vulnerability scanning."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can you integrate custom software with our existing ERP, CRM, and accounting tools?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. We build custom API connectors for Salesforce, HubSpot, SAP, Xero, Stripe, bespoke on-premises databases, and third-party webhooks to ensure zero data silos."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Who owns the intellectual property and source code?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Your organization owns 100% of all intellectual property, source code, CI/CD pipelines, Docker containers, database schemas, and documentation from day one."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <p class="proto-bar"><b>PROTOTYPE</b> — Certified UK Custom Software Engineering &amp; Cloud Architecture Agency since 2014.</p>
+
+  <!-- SITE HEADER -->
+  <header class="site-header" data-header>
+    <div class="container site-header__inner">
+
+      <a class="logo" href="/index.html">
+        <img src="https://www.gtechdigital.co.uk/assets/frontend/images/logo.png" alt="GTech Digital" width="200" height="52">
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <ul class="nav__list">
+          <li class="nav__item" data-megamenu>
+            <a class="nav__link is-active" href="/services" aria-expanded="false" aria-haspopup="true">
+              Services
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </a>
+
+            <div class="mega">
+              <div class="container mega__inner">
+
+                <div class="mega__rows" role="tablist" aria-label="Services">
+                  <button class="mega__row is-active" type="button" role="tab" aria-selected="true" data-mega-tab="performance">
+                    <span class="mega__row-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg></span>
+                    <span class="mega__row-name">Performance Marketing</span>
+                    <span class="mega__row-chevron" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></span>
+                  </button>
+                  <button class="mega__row" type="button" role="tab" aria-selected="false" data-mega-tab="seo">
+                    <span class="mega__row-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg></span>
+                    <span class="mega__row-name">SEO, AEO &amp; GEO</span>
+                    <span class="mega__row-chevron" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></span>
+                  </button>
+                  <button class="mega__row" type="button" role="tab" aria-selected="false" data-mega-tab="web">
+                    <span class="mega__row-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
+                    <span class="mega__row-name">Web &amp; Software Development</span>
+                    <span class="mega__row-chevron" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></span>
+                  </button>
+                  <button class="mega__row" type="button" role="tab" aria-selected="false" data-mega-tab="design">
+                    <span class="mega__row-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/></svg></span>
+                    <span class="mega__row-name">Graphics &amp; UI/UX Design</span>
+                    <span class="mega__row-chevron" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></span>
+                  </button>
+                </div>
+
+                <div class="mega__panels">
+                  <!-- Panel 1 -->
+                  <div class="mega__panel" data-mega-panel="performance">
+                    <p class="t-label mega__panel-title">Paid Media &amp; Performance Acquisition</p>
+                    <div class="mega__panel-links">
+                      <a href="/services/performance-marketing" style="color:#0081FB;font-weight:600">&bull; Performance Marketing Overview</a>
+                      <a href="/services/performance-marketing#google-ads" style="color:#0081FB;font-weight:600">&bull; Google Ads (Search, Display, PMax)</a>
+                      <a href="/services/performance-marketing#meta-ads" style="color:#0081FB;font-weight:600">&bull; Meta Ads (Facebook &amp; Instagram)</a>
+                      <a href="/services/performance-marketing#tiktok-ads">&bull; TikTok Advertising &amp; Video Funnels</a>
+                      <a href="/services/performance-marketing#server-side-tracking">&bull; Multi-Touch GA4 Attribution</a>
+                      <a href="/services/performance-marketing#cro-optimization">&bull; Conversion Rate Optimization (CRO)</a>
+                    </div>
+                    <a class="link mega__panel-cta" href="/services/performance-marketing">
+                      Explore Performance Marketing
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                  </div>
+
+                  <!-- Panel 2 -->
+                  <div class="mega__panel" data-mega-panel="seo" hidden>
+                    <p class="t-label mega__panel-title">Search Authority &amp; AI Visibility</p>
+                    <div class="mega__panel-links">
+                      <a href="/services/seo" style="color:#0081FB;font-weight:600">&bull; Technical SEO &amp; Core Web Vitals</a>
+                      <a href="/services/seo" style="color:#0081FB;font-weight:600">&bull; Generative Engine Optimization (GEO &amp; AEO)</a>
+                      <a href="/services/local-seo" style="color:#0081FB;font-weight:600">&bull; Complete Local SEO &amp; Maps 3-Pack</a>
+                      <a href="/services/restaurant-seo" style="color:#0081FB;font-weight:600">&bull; Restaurant &amp; Hospitality SEO</a>
+                      <a href="/services/link-building" style="color:#0081FB;font-weight:600">&bull; Link Building &amp; Digital PR</a>
+                    </div>
+                    <a class="link mega__panel-cta" href="/services/seo">
+                      Explore SEO &amp; AI Search
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                  </div>
+
+                  <!-- Panel 3 -->
+                  <div class="mega__panel" data-mega-panel="web" hidden>
+                    <p class="t-label mega__panel-title">Engineering &amp; Application Development</p>
+                    <div class="mega__panel-links">
+                      <a href="/services/web-development" style="color:#0081FB;font-weight:600">&bull; Web Design &amp; Development Overview</a>
+                      <a href="/services/mobile-app-development" style="color:#0081FB;font-weight:600">&bull; Mobile App Development (iOS &amp; Android)</a>
+                      <a href="/services/custom-software-development" style="color:#0081FB;font-weight:600">&bull; Custom Software Development &amp; Cloud</a>
+                      <a href="/services/web-development#nextjs-react">&bull; Next.js &amp; Headless React Platforms</a>
+                      <a href="/services/web-development#shopify-ecommerce">&bull; Shopify Plus &amp; WooCommerce Stores</a>
+                      <a href="/services/web-development#speed-optimization">&bull; 100/100 Core Web Vitals &amp; Speed</a>
+                    </div>
+                    <a class="link mega__panel-cta" href="/services/custom-software-development">
+                      Explore Custom Software Development
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                  </div>
+
+                  <!-- Panel 4 -->
+                  <div class="mega__panel" data-mega-panel="design" hidden>
+                    <p class="t-label mega__panel-title">Brand Identity &amp; Product Experience</p>
+                    <div class="mega__panel-links">
+                      <a href="/services/brand-design" style="color:#0081FB;font-weight:600">&bull; Brand Identity Guidelines &amp; Logos</a>
+                      <a href="/services/brand-design#ui-ux-research" style="color:#0081FB;font-weight:600">&bull; UI/UX Research &amp; User Journeys</a>
+                      <a href="/services/brand-design#figma-prototyping">&bull; Wireframing &amp; Figma Prototypes</a>
+                      <a href="/services/social-media-marketing" style="color:#0081FB;font-weight:600">&bull; Social Media Marketing</a>
+                      <a href="/services/brand-design#design-systems">&bull; Scalable Design Systems</a>
+                    </div>
+                    <a class="link mega__panel-cta" href="/services/brand-design">
+                      Explore Graphics &amp; UI/UX Design
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </li>
+
+          <li class="nav__item"><a class="nav__link" href="/pricing.html">SEO Packages</a></li>
+          <li class="nav__item"><a class="nav__link" href="/index.html#about">About Us</a></li>
+          <li class="nav__item"><a class="nav__link" href="#contact">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <a class="header__phone" href="tel:+442035985956">0203 598 5956</a>
+        <a class="btn btn--primary btn--sm" href="#contact">Book Intro Call</a>
+      </div>
+
+      <button class="nav-toggle" data-nav-open aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- Mobile Nav Drawer -->
+  <div class="mobile-nav" id="mobile-nav" data-mobile-nav aria-hidden="true">
+    <div class="mobile-nav__head">
+      <span class="logo"><img src="https://www.gtechdigital.co.uk/assets/frontend/images/logo.png" alt="GTech Digital" width="180" height="47"></span>
+      <button class="nav-toggle" style="display:grid" data-nav-close aria-label="Close menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <a class="mobile-nav__link" href="/services">All Services</a>
+    <div class="mobile-nav__sub">
+      <a href="/services/seo">01. SEO, AEO &amp; GEO (AI Search)</a>
+      <a href="/services/local-seo">02. Complete Local SEO Service</a>
+      <a href="/services/performance-marketing">03. Performance Marketing</a>
+      <a href="/services/social-media-marketing">04. Social Media Marketing</a>
+      <a href="/services/restaurant-seo">05. Restaurant &amp; Hospitality SEO</a>
+      <a href="/services/link-building">06. Link Building &amp; Digital PR</a>
+      <a href="/services/web-development">07. Web Design &amp; Development</a>
+      <a href="/services/brand-design">08. Graphics &amp; UI/UX Design</a>
+      <a href="/services/mobile-app-development">09. Mobile App Development</a>
+      <a href="/services/custom-software-development" style="color:#0081FB;font-weight:600">10. Custom Software Development</a>
+    </div>
+    <a class="mobile-nav__link" href="/pricing.html">SEO Packages</a>
+    <a class="mobile-nav__link" href="/index.html#about">About Us</a>
+    <a class="mobile-nav__link" href="/index.html#faq">FAQ</a>
+    <a class="mobile-nav__link" href="#contact">Contact Us</a>
+    <div class="mt-10 flex gap-3" style="flex-direction:column">
+      <a class="btn btn--primary btn--block" href="#contact">Book Intro Call</a>
+      <a class="btn btn--outline btn--block" href="tel:+442035985956">0203 598 5956</a>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero hero--split">
+      <div class="container">
+        <div class="hero__grid">
+          <div class="hero__content">
+            <h1 class="hero__title">
+              Custom Software Development Agency in the UK <span class="hero__accent">Building Scalable SaaS &amp; Cloud Systems</span>
+            </h1>
+            <p class="hero__lead">
+              We engineer resilient custom software, enterprise SaaS applications, and automated cloud workflows powered by <strong>Node.js, Python, TypeScript, AWS, and Microservice Architectures</strong>. Built with bank-grade data encryption, real-time analytics, and seamless ERP/CRM integrations.
+            </p>
+            <div class="hero__ctas">
+              <a class="btn btn--primary btn--arrow" href="#contact">
+                Request Software Scoping Call
+                <span class="btn__arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              </a>
+              <a class="btn btn--outline btn--arrow" href="#capabilities">
+                Explore Architecture Stacks
+                <span class="btn__arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              </a>
+            </div>
+          </div>
+          <div class="hero__visual" aria-hidden="true">
+            <div class="flow-ecosystem">
+              <svg class="flow-svg" viewBox="0 0 540 460" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="flowGradSoft" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#0081fb" stop-opacity="0.95"/>
+                    <stop offset="50%" stop-color="#38bdf8" stop-opacity="1"/>
+                    <stop offset="100%" stop-color="#0b3fb0" stop-opacity="0.75"/>
+                  </linearGradient>
+                  <radialGradient id="centerGlowSoft" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#0081fb" stop-opacity="0.25"/>
+                    <stop offset="60%" stop-color="#0b3fb0" stop-opacity="0.08"/>
+                    <stop offset="100%" stop-color="#0081fb" stop-opacity="0"/>
+                  </radialGradient>
+                </defs>
+                <circle cx="270" cy="230" r="130" fill="url(#centerGlowSoft)" />
+                <path class="flow-path-base" d="M 270 230 C 190 230, 160 42, 110 42" />
+                <path class="flow-path-base" d="M 270 230 C 180 230, 150 115, 95 115" />
+                <path class="flow-path-base" d="M 270 230 C 175 230, 145 188, 85 188" />
+                <path class="flow-path-base" d="M 270 230 C 175 230, 145 262, 85 262" />
+                <path class="flow-path-base" d="M 270 230 C 180 230, 150 335, 95 335" />
+                <path class="flow-path-base" d="M 270 230 C 190 230, 160 410, 110 410" />
+                <path class="flow-path-base" d="M 270 230 C 350 230, 380 42, 430 42" />
+                <path class="flow-path-base" d="M 270 230 C 360 230, 390 115, 445 115" />
+                <path class="flow-path-base" d="M 270 230 C 365 230, 395 188, 455 188" />
+                <path class="flow-path-base" d="M 270 230 C 365 230, 395 262, 455 262" />
+                <path class="flow-path-base" d="M 270 230 C 360 230, 390 335, 445 335" />
+                <path class="flow-path-base" d="M 270 230 C 350 230, 380 410, 430 410" />
+                <path class="flow-path-active" d="M 270 230 C 190 230, 160 42, 110 42" />
+                <path class="flow-path-active" d="M 270 230 C 180 230, 150 115, 95 115" />
+                <path class="flow-path-active" d="M 270 230 C 175 230, 145 188, 85 188" />
+                <path class="flow-path-active" d="M 270 230 C 175 230, 145 262, 85 262" />
+                <path class="flow-path-active" d="M 270 230 C 180 230, 150 335, 95 335" />
+                <path class="flow-path-active" d="M 270 230 C 190 230, 160 410, 110 410" />
+                <path class="flow-path-active" d="M 270 230 C 350 230, 380 42, 430 42" />
+                <path class="flow-path-active" d="M 270 230 C 360 230, 390 115, 445 115" />
+                <path class="flow-path-active" d="M 270 230 C 365 230, 395 188, 455 188" />
+                <path class="flow-path-active" d="M 270 230 C 365 230, 395 262, 455 262" />
+                <path class="flow-path-active" d="M 270 230 C 360 230, 390 335, 445 335" />
+                <path class="flow-path-active" d="M 270 230 C 350 230, 380 410, 430 410" />
+              </svg>
+              <div class="hub-center">
+                <div class="hub-ring hub-ring--outer"></div>
+                <div class="hub-ring hub-ring--inner"></div>
+                <div class="hub-core" title="Software Architecture Hub">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                  </svg>
+                </div>
+              </div>
+              <div class="flow-node node-1"><span class="flow-node__label">Node.js TS</span></div>
+              <div class="flow-node node-2"><span class="flow-node__label">Python API</span></div>
+              <div class="flow-node node-3"><span class="flow-node__label">PostgreSQL</span></div>
+              <div class="flow-node node-4"><span class="flow-node__label">AWS Cloud</span></div>
+              <div class="flow-node node-5"><span class="flow-node__label">Docker K8s</span></div>
+              <div class="flow-node node-6"><span class="flow-node__label">GraphQL</span></div>
+              <div class="flow-node node-7"><span class="flow-node__label">Microservices</span></div>
+              <div class="flow-node node-8"><span class="flow-node__label">OAuth2 / RBAC</span></div>
+              <div class="flow-node node-9"><span class="flow-node__label">ERP / CRM</span></div>
+              <div class="flow-node node-10"><span class="flow-node__label">Redis Cache</span></div>
+              <div class="flow-node node-11"><span class="flow-node__label">CI/CD Pipeline</span></div>
+              <div class="flow-node node-12"><span class="flow-node__label">Audit Logging</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- METRICS -->
+    <section class="section" style="background:var(--card-bg);padding:var(--space-8) 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+      <div class="container">
+        <div class="grid12" style="row-gap:var(--space-6)">
+          <div class="c-3" style="text-align:center">
+            <p style="font-size:clamp(2rem,3vw,2.75rem);font-weight:800;color:#0081fb;line-height:1">100+</p>
+            <p class="t-caption mt-2" style="color:var(--text-muted)">Enterprise Systems Built</p>
+          </div>
+          <div class="c-3" style="text-align:center">
+            <p style="font-size:clamp(2rem,3vw,2.75rem);font-weight:800;color:#0081fb;line-height:1">99.99%</p>
+            <p class="t-caption mt-2" style="color:var(--text-muted)">Cloud Infrastructure Uptime</p>
+          </div>
+          <div class="c-3" style="text-align:center">
+            <p style="font-size:clamp(2rem,3vw,2.75rem);font-weight:800;color:#0081fb;line-height:1">&lt;50ms</p>
+            <p class="t-caption mt-2" style="color:var(--text-muted)">Average API Response Time</p>
+          </div>
+          <div class="c-3" style="text-align:center">
+            <p style="font-size:clamp(2rem,3vw,2.75rem);font-weight:800;color:#0081fb;line-height:1">100%</p>
+            <p class="t-caption mt-2" style="color:var(--text-muted)">IP &amp; Repository Ownership</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAPABILITIES -->
+    <section class="section" id="capabilities" style="background:var(--surface)">
+      <div class="container">
+        <div class="grid12 mb-10">
+          <div class="c-7">
+            <p class="t-label">Software Capabilities</p>
+            <h2 class="t-h2 mt-4">Enterprise Custom Software, Microservices &amp; Cloud Infrastructure</h2>
+          </div>
+          <div class="c-5 start-8" style="align-self:end">
+            <p class="t-lead">
+              From proprietary business workflows to high-throughput cloud backends, our UK engineering team builds secure, scalable, and audit-ready software.
+            </p>
+          </div>
+        </div>
+
+        <div class="svc-showcase-list">
+          <!-- 01. Enterprise SaaS & Web Applications -->
+          <article class="svc-showcase" id="saas-platforms">
+            <div class="svc-showcase__visual">
+              <img class="svc-showcase__img" 
+                   src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=900&q=85&fit=crop" 
+                   alt="Enterprise SaaS and Web Application Engineering UK" 
+                   loading="lazy" 
+                   width="600" 
+                   height="540">
+            </div>
+            <div class="svc-showcase__content">
+              <h2 class="svc-showcase__title">Enterprise SaaS &amp; Bespoke Web Applications</h2>
+              <p class="svc-showcase__desc">
+                Architect high-concurrency multi-tenant SaaS platforms and internal business software with role-based access control (RBAC), multi-currency subscription billing, and real-time data analytics.
+              </p>
+              <ul class="svc-checklist">
+                <li class="svc-checklist__item"><span class="svc-checklist__text">Multi-Tenant Cloud Architecture &amp; Database Isolation</span></li>
+                <li class="svc-checklist__item"><span class="svc-checklist__text">Modular Next.js / React Frontend Dashboards &amp; Design Tokens</span></li>
+                <li class="svc-checklist__item"><span class="svc-checklist__text">Enterprise Single Sign-On (SSO / SAML / OAuth2) Integration</span></li>
+                <li class="svc-checklist__item"><span class="svc-checklist__text">Real-Time Operational Analytics &amp; Automated PDF Reporting</span></li>
+              </ul>
+              <div class="svc-showcase__actions">
+                <a class="btn btn--primary btn--arrow" href="#contact">Discuss SaaS Architecture</a>
+              </div>
+            </div>
+          </article>
+
+          <div class="svc-divider"></div>
+
+          <!-- 02. RESTful & GraphQL High-Throughput APIs -->
+          <article class="svc-showcase svc-showcase--reverse" id="api-engineering">
+            <div class="svc-showcase__content">
+              <h2 class="svc-showcase__title">High-Throughput API Backends &amp; Microservices</h2>
+              <p class="svc-showcase__desc">
+                Eliminate data bottlenecks with resilient RESTful and GraphQL API backends. We design decoupled microservice architectures that scale horizontally under heavy traffic, backed by Redis caching and message queues (RabbitMQ, Kafka).
+              </p>
+              <ul class="svc-checklist">
+                <li class="svc-checklist__item"><span class="svc-checklist__text">Scalable Node.js, TypeScript &amp; Python FastAPI Architectures</span></li>
+                <li class="svc-checklist__item"><span class="svc-checklist__text">Asynchronous Event-Driven Queues &amp; Real-Time WebSockets</span></li>
+                <li class="svc-checklist__item"><span class="svc-checklist__text">Comprehensive OpenAPI / Swagger Documentation &amp; SDK Generation</span></li>
+                <li class="svc-checklist__item"><span class="svc-checklist__text">Rate Limiting, DDoS Protection &amp; API Gateway Management</span></li>
+              </ul>
+              <div class="svc-showcase__actions">
+                <a class="btn btn--primary btn--arrow" href="#contact">Plan API Infrastructure</a>
+              </div>
+            </div>
+            <div class="svc-showcase__visual">
+              <img class="svc-showcase__img" 
+                   src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&q=85&fit=crop" 
+                   alt="API Backend and Cloud Microservices UK" 
+                   loading="lazy" 
+                   width="600" 
+                   height="540">
+            </div>
+          </article>
+
+          <div class="svc-divider"></div>
+
+          <!-- 03. Cloud Infrastructure & DevOps on AWS/GCP -->
+          <article class="svc-showcase" id="cloud-devops">
+            <div class="svc-showcase__visual">
+              <img class="svc-showcase__img" 
+                   src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=900&q=85&fit=crop" 
+                   alt="Cloud Infrastructure and DevOps Engineering UK" 
+                   loading="lazy" 
+                   width="600" 
+                   height="540">
+            </div>
+            <div class="svc-showcase__content">
+              <h2 class="svc-showcase__title">Cloud Infrastructure, Serverless &amp; DevOps</h2>
+              <p class="svc-showcase__desc">
+                Achieve 99.99% uptime with automated Infrastructure as Code (Terraform), Docker containerization, Kubernetes clusters, and zero-downtime CI/CD deployment pipelines on AWS, Google Cloud, or Microsoft Azure.
+              </p>
+              <ul class="svc-checklist">
+                <li class="svc-checklist__item"><span class="svc-checklist__text">Automated Terraform Infrastructure as Code (IaC) Provisioning</span></li>
+                <li class="svc-checklist__item"><span class="svc-checklist__text">Docker Containerization &amp; Kubernetes Auto-Scaling Clusters</span></li>
+                <li class="svc-checklist__item"><span class="svc-checklist__text">Zero-Downtime Blue/Green CI/CD Deployment Pipelines</span></li>
+                <li class="svc-checklist__item"><span class="svc-checklist__text">24/7 Server Health Monitoring, Sentry Telemetry &amp; Log Audits</span></li>
+              </ul>
+              <div class="svc-showcase__actions">
+                <a class="btn btn--primary btn--arrow" href="#contact">Consult Cloud Architect</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="section section--white">
+      <div class="container">
+        <div class="grid12 mb-10">
+          <div class="c-7">
+            <p class="t-label">Engineering Lifecycle</p>
+            <h2 class="t-h2 mt-4">Our Rigorous 4-Stage Software Engineering Framework</h2>
+          </div>
+          <div class="c-5 start-8" style="align-self:end">
+            <p class="t-lead">
+              Structured architecture planning, test-driven development (TDD), and automated security audits ensure robust, maintainable enterprise software.
+            </p>
+          </div>
+        </div>
+
+        <div class="process-steps--4">
+          <div class="card p-6" style="background:var(--card-bg);border:1px solid var(--border);border-radius:16px">
+            <div style="font-size:1.25rem;font-weight:800;color:#0081fb;margin-bottom:8px">01. Architecture Blueprint</div>
+            <h3 class="t-h4 mb-3">Schema &amp; Tech Stack</h3>
+            <p class="t-body" style="font-size:0.95rem;color:var(--text-muted)">
+              We map database entity relationships, API endpoint contracts, cloud topologies, and security boundaries before writing code.
+            </p>
+          </div>
+          <div class="card p-6" style="background:var(--card-bg);border:1px solid var(--border);border-radius:16px">
+            <div style="font-size:1.25rem;font-weight:800;color:#0081fb;margin-bottom:8px">02. Sprint Engineering</div>
+            <h3 class="t-h4 mb-3">TDD &amp; Clean Code</h3>
+            <p class="t-body" style="font-size:0.95rem;color:var(--text-muted)">
+              Iterative 2-week sprints with automated test suites, clean separation of concerns, and continuous code quality reviews.
+            </p>
+          </div>
+          <div class="card p-6" style="background:var(--card-bg);border:1px solid var(--border);border-radius:16px">
+            <div style="font-size:1.25rem;font-weight:800;color:#0081fb;margin-bottom:8px">03. Security &amp; Load QA</div>
+            <h3 class="t-h4 mb-3">Penetration &amp; Stress Tests</h3>
+            <p class="t-body" style="font-size:0.95rem;color:var(--text-muted)">
+              Automated load testing up to 100,000 concurrent requests, vulnerability penetration scans, and GDPR compliance validation.
+            </p>
+          </div>
+          <div class="card p-6" style="background:var(--card-bg);border:1px solid var(--border);border-radius:16px">
+            <div style="font-size:1.25rem;font-weight:800;color:#0081fb;margin-bottom:8px">04. Cloud Deployment</div>
+            <h3 class="t-h4 mb-3">CI/CD &amp; SLA Support</h3>
+            <p class="t-body" style="font-size:0.95rem;color:var(--text-muted)">
+              Zero-downtime deployment to AWS/GCP with automated rollback protection, 24/7 telemetry monitoring, and dedicated SLA support.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq" style="background:var(--surface)">
+      <div class="container">
+        <div class="grid12 mb-10">
+          <div class="c-8">
+            <p class="t-label">Frequently Asked Questions</p>
+            <h2 class="t-h2 mt-4">Everything You Need to Know About Custom Software Development</h2>
+          </div>
+        </div>
+        <div class="faq-list" style="max-width:880px">
+          <details class="card p-6 mb-4" style="background:var(--card-bg);border:1px solid var(--border);border-radius:14px" open>
+            <summary style="font-weight:700;font-size:1.1rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+              What programming languages and frameworks do you use for custom software?
+              <span style="color:#0081fb;font-size:1.4rem">+</span>
+            </summary>
+            <p class="t-body mt-4" style="color:var(--text-muted)">
+              We build scalable, enterprise-grade backends using Node.js/TypeScript, Python (FastAPI/Django), Go, and modern relational/NoSQL databases (PostgreSQL, Redis, DynamoDB). Frontend architectures are built with React and Next.js.
+            </p>
+          </details>
+          <details class="card p-6 mb-4" style="background:var(--card-bg);border:1px solid var(--border);border-radius:14px">
+            <summary style="font-weight:700;font-size:1.1rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+              How do you guarantee the security and compliance of custom software?
+              <span style="color:#0081fb;font-size:1.4rem">+</span>
+            </summary>
+            <p class="t-body mt-4" style="color:var(--text-muted)">
+              All custom software is engineered to OWASP Top 10 security standards, GDPR compliance, end-to-end data encryption at rest and in transit (AES-256 / TLS 1.3), role-based access control (RBAC), and automated vulnerability scanning.
+            </p>
+          </details>
+          <details class="card p-6 mb-4" style="background:var(--card-bg);border:1px solid var(--border);border-radius:14px">
+            <summary style="font-weight:700;font-size:1.1rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+              Can you integrate custom software with our existing ERP, CRM, and accounting tools?
+              <span style="color:#0081fb;font-size:1.4rem">+</span>
+            </summary>
+            <p class="t-body mt-4" style="color:var(--text-muted)">
+              Yes. We build custom API connectors for Salesforce, HubSpot, SAP, Xero, Stripe, bespoke on-premises databases, and third-party webhooks to ensure zero data silos.
+            </p>
+          </details>
+          <details class="card p-6 mb-4" style="background:var(--card-bg);border:1px solid var(--border);border-radius:14px">
+            <summary style="font-weight:700;font-size:1.1rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+              Who owns the intellectual property and source code?
+              <span style="color:#0081fb;font-size:1.4rem">+</span>
+            </summary>
+            <p class="t-body mt-4" style="color:var(--text-muted)">
+              Your organization owns 100% of all intellectual property, source code, CI/CD pipelines, Docker containers, database schemas, and documentation from day one.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT CTA -->
+    <section class="section" id="contact" style="background:linear-gradient(135deg, #0b3fb0 0%, #0081fb 100%);color:#ffffff">
+      <div class="container">
+        <div class="grid12" style="align-items:center">
+          <div class="c-6">
+            <p class="t-label" style="color:#38bdf8">Let's Engineer Your Solution</p>
+            <h2 class="t-h2 mt-4" style="color:#ffffff">Ready to Build Enterprise-Grade Software Built to Scale?</h2>
+            <p class="t-lead mt-4" style="color:rgba(255,255,255,0.9)">
+              Book a scoping call with our lead UK software architect to discuss technical requirements, data architecture, security posture, and project timelines.
+            </p>
+            <div class="mt-8 flex gap-4" style="flex-wrap:wrap">
+              <a class="btn" style="background:#ffffff;color:#0b3fb0;font-weight:700" href="tel:+442035985956">Call 0203 598 5956</a>
+              <a class="btn btn--outline" style="border-color:#ffffff;color:#ffffff" href="/services">View All 10 Services</a>
+            </div>
+          </div>
+          <div class="c-5 start-8">
+            <div class="card p-8" style="background:#ffffff;color:var(--text-primary);border-radius:20px;box-shadow:0 20px 40px rgba(0,0,0,0.2)">
+              <h3 class="t-h3 mb-4" style="color:#111827">Request Architecture Scoping</h3>
+              <form onsubmit="event.preventDefault(); alert('Thank you! Our software engineering team will contact you within 2 business hours.');">
+                <div class="mb-4">
+                  <label class="t-caption" style="display:block;margin-bottom:6px;font-weight:600">Full Name *</label>
+                  <input type="text" required placeholder="e.g. David Harrison" style="width:100%;padding:12px 14px;border:1px solid #d1d5db;border-radius:8px;font-size:1rem">
+                </div>
+                <div class="mb-4">
+                  <label class="t-caption" style="display:block;margin-bottom:6px;font-weight:600">Business Email *</label>
+                  <input type="email" required placeholder="david@company.co.uk" style="width:100%;padding:12px 14px;border:1px solid #d1d5db;border-radius:8px;font-size:1rem">
+                </div>
+                <div class="mb-4">
+                  <label class="t-caption" style="display:block;margin-bottom:6px;font-weight:600">Project Type</label>
+                  <select style="width:100%;padding:12px 14px;border:1px solid #d1d5db;border-radius:8px;font-size:1rem">
+                    <option>Custom SaaS &amp; Web Application</option>
+                    <option>High-Throughput API Backend</option>
+                    <option>Cloud Infrastructure &amp; DevOps Migration</option>
+                    <option>Legacy System Refactoring / Modernization</option>
+                  </select>
+                </div>
+                <div class="mb-6">
+                  <label class="t-caption" style="display:block;margin-bottom:6px;font-weight:600">Project Requirements</label>
+                  <textarea rows="3" placeholder="Briefly describe your software system goals..." style="width:100%;padding:12px 14px;border:1px solid #d1d5db;border-radius:8px;font-size:1rem"></textarea>
+                </div>
+                <button type="submit" class="btn btn--primary btn--block">Get Free Technical Roadmap</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="grid12">
+        <div class="c-4">
+          <a class="logo" href="/index.html">
+            <img src="https://www.gtechdigital.co.uk/assets/frontend/images/logo.png" alt="GTech Digital" width="180" height="47">
+          </a>
+          <p class="t-caption mt-4" style="color:var(--text-muted)">
+            GTech Digital is a premier UK digital performance and software engineering agency driving high-intent organic visibility, paid acquisition, and custom application development.
+          </p>
+        </div>
+        <div class="c-2 start-6">
+          <p class="t-label mb-4">Core Services</p>
+          <ul class="footer-links">
+            <li><a href="/services/seo">SEO, AEO &amp; GEO</a></li>
+            <li><a href="/services/local-seo">Complete Local SEO</a></li>
+            <li><a href="/services/performance-marketing">Performance Marketing</a></li>
+            <li><a href="/services/social-media-marketing">Social Media Marketing</a></li>
+            <li><a href="/services/restaurant-seo">Restaurant SEO</a></li>
+          </ul>
+        </div>
+        <div class="c-2">
+          <p class="t-label mb-4">Engineering</p>
+          <ul class="footer-links">
+            <li><a href="/services/link-building">Link Building &amp; PR</a></li>
+            <li><a href="/services/web-development">Web Development</a></li>
+            <li><a href="/services/brand-design">Graphics &amp; UI/UX</a></li>
+            <li><a href="/services/mobile-app-development">Mobile App Development</a></li>
+            <li><a href="/services/custom-software-development">Custom Software Dev</a></li>
+          </ul>
+        </div>
+        <div class="c-3">
+          <p class="t-label mb-4">Contact Info</p>
+          <p class="t-caption" style="color:var(--text-muted)">
+            Phone: <a href="tel:+442035985956" style="color:#0081fb;font-weight:600">0203 598 5956</a><br>
+            Location: London &amp; Across the UK<br>
+            Hours: Mon - Fri: 9:00 - 18:00
+          </p>
+        </div>
+      </div>
+      <div class="mt-8 pt-6" style="border-top:1px solid var(--border);text-align:center">
+        <p class="t-caption" style="color:var(--text-muted)">&copy; 2026 GTech Digital Ltd. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
