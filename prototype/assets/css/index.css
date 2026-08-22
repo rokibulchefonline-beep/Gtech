@@ -2775,10 +2775,46 @@
 }
 
 .svc-showcase__actions {
-  margin-top: clamp(20px, 2.5vw, 28px);
+  margin-top: clamp(24px, 2.8vw, 32px);
   display: flex;
   align-items: center;
   gap: 14px;
+}
+
+/* 4-Bullet Feature Checklist with Checkmark Icons */
+.svc-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.svc-checklist__item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.svc-checklist__icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(0, 129, 251, 0.1);
+  color: #0081fb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid rgba(0, 129, 251, 0.22);
+}
+
+.svc-checklist__text {
+  font-size: clamp(14px, 1.05vw, 15.5px);
+  font-weight: 500;
+  color: var(--neutral-800);
+  line-height: 1.45;
 }
 
 .svc-sublist {
