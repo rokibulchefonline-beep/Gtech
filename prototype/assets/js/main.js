@@ -504,6 +504,44 @@
     });
   }
 
+  /* ---------------------------------------------------- Portfolio Filters */
+
+  function initPortfolioFilters() {
+    var filterBtns = document.querySelectorAll("[data-portfolio-filter]");
+    var items = document.querySelectorAll("[data-portfolio-category]");
+    if (!filterBtns.length || !items.length) return;
+
+    filterBtns.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var targetCat = btn.getAttribute("data-portfolio-filter");
+        
+        filterBtns.forEach(function (b) {
+          b.classList.remove("is-active");
+          b.setAttribute("aria-selected", "false");
+        });
+        btn.classList.add("is-active");
+        btn.setAttribute("aria-selected", "true");
+
+        items.forEach(function (item) {
+          var itemCats = (item.getAttribute("data-portfolio-category") || "").split(" ");
+          if (targetCat === "all" || itemCats.indexOf(targetCat) !== -1) {
+            item.style.display = "";
+            setTimeout(function () {
+              item.style.opacity = "1";
+              item.style.transform = "none";
+            }, 20);
+          } else {
+            item.style.opacity = "0";
+            item.style.transform = "scale(0.96)";
+            setTimeout(function () {
+              item.style.display = "none";
+            }, 250);
+          }
+        });
+      });
+    });
+  }
+
   /* ---------------------------------------------------------------- Boot */
 
   function boot() {
@@ -519,6 +557,7 @@
     initFaq();
     initScrollTop();
     initStubForms();
+    initPortfolioFilters();
   }
 
   if (document.readyState === "loading") {
