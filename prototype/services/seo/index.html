@@ -132,25 +132,111 @@
 
       <nav class="nav" aria-label="Primary">
         <ul class="nav__list">
-          <li class="nav__item nav__item--dropdown" data-dropdown>
+          <li class="nav__item" data-megamenu>
             <a class="nav__link is-active" href="/services" aria-expanded="false" aria-haspopup="true">
               Services
-              <svg class="nav__chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
             </a>
 
-            <!-- Sleek Vertical Services Dropdown (Exact match to reference) -->
-            <div class="dropdown-menu" role="menu" aria-label="Services Dropdown">
-              <a class="dropdown-link dropdown-link--featured" href="/services" role="menuitem">All Services</a>
-              <a class="dropdown-link" href="/services/performance-marketing" role="menuitem">Performance Marketing</a>
-              <a class="dropdown-link" href="/services/social-media-marketing" role="menuitem">Social Media Marketing</a>
-              <a class="dropdown-link" href="/services/seo" role="menuitem">SEO, AEO &amp; GEO (AI Search)</a>
-              <a class="dropdown-link" href="/services/local-seo" role="menuitem">Local SEO &amp; Map 3-Pack</a>
-              <a class="dropdown-link" href="/services/restaurant-seo" role="menuitem">Restaurant SEO Services</a>
-              <a class="dropdown-link" href="/services/link-building" role="menuitem">Link Building &amp; Digital PR</a>
-              <a class="dropdown-link" href="/services/web-development" role="menuitem">Web Development</a>
-              <a class="dropdown-link" href="/services/mobile-app-development" role="menuitem">Mobile App Development</a>
-              <a class="dropdown-link" href="/services/custom-software-development" role="menuitem">Custom Software Development</a>
-              <a class="dropdown-link" href="/services/brand-design" role="menuitem">Brand &amp; UI/UX Design</a>
+            <!-- Direct 4-Pillar Mega Menu (All 10 Services + All Services Hub) -->
+            <div class="mega">
+              <div class="container mega__grid-4">
+
+                <!-- Column 1: Paid Media & Performance -->
+                <div class="mega__col">
+                  <div class="mega__col-header">
+                    <span class="mega__col-icon" aria-hidden="true">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0081FB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg>
+                    </span>
+                    <span class="mega__col-title">Paid Media</span>
+                  </div>
+                  <div class="mega__col-links">
+                    <a class="mega__item" href="/services/performance-marketing">
+                      <span class="mega__item-title">Performance Marketing</span>
+                      <span class="mega__item-desc">Google Ads, Meta Ads &amp; High-ROAS Funnels</span>
+                    </a>
+                    <a class="mega__item" href="/services/social-media-marketing">
+                      <span class="mega__item-title">Social Media Marketing</span>
+                      <span class="mega__item-desc">Paid Social, TikTok Ads &amp; Video Funnels</span>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Column 2: Search Authority & AI Search -->
+                <div class="mega__col">
+                  <div class="mega__col-header">
+                    <span class="mega__col-icon" aria-hidden="true">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0081FB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg>
+                    </span>
+                    <span class="mega__col-title">SEO &amp; AI Search</span>
+                  </div>
+                  <div class="mega__col-links">
+                    <a class="mega__item" href="/services/seo">
+                      <span class="mega__item-title">SEO, AEO &amp; GEO</span>
+                      <span class="mega__item-desc">Technical Search &amp; Generative AI Visibility</span>
+                    </a>
+                    <a class="mega__item" href="/services/local-seo">
+                      <span class="mega__item-title">Local SEO &amp; Maps 3-Pack</span>
+                      <span class="mega__item-desc">Google Business Profile &amp; Local Dominance</span>
+                    </a>
+                    <a class="mega__item" href="/services/restaurant-seo">
+                      <span class="mega__item-title">Restaurant SEO Services</span>
+                      <span class="mega__item-desc">Hospitality Search &amp; Direct Table Bookings</span>
+                    </a>
+                    <a class="mega__item" href="/services/link-building">
+                      <span class="mega__item-title">Link Building &amp; Digital PR</span>
+                      <span class="mega__item-desc">High-DA Editorial Backlinks &amp; Authority</span>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Column 3: Web & App Engineering -->
+                <div class="mega__col">
+                  <div class="mega__col-header">
+                    <span class="mega__col-icon" aria-hidden="true">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0081FB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                    </span>
+                    <span class="mega__col-title">Engineering &amp; Apps</span>
+                  </div>
+                  <div class="mega__col-links">
+                    <a class="mega__item" href="/services/web-development">
+                      <span class="mega__item-title">Web Development</span>
+                      <span class="mega__item-desc">Next.js, Headless React, WordPress &amp; Shopify</span>
+                    </a>
+                    <a class="mega__item" href="/services/mobile-app-development">
+                      <span class="mega__item-title">Mobile App Development</span>
+                      <span class="mega__item-desc">iOS &amp; Android Native &amp; React Native</span>
+                    </a>
+                    <a class="mega__item" href="/services/custom-software-development">
+                      <span class="mega__item-title">Custom Software &amp; Cloud</span>
+                      <span class="mega__item-desc">Bespoke SaaS Platforms &amp; Microservices</span>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Column 4: Brand & Experience -->
+                <div class="mega__col">
+                  <div class="mega__col-header">
+                    <span class="mega__col-icon" aria-hidden="true">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0081FB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/></svg>
+                    </span>
+                    <span class="mega__col-title">Brand &amp; Design</span>
+                  </div>
+                  <div class="mega__col-links">
+                    <a class="mega__item" href="/services/brand-design">
+                      <span class="mega__item-title">Brand &amp; UI/UX Design</span>
+                      <span class="mega__item-desc">Visual Identity Systems, Figma &amp; UX Research</span>
+                    </a>
+                  </div>
+                  <div class="mega__col-featured mt-4">
+                    <a class="mega__featured-card" href="/services">
+                      <span class="mega__featured-label">Complete Agency Portfolio</span>
+                      <span class="mega__featured-title">Explore All 10 Services &rarr;</span>
+                    </a>
+                  </div>
+                </div>
+
+              </div>
             </div>
           </li>
 
@@ -1132,7 +1218,7 @@
               <span class="bento__badge-icon">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                   <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.89 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.34 0 .66.06.96.17V9.45a6.34 6.34 0 0 0-.96-.07A6.34 6.34 0 0 0 3.15 15.7a6.34 6.34 0 0 0 6.34 6.34 6.34 0 0 0 6.34-6.34V8.71a8.28 8.28 0 0 0 4.88 1.58V6.84a4.8 4.8 0 0 1-1.12-.15z" fill="#00F2FE"/>
-                  <path d="M18.89 5.99a4.83 4.83 0 0 1-3.77-4.25V1.3h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.89 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.34 0 .66.06.96.17V8.75a6.34 6.34 0 0 0-.96-.07A6.34 6.34 0 0 0 2.45 15a6.34 6.34 0 0 0 6.34 6.34 6.34 0 0 0 6.34-6.34V8.01a8.28 8.28 0 0 0 4.88 1.58V6.14a4.8 4.8 0 0 1-1.12-.15z" fill="#FE2C55"/>
+                  <path d="M18.89 5.99a4.83 4.83 0 0 1-3.77-4.25V1.3h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.89 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.34 0 .66.06.96.17V8.75a6.34 6.34 0 0 0-.96-.07A6.34 6.34 0 0 0 2.45 15a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.01a8.28 8.28 0 0 0 4.88 1.58V6.14a4.8 4.8 0 0 1-1.12-.15z" fill="#FE2C55"/>
                   <path d="M19.24 6.34a4.83 4.83 0 0 1-3.77-4.25V1.65h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.89 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.34 0 .66.06.96.17V9.1a6.34 6.34 0 0 0-.96-.07A6.34 6.34 0 0 0 2.8 15.35a6.34 6.34 0 0 0 6.34 6.34 6.34 0 0 0 6.34-6.34V8.36a8.28 8.28 0 0 0 4.88 1.58V6.49a4.8 4.8 0 0 1-1.12-.15z" fill="#ffffff"/>
                 </svg>
               </span>

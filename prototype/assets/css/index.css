@@ -146,6 +146,7 @@
     visibility var(--dur);
 }
 
+.nav__item:hover .mega,
 .nav__item.is-open .mega {
   opacity: 1; visibility: visible; pointer-events: auto; transform: none;
 }
