@@ -139,11 +139,23 @@
   background: var(--surface);
   border-block: 1px solid var(--border);
   box-shadow: var(--shadow-2);
-  padding-block: var(--space-12);
+  padding-block: var(--space-8);
   opacity: 0; visibility: hidden; pointer-events: none;
   transform: translateY(-6px);
   transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease),
     visibility var(--dur);
+}
+
+/* Invisible hover bridge connecting navbar to mega menu without gap */
+.mega::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background: transparent;
+  pointer-events: auto;
 }
 
 .nav__item:hover .mega,

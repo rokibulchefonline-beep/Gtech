@@ -21,18 +21,36 @@
       onScroll();
     }
 
-    // Mega-menu: hover on pointer devices, click/Escape everywhere.
+    // Mega-menu: hover on pointer devices, click/Escape everywhere, with grace buffer.
     document.querySelectorAll("[data-megamenu]").forEach(function (item) {
       var trigger = item.querySelector(".nav__link");
       if (!trigger) return;
 
+      var closeTimer = null;
+
       var open = function (state) {
+        if (closeTimer) {
+          clearTimeout(closeTimer);
+          closeTimer = null;
+        }
         item.classList.toggle("is-open", state);
         trigger.setAttribute("aria-expanded", String(state));
       };
 
-      item.addEventListener("mouseenter", function () { open(true); });
-      item.addEventListener("mouseleave", function () { open(false); });
+      item.addEventListener("mouseenter", function () {
+        if (closeTimer) {
+          clearTimeout(closeTimer);
+          closeTimer = null;
+        }
+        open(true);
+      });
+
+      item.addEventListener("mouseleave", function () {
+        if (closeTimer) clearTimeout(closeTimer);
+        closeTimer = setTimeout(function () {
+          open(false);
+        }, 260); // 260ms grace period so moving cursor diagonally never closes the mega menu
+      });
 
       trigger.addEventListener("click", function (e) {
         e.preventDefault();
