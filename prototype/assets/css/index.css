@@ -4236,34 +4236,42 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  padding: 8px 24px;
+  gap: 8px;
+  min-width: 150px;
+  padding: 9px 24px;
   font-size: 13.5px;
-  font-weight: 600;
-  color: #0081FB;
-  background: #ffffff;
-  border: 1.5px solid #0081FB;
+  font-weight: 700;
+  color: #0081FB !important;
+  background: #f0f7ff;
+  border: 2px solid #0081FB;
   border-radius: 6px;
-  text-decoration: none;
+  text-decoration: none !important;
   transition: all 0.25s ease;
-  margin-top: 12px;
+  margin-top: auto;
   white-space: nowrap;
   cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 129, 251, 0.12);
 }
 
 .btn-view-details:hover {
   background: #0081FB;
-  color: #ffffff;
+  color: #ffffff !important;
   border-color: #0081FB;
-  box-shadow: 0 4px 14px rgba(0, 129, 251, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 129, 251, 0.3);
 }
 
 .btn-view-details__icon {
-  font-size: 10px;
+  font-size: 9px;
   line-height: 1;
   display: inline-block;
   color: inherit;
   transform: translateY(-0.5px);
+  transition: transform 0.25s ease;
+}
+
+.btn-view-details:hover .btn-view-details__icon {
+  transform: translateX(2px) translateY(-0.5px);
 }
 
 /* ==========================================================================
