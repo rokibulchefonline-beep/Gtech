@@ -4244,14 +4244,14 @@
 }
 
 .case-card__stats-box {
-  background: #f8fafc;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  border-radius: 10px;
+  background: #f0f7ff;
+  border: 1px solid rgba(0, 129, 251, 0.15);
+  border-radius: 12px;
   padding: 12px 16px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
   width: 100%;
 }
 
