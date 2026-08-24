@@ -4066,12 +4066,9 @@
   font-size: 11.5px;
   font-weight: 500;
   color: var(--neutral-600);
-.featured-case__img {
-  width: 100%;
-  height: 100%;
-  aspect-ratio: 16 / 11;
-  object-fit: cover;
-  display: block;
+  background: #f1f5f9;
+  padding: 3px 9px;
+  border-radius: 6px;
 }
 
 .featured-case__stats {
