@@ -4117,13 +4117,55 @@
 }
 
 /* Portfolio Cards Grid */
+.portfolio-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: clamp(32px, 4vw, 48px);
+}
+
+.filter-pill {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--neutral-700);
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.filter-pill:hover {
+  border-color: #0081FB;
+  color: #0081FB;
+}
+
+.filter-pill.is-active {
+  background: #0081FB;
+  color: #ffffff;
+  border-color: #0081FB;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(0, 129, 251, 0.25);
+}
+
+/* Clean Portfolio Cards (Matching Reference Layout) */
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(24px, 3vw, 36px);
 }
 
-@media (max-width: 480px) {
+@media (max-width: 1023px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 639px) {
   .portfolio-grid {
     grid-template-columns: 1fr;
   }
@@ -4131,10 +4173,10 @@
 
 .case-card {
   background: #ffffff;
-  border-radius: 18px;
+  border-radius: 12px;
   border: 1px solid rgba(0, 0, 0, 0.08);
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.04);
   display: flex;
   flex-direction: column;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
@@ -4143,16 +4185,17 @@
 }
 
 .case-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px -10px rgba(0, 129, 251, 0.12);
-  border-color: rgba(0, 129, 251, 0.3);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px -10px rgba(0, 129, 251, 0.16);
+  border-color: rgba(0, 129, 251, 0.35);
 }
 
 .case-card__visual {
   position: relative;
   overflow: hidden;
   aspect-ratio: 16 / 10;
-  background: var(--neutral-100);
+  background: #f8fafc;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .case-card__img {
@@ -4168,79 +4211,57 @@
 }
 
 .case-card__body {
-  padding: 24px;
+  padding: 24px 20px 20px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
   flex-grow: 1;
 }
 
-.case-card__meta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 10px;
-}
-
-.case-card__client {
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: #0081FB;
-}
-
-.case-card__badge {
-  font-size: 11.5px;
-  font-weight: 700;
-  color: #0284c7;
-  background: rgba(56, 189, 248, 0.12);
-  padding: 4px 10px;
-  border-radius: 9999px;
-  letter-spacing: 0.02em;
-  white-space: nowrap;
-}
-
 .case-card__title {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 700;
   line-height: 1.35;
-  color: var(--neutral-900);
-  margin-top: 2px;
-}
-
-.case-card__desc {
-  font-size: 13.5px;
-  line-height: 1.6;
-  color: var(--neutral-600);
-  margin-top: 8px;
-}
-
-.case-card__footer {
-  margin-top: auto;
-  padding-top: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.case-card__stat-highlight {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--neutral-900);
-}
-
-.case-card__link {
-  font-size: 13.5px;
-  font-weight: 600;
   color: #0081FB;
-  text-decoration: none;
+  margin-bottom: 16px;
   transition: color 0.2s ease;
 }
 
-.case-card__link:hover {
+.case-card:hover .case-card__title {
   color: #0056b3;
+}
+
+.btn-view-details {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 22px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #0081FB;
+  background: transparent;
+  border: 1.5px solid #0081FB;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn-view-details svg {
+  fill: #0081FB;
+  transition: fill 0.25s ease, transform 0.25s ease;
+}
+
+.btn-view-details:hover {
+  background: #0081FB;
+  color: #ffffff;
+}
+
+.btn-view-details:hover svg {
+  fill: #ffffff;
+  transform: translateX(2px);
 }
 
 /* ==========================================================================
