@@ -4528,6 +4528,239 @@
   padding-left: 20px;
 }
 
+/* ==========================================================================
+   HOMEPAGE CTA COMPONENT — Modern Split Consultation Form
+   ========================================================================== */
+
+.home-cta-section {
+  position: relative;
+  background: linear-gradient(135deg, #090d16 0%, #0f172a 50%, #0b1329 100%);
+  color: #ffffff;
+  padding-block: clamp(64px, 8vw, 104px);
+  overflow: hidden;
+}
+
+.home-cta-section::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0, 129, 251, 0.15) 0%, rgba(0, 129, 251, 0) 70%);
+  pointer-events: none;
+}
+
+.home-cta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: clamp(36px, 5vw, 64px);
+  align-items: center;
+}
+
+@media (max-width: 991px) {
+  .home-cta-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.home-cta-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-cta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  background: rgba(0, 129, 251, 0.12);
+  border: 1px solid rgba(0, 129, 251, 0.3);
+  color: #38bdf8;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin-bottom: 20px;
+  width: fit-content;
+}
+
+.home-cta-title {
+  font-size: clamp(30px, 3.2vw, 44px);
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+}
+
+.home-cta-lead {
+  font-size: 16px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.82);
+  margin-top: 20px;
+}
+
+.home-cta-contact-methods {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.home-cta-method {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.home-cta-method-lbl {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #38bdf8;
+}
+
+.home-cta-method-val {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.home-cta-method-val:hover {
+  color: #38bdf8;
+}
+
+.home-cta-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.home-cta-trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 500;
+}
+
+.home-cta-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: clamp(28px, 3.5vw, 40px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  color: var(--neutral-900);
+}
+
+.home-cta-card-header {
+  margin-bottom: 24px;
+}
+
+.home-cta-card-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--neutral-900);
+  line-height: 1.25;
+}
+
+.home-cta-card-sub {
+  font-size: 13.5px;
+  color: var(--neutral-500);
+  margin-top: 4px;
+}
+
+.home-cta-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 639px) {
+  .home-cta-form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.home-cta-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.home-cta-field--full {
+  grid-column: 1 / -1;
+}
+
+.home-cta-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--neutral-700);
+}
+
+.home-cta-input,
+.home-cta-select,
+.home-cta-textarea {
+  width: 100%;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--neutral-900);
+  background: #f8fafc;
+  border: 1.5px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 11px 14px;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.home-cta-input:focus,
+.home-cta-select:focus,
+.home-cta-textarea:focus {
+  background: #ffffff;
+  border-color: #0081FB;
+  box-shadow: 0 0 0 4px rgba(0, 129, 251, 0.12);
+}
+
+.home-cta-textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.home-cta-submit-btn {
+  width: 100%;
+  padding: 14px 28px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(135deg, #0081FB 0%, #0056b3 100%);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 8px;
+  box-shadow: 0 8px 24px rgba(0, 129, 251, 0.3);
+}
+
+.home-cta-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 129, 251, 0.45);
+}
+
+.home-cta-footer-note {
+  font-size: 12px;
+  color: var(--neutral-500);
+  text-align: center;
+  margin-top: 14px;
+  line-height: 1.4;
+}
+
 .pricing-notes-list li::before {
   content: "•";
   position: absolute;
