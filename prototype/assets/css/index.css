@@ -881,7 +881,9 @@
 .svc-card {
   position: relative;
   border-radius: 20px;
-  min-height: 490px;
+  aspect-ratio: 1 / 1.03;
+  min-height: 360px;
+  max-height: 410px;
   overflow: hidden;
   box-shadow: 0 8px 30px rgba(16, 19, 26, 0.08);
   border: 1px solid rgba(0, 0, 0, 0.06);
@@ -1046,7 +1048,9 @@
     gap: var(--space-4);
   }
   .svc-card {
-    min-height: 350px;
+    aspect-ratio: 1 / 1;
+    min-height: 300px;
+    max-height: 420px;
   }
 }
 
