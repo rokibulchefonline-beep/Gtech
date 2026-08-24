@@ -3811,30 +3811,32 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  margin-bottom: clamp(32px, 5vw, 56px);
+  gap: 14px;
+  margin-top: clamp(28px, 3.5vw, 40px);
+  margin-bottom: clamp(36px, 5vw, 56px);
 }
 
 .filter-pill {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 24px;
+  padding: 12px 26px;
   font-size: 14.5px;
   font-weight: 600;
   font-family: inherit;
   color: var(--neutral-700);
   background: #ffffff;
-  border: 1.5px solid var(--border);
+  border: 1.5px solid rgba(0, 0, 0, 0.12);
   border-radius: 9999px;
   cursor: pointer;
-  transition: all var(--dur) var(--ease);
+  transition: all 0.25s ease;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
 }
 
 .filter-pill:hover {
-  color: var(--neutral-900);
+  color: #0081FB;
   border-color: #0081FB;
+  background: #f0f7ff;
   transform: translateY(-1px);
 }
 
@@ -4114,40 +4116,6 @@
 }
 
 /* Portfolio Cards Grid */
-.portfolio-filters {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  margin-bottom: clamp(32px, 4vw, 48px);
-}
-
-.filter-pill {
-  font-family: inherit;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--neutral-700);
-  background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  padding: 10px 20px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-
-.filter-pill:hover {
-  border-color: #0081FB;
-  color: #0081FB;
-}
-
-.filter-pill.is-active {
-  background: #0081FB;
-  color: #ffffff;
-  border-color: #0081FB;
-  font-weight: 600;
-  box-shadow: 0 4px 14px rgba(0, 129, 251, 0.25);
-}
 
 /* Clean Portfolio Cards (Matching Reference Layout) */
 .portfolio-grid {
