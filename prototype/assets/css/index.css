@@ -900,16 +900,17 @@
   box-shadow: 0 24px 50px rgba(0, 129, 251, 0.28);
 }
 
-/* Stock Background Image */
+/* Stock Background Image — 500×500 square images, no cropping */
 .svc-card__bg {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 1;
+  background: #f8f9fb;
 }
 
 .svc-card:hover .svc-card__bg,
@@ -3072,10 +3073,9 @@
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 16px 40px rgba(16, 19, 26, 0.08);
-  background: var(--neutral-100);
+  background: #f8f9fb;
   border: 1px solid rgba(0, 0, 0, 0.06);
-  aspect-ratio: 1.12 / 1;
-  max-height: 420px;
+  aspect-ratio: 1 / 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3084,7 +3084,7 @@
 .svc-showcase__img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -3258,8 +3258,8 @@
     order: 2;
   }
   .svc-showcase__visual {
-    aspect-ratio: 16 / 10;
-    max-height: 400px;
+    aspect-ratio: 1 / 1;
+    max-height: 480px;
   }
 }
 
