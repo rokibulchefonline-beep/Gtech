@@ -336,12 +336,11 @@
   min-height: 100vh;
   height: 100vh;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   overflow: hidden;
   color: #ffffff;
-  padding-top: clamp(120px, 16vh, 175px);
-  padding-bottom: 60px;
+  padding-block: clamp(80px, 12vw, 140px) clamp(60px, 8vw, 100px);
   background: #090d16;
 }
 
@@ -384,24 +383,24 @@
 
 .hero-video-title {
   font-family: var(--font-heading, inherit);
-  font-size: clamp(28px, 4.2vw, 56px);
+  font-size: clamp(30px, 4.3vw, 58px);
   font-weight: 900;
   line-height: 1.12;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.015em;
   text-transform: uppercase;
   color: #ffffff;
-  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 4px 28px rgba(0, 0, 0, 0.75);
   margin-bottom: 18px;
 }
 
 .hero-video-subtitle {
   font-size: clamp(16px, 1.8vw, 21px);
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.45;
-  color: rgba(255, 255, 255, 0.95);
+  color: #ffffff;
   max-width: 860px;
   margin: 0 auto 34px auto;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55);
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.65);
 }
 
 .hero-video-ctas {
