@@ -1,6 +1,7 @@
-/service-digital-marketing /services/digital-marketing 301
+/service-digital-marketing /services 301
+/service-digital-marketing.html /services 301
 /services.html /services 301
-/portfolio.html /#work 302
+/portfolio.html /portfolio 301
 
 /pricing /seo-packages-pricing 301
 /pricing.html /seo-packages-pricing 301

@@ -1,0 +1,176 @@
+<!--
+  ============================================================================
+  GTech Digital — Single Blog / Article page: head meta + JSON-LD schema
+  ============================================================================
+
+  Drop-in template for a single article page. Everything in {{DOUBLE_BRACES}}
+  is a per-post variable — replace at render time (PHP, Laravel Blade, Next.js,
+  or a static build step). Nothing here is hard-coded to one post.
+
+  ---------------------------------------------------------------------------
+  REQUIRED tokens
+  ---------------------------------------------------------------------------
+  SLUG                post slug, no slashes            e.g. seo-for-restaurants
+  TITLE               article headline (<=110 chars — Google truncates beyond)
+  DESCRIPTION         meta description (150-160 chars)
+  IMAGE_URL           absolute URL, 1200x630 minimum
+  IMAGE_WIDTH         e.g. 1200
+  IMAGE_HEIGHT        e.g. 630
+  IMAGE_ALT           descriptive alt text
+  DATE_PUBLISHED      ISO 8601 with offset  e.g. 2026-08-28T09:00:00+01:00
+  DATE_MODIFIED       ISO 8601 with offset  (== published if never edited)
+  AUTHOR_NAME         e.g. Rokibul Islam
+  AUTHOR_SLUG         e.g. rokibul-islam
+  AUTHOR_JOB_TITLE    e.g. Head of SEO
+  AUTHOR_BIO          1-2 sentences
+  AUTHOR_IMAGE        absolute URL, square
+  CATEGORY            single primary category e.g. Search Marketing
+  CATEGORY_SLUG       e.g. search-marketing
+  WORD_COUNT          integer
+  READING_TIME        ISO 8601 duration e.g. PT7M
+
+  OPTIONAL tokens
+  ---------------------------------------------------------------------------
+  KEYWORDS_JSON       JSON array of strings, e.g. ["seo agency uk","local seo"]
+                      Render as [] when the post has no tags.
+  AUTHOR_LINKEDIN     absolute URL — omit the whole sameAs array if unknown
+
+  NOTES
+  ---------------------------------------------------------------------------
+  * dateModified must be truthful. Bumping it without editing the article is
+    a known spam signal — do not wire it to the build timestamp.
+  * headline over 110 characters makes Google drop the rich result entirely.
+  * Publisher @id below matches the Organization node already used across the
+    site, so article nodes attach to the existing entity rather than creating
+    a second, competing one.
+-->
+
+<title>{{TITLE}} | GTech Digital</title>
+<meta name="description" content="{{DESCRIPTION}}">
+<link rel="canonical" href="https://www.gtechdigital.co.uk/blog/{{SLUG}}">
+
+<meta name="author" content="{{AUTHOR_NAME}}">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="GTech Digital">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="{{TITLE}}">
+<meta property="og:description" content="{{DESCRIPTION}}">
+<meta property="og:url" content="https://www.gtechdigital.co.uk/blog/{{SLUG}}">
+<meta property="og:image" content="{{IMAGE_URL}}">
+<meta property="og:image:width" content="{{IMAGE_WIDTH}}">
+<meta property="og:image:height" content="{{IMAGE_HEIGHT}}">
+<meta property="og:image:alt" content="{{IMAGE_ALT}}">
+<meta property="article:published_time" content="{{DATE_PUBLISHED}}">
+<meta property="article:modified_time" content="{{DATE_MODIFIED}}">
+<meta property="article:author" content="{{AUTHOR_NAME}}">
+<meta property="article:section" content="{{CATEGORY}}">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{TITLE}}">
+<meta name="twitter:description" content="{{DESCRIPTION}}">
+<meta name="twitter:image" content="{{IMAGE_URL}}">
+<meta name="twitter:image:alt" content="{{IMAGE_ALT}}">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://www.gtechdigital.co.uk/blog/{{SLUG}}#article",
+      "isPartOf": { "@id": "https://www.gtechdigital.co.uk/blog/{{SLUG}}#webpage" },
+      "mainEntityOfPage": { "@id": "https://www.gtechdigital.co.uk/blog/{{SLUG}}#webpage" },
+      "headline": "{{TITLE}}",
+      "description": "{{DESCRIPTION}}",
+      "image": { "@id": "https://www.gtechdigital.co.uk/blog/{{SLUG}}#primaryimage" },
+      "datePublished": "{{DATE_PUBLISHED}}",
+      "dateModified": "{{DATE_MODIFIED}}",
+      "author": { "@id": "https://www.gtechdigital.co.uk/author/{{AUTHOR_SLUG}}#person" },
+      "publisher": { "@id": "https://www.gtechdigital.co.uk/#organization" },
+      "articleSection": "{{CATEGORY}}",
+      "keywords": {{KEYWORDS_JSON}},
+      "wordCount": {{WORD_COUNT}},
+      "timeRequired": "{{READING_TIME}}",
+      "inLanguage": "en-GB"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.gtechdigital.co.uk/blog/{{SLUG}}#webpage",
+      "url": "https://www.gtechdigital.co.uk/blog/{{SLUG}}",
+      "name": "{{TITLE}} | GTech Digital",
+      "description": "{{DESCRIPTION}}",
+      "isPartOf": { "@id": "https://www.gtechdigital.co.uk/#website" },
+      "primaryImageOfPage": { "@id": "https://www.gtechdigital.co.uk/blog/{{SLUG}}#primaryimage" },
+      "breadcrumb": { "@id": "https://www.gtechdigital.co.uk/blog/{{SLUG}}#breadcrumb" },
+      "datePublished": "{{DATE_PUBLISHED}}",
+      "dateModified": "{{DATE_MODIFIED}}",
+      "inLanguage": "en-GB"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.gtechdigital.co.uk/blog/{{SLUG}}#primaryimage",
+      "url": "{{IMAGE_URL}}",
+      "contentUrl": "{{IMAGE_URL}}",
+      "width": {{IMAGE_WIDTH}},
+      "height": {{IMAGE_HEIGHT}},
+      "caption": "{{IMAGE_ALT}}"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.gtechdigital.co.uk/blog/{{SLUG}}#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home",
+          "item": "https://www.gtechdigital.co.uk/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog",
+          "item": "https://www.gtechdigital.co.uk/blog" },
+        { "@type": "ListItem", "position": 3, "name": "{{CATEGORY}}",
+          "item": "https://www.gtechdigital.co.uk/blog/category/{{CATEGORY_SLUG}}" },
+        { "@type": "ListItem", "position": 4, "name": "{{TITLE}}" }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.gtechdigital.co.uk/author/{{AUTHOR_SLUG}}#person",
+      "name": "{{AUTHOR_NAME}}",
+      "url": "https://www.gtechdigital.co.uk/author/{{AUTHOR_SLUG}}",
+      "jobTitle": "{{AUTHOR_JOB_TITLE}}",
+      "description": "{{AUTHOR_BIO}}",
+      "image": { "@type": "ImageObject", "url": "{{AUTHOR_IMAGE}}" },
+      "worksFor": { "@id": "https://www.gtechdigital.co.uk/#organization" },
+      "sameAs": ["{{AUTHOR_LINKEDIN}}"]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.gtechdigital.co.uk/#organization",
+      "name": "GTech Digital",
+      "url": "https://www.gtechdigital.co.uk/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://www.gtechdigital.co.uk/#logo",
+        "url": "https://www.gtechdigital.co.uk/assets/frontend/images/logo.png",
+        "caption": "GTech Digital"
+      },
+      "image": { "@id": "https://www.gtechdigital.co.uk/#logo" },
+      "telephone": "+44 203 598 5956",
+      "email": "info@gtechdigital.co.uk",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "GB",
+        "addressLocality": "London"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.gtechdigital.co.uk/#website",
+      "url": "https://www.gtechdigital.co.uk/",
+      "name": "GTech Digital",
+      "publisher": { "@id": "https://www.gtechdigital.co.uk/#organization" },
+      "inLanguage": "en-GB"
+    }
+  ]
+}
+</script>
