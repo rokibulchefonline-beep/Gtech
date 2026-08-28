@@ -2906,50 +2906,44 @@
    ========================================================================== */
 
 .section--blue-stats {
-  background: linear-gradient(145deg, #0081fb 0%, #0056b3 100%);
-  color: #ffffff;
+  background: #ffffff;
+  color: #090d16;
   position: relative;
   overflow: hidden;
+  border-bottom: 1px solid rgba(0, 129, 251, 0.15);
 }
 
 .section--blue-stats::before {
-  content: "";
-  position: absolute;
-  top: -25%;
-  right: -15%;
-  width: 550px;
-  height: 550px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.16) 0%, transparent 65%);
-  pointer-events: none;
+  display: none;
 }
 
 .section--blue-stats h2, .section--blue-stats .t-h2 {
-  color: #ffffff;
+  color: #090d16;
 }
 
 .section--blue-stats .t-body {
-  color: rgba(255, 255, 255, 0.95);
+  color: #475569;
 }
 
 .section--blue-stats .stat {
-  border-left: 2px solid rgba(255, 255, 255, 0.3);
+  border-left: 3px solid #0081fb;
 }
 
 .section--blue-stats .stat__value {
-  color: #ffffff;
+  color: #0081fb;
 }
 
 .section--blue-stats .stat__affix {
-  color: #ffffff;
-  opacity: 0.95;
+  color: #0081fb;
+  opacity: 1;
 }
 
 .section--blue-stats .stat__label {
-  color: rgba(255, 255, 255, 0.9);
+  color: #090d16;
 }
 
 .section--blue-stats .stat__note {
-  color: rgba(255, 255, 255, 0.65);
+  color: #64748b;
 }
 
 .section--blue-stats .clients-strip {
