@@ -560,6 +560,37 @@
     });
   }
 
+  /* ------------------------------------------------ Corporate Services Tabs */
+  function initCorpServicesTabs() {
+    var tabs = document.querySelectorAll(".corp-svc-tab");
+    var panels = document.querySelectorAll(".corp-svc-panel");
+    if (!tabs.length || !panels.length) return;
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        var targetId = tab.getAttribute("data-tab-target");
+        if (!targetId) return;
+
+        tabs.forEach(function (t) {
+          t.classList.remove("is-active");
+          t.setAttribute("aria-selected", "false");
+        });
+
+        panels.forEach(function (p) {
+          p.classList.remove("is-active");
+        });
+
+        tab.classList.add("is-active");
+        tab.setAttribute("aria-selected", "true");
+
+        var activePanel = document.getElementById(targetId);
+        if (activePanel) {
+          activePanel.classList.add("is-active");
+        }
+      });
+    });
+  }
+
   /* ---------------------------------------------------------------- Boot */
 
   function boot() {
@@ -576,6 +607,7 @@
     initScrollTop();
     initStubForms();
     initPortfolioFilters();
+    initCorpServicesTabs();
   }
 
   if (document.readyState === "loading") {
