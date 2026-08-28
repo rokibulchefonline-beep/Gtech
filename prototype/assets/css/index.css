@@ -488,6 +488,54 @@
   transform: translateY(-1px);
 }
 
+/* Mobile Responsive Pixel-Perfect Optimizations for Hero Video Section */
+@media (max-width: 768px) {
+  .hero-video-section {
+    min-height: auto;
+    padding-block: 56px 44px;
+  }
+
+  .hero-video-title {
+    font-size: clamp(23px, 6.8vw, 32px);
+    line-height: 1.18;
+    letter-spacing: 0.02em;
+    margin-bottom: 12px;
+  }
+
+  .hero-video-subtitle {
+    font-size: 14px;
+    line-height: 1.48;
+    margin-bottom: 22px;
+    padding-inline: 6px;
+  }
+
+  .hero-video-ctas {
+    flex-direction: column;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+    gap: 10px;
+  }
+
+  .btn-blue-hero,
+  .btn-cyan-hero,
+  .btn-outline-hero {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-video-section {
+    padding-block: 44px 36px;
+  }
+
+  .hero-video-title {
+    font-size: 23px;
+  }
+}
+
 .hero--split {
   position: relative;
   background: var(--neutral-000);
