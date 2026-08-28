@@ -1727,15 +1727,16 @@
 }
 
 .slider__btn {
-  width: 44px; height: 44px;
+  width: 40px; height: 40px;
   display: grid; place-items: center;
-  border: 1px solid var(--neutral-300);
-  border-radius: 50%;
-  color: var(--neutral-800);
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #090d16;
   transition: all var(--dur) var(--ease);
 }
 
-.slider__btn:hover:not(:disabled) { background: var(--neutral-900); border-color: var(--neutral-900); color: #fff; }
+.slider__btn:hover:not(:disabled) { background: #0081FB; border-color: #0081FB; color: #fff; }
 .slider__btn:disabled { opacity: 0.35; cursor: not-allowed; }
 
 .slider__dots { display: flex; gap: 7px; margin-left: var(--space-2); }
@@ -1963,7 +1964,7 @@
 
 .bento__tile {
   position: relative;
-  border-radius: 22px;
+  border-radius: 10px;
   padding: clamp(24px, 2.6vw, 34px);
   display: flex;
   flex-direction: column;
@@ -2434,7 +2435,7 @@
   flex: 0 0 calc((100% - (2 * clamp(16px, 2vw, 24px))) / 3);
   min-width: 0;
   scroll-snap-align: start;
-  border-radius: 20px;
+  border-radius: 10px;
   overflow: hidden;
   background: #ffffff;
   border: 1px solid var(--border);
@@ -4035,7 +4036,7 @@
 .pricing-card {
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.09);
-  border-radius: 20px;
+  border-radius: 10px;
   padding: clamp(28px, 3vw, 40px) clamp(22px, 2.5vw, 30px);
   display: flex;
   flex-direction: column;
