@@ -382,23 +382,23 @@
 
 .hero-video-title {
   font-family: var(--font-heading, inherit);
-  font-size: clamp(34px, 5.5vw, 64px);
-  font-weight: 900;
-  line-height: 1.08;
-  letter-spacing: 0.02em;
+  font-size: clamp(30px, 4.5vw, 54px);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #ffffff;
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .hero-video-subtitle {
-  font-size: clamp(17px, 2.2vw, 24px);
+  font-size: clamp(15px, 1.8vw, 20px);
   font-weight: 400;
-  line-height: 1.45;
+  line-height: 1.5;
   color: rgba(255, 255, 255, 0.92);
-  max-width: 780px;
-  margin: 0 auto 36px auto;
+  max-width: 720px;
+  margin: 0 auto 32px auto;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -406,34 +406,34 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 14px;
   flex-wrap: wrap;
 }
 
-/* Blue Hero Button */
+/* Blue Hero Button (Corporate & Traditional Style) */
 .btn-blue-hero {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   background: #0081FB;
   color: #ffffff;
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  padding: 16px 40px;
+  padding: 11px 28px;
   border-radius: 4px;
   text-decoration: none;
   transition: all 0.25s ease;
-  box-shadow: 0 6px 20px rgba(0, 129, 251, 0.38);
-  border: 2px solid #0081FB;
+  box-shadow: 0 2px 8px rgba(0, 129, 251, 0.3);
+  border: 1.5px solid #0081FB;
 }
 
 .btn-blue-hero:hover {
   background: #0066cc;
   border-color: #0066cc;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 129, 251, 0.48);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 129, 251, 0.4);
   color: #ffffff;
 }
 
@@ -444,23 +444,23 @@
   justify-content: center;
   background: #00bcd4;
   color: #ffffff;
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  padding: 16px 40px;
+  padding: 11px 28px;
   border-radius: 4px;
   text-decoration: none;
   transition: all 0.25s ease;
-  box-shadow: 0 6px 20px rgba(0, 188, 212, 0.35);
-  border: 2px solid #00bcd4;
+  box-shadow: 0 2px 8px rgba(0, 188, 212, 0.3);
+  border: 1.5px solid #00bcd4;
 }
 
 .btn-cyan-hero:hover {
   background: #00acc1;
   border-color: #00acc1;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 188, 212, 0.45);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 188, 212, 0.4);
   color: #ffffff;
 }
 
@@ -470,14 +470,14 @@
   justify-content: center;
   background: transparent;
   color: #ffffff;
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  padding: 16px 40px;
+  padding: 11px 28px;
   border-radius: 4px;
   text-decoration: none;
-  border: 2px solid rgba(255, 255, 255, 0.8);
+  border: 1.5px solid rgba(255, 255, 255, 0.75);
   transition: all 0.25s ease;
 }
 
@@ -485,7 +485,7 @@
   background: #ffffff;
   color: #090d16;
   border-color: #ffffff;
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
 .hero--split {
