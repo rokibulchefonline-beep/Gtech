@@ -1157,7 +1157,8 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  filter: brightness(1.06) contrast(1.05);
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
   z-index: 1;
 }
 
@@ -1166,11 +1167,11 @@
   transform: scale(1.08);
 }
 
-/* Dark Gradient Overlay for Default State Contrast */
+/* Light Gradient Overlay for Maximum Image Visibility */
 .svc-card__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(10, 14, 26, 0.42) 0%, rgba(10, 14, 26, 0.15) 45%, rgba(10, 14, 26, 0.05) 75%, rgba(10, 14, 26, 0.2) 100%);
+  background: linear-gradient(180deg, rgba(9, 13, 22, 0.28) 0%, rgba(9, 13, 22, 0.08) 40%, transparent 100%);
   z-index: 2;
   transition: opacity 0.4s ease;
 }
