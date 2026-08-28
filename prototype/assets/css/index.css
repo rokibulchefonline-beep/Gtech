@@ -375,41 +375,58 @@
   width: 100%;
 }
 
-.hero-video-content {
-  max-width: 1160px;
+/* Click Consult Style 3-Line Hero Layout */
+.hero-clickconsult-wrapper {
+  max-width: 1080px;
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
 }
 
-.hero-video-title {
+.hero-clickconsult-title {
   font-family: var(--font-heading, inherit);
-  font-size: clamp(30px, 4.3vw, 58px);
-  font-weight: 900;
-  line-height: 1.12;
-  letter-spacing: 0.015em;
+  color: #ffffff;
   text-transform: uppercase;
-  color: #ffffff;
-  text-shadow: 0 4px 28px rgba(0, 0, 0, 0.75);
-  margin-bottom: 18px;
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.015em;
+  margin-bottom: 24px;
 }
 
-.hero-video-subtitle {
-  font-size: clamp(16px, 1.8vw, 21px);
-  font-weight: 600;
-  line-height: 1.45;
-  color: #ffffff;
-  max-width: 860px;
-  margin: 0 auto 34px auto;
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.65);
+.hero-line-1,
+.hero-line-2 {
+  display: block;
+  font-size: clamp(42px, 6.8vw, 86px);
+  text-shadow: 0 6px 32px rgba(0, 0, 0, 0.75);
 }
 
-.hero-video-ctas {
+.hero-line-3-row {
   display: flex;
-  flex-direction: row;
+  align-items: baseline;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.hero-line-3 {
+  font-size: clamp(42px, 6.8vw, 86px);
+  text-shadow: 0 6px 32px rgba(0, 0, 0, 0.75);
+}
+
+.hero-side-subtitle {
+  font-size: clamp(16px, 1.8vw, 22px);
+  font-weight: 600;
+  text-transform: none;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.28;
+  max-width: 380px;
+  letter-spacing: 0;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.75);
+}
+
+.hero-clickconsult-ctas {
+  display: flex;
   align-items: center;
-  justify-content: center;
   gap: 16px;
-  width: auto;
+  margin-top: 12px;
 }
 
 /* Blue Hero Button (Corporate & Traditional Style) */
