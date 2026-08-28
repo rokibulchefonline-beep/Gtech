@@ -1170,7 +1170,7 @@
 .svc-card__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(10, 14, 26, 0.8) 0%, rgba(10, 14, 26, 0.38) 38%, rgba(10, 14, 26, 0.08) 70%, rgba(10, 14, 26, 0.3) 100%);
+  background: linear-gradient(180deg, rgba(10, 14, 26, 0.42) 0%, rgba(10, 14, 26, 0.15) 45%, rgba(10, 14, 26, 0.05) 75%, rgba(10, 14, 26, 0.2) 100%);
   z-index: 2;
   transition: opacity 0.4s ease;
 }
