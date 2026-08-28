@@ -1080,10 +1080,43 @@
    ========================================================================== */
 
 .svc-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(20px, 2.4vw, 32px);
-  margin-top: clamp(36px, 4.5vw, 56px);
+  display: flex;
+  gap: clamp(16px, 2vw, 24px);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  margin-top: clamp(28px, 3.5vw, 44px);
+  padding-bottom: 20px;
+  padding-top: 4px;
+}
+
+.svc-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.svc-grid .svc-card {
+  flex: 0 0 calc((100% - (2 * clamp(16px, 2vw, 24px))) / 3);
+  min-width: 0;
+  scroll-snap-align: start;
+  height: 380px;
+}
+
+@media (max-width: 991px) {
+  .svc-grid .svc-card {
+    flex: 0 0 calc((100% - clamp(16px, 2vw, 24px)) / 2);
+  }
+}
+
+@media (max-width: 640px) {
+  .svc-grid .svc-card {
+    flex: 0 0 85%;
+  }
+  .svc-grid {
+    margin-inline: calc(var(--gutter) * -1);
+    padding-inline: var(--gutter);
+  }
 }
 
 .svc-card {
