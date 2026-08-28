@@ -1127,12 +1127,12 @@
 
 .svc-card {
   position: relative;
-  border-radius: 20px;
+  border-radius: 10px;
   aspect-ratio: 1 / 1.03;
-  min-height: 360px;
-  max-height: 410px;
+  min-height: 340px;
+  max-height: 380px;
   overflow: hidden;
-  box-shadow: 0 8px 30px rgba(16, 19, 26, 0.08);
+  box-shadow: 0 6px 24px rgba(16, 19, 26, 0.07);
   border: 1px solid rgba(0, 0, 0, 0.06);
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
               box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1145,8 +1145,8 @@
 
 .svc-card:hover,
 .svc-card:focus-within {
-  transform: translateY(-6px);
-  box-shadow: 0 24px 50px rgba(0, 129, 251, 0.28);
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(0, 129, 251, 0.22);
 }
 
 /* Stock Background Image */
@@ -1181,7 +1181,7 @@
   z-index: 3;
   margin-top: 0;
   margin-bottom: auto;
-  padding: clamp(24px, 2.5vw, 32px);
+  padding: clamp(18px, 2vw, 24px);
   transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
@@ -1192,11 +1192,11 @@
 }
 
 .svc-card__title {
-  font-size: clamp(22px, 1.85vw, 26px);
+  font-size: clamp(17px, 1.35vw, 19px);
   font-weight: 700;
   color: #ffffff;
   line-height: 1.25;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.015em;
   margin: 0;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
 }
@@ -1208,7 +1208,7 @@
   z-index: 4;
   background: linear-gradient(145deg, #0081fb 0%, #0056b3 100%);
   color: #ffffff;
-  padding: clamp(28px, 3vw, 36px);
+  padding: clamp(20px, 2.2vw, 26px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1226,36 +1226,46 @@
 }
 
 .svc-card__hover-title {
-  font-size: clamp(22px, 1.85vw, 26px);
+  font-size: clamp(17px, 1.35vw, 19px);
   font-weight: 700;
   color: #ffffff;
   line-height: 1.25;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.015em;
   margin: 0;
 }
 
 .svc-card__hover-desc {
-  font-size: 14.5px;
-  line-height: 1.65;
+  font-size: 13px;
+  line-height: 1.5;
   color: rgba(255, 255, 255, 0.95);
-  margin: 14px 0 auto;
+  margin: 10px 0 auto;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .svc-card__hover-btn {
   margin-top: auto;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 12px 26px;
+  gap: 6px;
+  padding: 8px 18px;
   background: #ffffff;
   color: #0081fb;
   font-weight: 600;
-  font-size: 13.5px;
-  border-radius: var(--radius-pill);
+  font-size: 12.5px;
+  border-radius: 6px;
   text-decoration: none;
   width: fit-content;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
   transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.svc-card__hover-btn:hover {
+  background: #f0f7ff;
+  color: #0056b3;
+  transform: translateY(-1px);
 }
 
 .svc-card__hover-btn:hover {
