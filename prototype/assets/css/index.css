@@ -336,11 +336,12 @@
   min-height: 100vh;
   height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   overflow: hidden;
   color: #ffffff;
-  padding-block: clamp(80px, 12vw, 140px) clamp(60px, 8vw, 100px);
+  padding-top: clamp(120px, 16vh, 175px);
+  padding-bottom: 60px;
   background: #090d16;
 }
 
