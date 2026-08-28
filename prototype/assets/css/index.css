@@ -3082,99 +3082,58 @@
   gap: 20px;
 }
 
-/* Individual Bespoke Corporate Card */
+/* Individual Bespoke Corporate Card (Image -> Heading -> Texts -> Link) */
 .corp-card {
   position: relative;
-  height: 230px;
-  border-radius: 10px;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
   text-decoration: none;
-  background: #0f172a;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  height: auto;
 }
 
-.corp-card__bg {
-  position: absolute;
-  inset: 0;
+.corp-card__img-wrap {
+  width: 100%;
+  height: 140px;
+  overflow: hidden;
+  background: #0f172a;
+}
+
+.corp-card__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
-  filter: brightness(0.45) contrast(1.1);
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  z-index: 1;
-}
-
-.corp-card__overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(15, 23, 42, 0.6) 0%, rgba(9, 13, 22, 0.92) 100%);
-  z-index: 2;
-  transition: background 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .corp-card__content {
-  position: relative;
-  z-index: 3;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  padding: 16px 18px 18px 18px;
+  flex: 1;
   justify-content: space-between;
-}
-
-.corp-card__top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.corp-card__badge {
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #38bdf8;
-  background: rgba(56, 189, 248, 0.14);
-  backdrop-filter: blur(4px);
-  padding: 3px 10px;
-  border-radius: 4px;
-  border: 1px solid rgba(56, 189, 248, 0.25);
-}
-
-.corp-card__metric {
-  font-size: 11px;
-  font-weight: 700;
-  color: #ffffff;
-  background: rgba(0, 129, 251, 0.85);
-  padding: 3px 9px;
-  border-radius: 4px;
-}
-
-.corp-card__body {
-  margin-top: auto;
 }
 
 .corp-card__title {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 700;
-  color: #ffffff;
-  line-height: 1.25;
+  color: #090d16;
+  line-height: 1.3;
   margin-bottom: 6px;
-  transition: color 0.25s ease;
+  transition: color 0.2s ease;
 }
 
 .corp-card__desc {
-  font-size: 12.5px;
-  color: rgba(255, 255, 255, 0.82);
-  line-height: 1.45;
-  margin: 0;
+  font-size: 13px;
+  color: #475569;
+  line-height: 1.48;
+  margin: 0 0 14px 0;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -3185,42 +3144,37 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 12px;
+  font-size: 12.5px;
   font-weight: 700;
-  color: #38bdf8;
-  margin-top: 10px;
+  color: #0081fb;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  transition: gap 0.25s ease;
+  margin-top: auto;
+  transition: gap 0.2s ease;
 }
 
 .corp-card__link svg {
-  transition: transform 0.25s ease;
+  transition: transform 0.2s ease;
 }
 
-/* Hover Elevation & Micro-Interactions */
+/* Hover State */
 .corp-card:hover {
-  border-color: #0081fb;
-  transform: translateY(-4px);
-  box-shadow: 0 14px 32px rgba(0, 129, 251, 0.28);
+  border-color: rgba(0, 129, 251, 0.35);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 129, 251, 0.12);
 }
 
-.corp-card:hover .corp-card__bg {
-  transform: scale(1.06);
-  filter: brightness(0.35) contrast(1.15);
-}
-
-.corp-card:hover .corp-card__overlay {
-  background: linear-gradient(180deg, rgba(0, 129, 251, 0.3) 0%, rgba(9, 13, 22, 0.95) 100%);
+.corp-card:hover .corp-card__img {
+  transform: scale(1.05);
 }
 
 .corp-card:hover .corp-card__title {
-  color: #ffffff;
+  color: #0081fb;
 }
 
 .corp-card:hover .corp-card__link {
-  color: #60a5fa;
-  gap: 10px;
+  color: #0066cc;
+  gap: 9px;
 }
 
 .corp-card:hover .corp-card__link svg {
