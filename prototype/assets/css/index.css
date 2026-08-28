@@ -410,6 +410,33 @@
   flex-wrap: wrap;
 }
 
+/* Blue Hero Button */
+.btn-blue-hero {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #0081FB;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 16px 40px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 20px rgba(0, 129, 251, 0.38);
+  border: 2px solid #0081FB;
+}
+
+.btn-blue-hero:hover {
+  background: #0066cc;
+  border-color: #0066cc;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 129, 251, 0.48);
+  color: #ffffff;
+}
+
 /* Cyan Button matching click consult reference */
 .btn-cyan-hero {
   display: inline-flex;
