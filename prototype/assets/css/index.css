@@ -358,13 +358,13 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  filter: brightness(0.95);
+  filter: brightness(0.85);
 }
 
 .hero-video-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(9, 13, 22, 0.42) 0%, rgba(15, 23, 42, 0.35) 50%, rgba(11, 19, 41, 0.48) 100%);
+  background: linear-gradient(135deg, rgba(9, 13, 22, 0.72) 0%, rgba(15, 23, 42, 0.65) 50%, rgba(11, 19, 41, 0.78) 100%);
   z-index: 2;
 }
 
