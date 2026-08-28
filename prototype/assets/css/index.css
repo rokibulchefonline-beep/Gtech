@@ -653,6 +653,77 @@
   }
 }
 
+/* ==========================================================================
+   SERVICES SECTION BOTTOM CTA BANNER (SAP-style Corporate Container)
+   ========================================================================== */
+
+.hero-cta-banner {
+  background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+  border: 1px solid #dbeafe;
+  border-left: 4px solid #0081fb;
+  border-radius: 10px;
+  padding: clamp(24px, 3vw, 32px) clamp(28px, 3.5vw, 44px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  box-shadow: 0 4px 20px rgba(0, 129, 251, 0.08);
+  margin-top: 48px;
+}
+
+.hero-cta-banner__content {
+  flex: 1 1 auto;
+  max-width: 780px;
+}
+
+.hero-cta-banner__title {
+  font-size: clamp(20px, 1.8vw, 24px);
+  font-weight: 700;
+  color: #090d16;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  margin: 0 0 6px 0;
+}
+
+.hero-cta-banner__text {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.hero-cta-banner__actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.hero-cta-banner__actions .btn {
+  padding: 12px 26px;
+  font-size: 13.5px;
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+@media (max-width: 991px) {
+  .hero-cta-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .hero-cta-banner__actions {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .hero-cta-banner__actions .btn {
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+}
+
   .hero-video-title {
     font-size: clamp(23px, 6.8vw, 32px);
     line-height: 1.18;
