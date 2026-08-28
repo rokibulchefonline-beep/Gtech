@@ -500,74 +500,78 @@
 }
 
 /* ==========================================================================
-   HERO CTA BANNER (SAP-style Light Blue Announcement Block)
+   HERO CTA ANNOUNCEMENT BANNER (GTech Corporate Design System)
    ========================================================================== */
 
-.hero-cta-banner-section {
+.hero-announcement-section {
   background: #ffffff;
-  padding-block: clamp(20px, 3vw, 32px);
+  padding-block: clamp(28px, 3.5vw, 44px);
   position: relative;
   z-index: 10;
+  border-bottom: 1px solid var(--border);
 }
 
-.hero-cta-banner {
-  background: #eff6ff;
-  border: 1px solid #dbeafe;
-  border-radius: 12px;
-  padding: clamp(20px, 2.5vw, 26px) clamp(24px, 3vw, 36px);
+.hero-announcement-card {
+  background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 100%);
+  border: 1px solid rgba(0, 129, 251, 0.18);
+  border-left: 4px solid #0081fb;
+  border-radius: 10px;
+  padding: clamp(24px, 3vw, 36px) clamp(28px, 3.5vw, 44px);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 32px;
+  box-shadow: 0 4px 24px rgba(0, 129, 251, 0.06);
 }
 
-.hero-cta-banner__content {
+.hero-announcement-card__left {
   flex: 1 1 auto;
+  max-width: 780px;
 }
 
-.hero-cta-banner__title {
-  font-size: clamp(17px, 1.5vw, 21px);
+.hero-announcement-card__title {
+  font-size: clamp(20px, 1.8vw, 24px);
   font-weight: 700;
-  color: #0f172a;
-  line-height: 1.3;
+  color: #090d16;
+  line-height: 1.25;
   letter-spacing: -0.015em;
-  margin: 0 0 4px 0;
+  margin: 4px 0 6px 0;
 }
 
-.hero-cta-banner__text {
-  font-size: 13.5px;
+.hero-announcement-card__desc {
+  font-size: 14px;
   color: #475569;
-  line-height: 1.45;
+  line-height: 1.5;
   margin: 0;
 }
 
-.hero-cta-banner__actions {
+.hero-announcement-card__actions {
   display: flex;
   align-items: center;
   gap: 12px;
   flex-shrink: 0;
 }
 
-.hero-cta-banner__actions .btn {
-  padding: 10px 22px;
+.hero-announcement-card__actions .btn {
+  padding: 11px 24px;
   font-size: 13.5px;
   font-weight: 600;
   border-radius: 6px;
 }
 
 @media (max-width: 991px) {
-  .hero-cta-banner {
+  .hero-announcement-card {
     flex-direction: column;
     align-items: flex-start;
-    gap: 16px;
+    gap: 20px;
   }
 
-  .hero-cta-banner__actions {
+  .hero-announcement-card__actions {
     width: 100%;
     flex-wrap: wrap;
   }
 
-  .hero-cta-banner__actions .btn {
+  .hero-announcement-card__actions .btn {
     flex: 1 1 auto;
     justify-content: center;
   }
