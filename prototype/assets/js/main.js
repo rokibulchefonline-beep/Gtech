@@ -428,6 +428,55 @@
     });
   }
 
+  /* ------------------------------------------- dotCMS Solutions Mega Menu */
+
+  function initSolutionsMegaMenu() {
+    var tabs = document.querySelectorAll("[data-sol-tab]");
+    var panels = document.querySelectorAll(".mega-sol__panel");
+    var featTitle = document.getElementById("mega-sol-feat-title");
+    var featDesc = document.getElementById("mega-sol-feat-desc");
+
+    if (!tabs.length || !panels.length) return;
+
+    var featureContent = {
+      "tab-search": {
+        title: "Enterprise-Grade Search & Generative AI Authority",
+        desc: "Dominate traditional organic search, Google Maps 3-Pack, ChatGPT, Perplexity, and Google AI Overviews with unified technical architectures."
+      },
+      "tab-paid": {
+        title: "High-ROAS Paid Acquisition & Full-Funnel Scaling",
+        desc: "Turn ad spend into predictable revenue with data-driven Google Performance Max, Meta Paid Social, and TikTok conversion funnels."
+      },
+      "tab-engineering": {
+        title: "Custom Digital Engineering & World-Class UI/UX",
+        desc: "High-velocity engineering teams building bespoke Next.js platforms, iOS/Android apps, SaaS architectures, and conversion-first design."
+      }
+    };
+
+    tabs.forEach(function (tab) {
+      var activate = function () {
+        var targetId = tab.getAttribute("data-sol-tab");
+        
+        tabs.forEach(function (t) { t.classList.remove("is-active"); });
+        panels.forEach(function (p) { p.classList.remove("is-active"); });
+
+        tab.classList.add("is-active");
+        var activePanel = document.getElementById(targetId);
+        if (activePanel) {
+          activePanel.classList.add("is-active");
+        }
+
+        if (featureContent[targetId]) {
+          if (featTitle) featTitle.textContent = featureContent[targetId].title;
+          if (featDesc) featDesc.textContent = featureContent[targetId].desc;
+        }
+      };
+
+      tab.addEventListener("mouseenter", activate);
+      tab.addEventListener("click", activate);
+    });
+  }
+
   /* ------------------------------------------------------------------- FAQ */
 
   function initFaq() {
@@ -473,31 +522,86 @@
       var prev = nav.querySelector("[data-carousel-prev]");
       var next = nav.querySelector("[data-carousel-next]");
 
+      function getStep() {
+        var cards = track.querySelectorAll(".svc-card, .story, .post, article");
+        if (cards.length >= 2) {
+          var gap = cards[1].offsetLeft - (cards[0].offsetLeft + cards[0].offsetWidth);
+          return cards[0].offsetWidth + (gap > 0 ? gap : 16);
+        }
+        var first = cards[0] || track.firstElementChild;
+        return first ? first.getBoundingClientRect().width + 16 : track.clientWidth * 0.85;
+      }
+
       function updateDisabled() {
+        var atStart = track.scrollLeft <= 4;
+        var maxScroll = track.scrollWidth - track.clientWidth - 4;
+        var atEnd = track.scrollLeft >= maxScroll;
+
         if (prev) {
-          prev.disabled = track.scrollLeft <= 6;
+          prev.style.opacity = atStart ? "0.45" : "1";
         }
         if (next) {
-          var maxScroll = track.scrollWidth - track.clientWidth - 6;
-          next.disabled = track.scrollLeft >= maxScroll;
+          next.style.opacity = atEnd ? "0.45" : "1";
         }
       }
 
       if (prev) {
-        prev.addEventListener("click", function () {
-          var card = track.firstElementChild;
-          var step = card ? card.getBoundingClientRect().width + 24 : track.clientWidth * 0.85;
-          track.scrollBy({ left: -step, behavior: reduceMotion ? "auto" : "smooth" });
+        prev.addEventListener("click", function (e) {
+          e.preventDefault();
+          var step = getStep();
+          if (track.scrollLeft <= 4) {
+            track.scrollTo({ left: track.scrollWidth, behavior: reduceMotion ? "auto" : "smooth" });
+          } else {
+            track.scrollBy({ left: -step, behavior: reduceMotion ? "auto" : "smooth" });
+          }
         });
       }
 
       if (next) {
-        next.addEventListener("click", function () {
-          var card = track.firstElementChild;
-          var step = card ? card.getBoundingClientRect().width + 24 : track.clientWidth * 0.85;
-          track.scrollBy({ left: step, behavior: reduceMotion ? "auto" : "smooth" });
+        next.addEventListener("click", function (e) {
+          e.preventDefault();
+          var step = getStep();
+          var maxScroll = track.scrollWidth - track.clientWidth - 4;
+          if (track.scrollLeft >= maxScroll) {
+            track.scrollTo({ left: 0, behavior: reduceMotion ? "auto" : "smooth" });
+          } else {
+            track.scrollBy({ left: step, behavior: reduceMotion ? "auto" : "smooth" });
+          }
         });
       }
+
+      // Mouse drag-to-scroll support
+      var isDown = false;
+      var startX;
+      var scrollLeftStart;
+
+      track.addEventListener("mousedown", function (e) {
+        if (e.target.closest("a, button")) return;
+        isDown = true;
+        track.classList.add("is-dragging");
+        startX = e.pageX - track.offsetLeft;
+        scrollLeftStart = track.scrollLeft;
+      });
+
+      window.addEventListener("mouseup", function () {
+        if (!isDown) return;
+        isDown = false;
+        track.classList.remove("is-dragging");
+      });
+
+      track.addEventListener("mouseleave", function () {
+        if (!isDown) return;
+        isDown = false;
+        track.classList.remove("is-dragging");
+      });
+
+      track.addEventListener("mousemove", function (e) {
+        if (!isDown) return;
+        e.preventDefault();
+        var x = e.pageX - track.offsetLeft;
+        var walk = (x - startX) * 1.4;
+        track.scrollLeft = scrollLeftStart - walk;
+      });
 
       track.addEventListener("scroll", updateDisabled, { passive: true });
       window.addEventListener("resize", updateDisabled);
@@ -507,18 +611,56 @@
 
   /* ---------------------------------------------------- Scroll to top */
 
-  function initScrollTop() {
-    var btn = document.querySelector("[data-scroll-top]");
-    if (!btn) return;
+  /* ------------------------------------------- Floating "Let's Talk" Widget */
+  function initContactWidget() {
+    var widget = document.querySelector("[data-contact-widget]");
+    if (!widget) return;
 
-    var onScroll = function () {
-      btn.classList.toggle("is-visible", window.scrollY > 380);
+    var toggleBtn = widget.querySelector("[data-contact-toggle]");
+    var card = widget.querySelector("#floating-contact-card");
+    var closeBtn = widget.querySelector("[data-contact-close]");
+    var links = widget.querySelectorAll("[data-contact-link]");
+
+    if (!toggleBtn || !card) return;
+
+    var setCardOpen = function (state) {
+      card.classList.toggle("is-open", state);
+      card.setAttribute("aria-hidden", String(!state));
+      toggleBtn.setAttribute("aria-expanded", String(state));
     };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
 
-    btn.addEventListener("click", function () {
-      window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+    toggleBtn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var isOpen = card.classList.contains("is-open");
+      setCardOpen(!isOpen);
+    });
+
+    if (closeBtn) {
+      closeBtn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        setCardOpen(false);
+      });
+    }
+
+    links.forEach(function (link) {
+      link.addEventListener("click", function () {
+        setCardOpen(false);
+      });
+    });
+
+    // Close on click outside
+    document.addEventListener("click", function (e) {
+      if (!widget.contains(e.target)) {
+        setCardOpen(false);
+      }
+    });
+
+    // Close on Escape
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && card.classList.contains("is-open")) {
+        setCardOpen(false);
+        toggleBtn.focus();
+      }
     });
   }
 
@@ -560,6 +702,37 @@
     });
   }
 
+  /* ------------------------------------------------ Corporate Services Tabs */
+  function initCorpServicesTabs() {
+    var tabs = document.querySelectorAll(".corp-svc-tab");
+    var panels = document.querySelectorAll(".corp-svc-panel");
+    if (!tabs.length || !panels.length) return;
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        var targetId = tab.getAttribute("data-tab-target");
+        if (!targetId) return;
+
+        tabs.forEach(function (t) {
+          t.classList.remove("is-active");
+          t.setAttribute("aria-selected", "false");
+        });
+
+        panels.forEach(function (p) {
+          p.classList.remove("is-active");
+        });
+
+        tab.classList.add("is-active");
+        tab.setAttribute("aria-selected", "true");
+
+        var activePanel = document.getElementById(targetId);
+        if (activePanel) {
+          activePanel.classList.add("is-active");
+        }
+      });
+    });
+  }
+
   /* ---------------------------------------------------------------- Boot */
 
   function boot() {
@@ -572,10 +745,12 @@
     initSlider();
     initCarouselControls();
     initMegaPanes();
+    initSolutionsMegaMenu();
     initFaq();
-    initScrollTop();
+    initContactWidget();
     initStubForms();
     initPortfolioFilters();
+    initCorpServicesTabs();
   }
 
   if (document.readyState === "loading") {

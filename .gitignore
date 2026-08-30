@@ -1,0 +1,9 @@
+# Scratch and temporary dump files
+*.zip
+commits.json
+diff.txt
+main_index.*
+old_index.*
+scratch_*
+.DS_Store
+Thumbs.db
